@@ -1,11 +1,28 @@
-# TeamRocket
+<p algin="center">
+  <img src="https://github.com/guswns1659/TeamRocket/blob/master/assets/team-rocket-logo.png?raw=true" width="160px">
+  <h3 align="center">로켓단</h3>
+</p>
 
-TeamRocket 저장소
+### 🅡 로켓단원
 
-## 아이디어 P.R 방법 
-- idea/<자기이름> 브랜치를 만든다. 
-- 해당 아이디어를 마크다운 파일로 작성한다. 
-- idea 브랜치에 P.R를 보낸다. 
-- P.R에 대해서 피드백을 해준다.
+##### 인자한 백엔드
 
+- [Jack 🐘](https://github.com/guswns1659)
+
+##### 활기찬 iOS 
+
+- [Delma 🐝](https://github.com/delmaSong)
+- [Cory 🦊](https://github.com/corykim0829)
+
+<br>
+
+### 🚀 로켓단의 임무
+
+- 책임감 있는 식문화를 전파하자!
+
+<br>
+
+### 📝 문서
+
+- [로켓단의 엄격한 Wiki](https://github.com/guswns1659/TeamRocket/wiki)
 
