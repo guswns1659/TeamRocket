@@ -1,5 +1,6 @@
 # TeamRocket
-엔젤해커톤 참여하는 TeamRocket 저장소
+
+TeamRocket 저장소
 
 ## 아이디어 P.R 방법 
 - idea/<자기이름> 브랜치를 만든다. 
