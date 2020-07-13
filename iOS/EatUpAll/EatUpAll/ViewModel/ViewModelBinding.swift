@@ -10,6 +10,6 @@ import Foundation
 
 protocol ViewModelBinding {
     associatedtype Key
-    typealias handler = (Key) -> Void
-    func updateNotify(handler: @escaping handler)
+    typealias Handler = (Key) -> Void
+    func updateNotify(handler: @escaping Handler)
 }
