@@ -41,17 +41,17 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujW-mp-Aoe">
-                                    <rect key="frame" x="20" y="78" width="374" height="82"/>
+                                    <rect key="frame" x="20" y="86" width="374" height="79"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="처음이신가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqr-EF-d3C">
-                                            <rect key="frame" x="22" y="16" width="98" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <rect key="frame" x="22" y="16" width="91.5" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                             <color key="textColor" name="key_dark_gray"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지구를 위한 '잘먹었습니다' 가이드 🌎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfe-bl-pwj">
-                                            <rect key="frame" x="22" y="45" width="254" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <rect key="frame" x="22" y="43.5" width="240.5" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                             <color key="textColor" name="key_dark_gray"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -65,15 +65,65 @@
                                         <constraint firstItem="kfe-bl-pwj" firstAttribute="top" secondItem="mqr-EF-d3C" secondAttribute="bottom" constant="8" id="uuC-ji-Jyb"/>
                                     </constraints>
                                 </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LM5-FL-uIQ">
+                                    <rect key="frame" x="20" y="189" width="374" height="106.5"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="oDI-ig-rFi">
+                                            <rect key="frame" x="94" y="15.5" width="220.5" height="20.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="델마" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqn-mE-jKH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="29.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님 덕분에 지구의 온실가스가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iua-xJ-Ckz">
+                                                    <rect key="frame" x="41.5" y="0.0" width="179" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Uqo-2y-XyV">
+                                            <rect key="frame" x="54" y="46" width="274.5" height="38.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izc-TI-JQO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="69.5" height="38.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="32"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kg만큼 감소했어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opq-Kc-P9c">
+                                                    <rect key="frame" x="71.5" y="0.0" width="203" height="38.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Uqo-2y-XyV" firstAttribute="top" secondItem="oDI-ig-rFi" secondAttribute="bottom" constant="8" id="32L-Tx-KSf"/>
+                                        <constraint firstItem="Uqo-2y-XyV" firstAttribute="centerX" secondItem="LM5-FL-uIQ" secondAttribute="centerX" id="DAB-iL-M6n"/>
+                                        <constraint firstItem="oDI-ig-rFi" firstAttribute="centerX" secondItem="LM5-FL-uIQ" secondAttribute="centerX" id="U2t-gq-wHc"/>
+                                        <constraint firstAttribute="bottom" secondItem="Uqo-2y-XyV" secondAttribute="bottom" constant="24" id="h4f-Zv-AaU"/>
+                                        <constraint firstItem="oDI-ig-rFi" firstAttribute="top" secondItem="LM5-FL-uIQ" secondAttribute="top" constant="15.5" id="zgj-VN-0wY"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
+                                <constraint firstItem="LM5-FL-uIQ" firstAttribute="trailing" secondItem="ujW-mp-Aoe" secondAttribute="trailing" id="ArP-wl-QH2"/>
                                 <constraint firstItem="ujW-mp-Aoe" firstAttribute="leading" secondItem="JfI-SH-rUe" secondAttribute="leading" id="BoO-mt-m4L"/>
-                                <constraint firstItem="ujW-mp-Aoe" firstAttribute="top" secondItem="p69-3e-giH" secondAttribute="bottom" constant="16" id="ISa-Do-eXw"/>
+                                <constraint firstItem="ujW-mp-Aoe" firstAttribute="top" secondItem="p69-3e-giH" secondAttribute="bottom" constant="24" id="ISa-Do-eXw"/>
+                                <constraint firstItem="LM5-FL-uIQ" firstAttribute="top" secondItem="ujW-mp-Aoe" secondAttribute="bottom" constant="24" id="LiX-gf-ZtF"/>
                                 <constraint firstAttribute="trailing" secondItem="ujW-mp-Aoe" secondAttribute="trailing" constant="20" id="Ljn-9v-vFU"/>
                                 <constraint firstAttribute="height" constant="1800" id="MqX-hw-OCL"/>
                                 <constraint firstItem="p69-3e-giH" firstAttribute="leading" secondItem="JfI-SH-rUe" secondAttribute="leading" id="Ty3-lx-JoV"/>
                                 <constraint firstItem="JfI-SH-rUe" firstAttribute="top" secondItem="WO3-Lq-Lvv" secondAttribute="top" constant="12" id="b03-AS-lbK"/>
+                                <constraint firstItem="LM5-FL-uIQ" firstAttribute="leading" secondItem="ujW-mp-Aoe" secondAttribute="leading" id="bsd-gn-MMw"/>
                                 <constraint firstItem="JfI-SH-rUe" firstAttribute="leading" secondItem="WO3-Lq-Lvv" secondAttribute="leading" constant="20" id="jyb-8H-H47"/>
                                 <constraint firstItem="p69-3e-giH" firstAttribute="top" secondItem="JfI-SH-rUe" secondAttribute="bottom" constant="2" id="mrb-A4-U0S"/>
                             </constraints>
