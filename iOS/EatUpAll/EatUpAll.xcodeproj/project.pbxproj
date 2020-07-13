@@ -15,6 +15,8 @@
 		38714B3824BC7B7C00E9B9FC /* UIViewController+loadFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38714B3724BC7B7C00E9B9FC /* UIViewController+loadFromNib.swift */; };
 		38714B3C24BC7BFD00E9B9FC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38714B3A24BC7BFD00E9B9FC /* HomeViewController.swift */; };
 		38714B3D24BC7BFD00E9B9FC /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38714B3B24BC7BFD00E9B9FC /* HomeViewController.xib */; };
+		38714B4124BC7FA400E9B9FC /* DonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38714B3F24BC7FA400E9B9FC /* DonationViewController.swift */; };
+		38714B4224BC7FA400E9B9FC /* DonationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38714B4024BC7FA400E9B9FC /* DonationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		38714B3724BC7B7C00E9B9FC /* UIViewController+loadFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+loadFromNib.swift"; sourceTree = "<group>"; };
 		38714B3A24BC7BFD00E9B9FC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		38714B3B24BC7BFD00E9B9FC /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		38714B3F24BC7FA400E9B9FC /* DonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewController.swift; sourceTree = "<group>"; };
+		38714B4024BC7FA400E9B9FC /* DonationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			children = (
 				38714B3424BC79BB00E9B9FC /* TabBar */,
 				38714B3924BC7BE000E9B9FC /* Home */,
+				38714B3E24BC7F9200E9B9FC /* Donation */,
 				38714B3624BC7B5500E9B9FC /* Extensions */,
 				38714B2024BC780A00E9B9FC /* AppDelegate.swift */,
 				38714B2224BC780A00E9B9FC /* SceneDelegate.swift */,
@@ -95,6 +100,23 @@
 				38714B3B24BC7BFD00E9B9FC /* HomeViewController.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		38714B3E24BC7F9200E9B9FC /* Donation */ = {
+			isa = PBXGroup;
+			children = (
+				38714B4324BC7FA700E9B9FC /* Controllers */,
+			);
+			path = Donation;
+			sourceTree = "<group>";
+		};
+		38714B4324BC7FA700E9B9FC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				38714B3F24BC7FA400E9B9FC /* DonationViewController.swift */,
+				38714B4024BC7FA400E9B9FC /* DonationViewController.xib */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +179,7 @@
 			files = (
 				38714B2D24BC780C00E9B9FC /* LaunchScreen.storyboard in Resources */,
 				38714B2A24BC780C00E9B9FC /* Assets.xcassets in Resources */,
+				38714B4224BC7FA400E9B9FC /* DonationViewController.xib in Resources */,
 				38714B3D24BC7BFD00E9B9FC /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38714B4124BC7FA400E9B9FC /* DonationViewController.swift in Sources */,
 				38714B3C24BC7BFD00E9B9FC /* HomeViewController.swift in Sources */,
 				38714B2524BC780A00E9B9FC /* TabBarViewController.swift in Sources */,
 				38714B2124BC780A00E9B9FC /* AppDelegate.swift in Sources */,

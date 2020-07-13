@@ -31,6 +31,7 @@ extension TabBarViewController {
     
     private func configureChildViewControllers() {
         let homeViewController = HomeViewController.loadFromNib()
-        viewControllers = [homeViewController]
+        let donationViewController = DonationViewController.loadFromNib()
+        viewControllers = [homeViewController, donationViewController]
     }
 }
