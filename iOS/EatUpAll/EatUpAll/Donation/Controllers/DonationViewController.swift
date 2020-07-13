@@ -12,6 +12,15 @@ final class DonationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configure()
+    }
+}
 
+// MARK:- Configuration
+
+extension DonationViewController {
+    private func configure() {
+        
     }
 }
