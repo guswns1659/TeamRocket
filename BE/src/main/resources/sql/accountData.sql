@@ -12,11 +12,11 @@ use angelhack;
 -- drop table if exists corporation;
 
 -- Account
-INSERT INTO account (name, today_count, eco_point) VALUES ( 'jack', 2, 1000);
-INSERT INTO account (name, today_count, eco_point) VALUES ( 'cory', 3, 1500);
-INSERT INTO account (name, today_count, eco_point) VALUES ( 'delma', 1, 2000);
---
--- -- -- PointHistory
+INSERT INTO account (eco_point, name, today_count, total_count) VALUES ( 1000, 'jack', 2,  20);
+INSERT INTO account (eco_point, name, today_count, total_count) VALUES ( 1500, 'cory', 3,  30);
+INSERT INTO account (eco_point, name, today_count, total_count) VALUES ( 2000, 'delma', 1, 40);
+
+-- -- PointHistory
 INSERT INTO account_point_history (account_id, created_at, eco_point, point_option, project_name)
 VALUES (1, CURRENT_TIME , 300, 'SAVE', '북극곰 살리기 프로젝트');
 --
@@ -24,4 +24,4 @@ VALUES (1, CURRENT_TIME , 300, 'SAVE', '북극곰 살리기 프로젝트');
 INSERT INTO account_challenge (account_id, created_at, description, challenge_like_count, point, challenge_restaurant_name, updated_at, url)
 VALUES (1, CURRENT_TIME , 'description', 5, POINT (126.29216, 33.6632387), '제주식당', CURRENT_TIME , 'www.naver.com');
 
---
+

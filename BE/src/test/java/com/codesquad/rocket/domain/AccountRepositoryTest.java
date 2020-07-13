@@ -28,12 +28,13 @@ public class AccountRepositoryTest {
     private AccountRepository accountRepository;
 
     @DisplayName("사용자와 위치정보를 가진 피드를 저장하는 테스트")
-    @CsvSource({"accountName, 3, 4, 2, restaurantName, projectName"})
+    @CsvSource({"accountName, 3, 10, 4, 2, restaurantName, projectName"})
     @ParameterizedTest
-    void 유저와_피드를_저장한다(String accountName, Integer todayCount, Integer ecoPoint, Integer likeCount,
+    void 유저와_피드를_저장한다(String accountName, Integer totalCount, Integer todayCount, Integer ecoPoint, Integer likeCount,
         String restaurantName, String projectName) throws ParseException {
         Account account = Account.builder()
             .name(accountName)
+            .totalCount(totalCount)
             .todayCount(todayCount)
             .ecoPoint(ecoPoint)
             .build();

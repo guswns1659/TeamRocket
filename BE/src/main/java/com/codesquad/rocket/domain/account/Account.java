@@ -34,6 +34,8 @@ public class Account {
 
     private String name;
 
+    private Integer totalCount;
+
     private Integer todayCount;
 
     private Integer ecoPoint;

@@ -1,4 +1,4 @@
-package com.codesquad.rocket.web;
+package com.codesquad.rocket.web.controller;
 
 import java.io.IOException;
 
