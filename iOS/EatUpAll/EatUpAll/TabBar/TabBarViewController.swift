@@ -26,6 +26,7 @@ extension TabBarViewController {
     private func configure() {
         configureUI()
         configureChildViewControllers()
+        configureTabBarItems()
     }
     
     private func configureUI() {
@@ -36,5 +37,10 @@ extension TabBarViewController {
         homeViewController = HomeViewController.loadFromNib()
         donationViewController = DonationViewController.loadFromNib()
         viewControllers = [homeViewController, donationViewController]
+    }
+    
+    private func configureTabBarItems() {
+        homeViewController.title = "홈"
+        donationViewController.title = "기부"
     }
 }
