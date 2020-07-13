@@ -21,6 +21,11 @@ final class DonationViewController: UIViewController {
 
 extension DonationViewController {
     private func configure() {
-        
+        configureNavigation()
+    }
+    
+    private func configureNavigation() {
+        navigationItem.title = "기부하기"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
