@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TabBarViewController: UIViewController {
+final class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +22,15 @@ final class TabBarViewController: UIViewController {
 extension TabBarViewController {
     private func configure() {
         configureUI()
+        configureChildViewControllers()
     }
     
     private func configureUI() {
         view.backgroundColor = .white
+    }
+    
+    private func configureChildViewControllers() {
+        let homeViewController = HomeViewController.loadFromNib()
+        viewControllers = [homeViewController]
     }
 }
