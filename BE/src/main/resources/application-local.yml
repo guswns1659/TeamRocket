@@ -8,7 +8,7 @@ spring:
     initialization-mode: always
     hikari:
       maximum-pool-size: 10
-#    data: classpath:sql/accountData.sql, classpath:sql/applicationData.sql, classpath:sql/corporationData.sql, classpath:sql/projectData.sql, classpath:sql/restaurantData.sql
+    data: classpath:sql/accountData.sql, classpath:sql/applicationData.sql, classpath:sql/corporationData.sql, classpath:sql/projectData.sql, classpath:sql/restaurantData.sql
   jpa:
     properties:
       hibernate:

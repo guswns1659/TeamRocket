@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="SshConfigs">
-    <configs>
-      <sshConfig host="15.164.255.212" id="37c33523-8e1c-4b73-9ce2-4de595bc00d0" keyPath="$USER_HOME$/Downloads/angelhack/ec2-angelhack-pem2.pem" port="22" nameFormat="DESCRIPTIVE" username="ubuntu" />
-    </configs>
-  </component>
-</project>
