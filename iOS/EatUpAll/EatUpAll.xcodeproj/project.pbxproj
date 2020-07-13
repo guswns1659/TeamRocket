@@ -104,7 +104,6 @@
 		38652A3524BC85BA006A8A48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				383D8C8824BC967100561EF3 /* CollectionViewDataSources */,
 				38652A3C24BC89F3006A8A48 /* ClosingDonationProject */,
 				383D8C7A24BC8E3300561EF3 /* DonationProject */,
 			);
@@ -186,6 +185,7 @@
 			children = (
 				38714B4324BC7FA700E9B9FC /* Controllers */,
 				383D8C8B24BC97EF00561EF3 /* Models */,
+				383D8C8824BC967100561EF3 /* CollectionViewDataSources */,
 				38652A3524BC85BA006A8A48 /* Views */,
 			);
 			path = Donation;
