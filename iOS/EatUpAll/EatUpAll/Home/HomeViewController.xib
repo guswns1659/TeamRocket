@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,9 +40,37 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujW-mp-Aoe">
+                                    <rect key="frame" x="20" y="78" width="374" height="82"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="처음이신가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqr-EF-d3C">
+                                            <rect key="frame" x="22" y="16" width="98" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="textColor" name="key_dark_gray"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지구를 위한 '잘먹었습니다' 가이드 🌎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfe-bl-pwj">
+                                            <rect key="frame" x="22" y="45" width="254" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="textColor" name="key_dark_gray"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" name="key_light_gray"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="kfe-bl-pwj" secondAttribute="bottom" constant="16" id="Fcp-1R-zy2"/>
+                                        <constraint firstItem="kfe-bl-pwj" firstAttribute="leading" secondItem="mqr-EF-d3C" secondAttribute="leading" id="ODm-zk-DGV"/>
+                                        <constraint firstItem="mqr-EF-d3C" firstAttribute="leading" secondItem="ujW-mp-Aoe" secondAttribute="leading" constant="22" id="mMJ-iC-LWG"/>
+                                        <constraint firstItem="mqr-EF-d3C" firstAttribute="top" secondItem="ujW-mp-Aoe" secondAttribute="top" constant="16" id="mQT-oV-5lf"/>
+                                        <constraint firstItem="kfe-bl-pwj" firstAttribute="top" secondItem="mqr-EF-d3C" secondAttribute="bottom" constant="8" id="uuC-ji-Jyb"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
+                                <constraint firstItem="ujW-mp-Aoe" firstAttribute="leading" secondItem="JfI-SH-rUe" secondAttribute="leading" id="BoO-mt-m4L"/>
+                                <constraint firstItem="ujW-mp-Aoe" firstAttribute="top" secondItem="p69-3e-giH" secondAttribute="bottom" constant="16" id="ISa-Do-eXw"/>
+                                <constraint firstAttribute="trailing" secondItem="ujW-mp-Aoe" secondAttribute="trailing" constant="20" id="Ljn-9v-vFU"/>
                                 <constraint firstAttribute="height" constant="1800" id="MqX-hw-OCL"/>
                                 <constraint firstItem="p69-3e-giH" firstAttribute="leading" secondItem="JfI-SH-rUe" secondAttribute="leading" id="Ty3-lx-JoV"/>
                                 <constraint firstItem="JfI-SH-rUe" firstAttribute="top" secondItem="WO3-Lq-Lvv" secondAttribute="top" constant="12" id="b03-AS-lbK"/>
@@ -75,5 +104,11 @@
     </objects>
     <resources>
         <image name="title" width="321.33334350585938" height="57.666667938232422"/>
+        <namedColor name="key_dark_gray">
+            <color white="0.12298315763473511" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="key_light_gray">
+            <color white="0.86247456073760986" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
     </resources>
 </document>
