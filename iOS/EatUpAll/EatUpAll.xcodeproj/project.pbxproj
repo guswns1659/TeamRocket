@@ -13,6 +13,8 @@
 		383D8C8224BC920100561EF3 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8124BC920100561EF3 /* UIView+Border.swift */; };
 		383D8C8424BC921600561EF3 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8324BC921600561EF3 /* UIView+Shadow.swift */; };
 		383D8C8724BC94BE00561EF3 /* ViewModelBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8624BC94BE00561EF3 /* ViewModelBinding.swift */; };
+		383D8C8A24BC979900561EF3 /* ClosingDonationProjectCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8924BC979900561EF3 /* ClosingDonationProjectCollectionViewDataSource.swift */; };
+		383D8C8D24BC97F700561EF3 /* DonationProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8C24BC97F700561EF3 /* DonationProject.swift */; };
 		38652A3724BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38652A3624BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift */; };
 		38652A3A24BC89E4006A8A48 /* ClosingDonationProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38652A3824BC89E4006A8A48 /* ClosingDonationProjectCell.swift */; };
 		38652A3B24BC89E4006A8A48 /* ClosingDonationProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38652A3924BC89E4006A8A48 /* ClosingDonationProjectCell.xib */; };
@@ -35,6 +37,8 @@
 		383D8C8124BC920100561EF3 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
 		383D8C8324BC921600561EF3 /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		383D8C8624BC94BE00561EF3 /* ViewModelBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBinding.swift; sourceTree = "<group>"; };
+		383D8C8924BC979900561EF3 /* ClosingDonationProjectCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosingDonationProjectCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		383D8C8C24BC97F700561EF3 /* DonationProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProject.swift; sourceTree = "<group>"; };
 		38652A3624BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosingDonationProjectCollectionView.swift; sourceTree = "<group>"; };
 		38652A3824BC89E4006A8A48 /* ClosingDonationProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosingDonationProjectCell.swift; sourceTree = "<group>"; };
 		38652A3924BC89E4006A8A48 /* ClosingDonationProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClosingDonationProjectCell.xib; sourceTree = "<group>"; };
@@ -81,9 +85,26 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		383D8C8824BC967100561EF3 /* CollectionViewDataSources */ = {
+			isa = PBXGroup;
+			children = (
+				383D8C8924BC979900561EF3 /* ClosingDonationProjectCollectionViewDataSource.swift */,
+			);
+			path = CollectionViewDataSources;
+			sourceTree = "<group>";
+		};
+		383D8C8B24BC97EF00561EF3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				383D8C8C24BC97F700561EF3 /* DonationProject.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		38652A3524BC85BA006A8A48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				383D8C8824BC967100561EF3 /* CollectionViewDataSources */,
 				38652A3C24BC89F3006A8A48 /* ClosingDonationProject */,
 				383D8C7A24BC8E3300561EF3 /* DonationProject */,
 			);
@@ -164,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				38714B4324BC7FA700E9B9FC /* Controllers */,
+				383D8C8B24BC97EF00561EF3 /* Models */,
 				38652A3524BC85BA006A8A48 /* Views */,
 			);
 			path = Donation;
@@ -259,8 +281,10 @@
 				383D8C8424BC921600561EF3 /* UIView+Shadow.swift in Sources */,
 				383D8C8724BC94BE00561EF3 /* ViewModelBinding.swift in Sources */,
 				38714B2524BC780A00E9B9FC /* TabBarViewController.swift in Sources */,
+				383D8C8D24BC97F700561EF3 /* DonationProject.swift in Sources */,
 				383D8C7C24BC8E4D00561EF3 /* DonationProjectCollectionView.swift in Sources */,
 				38652A3724BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift in Sources */,
+				383D8C8A24BC979900561EF3 /* ClosingDonationProjectCollectionViewDataSource.swift in Sources */,
 				38714B2124BC780A00E9B9FC /* AppDelegate.swift in Sources */,
 				38714B3824BC7B7C00E9B9FC /* UIViewController+loadFromNib.swift in Sources */,
 				38714B2324BC780A00E9B9FC /* SceneDelegate.swift in Sources */,

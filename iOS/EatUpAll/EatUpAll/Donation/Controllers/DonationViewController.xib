@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DonationViewController" customModule="EatUpAll" customModuleProvider="target">
             <connections>
+                <outlet property="closingDonationProjectCollectionView" destination="c6d-97-z3n" id="CuK-8h-Fcf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
