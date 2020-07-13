@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: local
+    include: aws
+
+# logging 설정
+logging:
+  level:
+    root: INFO
+    sql: trace
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
+  pattern:
+    file: "%d{dd-MM-yyyy HH:mm:ss.SSS,Asia/Seoul} [%thread] %-5level %logger{36}.%M - %msg%n"
+    console: "%d{dd-MM-yyyy HH:mm:ss.SSS,Asia/Seoul} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n"
+  file:
+    name: logs/dev_log.log

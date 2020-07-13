@@ -1,0 +1,36 @@
+spring:
+  profiles: local
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/angelhack?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useLegacyDatetimeCode=false
+    username: teamrocket
+    password: teamrocket
+    initialization-mode: always
+    hikari:
+      maximum-pool-size: 10
+#    data: classpath:sql/accountData.sql, classpath:sql/applicationData.sql, classpath:sql/corporationData.sql, classpath:sql/projectData.sql, classpath:sql/restaurantData.sql
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+        lob:
+        non_contextual_creation: true
+    hibernate:
+      use-new-id-generator-mappings: false
+      ddl-auto: create
+    database: mysql
+    database-platform: org.hibernate.spatial.dialect.mysql.MySQL56InnoDBSpatialDialect
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+---
+cloud:
+  aws:
+    s3:
+      bucket: s3-angelhack
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
