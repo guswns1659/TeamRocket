@@ -29,9 +29,17 @@ final class DonationProjectCollectionView: UICollectionView {
 
 extension DonationProjectCollectionView {
     private func configure() {
-        backgroundColor = .blue
+        configureUI()
         configureCollectionView()
+        configureContentInset()
         registerCollectionViewCell()
+    }
+    
+    private func configureUI() {
+        backgroundColor = .clear
+    }
+    
+    private func configureContentInset() {
         contentInset = UIEdgeInsets(
             top: Metric.topBottomPadding,
             left: 0,
