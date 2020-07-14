@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DonationProjectCell: UICollectionViewCell {
+final class DonationProjectCell: UICollectionViewCell, DonationProjectConfigurable {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var progressBar: UIView!

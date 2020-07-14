@@ -8,7 +8,11 @@
 
 import UIKit
 
-final class ClosingDonationProjectCell: UICollectionViewCell {
+protocol DonationProjectConfigurable: UICollectionViewCell {
+    func configureCell(with donationProject: DonationProject)
+}
+
+final class ClosingDonationProjectCell: UICollectionViewCell, DonationProjectConfigurable {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var remainingDateLabel: UILabel!
