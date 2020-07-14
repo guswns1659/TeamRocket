@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-extension Session {
+extension Session: NetworkDispatcher {
     func execute(request: URLRequest, handler: @escaping (Result<Data?, Error>) -> Void) {
         self.request(request).validate().response { response in
             switch response.result {
