@@ -20,6 +20,9 @@
 		30B0A2F824BD9E0300BB9E55 /* EmptyPlateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2F724BD9E0300BB9E55 /* EmptyPlateRequest.swift */; };
 		30B0A2FB24BD9F2F00BB9E55 /* ChallengeEmptyPlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2FA24BD9F2F00BB9E55 /* ChallengeEmptyPlate.swift */; };
 		30B0A2FE24BDA4BD00BB9E55 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 30B0A2FD24BDA4BD00BB9E55 /* Kingfisher */; };
+		30B0A30024BDC2AA00BB9E55 /* TodayRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2FF24BDC2AA00BB9E55 /* TodayRecord.swift */; };
+		30B0A30224BDC2FF00BB9E55 /* TodayRecordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A30124BDC2FF00BB9E55 /* TodayRecordRequest.swift */; };
+		30B0A30424BDC37900BB9E55 /* TodayRecordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A30324BDC37900BB9E55 /* TodayRecordUseCase.swift */; };
 		383D8C7C24BC8E4D00561EF3 /* DonationProjectCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C7B24BC8E4D00561EF3 /* DonationProjectCollectionView.swift */; };
 		383D8C7F24BC8F5500561EF3 /* DonationProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C7D24BC8F5500561EF3 /* DonationProjectCell.swift */; };
 		383D8C8024BC8F5500561EF3 /* DonationProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383D8C7E24BC8F5500561EF3 /* DonationProjectCell.xib */; };
@@ -57,6 +60,9 @@
 		30B0A2F524BD9CCA00BB9E55 /* EmptyPlateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlateUseCase.swift; sourceTree = "<group>"; };
 		30B0A2F724BD9E0300BB9E55 /* EmptyPlateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlateRequest.swift; sourceTree = "<group>"; };
 		30B0A2FA24BD9F2F00BB9E55 /* ChallengeEmptyPlate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEmptyPlate.swift; sourceTree = "<group>"; };
+		30B0A2FF24BDC2AA00BB9E55 /* TodayRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecord.swift; sourceTree = "<group>"; };
+		30B0A30124BDC2FF00BB9E55 /* TodayRecordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecordRequest.swift; sourceTree = "<group>"; };
+		30B0A30324BDC37900BB9E55 /* TodayRecordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecordUseCase.swift; sourceTree = "<group>"; };
 		383D8C7B24BC8E4D00561EF3 /* DonationProjectCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectCollectionView.swift; sourceTree = "<group>"; };
 		383D8C7D24BC8F5500561EF3 /* DonationProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectCell.swift; sourceTree = "<group>"; };
 		383D8C7E24BC8F5500561EF3 /* DonationProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationProjectCell.xib; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 			children = (
 				302BB01E24BD66CE000EB297 /* UseCase.swift */,
 				30B0A2F524BD9CCA00BB9E55 /* EmptyPlateUseCase.swift */,
+				30B0A30324BDC37900BB9E55 /* TodayRecordUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -119,6 +126,7 @@
 			children = (
 				302BB02424BD68BE000EB297 /* Request.swift */,
 				30B0A2F724BD9E0300BB9E55 /* EmptyPlateRequest.swift */,
+				30B0A30124BDC2FF00BB9E55 /* TodayRecordRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -135,11 +143,11 @@
 		30A1615024BD62A1007FEDC4 /* Networks */ = {
 			isa = PBXGroup;
 			children = (
-				302BB02324BD68B3000EB297 /* Request */,
 				302BB01724BD65C6000EB297 /* Endpoint.swift */,
 				302BB01924BD65DB000EB297 /* NetworkDispatcher.swift */,
 				302BB01B24BD661D000EB297 /* Session+NetworkDispatcher.swift */,
 				302BB01D24BD66B7000EB297 /* UseCases */,
+				302BB02324BD68B3000EB297 /* Request */,
 				302BB02024BD67AE000EB297 /* Error */,
 			);
 			path = Networks;
@@ -149,7 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				30B0A2FA24BD9F2F00BB9E55 /* ChallengeEmptyPlate.swift */,
-        );
+				30B0A2FF24BDC2AA00BB9E55 /* TodayRecord.swift */,
+			);
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -390,6 +399,7 @@
 				38652A3A24BC89E4006A8A48 /* ClosingDonationProjectCell.swift in Sources */,
 				383D8C7F24BC8F5500561EF3 /* DonationProjectCell.swift in Sources */,
 				383D8C8424BC921600561EF3 /* UIView+Shadow.swift in Sources */,
+				30B0A30024BDC2AA00BB9E55 /* TodayRecord.swift in Sources */,
 				383D8C8724BC94BE00561EF3 /* ViewModelBinding.swift in Sources */,
 				38714B2524BC780A00E9B9FC /* TabBarViewController.swift in Sources */,
 				383D8C8D24BC97F700561EF3 /* DonationProject.swift in Sources */,
@@ -405,9 +415,11 @@
 				38714B3824BC7B7C00E9B9FC /* UIViewController+loadFromNib.swift in Sources */,
 				38EB2A7424BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift in Sources */,
 				302BB01F24BD66CE000EB297 /* UseCase.swift in Sources */,
+				30B0A30424BDC37900BB9E55 /* TodayRecordUseCase.swift in Sources */,
 				302BB01824BD65C6000EB297 /* Endpoint.swift in Sources */,
 				38714B2324BC780A00E9B9FC /* SceneDelegate.swift in Sources */,
 				383D8C8224BC920100561EF3 /* UIView+Border.swift in Sources */,
+				30B0A30224BDC2FF00BB9E55 /* TodayRecordRequest.swift in Sources */,
 				302BB02224BD67B8000EB297 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,8 +11,13 @@ import Kingfisher
 
 final class HomeViewController: UIViewController {
 
+    @IBOutlet weak var todayWholePlates: UILabel!
+    @IBOutlet weak var todayWholeSavings: UILabel!
+    @IBOutlet weak var todayMyPlates: UILabel!
+    @IBOutlet weak var todayMySavings: UILabel!
     @IBOutlet weak var emptyPlateCollectionView: UICollectionView!
     
+    private var todayRecordUseCase: TodayRecordUseCase!
     private var emptyPlateUseCase: EmptyPlateUseCase!
     private var emptyPlateInfo: ChallengeEmptyPlate!
     
@@ -22,9 +27,26 @@ final class HomeViewController: UIViewController {
     }
     
     private func configure() {
+        todayRecordUseCase = TodayRecordUseCase()
         emptyPlateUseCase = EmptyPlateUseCase()
+        fetchTodayRecords()
         fetchEmptyPlate()
         configureCollectionView()
+    }
+    
+    private func fetchTodayRecords() {
+        let request = TodayRecordRequest().asURLRequest()
+        todayRecordUseCase.getResources(request: request, dataType: TodayRecord.self) { result in
+            switch result {
+            case .success(let record):
+                self.todayWholePlates.text = "\(record.todayTotalPlates)"
+                self.todayWholeSavings.text = String(format: "%.2f", arguments: [record.todayTotalSaving])
+                self.todayMyPlates.text = "\(record.todayMyPlates)"
+                self.todayMySavings.text = String(format: "%.2f", arguments: [record.todayMySaving])
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     private func fetchEmptyPlate() {
