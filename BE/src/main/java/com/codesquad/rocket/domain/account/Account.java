@@ -34,9 +34,9 @@ public class Account {
 
     private String name;
 
-    private Integer totalCount;
+    private Integer totalPlate;
 
-    private Integer todayCount;
+    private Integer todayPlate;
 
     private Integer ecoPoint;
 

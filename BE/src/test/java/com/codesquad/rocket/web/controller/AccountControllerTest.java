@@ -12,6 +12,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
+import com.codesquad.rocket.web.dto.response.TodaySavingResponseDto;
 import com.codesquad.rocket.web.dto.response.TotalSavingResponseDto;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -25,9 +26,9 @@ public class AccountControllerTest {
     private int port;
 
     @DisplayName("totalSaving api 테스트")
-    @CsvSource({"90"})
+    @CsvSource({"13.5"})
     @ParameterizedTest
-    void totalSaving를_응답한다(Integer totalSaving) {
+    void totalSaving를_응답한다(Double totalSaving) {
 
         String url = "http://localhost:" + port + "/account/totalSaving";
 
@@ -40,5 +41,24 @@ public class AccountControllerTest {
             .getResponseBody();
 
         assertThat(totalSavingResponseDto.getTotalSaving()).isEqualTo(totalSaving);
+    }
+
+    @DisplayName("todaySaving api 테스트")
+    @CsvSource({"6, 1"})
+    @ParameterizedTest
+    void todaySaving을_응답한다(Integer todayTotalPlates, Integer todayMyPlates) {
+
+        String url = "http://localhost:" + port + "/account/todaySaving";
+
+        TodaySavingResponseDto todaySavingResponseDto = webTestClient.get()
+            .uri(url)
+            .exchange()
+            .expectStatus().isEqualTo(HttpStatus.OK)
+            .expectBody(TodaySavingResponseDto.class)
+            .returnResult()
+            .getResponseBody();
+
+        assertThat(todaySavingResponseDto.getTodayTotalPlates()).isEqualTo(todayTotalPlates);
+        assertThat(todaySavingResponseDto.getTodayMyPlates()).isEqualTo(todayMyPlates);
     }
 }

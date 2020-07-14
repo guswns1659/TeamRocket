@@ -34,8 +34,8 @@ public class AccountRepositoryTest {
         String restaurantName, String projectName) throws ParseException {
         Account account = Account.builder()
             .name(accountName)
-            .totalCount(totalCount)
-            .todayCount(todayCount)
+            .totalPlate(totalCount)
+            .todayPlate(todayCount)
             .ecoPoint(ecoPoint)
             .build();
 

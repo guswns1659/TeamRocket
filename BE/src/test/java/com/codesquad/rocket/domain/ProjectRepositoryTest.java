@@ -78,7 +78,7 @@ public class ProjectRepositoryTest {
         Account account = Account.builder()
             .name(accountName)
             .ecoPoint(ecoPoint)
-            .todayCount(todayCount)
+            .todayPlate(todayCount)
             .build();
 
         Image image = Image.builder()

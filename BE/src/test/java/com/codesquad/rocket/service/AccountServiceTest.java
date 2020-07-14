@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.codesquad.rocket.web.dto.response.TodaySavingResponseDto;
 import com.codesquad.rocket.web.dto.response.TotalSavingResponseDto;
 
 @SpringBootTest
@@ -31,8 +32,11 @@ public class AccountServiceTest {
     }
 
     @DisplayName("todaySaving을 가져오는 테스트")
-    @Test
-    void todaySaving을_요청한다() {
-
+    @CsvSource({"6, 1"})
+    @ParameterizedTest
+    void todaySaving을_요청한다(Integer todayTotalPlates, Integer todayMyPlates) {
+        TodaySavingResponseDto todaySavingResponseDto = accountService.todaySaving();
+        assertThat(todaySavingResponseDto.getTodayTotalPlates()).isEqualTo(todayTotalPlates);
+        assertThat(todaySavingResponseDto.getTodayMyPlates()).isEqualTo(todayMyPlates);
     }
 }
