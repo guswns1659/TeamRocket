@@ -2,7 +2,6 @@ package com.codesquad.rocket.web.dto.response.challenge;
 
 import java.util.List;
 
-import com.codesquad.rocket.domain.account.Challenge;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,5 +16,5 @@ import lombok.ToString;
 @Builder
 public class WeeklyTopLikeResponseDto {
 
-    private List<Challenge> data;
+    private List<ChallengeDto> data;
 }

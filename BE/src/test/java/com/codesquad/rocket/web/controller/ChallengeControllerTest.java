@@ -42,6 +42,5 @@ public class ChallengeControllerTest {
             .getResponseBody();
 
         assertThat(weeklyTopLikeResponseDto.getData().get(0).getLikeCount()).isEqualTo(likeCount);
-        assertThat(weeklyTopLikeResponseDto.getData().get(0).getUrl()).isEqualTo(challengeUrl);
     }
 }

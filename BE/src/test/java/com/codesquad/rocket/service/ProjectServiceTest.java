@@ -19,7 +19,7 @@ public class ProjectServiceTest {
     private ProjectService projectService;
 
     @DisplayName("orderByCreatedAt API 테스트")
-    @CsvSource({"5, 9999, 해양 포유류 보호법 후원 프로젝트, 6"})
+    @CsvSource({"5, 9000, 해양 포유류 보호법 후원 프로젝트, 6"})
     @ParameterizedTest
     void orderByCreatedAt을_요청한다(Integer size, Integer currentMoney, String projectTitle, Long leftDays) {
         ProjectOrderByResponseDtos projectOrderByResponseDtos = projectService.orderByCreatedAt();
@@ -31,7 +31,7 @@ public class ProjectServiceTest {
     }
 
     @DisplayName("orderByDeadLine API 테스트")
-    @CsvSource({"3, 9999, 해양 포유류 보호법 후원 프로젝트, 6"})
+    @CsvSource({"3, 9000, 해양 포유류 보호법 후원 프로젝트, 6"})
     @ParameterizedTest
     void orderByDeadLine을_요청한다(Integer size, Integer currentMoney, String projectTitle, Long leftDays) {
         ProjectOrderByResponseDtos projectOrderByResponseDtos = projectService.orderByDeadLine();
@@ -44,7 +44,7 @@ public class ProjectServiceTest {
 
     @Transactional
     @DisplayName("orderByCreatedAt API 테스트")
-    @CsvSource({"1, 9999, 해양 포유류 보호법 후원 프로젝트, 6, 4"})
+    @CsvSource({"1, 9000, 해양 포유류 보호법 후원 프로젝트, 6, 4"})
     @ParameterizedTest
     void 프로젝트_상세보기를_요청한다(Long projectId, Integer currentMoney, String title, Long leftDay, Long leftHour) {
 

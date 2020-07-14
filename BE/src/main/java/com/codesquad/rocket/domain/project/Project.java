@@ -1,7 +1,9 @@
 package com.codesquad.rocket.domain.project;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.AttributeOverride;
@@ -60,7 +62,7 @@ public class Project {
     @AttributeOverrides({
         @AttributeOverride(name = "url", column = @Column(name = "project_image"))
     })
-    private final Set<Image> images = new HashSet<>();
+    private final List<Image> images = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Corporation corporation;
