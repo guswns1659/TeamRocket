@@ -11,12 +11,13 @@ import lombok.RequiredArgsConstructor;
 public class AccountService {
 
     private final AccountRepository accountRepository;
+    private final static double SAVING_UNIT_PER_PLATE = 0.15;
 
     public TotalSavingResponseDto totalSaving() {
-        int totalCount = accountRepository.sumTotalSaving();
+        double totalSaving = accountRepository.sumTotalSaving() * SAVING_UNIT_PER_PLATE;
 
         return TotalSavingResponseDto.builder()
-            .totalSaving(totalCount)
+            .totalSaving(totalSaving)
             .build();
     }
 }

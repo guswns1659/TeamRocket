@@ -3,7 +3,6 @@ package com.codesquad.rocket.web.controller;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +25,14 @@ public class AccountControllerTest {
     private int port;
 
     @DisplayName("totalSaving api 테스트")
-    @CsvSource({"10"})
+    @CsvSource({"90"})
     @ParameterizedTest
     void totalSaving를_응답한다(Integer totalSaving) {
 
         String url = "http://localhost:" + port + "/account/totalSaving";
 
         TotalSavingResponseDto totalSavingResponseDto = webTestClient.get()
+            .uri(url)
             .exchange()
             .expectStatus().isEqualTo(HttpStatus.OK)
             .expectBody(TotalSavingResponseDto.class)
