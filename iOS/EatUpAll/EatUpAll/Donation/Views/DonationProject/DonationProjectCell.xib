@@ -110,9 +110,14 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="397" height="154"/>
             <connections>
+                <outlet property="accumulatedDonationLabel" destination="Plp-Ny-Gg0" id="sTr-rX-aC5"/>
                 <outlet property="containerView" destination="hVm-d8-e7r" id="vgV-M8-pMF"/>
                 <outlet property="progressBar" destination="a3f-0W-jfT" id="mZb-d2-9tp"/>
                 <outlet property="progressBarBackgroundView" destination="dPI-JM-8id" id="EGI-ek-6dK"/>
+                <outlet property="progressPercentageLabel" destination="Wwj-wb-tZ3" id="bYM-b4-11f"/>
+                <outlet property="projectImageView" destination="eBN-yO-v5E" id="0qK-nE-Z5A"/>
+                <outlet property="remainingDateLabel" destination="MD9-6q-IgN" id="9RP-bE-FDb"/>
+                <outlet property="titleLabel" destination="5sI-46-GdW" id="BVE-50-4Kw"/>
             </connections>
             <point key="canvasLocation" x="389.13043478260875" y="185.49107142857142"/>
         </collectionViewCell>
