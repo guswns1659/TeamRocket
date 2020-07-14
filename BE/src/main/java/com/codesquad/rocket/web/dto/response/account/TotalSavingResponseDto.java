@@ -16,4 +16,5 @@ public class TotalSavingResponseDto {
 
     private Integer totalPlates;
     private Double totalSaving;
+    private String accountName;
 }

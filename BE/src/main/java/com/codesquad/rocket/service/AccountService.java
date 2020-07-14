@@ -18,9 +18,11 @@ public class AccountService {
 
     public TotalSavingResponseDto totalSaving() {
         String user = "delma";
+        String delma = "델마";
         Account account  = accountRepository.findAccountByName(user).orElse(new Account());
 
         return TotalSavingResponseDto.builder()
+            .accountName(delma)
             .totalPlates(account.getTotalPlate())
             .totalSaving(account.getTotalPlate() * SAVING_UNIT_PER_PLATE)
             .build();

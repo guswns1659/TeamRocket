@@ -11,7 +11,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.codesquad.rocket.utils.S3Uploader;
 import lombok.RequiredArgsConstructor;
+import springfox.documentation.annotations.ApiIgnore;
 
+@ApiIgnore
 @RequiredArgsConstructor
 @Controller
 public class WebController {
