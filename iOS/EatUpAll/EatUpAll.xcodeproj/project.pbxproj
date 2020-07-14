@@ -36,6 +36,7 @@
 		38714B4124BC7FA400E9B9FC /* DonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38714B3F24BC7FA400E9B9FC /* DonationViewController.swift */; };
 		38714B4224BC7FA400E9B9FC /* DonationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38714B4024BC7FA400E9B9FC /* DonationViewController.xib */; };
 		38EB2A7224BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7124BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift */; };
+		38EB2A7424BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7324BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		38714B3F24BC7FA400E9B9FC /* DonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewController.swift; sourceTree = "<group>"; };
 		38714B4024BC7FA400E9B9FC /* DonationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationViewController.xib; sourceTree = "<group>"; };
 		38EB2A7124BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		38EB2A7324BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeDonationProjectCollectionViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				383D8C8E24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift */,
+				38EB2A7324BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				302BB02524BD68BE000EB297 /* Request.swift in Sources */,
 				302BB01A24BD65DB000EB297 /* NetworkDispatcher.swift in Sources */,
 				38714B3824BC7B7C00E9B9FC /* UIViewController+loadFromNib.swift in Sources */,
+				38EB2A7424BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift in Sources */,
 				302BB01F24BD66CE000EB297 /* UseCase.swift in Sources */,
 				302BB01824BD65C6000EB297 /* Endpoint.swift in Sources */,
 				38714B2324BC780A00E9B9FC /* SceneDelegate.swift in Sources */,

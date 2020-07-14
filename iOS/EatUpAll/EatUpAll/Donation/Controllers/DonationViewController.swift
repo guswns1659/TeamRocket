@@ -15,6 +15,7 @@ final class DonationViewController: UIViewController {
     private var closingDonationProjectDataSource: DonationProjectCollectionViewDataSource<ClosingDonationProjectCell>!
     private var wholeDonationProjectDataSource: DonationProjectCollectionViewDataSource<DonationProjectCell>!
     private var closingDonationProjectDelegate: ClosingDonationProjectCollectionViewDelegate!
+    private var wholeDonationProjectDelegate: WholeDonationProjectCollectionViewDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,7 @@ extension DonationViewController {
         configureClosingDonationProjectDataSource()
         configureClosingDonationProjectDelegate()
         configureWholeDonationProjectDataSource()
+        configureWholeDonationProjectDelegate()
     }
     
     private func configureNavigation() {
@@ -86,5 +88,11 @@ extension DonationViewController {
                 self.wholeDonationProjectCollectionView.reloadData()
         })
         wholeDonationProjectCollectionView.dataSource = wholeDonationProjectDataSource
+    }
+    
+    private func configureWholeDonationProjectDelegate() {
+        wholeDonationProjectDelegate = WholeDonationProjectCollectionViewDelegate(
+            frame: CGSize(width: view.frame.width, height: view.frame.height))
+        wholeDonationProjectCollectionView.delegate = wholeDonationProjectDelegate
     }
 }
