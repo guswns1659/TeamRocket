@@ -8,22 +8,32 @@
 
 import Foundation
 
+struct DonationProjectContainer: Codable {
+    let data: [DonationProject]
+}
+
 struct DonationProject: Codable {
+    let id: Int
     let title: String
     let subtitle: String
-    let leftDays: String
-    let numberOfDonations: Int
+    let leftDays: Int
     let currentAmount: Int
-    let goalAmount: Int
-    let imageDictionary: [String: String]
+    let imageURLs: DonationProjectImage
+//    let numberOfDonations: Int
+//    let goalAmount: Int
     
     enum CodingKeys: String, CodingKey {
+        case id
         case title = "projectTitle"
         case subtitle = "titleWithCompany"
         case leftDays
-        case imageDictionary = "image"
+        case imageURLs = "image"
         case currentAmount = "currentMoney"
-        case goalAmount
-        case numberOfDonations
+//        case goalAmount
+//        case numberOfDonations
     }
+}
+
+struct DonationProjectImage: Codable {
+    let url: String
 }

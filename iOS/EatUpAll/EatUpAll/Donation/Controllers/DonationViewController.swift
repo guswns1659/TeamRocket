@@ -22,10 +22,31 @@ final class DonationViewController: UIViewController {
     private var wholeDonationProjectDelegate: WholeDonationProjectCollectionViewDelegate!
     @IBOutlet weak var wholeDonationProjectCollectionViewHeight: NSLayoutConstraint!
     
+    private var donationUseCase: DonationUseCase!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configure()
+        fetchDonationProjects()
+    }
+    
+    private func fetchDonationProjects() {
+        fetchClosingDonationProjects()
+    }
+    
+    private func fetchClosingDonationProjects() {
+        let request = DonationClosingProjectRequest().asURLRequest()
+        donationUseCase.getResources(
+            request: request,
+            dataType: DonationProjectContainer.self) { (result) in
+                switch result {
+                case .success(let closingProjectContainer):
+                    self.closingDonationProjectDataSource.updateDonationProjects(closingProjectContainer.data)
+                case .failure(_):
+                    break
+                }
+        }
     }
 }
 
@@ -38,6 +59,11 @@ extension DonationViewController {
         configureClosingDonationProjectDelegate()
         configureWholeDonationProjectDataSource()
         configureWholeDonationProjectDelegate()
+        configureUseCase()
+    }
+    
+    private func configureUseCase() {
+        donationUseCase = DonationUseCase()
     }
     
     private func configureNavigation() {
