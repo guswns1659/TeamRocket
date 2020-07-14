@@ -7,18 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		383D8C7C24BC8E4D00561EF3 /* DonationProjectCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C7B24BC8E4D00561EF3 /* DonationProjectCollectionView.swift */; };
-		383D8C7F24BC8F5500561EF3 /* DonationProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C7D24BC8F5500561EF3 /* DonationProjectCell.swift */; };
-		383D8C8024BC8F5500561EF3 /* DonationProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383D8C7E24BC8F5500561EF3 /* DonationProjectCell.xib */; };
-		383D8C8224BC920100561EF3 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8124BC920100561EF3 /* UIView+Border.swift */; };
-		383D8C8424BC921600561EF3 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8324BC921600561EF3 /* UIView+Shadow.swift */; };
-		383D8C8724BC94BE00561EF3 /* ViewModelBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8624BC94BE00561EF3 /* ViewModelBinding.swift */; };
-		383D8C8A24BC979900561EF3 /* ClosingDonationProjectCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8924BC979900561EF3 /* ClosingDonationProjectCollectionViewDataSource.swift */; };
-		383D8C8D24BC97F700561EF3 /* DonationProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8C24BC97F700561EF3 /* DonationProject.swift */; };
-		383D8C8F24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8E24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift */; };
-		38652A3724BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38652A3624BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift */; };
-		38652A3A24BC89E4006A8A48 /* ClosingDonationProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38652A3824BC89E4006A8A48 /* ClosingDonationProjectCell.swift */; };
-		38652A3B24BC89E4006A8A48 /* ClosingDonationProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38652A3924BC89E4006A8A48 /* ClosingDonationProjectCell.xib */; };
 		302BB01824BD65C6000EB297 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB01724BD65C6000EB297 /* Endpoint.swift */; };
 		302BB01A24BD65DB000EB297 /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB01924BD65DB000EB297 /* NetworkDispatcher.swift */; };
 		302BB01C24BD661E000EB297 /* Session+NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB01B24BD661D000EB297 /* Session+NetworkDispatcher.swift */; };
@@ -26,6 +14,17 @@
 		302BB02224BD67B8000EB297 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB02124BD67B8000EB297 /* NetworkError.swift */; };
 		302BB02524BD68BE000EB297 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB02424BD68BE000EB297 /* Request.swift */; };
 		306FA78D24BD61C300279A18 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 306FA78C24BD61C300279A18 /* Alamofire */; };
+		383D8C7C24BC8E4D00561EF3 /* DonationProjectCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C7B24BC8E4D00561EF3 /* DonationProjectCollectionView.swift */; };
+		383D8C7F24BC8F5500561EF3 /* DonationProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C7D24BC8F5500561EF3 /* DonationProjectCell.swift */; };
+		383D8C8024BC8F5500561EF3 /* DonationProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383D8C7E24BC8F5500561EF3 /* DonationProjectCell.xib */; };
+		383D8C8224BC920100561EF3 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8124BC920100561EF3 /* UIView+Border.swift */; };
+		383D8C8424BC921600561EF3 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8324BC921600561EF3 /* UIView+Shadow.swift */; };
+		383D8C8724BC94BE00561EF3 /* ViewModelBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8624BC94BE00561EF3 /* ViewModelBinding.swift */; };
+		383D8C8D24BC97F700561EF3 /* DonationProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8C24BC97F700561EF3 /* DonationProject.swift */; };
+		383D8C8F24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8E24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift */; };
+		38652A3724BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38652A3624BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift */; };
+		38652A3A24BC89E4006A8A48 /* ClosingDonationProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38652A3824BC89E4006A8A48 /* ClosingDonationProjectCell.swift */; };
+		38652A3B24BC89E4006A8A48 /* ClosingDonationProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38652A3924BC89E4006A8A48 /* ClosingDonationProjectCell.xib */; };
 		38714B2124BC780A00E9B9FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38714B2024BC780A00E9B9FC /* AppDelegate.swift */; };
 		38714B2324BC780A00E9B9FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38714B2224BC780A00E9B9FC /* SceneDelegate.swift */; };
 		38714B2524BC780A00E9B9FC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38714B2424BC780A00E9B9FC /* TabBarViewController.swift */; };
@@ -36,27 +35,28 @@
 		38714B3D24BC7BFD00E9B9FC /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38714B3B24BC7BFD00E9B9FC /* HomeViewController.xib */; };
 		38714B4124BC7FA400E9B9FC /* DonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38714B3F24BC7FA400E9B9FC /* DonationViewController.swift */; };
 		38714B4224BC7FA400E9B9FC /* DonationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38714B4024BC7FA400E9B9FC /* DonationViewController.xib */; };
+		38EB2A7224BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7124BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift */; };
+		38EB2A7424BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7324BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		383D8C7B24BC8E4D00561EF3 /* DonationProjectCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectCollectionView.swift; sourceTree = "<group>"; };
-		383D8C7D24BC8F5500561EF3 /* DonationProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectCell.swift; sourceTree = "<group>"; };
-		383D8C7E24BC8F5500561EF3 /* DonationProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationProjectCell.xib; sourceTree = "<group>"; };
-		383D8C8124BC920100561EF3 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
-		383D8C8324BC921600561EF3 /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
-		383D8C8624BC94BE00561EF3 /* ViewModelBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBinding.swift; sourceTree = "<group>"; };
-		383D8C8924BC979900561EF3 /* ClosingDonationProjectCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosingDonationProjectCollectionViewDataSource.swift; sourceTree = "<group>"; };
-		383D8C8C24BC97F700561EF3 /* DonationProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProject.swift; sourceTree = "<group>"; };
-		383D8C8E24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosingDonationProjectCollectionViewDelegate.swift; sourceTree = "<group>"; };
-		38652A3624BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosingDonationProjectCollectionView.swift; sourceTree = "<group>"; };
-		38652A3824BC89E4006A8A48 /* ClosingDonationProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosingDonationProjectCell.swift; sourceTree = "<group>"; };
-		38652A3924BC89E4006A8A48 /* ClosingDonationProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClosingDonationProjectCell.xib; sourceTree = "<group>"; };
 		302BB01724BD65C6000EB297 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		302BB01924BD65DB000EB297 /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		302BB01B24BD661D000EB297 /* Session+NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+NetworkDispatcher.swift"; sourceTree = "<group>"; };
 		302BB01E24BD66CE000EB297 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		302BB02124BD67B8000EB297 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		302BB02424BD68BE000EB297 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		383D8C7B24BC8E4D00561EF3 /* DonationProjectCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectCollectionView.swift; sourceTree = "<group>"; };
+		383D8C7D24BC8F5500561EF3 /* DonationProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectCell.swift; sourceTree = "<group>"; };
+		383D8C7E24BC8F5500561EF3 /* DonationProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationProjectCell.xib; sourceTree = "<group>"; };
+		383D8C8124BC920100561EF3 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
+		383D8C8324BC921600561EF3 /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
+		383D8C8624BC94BE00561EF3 /* ViewModelBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBinding.swift; sourceTree = "<group>"; };
+		383D8C8C24BC97F700561EF3 /* DonationProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProject.swift; sourceTree = "<group>"; };
+		383D8C8E24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosingDonationProjectCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		38652A3624BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosingDonationProjectCollectionView.swift; sourceTree = "<group>"; };
+		38652A3824BC89E4006A8A48 /* ClosingDonationProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosingDonationProjectCell.swift; sourceTree = "<group>"; };
+		38652A3924BC89E4006A8A48 /* ClosingDonationProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClosingDonationProjectCell.xib; sourceTree = "<group>"; };
 		38714B1D24BC780A00E9B9FC /* EatUpAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatUpAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38714B2024BC780A00E9B9FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38714B2224BC780A00E9B9FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +69,8 @@
 		38714B3B24BC7BFD00E9B9FC /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		38714B3F24BC7FA400E9B9FC /* DonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewController.swift; sourceTree = "<group>"; };
 		38714B4024BC7FA400E9B9FC /* DonationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationViewController.xib; sourceTree = "<group>"; };
+		38EB2A7124BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		38EB2A7324BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeDonationProjectCollectionViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,67 +85,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		383D8C7A24BC8E3300561EF3 /* DonationProject */ = {
-			isa = PBXGroup;
-			children = (
-				383D8C7B24BC8E4D00561EF3 /* DonationProjectCollectionView.swift */,
-				383D8C7D24BC8F5500561EF3 /* DonationProjectCell.swift */,
-				383D8C7E24BC8F5500561EF3 /* DonationProjectCell.xib */,
-			);
-			path = DonationProject;
-			sourceTree = "<group>";
-		};
-		383D8C8524BC94B400561EF3 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				383D8C8624BC94BE00561EF3 /* ViewModelBinding.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		383D8C8824BC967100561EF3 /* CollectionViewDataSources */ = {
-			isa = PBXGroup;
-			children = (
-				383D8C8924BC979900561EF3 /* ClosingDonationProjectCollectionViewDataSource.swift */,
-			);
-			path = CollectionViewDataSources;
-			sourceTree = "<group>";
-		};
-		383D8C8B24BC97EF00561EF3 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				383D8C8C24BC97F700561EF3 /* DonationProject.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		383D8C9024BCA0E300561EF3 /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				383D8C8E24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift */,
-			);
-			path = Delegates;
-			sourceTree = "<group>";
-		};
-		38652A3524BC85BA006A8A48 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				38652A3C24BC89F3006A8A48 /* ClosingDonationProject */,
-				383D8C7A24BC8E3300561EF3 /* DonationProject */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		38652A3C24BC89F3006A8A48 /* ClosingDonationProject */ = {
-			isa = PBXGroup;
-			children = (
-				38652A3624BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift */,
-				38652A3824BC89E4006A8A48 /* ClosingDonationProjectCell.swift */,
-				38652A3924BC89E4006A8A48 /* ClosingDonationProjectCell.xib */,
-			);
-			path = ClosingDonationProject;
-      sourceTree = "<group>";
-    };
 		302BB01D24BD66B7000EB297 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +120,68 @@
 				302BB02024BD67AE000EB297 /* Error */,
 			);
 			path = Networks;
+			sourceTree = "<group>";
+		};
+		383D8C7A24BC8E3300561EF3 /* DonationProject */ = {
+			isa = PBXGroup;
+			children = (
+				383D8C7B24BC8E4D00561EF3 /* DonationProjectCollectionView.swift */,
+				383D8C7D24BC8F5500561EF3 /* DonationProjectCell.swift */,
+				383D8C7E24BC8F5500561EF3 /* DonationProjectCell.xib */,
+			);
+			path = DonationProject;
+			sourceTree = "<group>";
+		};
+		383D8C8524BC94B400561EF3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				383D8C8624BC94BE00561EF3 /* ViewModelBinding.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		383D8C8824BC967100561EF3 /* CollectionViewDataSources */ = {
+			isa = PBXGroup;
+			children = (
+				38EB2A7124BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift */,
+			);
+			path = CollectionViewDataSources;
+			sourceTree = "<group>";
+		};
+		383D8C8B24BC97EF00561EF3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				383D8C8C24BC97F700561EF3 /* DonationProject.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		383D8C9024BCA0E300561EF3 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				383D8C8E24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift */,
+				38EB2A7324BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		38652A3524BC85BA006A8A48 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				38652A3C24BC89F3006A8A48 /* ClosingDonationProject */,
+				383D8C7A24BC8E3300561EF3 /* DonationProject */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		38652A3C24BC89F3006A8A48 /* ClosingDonationProject */ = {
+			isa = PBXGroup;
+			children = (
+				38652A3624BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift */,
+				38652A3824BC89E4006A8A48 /* ClosingDonationProjectCell.swift */,
+				38652A3924BC89E4006A8A48 /* ClosingDonationProjectCell.xib */,
+			);
+			path = ClosingDonationProject;
 			sourceTree = "<group>";
 		};
 		38714B1424BC780A00E9B9FC = {
@@ -354,12 +357,13 @@
 				383D8C8D24BC97F700561EF3 /* DonationProject.swift in Sources */,
 				383D8C7C24BC8E4D00561EF3 /* DonationProjectCollectionView.swift in Sources */,
 				38652A3724BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift in Sources */,
-				383D8C8A24BC979900561EF3 /* ClosingDonationProjectCollectionViewDataSource.swift in Sources */,
 				302BB01C24BD661E000EB297 /* Session+NetworkDispatcher.swift in Sources */,
+				38EB2A7224BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift in Sources */,
 				38714B2124BC780A00E9B9FC /* AppDelegate.swift in Sources */,
 				302BB02524BD68BE000EB297 /* Request.swift in Sources */,
 				302BB01A24BD65DB000EB297 /* NetworkDispatcher.swift in Sources */,
 				38714B3824BC7B7C00E9B9FC /* UIViewController+loadFromNib.swift in Sources */,
+				38EB2A7424BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift in Sources */,
 				302BB01F24BD66CE000EB297 /* UseCase.swift in Sources */,
 				302BB01824BD65C6000EB297 /* Endpoint.swift in Sources */,
 				38714B2324BC780A00E9B9FC /* SceneDelegate.swift in Sources */,

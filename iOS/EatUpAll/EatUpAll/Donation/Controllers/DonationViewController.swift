@@ -10,19 +10,41 @@ import UIKit
 
 final class DonationViewController: UIViewController {
     
+    private enum Metric {
+        static let WholeDonationTopBottomPadding: CGFloat = 12.0
+    }
+    
     @IBOutlet weak var closingDonationProjectCollectionView: ClosingDonationProjectCollectionView!
-    private var closingDonationProjectDataSource: ClosingDonationProjectCollectionViewDataSource!
+    @IBOutlet weak var wholeDonationProjectCollectionView: DonationProjectCollectionView!
+    private var closingDonationProjectDataSource: DonationProjectCollectionViewDataSource<ClosingDonationProjectCell>!
+    private var wholeDonationProjectDataSource: DonationProjectCollectionViewDataSource<DonationProjectCell>!
     private var closingDonationProjectDelegate: ClosingDonationProjectCollectionViewDelegate!
-
+    private var wholeDonationProjectDelegate: WholeDonationProjectCollectionViewDelegate!
+    @IBOutlet weak var wholeDonationProjectCollectionViewHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configure()
+        fetchClosingDonationProjects()
         fetchDonationProjects()
     }
     
-    private func fetchDonationProjects() {
+    private func fetchClosingDonationProjects() {
         closingDonationProjectDataSource.updateDonationProjects([
+            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
+            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
+            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
+            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
+            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
+            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
+            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
+            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
+            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000)])
+    }
+    
+    private func fetchDonationProjects() {
+        wholeDonationProjectDataSource.updateDonationProjects([
             DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
             DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
             DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
@@ -40,8 +62,10 @@ final class DonationViewController: UIViewController {
 extension DonationViewController {
     private func configure() {
         configureNavigation()
-        configureClosingDonationProjectDataSources()
+        configureClosingDonationProjectDataSource()
         configureClosingDonationProjectDelegate()
+        configureWholeDonationProjectDataSource()
+        configureWholeDonationProjectDelegate()
     }
     
     private func configureNavigation() {
@@ -49,8 +73,8 @@ extension DonationViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    private func configureClosingDonationProjectDataSources() {
-        closingDonationProjectDataSource = ClosingDonationProjectCollectionViewDataSource(
+    private func configureClosingDonationProjectDataSource() {
+        closingDonationProjectDataSource = DonationProjectCollectionViewDataSource(
             handler: { (_) in
                 self.closingDonationProjectCollectionView.reloadData()
         })
@@ -61,5 +85,22 @@ extension DonationViewController {
         closingDonationProjectDelegate = ClosingDonationProjectCollectionViewDelegate(
             frame: CGSize(width: view.frame.width, height: view.frame.height))
         closingDonationProjectCollectionView.delegate = closingDonationProjectDelegate
+    }
+    
+    private func configureWholeDonationProjectDataSource() {
+        wholeDonationProjectDataSource = DonationProjectCollectionViewDataSource(
+            handler: { (_) in
+                self.wholeDonationProjectCollectionView.reloadData()
+                self.wholeDonationProjectCollectionView.layoutIfNeeded()
+                self.wholeDonationProjectCollectionViewHeight.constant =
+                    self.wholeDonationProjectCollectionView.contentSize.height + Metric.WholeDonationTopBottomPadding * 2
+        })
+        wholeDonationProjectCollectionView.dataSource = wholeDonationProjectDataSource
+    }
+    
+    private func configureWholeDonationProjectDelegate() {
+        wholeDonationProjectDelegate = WholeDonationProjectCollectionViewDelegate(
+            frame: CGSize(width: view.frame.width, height: view.frame.height))
+        wholeDonationProjectCollectionView.delegate = wholeDonationProjectDelegate
     }
 }

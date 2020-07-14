@@ -9,5 +9,34 @@
 import UIKit
 
 final class DonationProjectCell: UICollectionViewCell {
+    
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var progressBar: UIView!
+    @IBOutlet weak var progressBarBackgroundView: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        configure()
+    }
+}
 
+// MARK:- Configuration
+
+extension DonationProjectCell {
+    private func configure() {
+        configureUI()
+        configureProgressBars()
+    }
+    
+    private func configureProgressBars() {
+        progressBar.roundCorner(cornerRadius: 2.0)
+        progressBarBackgroundView.roundCorner(cornerRadius: 2.0)
+    }
+    
+    private func configureUI() {
+        containerView.roundCorner(cornerRadius: 8.0)
+        containerView.clipsToBounds = true
+        drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.3)
+    }
 }
