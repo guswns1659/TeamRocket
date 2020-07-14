@@ -29,10 +29,14 @@ final class ClosingDonationProjectCollectionView: UICollectionView {
 
 extension ClosingDonationProjectCollectionView {
     private func configure() {
-        backgroundColor = .red
+        configureUI()
         configureCollectionView()
         configureContentInset()
         registerCollectionViewCell()
+    }
+    
+    private func configureUI() {
+        backgroundColor = .clear
     }
     
     private func configureContentInset() {
