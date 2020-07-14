@@ -11,10 +11,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="EatUpAll" customModuleProvider="target">
             <connections>
                 <outlet property="emptyPlateCollectionView" destination="r3Q-AB-4kB" id="zPp-XW-Sfn"/>
+                <outlet property="personalTotalSavings" destination="Izc-TI-JQO" id="WnK-W9-BP7"/>
+                <outlet property="personalTotalView" destination="LM5-FL-uIQ" id="t7f-PE-6Zg"/>
                 <outlet property="todayMyPlates" destination="F4d-wJ-Eue" id="VVC-6s-OIT"/>
                 <outlet property="todayMySavings" destination="BS6-ex-bLz" id="gpi-Ve-55f"/>
                 <outlet property="todayWholePlates" destination="TKS-al-5Nf" id="lfN-yo-8S4"/>
                 <outlet property="todayWholeSavings" destination="24J-OF-NtK" id="lxf-fw-ZO5"/>
+                <outlet property="userName" destination="xqn-mE-jKH" id="9Do-A5-xnb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -67,7 +70,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LM5-FL-uIQ">
-                                    <rect key="frame" x="20" y="214.5" width="374" height="106.5"/>
+                                    <rect key="frame" x="20" y="214.5" width="374" height="111"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="oDI-ig-rFi">
                                             <rect key="frame" x="94" y="15.5" width="212.5" height="20.5"/>
@@ -110,17 +113,17 @@
                                         <constraint firstItem="Uqo-2y-XyV" firstAttribute="centerX" secondItem="LM5-FL-uIQ" secondAttribute="centerX" id="DAB-iL-M6n"/>
                                         <constraint firstItem="oDI-ig-rFi" firstAttribute="centerX" secondItem="LM5-FL-uIQ" secondAttribute="centerX" id="U2t-gq-wHc"/>
                                         <constraint firstAttribute="bottom" secondItem="Uqo-2y-XyV" secondAttribute="bottom" constant="24" id="h4f-Zv-AaU"/>
-                                        <constraint firstItem="oDI-ig-rFi" firstAttribute="top" secondItem="LM5-FL-uIQ" secondAttribute="top" constant="15.5" id="zgj-VN-0wY"/>
+                                        <constraint firstItem="oDI-ig-rFi" firstAttribute="top" secondItem="LM5-FL-uIQ" secondAttribute="top" constant="20" id="zgj-VN-0wY"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 잘먹었습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrC-nn-Etn">
-                                    <rect key="frame" x="20" y="349" width="122" height="20.5"/>
+                                    <rect key="frame" x="20" y="353.5" width="122" height="20.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <color key="highlightedColor" name="key_dark_gray"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvM-Ks-JdS">
-                                    <rect key="frame" x="20" y="385.5" width="165.5" height="120"/>
+                                    <rect key="frame" x="20" y="390" width="165.5" height="120"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="전체 참여" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrJ-OW-VIr">
                                             <rect key="frame" x="54" y="8" width="56" height="18"/>
@@ -175,7 +178,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7M-HD-yLM">
-                                    <rect key="frame" x="228.5" y="385.5" width="165.5" height="120"/>
+                                    <rect key="frame" x="228.5" y="390" width="165.5" height="120"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 참여" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hys-oI-nXW">
                                             <rect key="frame" x="54.5" y="8" width="56" height="18"/>
@@ -230,13 +233,13 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번주 빈그릇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvi-14-C3q">
-                                    <rect key="frame" x="20" y="533.5" width="92.5" height="20.5"/>
+                                    <rect key="frame" x="20" y="538" width="92.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <color key="highlightedColor" name="key_dark_gray"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="r3Q-AB-4kB">
-                                    <rect key="frame" x="20" y="570" width="374" height="120"/>
+                                    <rect key="frame" x="20" y="574.5" width="374" height="120"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="120" id="xoV-8y-0Ml"/>
@@ -249,13 +252,13 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="진행중인 기부 프로젝트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAY-tD-5Wm">
-                                    <rect key="frame" x="20" y="718" width="155.5" height="20.5"/>
+                                    <rect key="frame" x="20" y="722.5" width="155.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <color key="highlightedColor" name="key_dark_gray"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="FPT-A0-IBe">
-                                    <rect key="frame" x="20" y="754.5" width="374" height="240"/>
+                                    <rect key="frame" x="20" y="759" width="374" height="240"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="240" id="4fz-3f-iQb"/>
@@ -268,7 +271,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b87-tu-eD7">
-                                    <rect key="frame" x="20" y="1022.5" width="374" height="100"/>
+                                    <rect key="frame" x="20" y="1027" width="374" height="100"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="I0N-fV-NGx">
                                             <rect key="frame" x="12" y="12" width="350" height="76"/>

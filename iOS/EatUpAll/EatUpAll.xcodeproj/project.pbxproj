@@ -23,6 +23,9 @@
 		30B0A30024BDC2AA00BB9E55 /* TodayRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2FF24BDC2AA00BB9E55 /* TodayRecord.swift */; };
 		30B0A30224BDC2FF00BB9E55 /* TodayRecordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A30124BDC2FF00BB9E55 /* TodayRecordRequest.swift */; };
 		30B0A30424BDC37900BB9E55 /* TodayRecordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A30324BDC37900BB9E55 /* TodayRecordUseCase.swift */; };
+		30B0A30824BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A30724BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift */; };
+		30B0A30A24BDCEB300BB9E55 /* PersonalTotalSavingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A30924BDCEB300BB9E55 /* PersonalTotalSavingRequest.swift */; };
+		30B0A30C24BDCEE400BB9E55 /* PersonalTotalSaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A30B24BDCEE400BB9E55 /* PersonalTotalSaving.swift */; };
 		383D8C7C24BC8E4D00561EF3 /* DonationProjectCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C7B24BC8E4D00561EF3 /* DonationProjectCollectionView.swift */; };
 		383D8C7F24BC8F5500561EF3 /* DonationProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C7D24BC8F5500561EF3 /* DonationProjectCell.swift */; };
 		383D8C8024BC8F5500561EF3 /* DonationProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383D8C7E24BC8F5500561EF3 /* DonationProjectCell.xib */; };
@@ -63,6 +66,9 @@
 		30B0A2FF24BDC2AA00BB9E55 /* TodayRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecord.swift; sourceTree = "<group>"; };
 		30B0A30124BDC2FF00BB9E55 /* TodayRecordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecordRequest.swift; sourceTree = "<group>"; };
 		30B0A30324BDC37900BB9E55 /* TodayRecordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecordUseCase.swift; sourceTree = "<group>"; };
+		30B0A30724BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalTotalSavingUseCase.swift; sourceTree = "<group>"; };
+		30B0A30924BDCEB300BB9E55 /* PersonalTotalSavingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalTotalSavingRequest.swift; sourceTree = "<group>"; };
+		30B0A30B24BDCEE400BB9E55 /* PersonalTotalSaving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalTotalSaving.swift; sourceTree = "<group>"; };
 		383D8C7B24BC8E4D00561EF3 /* DonationProjectCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectCollectionView.swift; sourceTree = "<group>"; };
 		383D8C7D24BC8F5500561EF3 /* DonationProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectCell.swift; sourceTree = "<group>"; };
 		383D8C7E24BC8F5500561EF3 /* DonationProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationProjectCell.xib; sourceTree = "<group>"; };
@@ -109,6 +115,7 @@
 				302BB01E24BD66CE000EB297 /* UseCase.swift */,
 				30B0A2F524BD9CCA00BB9E55 /* EmptyPlateUseCase.swift */,
 				30B0A30324BDC37900BB9E55 /* TodayRecordUseCase.swift */,
+				30B0A30724BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -127,6 +134,7 @@
 				302BB02424BD68BE000EB297 /* Request.swift */,
 				30B0A2F724BD9E0300BB9E55 /* EmptyPlateRequest.swift */,
 				30B0A30124BDC2FF00BB9E55 /* TodayRecordRequest.swift */,
+				30B0A30924BDCEB300BB9E55 /* PersonalTotalSavingRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 			children = (
 				30B0A2FA24BD9F2F00BB9E55 /* ChallengeEmptyPlate.swift */,
 				30B0A2FF24BDC2AA00BB9E55 /* TodayRecord.swift */,
+				30B0A30B24BDCEE400BB9E55 /* PersonalTotalSaving.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -399,16 +408,19 @@
 				38652A3A24BC89E4006A8A48 /* ClosingDonationProjectCell.swift in Sources */,
 				383D8C7F24BC8F5500561EF3 /* DonationProjectCell.swift in Sources */,
 				383D8C8424BC921600561EF3 /* UIView+Shadow.swift in Sources */,
+				30B0A30A24BDCEB300BB9E55 /* PersonalTotalSavingRequest.swift in Sources */,
 				30B0A30024BDC2AA00BB9E55 /* TodayRecord.swift in Sources */,
 				383D8C8724BC94BE00561EF3 /* ViewModelBinding.swift in Sources */,
 				38714B2524BC780A00E9B9FC /* TabBarViewController.swift in Sources */,
 				383D8C8D24BC97F700561EF3 /* DonationProject.swift in Sources */,
+				30B0A30C24BDCEE400BB9E55 /* PersonalTotalSaving.swift in Sources */,
 				383D8C7C24BC8E4D00561EF3 /* DonationProjectCollectionView.swift in Sources */,
 				38652A3724BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift in Sources */,
 				302BB01C24BD661E000EB297 /* Session+NetworkDispatcher.swift in Sources */,
 				38EB2A7224BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift in Sources */,
 				38714B2124BC780A00E9B9FC /* AppDelegate.swift in Sources */,
 				30B0A2FB24BD9F2F00BB9E55 /* ChallengeEmptyPlate.swift in Sources */,
+				30B0A30824BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift in Sources */,
 				302BB02524BD68BE000EB297 /* Request.swift in Sources */,
 				302BB01A24BD65DB000EB297 /* NetworkDispatcher.swift in Sources */,
 				30B0A2F624BD9CCA00BB9E55 /* EmptyPlateUseCase.swift in Sources */,
