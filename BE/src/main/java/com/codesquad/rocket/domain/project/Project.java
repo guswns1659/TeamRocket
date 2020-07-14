@@ -84,4 +84,12 @@ public class Project {
     public void addImage(Image image) {
         this.images.add(image);
     }
+
+    public long calculateLeftDays(long DAY) {
+        return (this.deadLine.getTime() - new Date().getTime()) / DAY;
+    }
+
+    public long calculateLeftHours(long HOUR) {
+        return (this.deadLine.getTime() - new Date().getTime()) / HOUR;
+    }
 }

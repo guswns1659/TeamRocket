@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.codesquad.rocket.domain.project.Project;
 import com.codesquad.rocket.domain.project.ProjectRepository;
+import com.codesquad.rocket.web.dto.response.project.ProjectDetailResponseDto;
 import com.codesquad.rocket.web.dto.response.project.ProjectOrderByResponseDtos;
 import com.codesquad.rocket.web.dto.response.project.ProjectOrderByDto;
 import lombok.RequiredArgsConstructor;
@@ -37,5 +38,10 @@ public class ProjectService {
         return ProjectOrderByResponseDtos.builder()
             .data(data)
             .build();
+    }
+
+    public ProjectDetailResponseDto projectDetail(Long projectId) {
+        Project project = projectRepository.findById(projectId).orElse(new Project());
+        return ProjectDetailResponseDto.of(project);
     }
 }

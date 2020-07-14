@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 public class ProjectOrderByDto {
 
     private final static long DAY = 24 * 60 * 60 * 1000;
+    private final static String postfix = "와 함께하는";
 
     private Long id;
     private Long leftDays;
@@ -32,7 +33,7 @@ public class ProjectOrderByDto {
             .currentMoney(project.getCurrentMoney())
             .projectTitle(project.getName())
             .image(project.getImages().iterator().next())
-            .titleWithCompany(project.getCorporation().getName()+"와 함께하는")
+            .titleWithCompany(project.getCorporation().getName() + postfix)
             .build();
     }
 }

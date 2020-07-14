@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.codesquad.rocket.web.dto.response.project.ProjectDetailResponseDto;
 import com.codesquad.rocket.web.dto.response.project.ProjectOrderByResponseDtos;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -67,5 +68,28 @@ public class ProjectControllerTest {
         assertThat(projectOrderByResponseDtos.getData().get(0).getCurrentMoney()).isEqualTo(currentMoney);
         assertThat(projectOrderByResponseDtos.getData().get(0).getProjectTitle()).isEqualTo(projectTitle);
         assertThat(projectOrderByResponseDtos.getData().get(0).getLeftDays()).isEqualTo(leftDays);
+    }
+
+    @Transactional
+    @DisplayName("orderByCreatedAt API 테스트")
+    @CsvSource({"1, 9999, 해양 포유류 보호법 후원 프로젝트, 6, 4"})
+    @ParameterizedTest
+    void 프로젝트_상세보기를_요청한다(Long projectId, Integer currentMoney, String title, Long leftDay, Long leftHour) {
+
+        String url = "http://localhost:" + port + "/project/" + projectId;
+
+        ProjectDetailResponseDto projectDetailResponseDto = webTestClient.get()
+            .uri(url)
+            .exchange()
+            .expectStatus().isEqualTo(HttpStatus.OK)
+            .expectBody(ProjectDetailResponseDto.class)
+            .returnResult()
+            .getResponseBody();
+
+        assertThat(projectDetailResponseDto.getId()).isEqualTo(projectId);
+        assertThat(projectDetailResponseDto.getCurrentMoney()).isEqualTo(currentMoney);
+        assertThat(projectDetailResponseDto.getTitle()).isEqualTo(title);
+        assertThat(projectDetailResponseDto.getLeftDay()).isEqualTo(leftDay);
+        assertThat(projectDetailResponseDto.getLeftHour()).isEqualTo(leftHour);
     }
 }
