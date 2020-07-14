@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class HomeViewController: UIViewController {
 
@@ -53,7 +54,15 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EmptyPlateCollectionViewCell.self), for: indexPath) as! EmptyPlateCollectionViewCell
-        cell.configureImage(UIImage(named: "logo")!)
+        let url = URL(string: emptyPlateInfo.data[indexPath.row].url)
+        KingfisherManager.shared.retrieveImage(with: url!, options: nil, progressBlock: nil, downloadTaskUpdated: nil) { (result) in
+            switch result {
+            case .success(let value):
+                cell.configureImage(value.image)
+            case .failure(let error):
+                print(error)
+            }
+        }
         return cell
     }
 }
