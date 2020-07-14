@@ -51,6 +51,7 @@ extension ClosingDonationProjectCollectionView {
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         layout.scrollDirection = .horizontal
         showsHorizontalScrollIndicator = false
+        decelerationRate = .fast
     }
     
     private func registerCollectionViewCell() {
