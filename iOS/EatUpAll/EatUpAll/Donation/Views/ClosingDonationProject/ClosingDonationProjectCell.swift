@@ -11,11 +11,20 @@ import UIKit
 final class ClosingDonationProjectCell: UICollectionViewCell {
     
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var remainingDateLabel: UILabel!
+    @IBOutlet weak var accumulatedDonationLabel: UILabel!
+    @IBOutlet weak var progressPercentageLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
             
         configure()
+    }
+    
+    func configureCell(with donationProject: DonationProject) {
+
     }
 }
 
