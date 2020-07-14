@@ -14,6 +14,11 @@ class EmptyPlateCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        configure()
+    }
+
+    private func configure() {
+        emptyPlateImageView.roundCorner(cornerRadius: 20)
     }
     
     func configureImage(_ image: UIImage) {
