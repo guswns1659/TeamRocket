@@ -3,7 +3,6 @@ package com.codesquad.rocket.service;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.slf4j.Logger;
@@ -11,8 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.codesquad.rocket.web.dto.response.TodaySavingResponseDto;
-import com.codesquad.rocket.web.dto.response.TotalSavingResponseDto;
+import com.codesquad.rocket.web.dto.response.account.TodaySavingResponseDto;
+import com.codesquad.rocket.web.dto.response.account.TotalSavingResponseDto;
 
 @SpringBootTest
 public class AccountServiceTest {

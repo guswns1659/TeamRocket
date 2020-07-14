@@ -1,4 +1,4 @@
-package com.codesquad.rocket.web.dto.response;
+package com.codesquad.rocket.web.dto.response.account;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -8,11 +8,14 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Getter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
-@ToString
-public class TotalSavingResponseDto {
+public class TodaySavingResponseDto {
 
-    private Double totalSaving;
+    private Integer todayTotalPlates;
+    private Double todayTotalSaving;
+    private Integer todayMyPlates;
+    private Double todayMySaving;
 }

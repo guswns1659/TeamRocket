@@ -22,6 +22,15 @@ VALUES (1, CURRENT_TIME , 300, 'SAVE', '북극곰 살리기 프로젝트');
 --
 -- Challenge
 INSERT INTO account_challenge (account_id, created_at, description, challenge_like_count, point, challenge_restaurant_name, updated_at, url)
-VALUES (1, CURRENT_TIME , 'description', 5, POINT (126.29216, 33.6632387), '제주식당', CURRENT_TIME , 'www.naver.com');
+VALUES (1, CURRENT_TIME , 'description', 1, POINT (126.29216, 33.6632387), '제주식당', CURRENT_TIME , 'www.naver.com');
+
+INSERT INTO account_challenge (account_id, created_at, description, challenge_like_count, point, challenge_restaurant_name, updated_at, url)
+VALUES (2, CURRENT_TIME , 'description2', 2, POINT (126.29216, 33.6632387), '전남식당', CURRENT_TIME , 'www.daum.com');
+
+INSERT INTO account_challenge (account_id, created_at, description, challenge_like_count, point, challenge_restaurant_name, updated_at, url)
+VALUES (3, CURRENT_TIME , 'description3', 3, POINT (126.29216, 33.6632387), '강남식당', CURRENT_TIME , 'www.daum.com');
+
+INSERT INTO account_challenge (account_id, created_at, description, challenge_like_count, point, challenge_restaurant_name, updated_at, url)
+VALUES (1, CURRENT_TIME , 'description4', 4, POINT (126.29216, 33.6632387), '서귀포식당', CURRENT_TIME , 'www.daum.com');
 
 

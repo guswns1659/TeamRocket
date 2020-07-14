@@ -9,6 +9,7 @@ import javax.persistence.TemporalType;
 
 import org.locationtech.jts.geom.Point;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -31,6 +32,7 @@ public class Challenge {
     @Column(name = "challenge_restaurant_name")
     private String restaurantName;
 
+    @JsonIgnore
     private Point point;
 
     @Temporal(TemporalType.TIMESTAMP)

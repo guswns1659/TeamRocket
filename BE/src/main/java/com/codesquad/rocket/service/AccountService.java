@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service;
 
 import com.codesquad.rocket.domain.account.Account;
 import com.codesquad.rocket.domain.account.AccountRepository;
-import com.codesquad.rocket.web.dto.response.TodaySavingResponseDto;
-import com.codesquad.rocket.web.dto.response.TotalSavingResponseDto;
+import com.codesquad.rocket.web.dto.response.account.TodaySavingResponseDto;
+import com.codesquad.rocket.web.dto.response.account.TotalSavingResponseDto;
 import lombok.RequiredArgsConstructor;
 
 @Service

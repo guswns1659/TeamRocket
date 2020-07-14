@@ -12,8 +12,8 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-import com.codesquad.rocket.web.dto.response.TodaySavingResponseDto;
-import com.codesquad.rocket.web.dto.response.TotalSavingResponseDto;
+import com.codesquad.rocket.web.dto.response.account.TodaySavingResponseDto;
+import com.codesquad.rocket.web.dto.response.account.TotalSavingResponseDto;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureWebTestClient(timeout = "30000")

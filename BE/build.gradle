@@ -23,6 +23,7 @@ dependencies {
     implementation 'mysql:mysql-connector-java'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    implementation group: 'com.bedatadriven', name: 'jackson-datatype-jts', version: '2.4'
     implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
     implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
     implementation group: 'org.hibernate', name: 'hibernate-spatial', version: '5.4.17.Final'

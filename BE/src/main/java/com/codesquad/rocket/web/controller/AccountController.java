@@ -4,8 +4,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.codesquad.rocket.web.dto.response.TodaySavingResponseDto;
-import com.codesquad.rocket.web.dto.response.TotalSavingResponseDto;
+import com.codesquad.rocket.web.dto.response.account.TodaySavingResponseDto;
+import com.codesquad.rocket.web.dto.response.account.TotalSavingResponseDto;
 import com.codesquad.rocket.service.AccountService;
 import lombok.RequiredArgsConstructor;
 

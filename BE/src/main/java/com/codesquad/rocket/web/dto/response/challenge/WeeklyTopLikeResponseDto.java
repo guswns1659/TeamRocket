@@ -1,5 +1,8 @@
-package com.codesquad.rocket.web.dto.response;
+package com.codesquad.rocket.web.dto.response.challenge;
 
+import java.util.List;
+
+import com.codesquad.rocket.domain.account.Challenge;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,10 +15,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
-public class TodaySavingResponseDto {
+public class WeeklyTopLikeResponseDto {
 
-    private Integer todayTotalPlates;
-    private Double todayTotalSaving;
-    private Integer todayMyPlates;
-    private Double todayMySaving;
+    private List<Challenge> data;
 }
