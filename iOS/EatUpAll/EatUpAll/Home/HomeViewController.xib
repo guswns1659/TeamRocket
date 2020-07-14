@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="EatUpAll" customModuleProvider="target">
             <connections>
+                <outlet property="emptyPlateCollectionView" destination="r3Q-AB-4kB" id="zPp-XW-Sfn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -230,13 +231,13 @@
                                     <nil key="textColor"/>
                                     <color key="highlightedColor" name="key_dark_gray"/>
                                 </label>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="r3Q-AB-4kB">
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="r3Q-AB-4kB">
                                     <rect key="frame" x="20" y="570" width="374" height="120"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="120" id="xoV-8y-0Ml"/>
                                     </constraints>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xOJ-u2-k6C">
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xOJ-u2-k6C">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
