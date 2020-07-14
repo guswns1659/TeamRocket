@@ -1,8 +1,7 @@
-package com.codesquad.rocket.web.dto.response;
+package com.codesquad.rocket.web.dto.response.project;
 
 import java.util.List;
 
-import com.codesquad.rocket.web.dto.response.project.ProjectByCreatedAtDto;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,9 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
-public class ProjectByCreatedAtResponseDtos {
+public class ProjectOrderByResponseDtos {
 
-    private String status;
-    private List<ProjectByCreatedAtDto> data;
-
+    private List<ProjectOrderByDto> data;
 }

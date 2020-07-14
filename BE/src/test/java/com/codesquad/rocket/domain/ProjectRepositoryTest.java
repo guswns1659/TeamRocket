@@ -2,7 +2,6 @@ package com.codesquad.rocket.domain;
 
 import static org.assertj.core.api.Assertions.*;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 import org.junit.jupiter.api.DisplayName;
@@ -40,7 +39,7 @@ public class ProjectRepositoryTest {
             .createdAt(new Date())
             .description(description)
             .targetMoney(targetMoney)
-            .deadLine(LocalDate.parse(deadLine))
+            .deadLine(new Date())
             .donators(donators)
             .build();
 
@@ -49,7 +48,7 @@ public class ProjectRepositoryTest {
             .currentMoney(currentMoney)
             .description(description)
             .targetMoney(targetMoney)
-            .deadLine(LocalDate.parse(deadLine))
+            .deadLine(new Date())
             .donators(donators)
             .build();
 
@@ -81,7 +80,7 @@ public class ProjectRepositoryTest {
 
         Project project1 = Project.builder()
             .name(projectName1)
-            .deadLine(LocalDate.parse(deadLine))
+            .deadLine(new Date())
             .description(description)
             .build();
 

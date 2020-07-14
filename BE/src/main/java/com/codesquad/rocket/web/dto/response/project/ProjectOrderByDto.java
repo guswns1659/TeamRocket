@@ -14,19 +14,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
-public class ProjectByCreatedAtDto {
+public class ProjectOrderByDto {
 
     private final static long DAY = 24 * 60 * 60 * 1000;
 
+    private Long id;
     private Long leftDays;
     private Integer currentMoney;
     private String titleWithCompany;
     private String projectTitle;
     private Image image;
 
-    public static ProjectByCreatedAtDto of (Project project) {
-        return ProjectByCreatedAtDto.builder()
-            .leftDays((new Date().getTime() - project.getCreatedAt().getTime()) / DAY)
+    public static ProjectOrderByDto of (Project project) {
+        return ProjectOrderByDto.builder()
+            .id(project.getId())
+            .leftDays((project.getDeadLine().getTime() - new Date().getTime()) / DAY)
             .currentMoney(project.getCurrentMoney())
             .projectTitle(project.getName())
             .image(project.getImages().iterator().next())

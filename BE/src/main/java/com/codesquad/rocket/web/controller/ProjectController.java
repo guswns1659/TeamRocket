@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codesquad.rocket.service.ProjectService;
-import com.codesquad.rocket.web.dto.response.ProjectByCreatedAtResponseDtos;
+import com.codesquad.rocket.web.dto.response.project.ProjectOrderByResponseDtos;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -16,7 +16,12 @@ public class ProjectController {
     private final ProjectService projectService;
 
     @GetMapping("/orderByCreatedAt")
-    public ProjectByCreatedAtResponseDtos orderByCreatedAt() {
+    public ProjectOrderByResponseDtos orderByCreatedAt() {
         return projectService.orderByCreatedAt();
+    }
+
+    @GetMapping("/orderByDeadLine")
+    public ProjectOrderByResponseDtos orderByDeadLine() {
+        return projectService.orderByDeadLine();
     }
 }

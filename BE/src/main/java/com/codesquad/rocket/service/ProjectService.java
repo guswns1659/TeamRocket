@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.codesquad.rocket.domain.project.Project;
 import com.codesquad.rocket.domain.project.ProjectRepository;
-import com.codesquad.rocket.web.dto.response.ProjectByCreatedAtResponseDtos;
-import com.codesquad.rocket.web.dto.response.project.ProjectByCreatedAtDto;
+import com.codesquad.rocket.web.dto.response.project.ProjectOrderByResponseDtos;
+import com.codesquad.rocket.web.dto.response.project.ProjectOrderByDto;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -17,13 +17,24 @@ public class ProjectService {
 
     private final ProjectRepository projectRepository;
 
-    public ProjectByCreatedAtResponseDtos orderByCreatedAt() {
+    public ProjectOrderByResponseDtos orderByCreatedAt() {
         List<Project> projects = projectRepository.findAllByOrderByCreatedAt();
-        List<ProjectByCreatedAtDto> data = projects.stream()
-            .map(ProjectByCreatedAtDto::of)
+        List<ProjectOrderByDto> data = projects.stream()
+            .map(ProjectOrderByDto::of)
             .collect(Collectors.toList());
 
-        return ProjectByCreatedAtResponseDtos.builder()
+        return ProjectOrderByResponseDtos.builder()
+            .data(data)
+            .build();
+    }
+
+    public ProjectOrderByResponseDtos orderByDeadLine() {
+        List<Project> projects = projectRepository.findTop3AllByOrderByDeadLine();
+        List<ProjectOrderByDto> data = projects.stream()
+            .map(ProjectOrderByDto::of)
+            .collect(Collectors.toList());
+
+        return ProjectOrderByResponseDtos.builder()
             .data(data)
             .build();
     }

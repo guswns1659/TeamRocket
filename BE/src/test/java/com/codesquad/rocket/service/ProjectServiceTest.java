@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.codesquad.rocket.web.dto.response.ProjectByCreatedAtResponseDtos;
+import com.codesquad.rocket.web.dto.response.project.ProjectOrderByResponseDtos;
 
 @SpringBootTest
 public class ProjectServiceTest {
@@ -17,14 +17,26 @@ public class ProjectServiceTest {
     private ProjectService projectService;
 
     @DisplayName("orderByCreatedAt API 테스트")
-    @CsvSource({"5, 9999, 해양 포유류 보호법 후원 프로젝트, 3"})
+    @CsvSource({"5, 9999, 해양 포유류 보호법 후원 프로젝트, 6"})
     @ParameterizedTest
     void orderByCreatedAt을_요청한다(Integer size, Integer currentMoney, String projectTitle, Long leftDays) {
-        ProjectByCreatedAtResponseDtos projectByCreatedAtResponseDtos = projectService.orderByCreatedAt();
+        ProjectOrderByResponseDtos projectOrderByResponseDtos = projectService.orderByCreatedAt();
 
-        assertThat(projectByCreatedAtResponseDtos.getData().size()).isEqualTo(size);
-        assertThat(projectByCreatedAtResponseDtos.getData().get(0).getCurrentMoney()).isEqualTo(currentMoney);
-        assertThat(projectByCreatedAtResponseDtos.getData().get(0).getProjectTitle()).isEqualTo(projectTitle);
-        assertThat(projectByCreatedAtResponseDtos.getData().get(0).getLeftDays()).isEqualTo(leftDays);
+        assertThat(projectOrderByResponseDtos.getData().size()).isEqualTo(size);
+        assertThat(projectOrderByResponseDtos.getData().get(0).getCurrentMoney()).isEqualTo(currentMoney);
+        assertThat(projectOrderByResponseDtos.getData().get(0).getProjectTitle()).isEqualTo(projectTitle);
+        assertThat(projectOrderByResponseDtos.getData().get(0).getLeftDays()).isEqualTo(leftDays);
+    }
+
+    @DisplayName("orderByDeadLine API 테스트")
+    @CsvSource({"3, 9999, 해양 포유류 보호법 후원 프로젝트, 6"})
+    @ParameterizedTest
+    void orderByDeadLine을_요청한다(Integer size, Integer currentMoney, String projectTitle, Long leftDays) {
+        ProjectOrderByResponseDtos projectOrderByResponseDtos = projectService.orderByDeadLine();
+
+        assertThat(projectOrderByResponseDtos.getData().size()).isEqualTo(size);
+        assertThat(projectOrderByResponseDtos.getData().get(0).getCurrentMoney()).isEqualTo(currentMoney);
+        assertThat(projectOrderByResponseDtos.getData().get(0).getProjectTitle()).isEqualTo(projectTitle);
+        assertThat(projectOrderByResponseDtos.getData().get(0).getLeftDays()).isEqualTo(leftDays);
     }
 }

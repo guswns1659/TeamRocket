@@ -1,15 +1,15 @@
 use angelhack;
 
 insert into project (corporation_id, created_at, current_money, dead_line, description, donators, name, target_money)
-values (1, '2020-07-11' , 9999, '2020-07-11', 'description', 5, '해양 포유류 보호법 후원 프로젝트', 10000);
+values (1, '2020-07-11' , 9999, '2020-07-21', 'description', 5, '해양 포유류 보호법 후원 프로젝트', 10000);
 insert into project (corporation_id, created_at, current_money, dead_line, description, donators, name, target_money)
-values (2, '2020-07-11' , 9999, '2020-07-12', 'description', 5, '해양 쓰레기 줍기 프로젝트', 10000);
+values (2, '2020-07-12' , 9999, '2020-07-22', 'description', 5, '해양 쓰레기 줍기 프로젝트', 10000);
 insert into project (corporation_id, created_at, current_money, dead_line, description, donators, name, target_money)
-values (3, '2020-07-11' , 9999, '2020-07-13', 'description', 5, '순천만 습지에 맹꽁이 살리기 프로젝트', 10000);
+values (3, '2020-07-13' , 9999, '2020-07-23', 'description', 5, '순천만 습지에 맹꽁이 살리기 프로젝트', 10000);
 insert into project (corporation_id, created_at, current_money, dead_line, description, donators, name, target_money)
-values (4, '2020-07-11' , 9999, '2020-07-14', 'description', 5, '북극곰 살리기 프로젝트', 10000);
+values (4, '2020-07-14' , 9999, '2020-07-24', 'description', 5, '북극곰 살리기 프로젝트', 10000);
 insert into project (corporation_id, created_at, current_money, dead_line, description, donators, name, target_money)
-values (5, '2020-07-11' , 9999, '2020-07-15', 'description', 5, '개마고원에 나무 심기 프로젝트', 10000);
+values (5, '2020-07-15' , 9999, '2020-07-25', 'description', 5, '개마고원에 나무 심기 프로젝트', 10000);
 
 insert into project_account (account_id, project_id) values (1, 1);
 insert into project_account (account_id, project_id) values (1, 2);

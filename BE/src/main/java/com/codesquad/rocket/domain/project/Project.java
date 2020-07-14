@@ -1,6 +1,5 @@
 package com.codesquad.rocket.domain.project;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -43,7 +42,7 @@ public class Project {
 
     private String name;
 
-    private LocalDate deadLine;
+    private Date deadLine;
 
     @Temporal(TemporalType.DATE)
     private Date createdAt;
