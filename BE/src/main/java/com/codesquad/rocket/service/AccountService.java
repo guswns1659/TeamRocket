@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.codesquad.rocket.domain.account.Account;
 import com.codesquad.rocket.domain.account.AccountRepository;
+import com.codesquad.rocket.web.dto.response.account.EcoPointResponseDto;
 import com.codesquad.rocket.web.dto.response.account.TodaySavingResponseDto;
 import com.codesquad.rocket.web.dto.response.account.TotalSavingResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +35,15 @@ public class AccountService {
             .todayTotalSaving(todayTotalPlate * SAVING_UNIT_PER_PLATE)
             .todayMyPlates(delma.getTodayPlate())
             .todayMySaving(delma.getTodayPlate() * SAVING_UNIT_PER_PLATE)
+            .build();
+    }
+
+    public EcoPointResponseDto ecoPointOfAccount() {
+        String user = "delma";
+        Account account  = accountRepository.findAccountByName(user).orElse(new Account());
+
+        return EcoPointResponseDto.builder()
+            .ecoPoint(account.getEcoPoint())
             .build();
     }
 }

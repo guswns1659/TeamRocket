@@ -12,6 +12,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
+import com.codesquad.rocket.web.dto.response.account.EcoPointResponseDto;
 import com.codesquad.rocket.web.dto.response.account.TodaySavingResponseDto;
 import com.codesquad.rocket.web.dto.response.account.TotalSavingResponseDto;
 
@@ -60,5 +61,23 @@ public class AccountControllerTest {
 
         assertThat(todaySavingResponseDto.getTodayTotalPlates()).isEqualTo(todayTotalPlates);
         assertThat(todaySavingResponseDto.getTodayMyPlates()).isEqualTo(todayMyPlates);
+    }
+
+    @DisplayName("ecoPoint api 테스트")
+    @CsvSource({"2000"})
+    @ParameterizedTest
+    void 사용자의_ecoPoint를_응답한다(Integer ecoPoint) {
+
+        String url = "http://localhost:" + port + "/account/ecoPoint";
+
+        EcoPointResponseDto ecoPointResponseDto = webTestClient.get()
+            .uri(url)
+            .exchange()
+            .expectStatus().isEqualTo(HttpStatus.OK)
+            .expectBody(EcoPointResponseDto.class)
+            .returnResult()
+            .getResponseBody();
+
+        assertThat(ecoPointResponseDto.getEcoPoint()).isEqualTo(ecoPoint);
     }
 }
