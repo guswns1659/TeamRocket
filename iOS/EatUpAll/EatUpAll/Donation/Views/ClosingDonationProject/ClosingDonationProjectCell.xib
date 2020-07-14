@@ -22,7 +22,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plastic" translatesAutoresizingMaskIntoConstraints="NO" id="xhj-l2-Tkc">
                                 <rect key="frame" x="0.0" y="0.0" width="357" height="193"/>
                             </imageView>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="36P-91-MIl">
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="36P-91-MIl" userLabel="darkView">
                                 <rect key="frame" x="0.0" y="0.0" width="357" height="193"/>
                                 <color key="backgroundColor" red="0.0806630710659898" green="0.0806630710659898" blue="0.0806630710659898" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
