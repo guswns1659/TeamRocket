@@ -19,7 +19,7 @@ final class WholeDonationProjectCollectionViewDelegate: NSObject, UICollectionVi
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: frame.width * 0.9, height: 240)
+        return .init(width: frame.width * 0.9, height: 220)
     }
     
     func collectionView(
