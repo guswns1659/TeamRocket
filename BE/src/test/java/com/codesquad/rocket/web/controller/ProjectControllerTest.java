@@ -13,11 +13,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.codesquad.rocket.web.dto.response.challenge.WeeklyTopLikeResponseDto;
+import com.codesquad.rocket.web.dto.response.ProjectByCreatedAtResponseDtos;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureWebTestClient(timeout = "30000")
-public class ChallengeControllerTest {
+public class ProjectControllerTest {
 
     @Autowired
     private WebTestClient webTestClient;
@@ -26,22 +26,23 @@ public class ChallengeControllerTest {
     private int port;
 
     @Transactional
-    @DisplayName("weeklyTopLike API 테스트")
-    @CsvSource({"4, https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/empty_image4.jpg%20new"})
+    @DisplayName("orderByCreatedAt API 테스트")
+    @CsvSource({"9999, 해양 포유류 보호법 후원 프로젝트, 3"})
     @ParameterizedTest
-    void weeklyTopLike를_응답한다(Integer likeCount, String challengeUrl) {
+    void 최근생성순으로_프로젝트를_요청한다(Integer currentMoney, String projectTitle, Long leftDays) {
 
-        String url = "http://localhost:" + port + "/challenge/weeklyTopLike";
+        String url = "http://localhost:" + port + "/project/orderByCreatedAt";
 
-        WeeklyTopLikeResponseDto weeklyTopLikeResponseDto = webTestClient.get()
+        ProjectByCreatedAtResponseDtos projectByCreatedAtResponseDtos = webTestClient.get()
             .uri(url)
             .exchange()
             .expectStatus().isEqualTo(HttpStatus.OK)
-            .expectBody(WeeklyTopLikeResponseDto.class)
+            .expectBody(ProjectByCreatedAtResponseDtos.class)
             .returnResult()
             .getResponseBody();
 
-        assertThat(weeklyTopLikeResponseDto.getData().get(0).getLikeCount()).isEqualTo(likeCount);
-        assertThat(weeklyTopLikeResponseDto.getData().get(0).getUrl()).isEqualTo(challengeUrl);
+        assertThat(projectByCreatedAtResponseDtos.getData().get(0).getCurrentMoney()).isEqualTo(currentMoney);
+        assertThat(projectByCreatedAtResponseDtos.getData().get(0).getProjectTitle()).isEqualTo(projectTitle);
+        assertThat(projectByCreatedAtResponseDtos.getData().get(0).getLeftDays()).isEqualTo(leftDays);
     }
 }

@@ -3,6 +3,7 @@ package com.codesquad.rocket.domain;
 import static org.assertj.core.api.Assertions.*;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,8 +11,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.test.web.reactive.server.WebTestClient;
 
 import com.codesquad.rocket.domain.account.Account;
 import com.codesquad.rocket.domain.corporation.Corporation;
@@ -24,13 +23,7 @@ import com.codesquad.rocket.domain.restaurant.Image;
 public class ProjectRepositoryTest {
 
     @Autowired
-    private WebTestClient webTestClient;
-
-    @Autowired
     private ProjectRepository projectRepository;
-
-    @LocalServerPort
-    private int port;
 
     @DisplayName("기업과 프로젝트를 저장하는 테스트")
     @CsvSource({"corporation, project1, 100000, description, 55555, 2020-07-13, 100, project2"})
@@ -44,6 +37,7 @@ public class ProjectRepositoryTest {
         Project project1 = Project.builder()
             .name(projectName1)
             .currentMoney(currentMoney)
+            .createdAt(new Date())
             .description(description)
             .targetMoney(targetMoney)
             .deadLine(LocalDate.parse(deadLine))

@@ -1,6 +1,7 @@
 package com.codesquad.rocket.domain.project;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,11 +12,14 @@ import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.codesquad.rocket.domain.account.Account;
 import com.codesquad.rocket.domain.corporation.Corporation;
@@ -41,6 +45,9 @@ public class Project {
 
     private LocalDate deadLine;
 
+    @Temporal(TemporalType.DATE)
+    private Date createdAt;
+
     private String description;
 
     private Integer targetMoney;
@@ -49,7 +56,7 @@ public class Project {
 
     private Integer donators;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "project_image", joinColumns = @JoinColumn(name = "project_id"))
     @AttributeOverrides({
         @AttributeOverride(name = "url", column = @Column(name = "project_image"))
@@ -59,7 +66,7 @@ public class Project {
     @ManyToOne(cascade = CascadeType.ALL)
     private Corporation corporation;
 
-    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private final Set<ProjectAccount> projectAccounts = new HashSet<>();
 
     public void addCorporation(Corporation corporation) {
