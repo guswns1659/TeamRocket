@@ -149,11 +149,11 @@
 			isa = PBXGroup;
 			children = (
 				30B0A2FA24BD9F2F00BB9E55 /* ChallengeEmptyPlate.swift */,
-	    );
-			path = DonationProject;
+        );
+			path = Models;
 			sourceTree = "<group>";
-	  };
-    383D8C7A24BC8E3300561EF3 /* DonationProject */ = {
+		};
+		383D8C7A24BC8E3300561EF3 /* DonationProject */ = {
 			isa = PBXGroup;
 			children = (
 				383D8C7B24BC8E4D00561EF3 /* DonationProjectCollectionView.swift */,
