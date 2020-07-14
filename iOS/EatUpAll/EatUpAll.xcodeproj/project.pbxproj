@@ -283,7 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				38EB2A7A24BDD2D4002CBDEA /* Controllers */,
-				38EB2A8224BDD571002CBDEA /* CollectionViewDataSources */,
+				38EB2A8224BDD571002CBDEA /* DataSources */,
 				38EB2A7B24BDD38A002CBDEA /* Views */,
 			);
 			path = Challenge;
@@ -308,12 +308,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		38EB2A8224BDD571002CBDEA /* CollectionViewDataSources */ = {
+		38EB2A8224BDD571002CBDEA /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
 				38EB2A8324BDD5C1002CBDEA /* ChallengeCollectionViewDataSource.swift */,
 			);
-			path = CollectionViewDataSources;
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
