@@ -11,8 +11,19 @@ import Foundation
 struct DonationProject: Codable {
     let title: String
     let subtitle: String
-    let deadline: Date
+    let leftDays: String
     let numberOfDonations: Int
     let currentAmount: Int
     let goalAmount: Int
+    let imageDictionary: [String: String]
+    
+    enum CodingKeys: String, CodingKey {
+        case title = "projectTitle"
+        case subtitle = "titleWithCompany"
+        case leftDays
+        case imageDictionary = "image"
+        case currentAmount = "currentMoney"
+        case goalAmount
+        case numberOfDonations
+    }
 }

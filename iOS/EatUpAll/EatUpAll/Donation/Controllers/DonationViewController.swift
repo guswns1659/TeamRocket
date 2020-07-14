@@ -26,34 +26,6 @@ final class DonationViewController: UIViewController {
         super.viewDidLoad()
         
         configure()
-        fetchClosingDonationProjects()
-        fetchDonationProjects()
-    }
-    
-    private func fetchClosingDonationProjects() {
-        closingDonationProjectDataSource.updateDonationProjects([
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000)])
-    }
-    
-    private func fetchDonationProjects() {
-        wholeDonationProjectDataSource.updateDonationProjects([
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000)])
     }
 }
 
