@@ -9,5 +9,26 @@
 import UIKit
 
 final class DonationProjectCell: UICollectionViewCell {
+    
+    @IBOutlet weak var containerView: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        configure()
+    }
+}
 
+// MARK:- Configuration
+
+extension DonationProjectCell {
+    private func configure() {
+        configureUI()
+    }
+    
+    private func configureUI() {
+        containerView.roundCorner(cornerRadius: 8.0)
+        containerView.clipsToBounds = true
+        drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.4)
+    }
 }

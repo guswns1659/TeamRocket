@@ -10,6 +10,10 @@ import UIKit
 
 final class DonationProjectCollectionView: UICollectionView {
     
+    private enum Metric {
+        static let topBottomPadding: CGFloat = 12.0
+    }
+    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         configure()
@@ -28,7 +32,11 @@ extension DonationProjectCollectionView {
         backgroundColor = .blue
         configureCollectionView()
         registerCollectionViewCell()
-        contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+        contentInset = UIEdgeInsets(
+            top: Metric.topBottomPadding,
+            left: 0,
+            bottom: Metric.topBottomPadding,
+            right: 0)
     }
     
     private func configureCollectionView() {

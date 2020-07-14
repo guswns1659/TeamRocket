@@ -104,6 +104,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="308" height="154"/>
+            <connections>
+                <outlet property="containerView" destination="hVm-d8-e7r" id="vgV-M8-pMF"/>
+            </connections>
             <point key="canvasLocation" x="324.63768115942031" y="185.49107142857142"/>
         </collectionViewCell>
     </objects>

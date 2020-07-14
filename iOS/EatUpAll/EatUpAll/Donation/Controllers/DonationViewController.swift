@@ -10,6 +10,10 @@ import UIKit
 
 final class DonationViewController: UIViewController {
     
+    private enum Metric {
+        static let WholeDonationTopBottomPadding: CGFloat = 12.0
+    }
+    
     @IBOutlet weak var closingDonationProjectCollectionView: ClosingDonationProjectCollectionView!
     @IBOutlet weak var wholeDonationProjectCollectionView: DonationProjectCollectionView!
     private var closingDonationProjectDataSource: DonationProjectCollectionViewDataSource<ClosingDonationProjectCell>!
@@ -88,7 +92,8 @@ extension DonationViewController {
             handler: { (_) in
                 self.wholeDonationProjectCollectionView.reloadData()
                 self.wholeDonationProjectCollectionView.layoutIfNeeded()
-                self.wholeDonationProjectCollectionViewHeight.constant = self.wholeDonationProjectCollectionView.contentSize.height
+                self.wholeDonationProjectCollectionViewHeight.constant =
+                    self.wholeDonationProjectCollectionView.contentSize.height + Metric.WholeDonationTopBottomPadding * 2
         })
         wholeDonationProjectCollectionView.dataSource = wholeDonationProjectDataSource
     }
