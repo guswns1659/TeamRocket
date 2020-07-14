@@ -12,6 +12,7 @@
 		302BB01C24BD661E000EB297 /* Session+NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB01B24BD661D000EB297 /* Session+NetworkDispatcher.swift */; };
 		302BB01F24BD66CE000EB297 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB01E24BD66CE000EB297 /* UseCase.swift */; };
 		302BB02224BD67B8000EB297 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB02124BD67B8000EB297 /* NetworkError.swift */; };
+		302BB02524BD68BE000EB297 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB02424BD68BE000EB297 /* Request.swift */; };
 		306FA78D24BD61C300279A18 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 306FA78C24BD61C300279A18 /* Alamofire */; };
 		38714B2124BC780A00E9B9FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38714B2024BC780A00E9B9FC /* AppDelegate.swift */; };
 		38714B2324BC780A00E9B9FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38714B2224BC780A00E9B9FC /* SceneDelegate.swift */; };
@@ -29,6 +30,7 @@
 		302BB01B24BD661D000EB297 /* Session+NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+NetworkDispatcher.swift"; sourceTree = "<group>"; };
 		302BB01E24BD66CE000EB297 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		302BB02124BD67B8000EB297 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		302BB02424BD68BE000EB297 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		38714B1D24BC780A00E9B9FC /* EatUpAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatUpAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38714B2024BC780A00E9B9FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38714B2224BC780A00E9B9FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,9 +71,18 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		302BB02324BD68B3000EB297 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				302BB02424BD68BE000EB297 /* Request.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		30A1615024BD62A1007FEDC4 /* Networks */ = {
 			isa = PBXGroup;
 			children = (
+				302BB02324BD68B3000EB297 /* Request */,
 				302BB01724BD65C6000EB297 /* Endpoint.swift */,
 				302BB01924BD65DB000EB297 /* NetworkDispatcher.swift */,
 				302BB01B24BD661D000EB297 /* Session+NetworkDispatcher.swift */,
@@ -219,6 +230,7 @@
 				38714B2524BC780A00E9B9FC /* TabBarViewController.swift in Sources */,
 				302BB01C24BD661E000EB297 /* Session+NetworkDispatcher.swift in Sources */,
 				38714B2124BC780A00E9B9FC /* AppDelegate.swift in Sources */,
+				302BB02524BD68BE000EB297 /* Request.swift in Sources */,
 				302BB01A24BD65DB000EB297 /* NetworkDispatcher.swift in Sources */,
 				38714B3824BC7B7C00E9B9FC /* UIViewController+loadFromNib.swift in Sources */,
 				302BB01F24BD66CE000EB297 /* UseCase.swift in Sources */,
