@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DonationProjectCollectionViewDataSource<T: UICollectionViewCell>: NSObject, UICollectionViewDataSource, ViewModelBinding {
+final class DonationProjectCollectionViewDataSource<T: DonationProjectConfigurable>: NSObject, UICollectionViewDataSource, ViewModelBinding {
     
     typealias Key = [DonationProject]
     private var changedHandler: Handler

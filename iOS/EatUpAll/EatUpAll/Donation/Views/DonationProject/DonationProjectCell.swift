@@ -8,16 +8,25 @@
 
 import UIKit
 
-final class DonationProjectCell: UICollectionViewCell {
+final class DonationProjectCell: UICollectionViewCell, DonationProjectConfigurable {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var progressBar: UIView!
     @IBOutlet weak var progressBarBackgroundView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var remainingDateLabel: UILabel!
+    @IBOutlet weak var accumulatedDonationLabel: UILabel!
+    @IBOutlet weak var progressPercentageLabel: UILabel!
+    @IBOutlet weak var projectImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         configure()
+    }
+    
+    func configureCell(with donationProject: DonationProject) {
+        
     }
 }
 
