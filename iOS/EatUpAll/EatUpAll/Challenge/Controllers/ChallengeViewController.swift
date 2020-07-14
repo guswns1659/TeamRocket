@@ -10,6 +10,9 @@ import UIKit
 
 final class ChallengeViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: ChallengeCollectionView!
+    private var dataSource: ChallengeCollectionViewDataSource!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,9 +25,15 @@ final class ChallengeViewController: UIViewController {
 extension ChallengeViewController {
     private func configure() {
         configureUI()
+        configureCollectionViewDataSource()
     }
     
     private func configureUI() {
         view.backgroundColor = .white
+    }
+    
+    private func configureCollectionViewDataSource() {
+        dataSource = ChallengeCollectionViewDataSource()
+        collectionView.dataSource = dataSource
     }
 }

@@ -39,6 +39,10 @@
 		38EB2A7424BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7324BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift */; };
 		38EB2A7824BDA61D002CBDEA /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7624BDA61D002CBDEA /* ChallengeViewController.swift */; };
 		38EB2A7924BDA61D002CBDEA /* ChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38EB2A7724BDA61D002CBDEA /* ChallengeViewController.xib */; };
+		38EB2A7D24BDD3B7002CBDEA /* ChallengeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7C24BDD3B7002CBDEA /* ChallengeCollectionView.swift */; };
+		38EB2A8024BDD424002CBDEA /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7E24BDD424002CBDEA /* ChallengeCell.swift */; };
+		38EB2A8124BDD424002CBDEA /* ChallengeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38EB2A7F24BDD424002CBDEA /* ChallengeCell.xib */; };
+		38EB2A8424BDD5C1002CBDEA /* ChallengeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A8324BDD5C1002CBDEA /* ChallengeCollectionViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +79,10 @@
 		38EB2A7324BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeDonationProjectCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		38EB2A7624BDA61D002CBDEA /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		38EB2A7724BDA61D002CBDEA /* ChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeViewController.xib; sourceTree = "<group>"; };
+		38EB2A7C24BDD3B7002CBDEA /* ChallengeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCollectionView.swift; sourceTree = "<group>"; };
+		38EB2A7E24BDD424002CBDEA /* ChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
+		38EB2A7F24BDD424002CBDEA /* ChallengeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeCell.xib; sourceTree = "<group>"; };
+		38EB2A8324BDD5C1002CBDEA /* ChallengeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCollectionViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,10 +282,38 @@
 		38EB2A7524BDA5D0002CBDEA /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				38EB2A7A24BDD2D4002CBDEA /* Controllers */,
+				38EB2A8224BDD571002CBDEA /* CollectionViewDataSources */,
+				38EB2A7B24BDD38A002CBDEA /* Views */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
+		38EB2A7A24BDD2D4002CBDEA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				38EB2A7624BDA61D002CBDEA /* ChallengeViewController.swift */,
 				38EB2A7724BDA61D002CBDEA /* ChallengeViewController.xib */,
 			);
-			path = Challenge;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		38EB2A7B24BDD38A002CBDEA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				38EB2A7C24BDD3B7002CBDEA /* ChallengeCollectionView.swift */,
+				38EB2A7E24BDD424002CBDEA /* ChallengeCell.swift */,
+				38EB2A7F24BDD424002CBDEA /* ChallengeCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		38EB2A8224BDD571002CBDEA /* CollectionViewDataSources */ = {
+			isa = PBXGroup;
+			children = (
+				38EB2A8324BDD5C1002CBDEA /* ChallengeCollectionViewDataSource.swift */,
+			);
+			path = CollectionViewDataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +385,7 @@
 				38EB2A7924BDA61D002CBDEA /* ChallengeViewController.xib in Resources */,
 				38714B2D24BC780C00E9B9FC /* LaunchScreen.storyboard in Resources */,
 				38714B2A24BC780C00E9B9FC /* Assets.xcassets in Resources */,
+				38EB2A8124BDD424002CBDEA /* ChallengeCell.xib in Resources */,
 				38714B4224BC7FA400E9B9FC /* DonationViewController.xib in Resources */,
 				38714B3D24BC7BFD00E9B9FC /* HomeViewController.xib in Resources */,
 			);
@@ -365,11 +402,13 @@
 				383D8C8F24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift in Sources */,
 				38714B3C24BC7BFD00E9B9FC /* HomeViewController.swift in Sources */,
 				38652A3A24BC89E4006A8A48 /* ClosingDonationProjectCell.swift in Sources */,
+				38EB2A7D24BDD3B7002CBDEA /* ChallengeCollectionView.swift in Sources */,
 				383D8C7F24BC8F5500561EF3 /* DonationProjectCell.swift in Sources */,
 				383D8C8424BC921600561EF3 /* UIView+Shadow.swift in Sources */,
 				383D8C8724BC94BE00561EF3 /* ViewModelBinding.swift in Sources */,
 				38714B2524BC780A00E9B9FC /* TabBarViewController.swift in Sources */,
 				383D8C8D24BC97F700561EF3 /* DonationProject.swift in Sources */,
+				38EB2A8424BDD5C1002CBDEA /* ChallengeCollectionViewDataSource.swift in Sources */,
 				383D8C7C24BC8E4D00561EF3 /* DonationProjectCollectionView.swift in Sources */,
 				38EB2A7824BDA61D002CBDEA /* ChallengeViewController.swift in Sources */,
 				38652A3724BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift in Sources */,
@@ -383,6 +422,7 @@
 				302BB01F24BD66CE000EB297 /* UseCase.swift in Sources */,
 				302BB01824BD65C6000EB297 /* Endpoint.swift in Sources */,
 				38714B2324BC780A00E9B9FC /* SceneDelegate.swift in Sources */,
+				38EB2A8024BDD424002CBDEA /* ChallengeCell.swift in Sources */,
 				383D8C8224BC920100561EF3 /* UIView+Border.swift in Sources */,
 				302BB02224BD67B8000EB297 /* NetworkError.swift in Sources */,
 			);
