@@ -14,6 +14,6 @@ import lombok.ToString;
 @ToString
 public class TotalSavingResponseDto {
 
-    private Double totalPlates;
+    private Integer totalPlates;
     private Double totalSaving;
 }

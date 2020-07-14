@@ -26,7 +26,7 @@ public class AccountControllerTest {
     private int port;
 
     @DisplayName("totalSaving api 테스트")
-    @CsvSource({"13.5"})
+    @CsvSource({"6"})
     @ParameterizedTest
     void totalSaving를_응답한다(Double totalSaving) {
 

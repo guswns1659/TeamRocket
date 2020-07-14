@@ -15,7 +15,7 @@ public class ProjectDetailResponseDto {
 
     private final static long DAY = 24 * 60 * 60 * 1000;
     private final static long HOUR = 60 * 60 * 1000;
-    private final static String postfix = "와 함께 하는";
+    private final static String postfix = "와(과) 함께 하는";
 
     private Long id;
     private String titleWithCompany;

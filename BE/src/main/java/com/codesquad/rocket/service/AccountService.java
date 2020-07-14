@@ -16,12 +16,12 @@ public class AccountService {
     private final static double SAVING_UNIT_PER_PLATE = 0.15;
 
     public TotalSavingResponseDto totalSaving() {
-        double totalPlates = accountRepository.sumTotalPlate();
-        double totalSaving = totalPlates * SAVING_UNIT_PER_PLATE;
+        String user = "delma";
+        Account account  = accountRepository.findAccountByName(user).orElse(new Account());
 
         return TotalSavingResponseDto.builder()
-            .totalPlates(totalPlates)
-            .totalSaving(totalSaving)
+            .totalPlates(account.getTotalPlate())
+            .totalSaving(account.getTotalPlate() * SAVING_UNIT_PER_PLATE)
             .build();
     }
 

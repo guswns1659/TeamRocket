@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class ProjectOrderByDto {
 
     private final static long DAY = 24 * 60 * 60 * 1000;
-    private final static String postfix = "와 함께하는";
+    private final static String postfix = "와(과) 함께하는";
 
     private Long id;
     private Long leftDays;
