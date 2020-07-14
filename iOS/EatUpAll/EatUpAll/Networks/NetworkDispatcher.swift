@@ -10,4 +10,5 @@ import Foundation
 
 protocol NetworkDispatcher {
     func execute(request: URLRequest, handler: @escaping (Result<Data?, Error>) -> Void)
+    func implement(request: URLRequest, handler: @escaping (Int) -> Void)
 }

@@ -20,4 +20,11 @@ extension Session {
             }
         }
     }
+    
+    func implement(request: URLRequest, handler: @escaping (Int) -> Void) {
+        self.request(request).validate().response { response in
+            guard let statusCode = response.response?.statusCode else { return }
+            handler(statusCode)
+        }
+    }
 }
