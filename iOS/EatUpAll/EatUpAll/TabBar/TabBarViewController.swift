@@ -9,6 +9,9 @@
 import UIKit
 
 final class TabBarViewController: UITabBarController {
+    
+    private var homeViewController: UIViewController!
+    private var donationViewController: UIViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,7 @@ extension TabBarViewController {
     private func configure() {
         configureUI()
         configureChildViewControllers()
+        configureTabBarItems()
     }
     
     private func configureUI() {
@@ -30,7 +34,14 @@ extension TabBarViewController {
     }
     
     private func configureChildViewControllers() {
-        let homeViewController = HomeViewController.loadFromNib()
-        viewControllers = [homeViewController]
+        homeViewController = HomeViewController.loadFromNib()
+        donationViewController = DonationViewController.loadFromNib()
+        let donationNavigationController = UINavigationController(rootViewController: donationViewController)
+        viewControllers = [homeViewController, donationNavigationController]
+    }
+    
+    private func configureTabBarItems() {
+        homeViewController.title = "홈"
+        donationViewController.title = "기부"
     }
 }
