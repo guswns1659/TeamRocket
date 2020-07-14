@@ -11,12 +11,16 @@ import Kingfisher
 
 final class HomeViewController: UIViewController {
 
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var personalTotalView: UIView!
+    @IBOutlet weak var personalTotalSavings: UILabel!
     @IBOutlet weak var todayWholePlates: UILabel!
     @IBOutlet weak var todayWholeSavings: UILabel!
     @IBOutlet weak var todayMyPlates: UILabel!
     @IBOutlet weak var todayMySavings: UILabel!
     @IBOutlet weak var emptyPlateCollectionView: UICollectionView!
     
+    private var personalTotalSavingUseCase: PersonalTotalSavingUseCase!
     private var todayRecordUseCase: TodayRecordUseCase!
     private var emptyPlateUseCase: EmptyPlateUseCase!
     private var emptyPlateInfo: ChallengeEmptyPlate!
@@ -27,11 +31,38 @@ final class HomeViewController: UIViewController {
     }
     
     private func configure() {
-        todayRecordUseCase = TodayRecordUseCase()
-        emptyPlateUseCase = EmptyPlateUseCase()
+        configureUI()
+        configureUseCases()
+        
+        fetchPersonalTotalSaving()
         fetchTodayRecords()
         fetchEmptyPlate()
+        
         configureCollectionView()
+    }
+    
+    private func configureUI() {
+        personalTotalView.roundCorner(cornerRadius: 15)
+        personalTotalView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.3)
+    }
+    
+    private func configureUseCases() {
+        personalTotalSavingUseCase = PersonalTotalSavingUseCase()
+        todayRecordUseCase = TodayRecordUseCase()
+        emptyPlateUseCase = EmptyPlateUseCase()
+    }
+    
+    private func fetchPersonalTotalSaving() {
+        let request = PersonalTotalSavingRequest().asURLRequest()
+        personalTotalSavingUseCase.getResources(request: request, dataType: PersonalTotalSaving.self) { result in
+            switch result {
+            case .success(let data):
+                self.userName.text = "\(data.accountName)"
+                self.personalTotalSavings.text = "\(data.totalSaving)"
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     private func fetchTodayRecords() {
