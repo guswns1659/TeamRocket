@@ -12,18 +12,35 @@ final class HomeViewController: UIViewController {
 
     @IBOutlet weak var emptyPlateCollectionView: UICollectionView!
     
+    private var emptyPlateUseCase: EmptyPlateUseCase!
+    private var emptyPlateInfo: ChallengeEmptyPlate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
     }
     
     private func configure() {
+        emptyPlateUseCase = EmptyPlateUseCase()
+        fetchEmptyPlate()
         configureCollectionView()
+    }
+    
+    private func fetchEmptyPlate() {
+        let request = EmptyPlateRequest().asURLRequest()
+        emptyPlateUseCase.getResources(request: request, dataType: ChallengeEmptyPlate.self) { result in
+            switch result {
+            case .success(let data):
+                self.emptyPlateInfo = data
+                self.emptyPlateCollectionView.dataSource = self
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     private func configureCollectionView() {
         emptyPlateCollectionView.register(UINib(nibName: String(describing: EmptyPlateCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EmptyPlateCollectionViewCell.self))
-        emptyPlateCollectionView.dataSource = self
     }
 }
 
@@ -31,7 +48,7 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return emptyPlateInfo.data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
