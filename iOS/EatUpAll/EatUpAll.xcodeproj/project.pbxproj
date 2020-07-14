@@ -37,6 +37,8 @@
 		38714B4224BC7FA400E9B9FC /* DonationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38714B4024BC7FA400E9B9FC /* DonationViewController.xib */; };
 		38EB2A7224BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7124BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift */; };
 		38EB2A7424BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7324BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift */; };
+		38EB2A7824BDA61D002CBDEA /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7624BDA61D002CBDEA /* ChallengeViewController.swift */; };
+		38EB2A7924BDA61D002CBDEA /* ChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38EB2A7724BDA61D002CBDEA /* ChallengeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		38714B4024BC7FA400E9B9FC /* DonationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationViewController.xib; sourceTree = "<group>"; };
 		38EB2A7124BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		38EB2A7324BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeDonationProjectCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		38EB2A7624BDA61D002CBDEA /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
+		38EB2A7724BDA61D002CBDEA /* ChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +211,7 @@
 				38714B3424BC79BB00E9B9FC /* TabBar */,
 				38714B3924BC7BE000E9B9FC /* Home */,
 				38714B3E24BC7F9200E9B9FC /* Donation */,
+				38EB2A7524BDA5D0002CBDEA /* Challenge */,
 				38714B3624BC7B5500E9B9FC /* Extensions */,
 				383D8C8524BC94B400561EF3 /* ViewModel */,
 				38714B2024BC780A00E9B9FC /* AppDelegate.swift */,
@@ -264,6 +269,15 @@
 				38714B4024BC7FA400E9B9FC /* DonationViewController.xib */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		38EB2A7524BDA5D0002CBDEA /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				38EB2A7624BDA61D002CBDEA /* ChallengeViewController.swift */,
+				38EB2A7724BDA61D002CBDEA /* ChallengeViewController.xib */,
+			);
+			path = Challenge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +346,7 @@
 			files = (
 				38652A3B24BC89E4006A8A48 /* ClosingDonationProjectCell.xib in Resources */,
 				383D8C8024BC8F5500561EF3 /* DonationProjectCell.xib in Resources */,
+				38EB2A7924BDA61D002CBDEA /* ChallengeViewController.xib in Resources */,
 				38714B2D24BC780C00E9B9FC /* LaunchScreen.storyboard in Resources */,
 				38714B2A24BC780C00E9B9FC /* Assets.xcassets in Resources */,
 				38714B4224BC7FA400E9B9FC /* DonationViewController.xib in Resources */,
@@ -356,6 +371,7 @@
 				38714B2524BC780A00E9B9FC /* TabBarViewController.swift in Sources */,
 				383D8C8D24BC97F700561EF3 /* DonationProject.swift in Sources */,
 				383D8C7C24BC8E4D00561EF3 /* DonationProjectCollectionView.swift in Sources */,
+				38EB2A7824BDA61D002CBDEA /* ChallengeViewController.swift in Sources */,
 				38652A3724BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift in Sources */,
 				302BB01C24BD661E000EB297 /* Session+NetworkDispatcher.swift in Sources */,
 				38EB2A7224BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift in Sources */,
