@@ -359,13 +359,13 @@
         <image name="map" width="149" height="156.66667175292969"/>
         <image name="title" width="321.33334350585938" height="57.666667938232422"/>
         <namedColor name="key_dark_gray">
-            <color white="0.12298315763473511" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color white="0.12300000339746475" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
         <namedColor name="key_green">
             <color red="0.11400000005960464" green="0.68599998950958252" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="key_light_gray">
-            <color white="0.86247456073760986" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color white="0.8619999885559082" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
     </resources>
 </document>
