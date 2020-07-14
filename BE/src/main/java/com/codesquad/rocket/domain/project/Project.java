@@ -92,4 +92,8 @@ public class Project {
     public long calculateLeftHours(long HOUR) {
         return (this.deadLine.getTime() - new Date().getTime()) / HOUR;
     }
+
+    public void addEcoPoint(Integer ecoPoint) {
+        this.currentMoney += ecoPoint;
+    }
 }

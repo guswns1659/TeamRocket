@@ -3,6 +3,7 @@ package com.codesquad.rocket.web.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codesquad.rocket.service.ProjectService;
@@ -30,5 +31,10 @@ public class ProjectController {
     @GetMapping("/{id}")
     public ProjectDetailResponseDto projectDetail(@PathVariable Long id) {
         return projectService.projectDetail(id);
+    }
+
+    @GetMapping("/donate/{id}")
+    public ProjectDetailResponseDto donate(@PathVariable Long id, @RequestParam(required = false, name = "ecoPoint") Integer ecoPoint) {
+        return projectService.donate(id, ecoPoint);
     }
 }

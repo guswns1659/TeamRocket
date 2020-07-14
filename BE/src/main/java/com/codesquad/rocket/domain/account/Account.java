@@ -62,4 +62,8 @@ public class Account {
     public void addPointHistory(PointHistory pointHistory) {
         this.getPointHistories().add(pointHistory);
     }
+
+    public void subtractEcoPoint(Integer ecoPoint) {
+        this.ecoPoint -= ecoPoint;
+    }
 }

@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.codesquad.rocket.domain.account.Account;
+import com.codesquad.rocket.domain.account.AccountRepository;
 import com.codesquad.rocket.domain.project.Project;
 import com.codesquad.rocket.domain.project.ProjectRepository;
 import com.codesquad.rocket.web.dto.response.project.ProjectDetailResponseDto;
@@ -17,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 public class ProjectService {
 
     private final ProjectRepository projectRepository;
+    private final AccountRepository accountRepository;
 
     public ProjectOrderByResponseDtos orderByCreatedAt() {
         List<Project> projects = projectRepository.findAllByOrderByCreatedAt();
@@ -43,5 +46,15 @@ public class ProjectService {
     public ProjectDetailResponseDto projectDetail(Long projectId) {
         Project project = projectRepository.findById(projectId).orElse(new Project());
         return ProjectDetailResponseDto.of(project);
+    }
+
+    public ProjectDetailResponseDto donate(Long id, Integer ecoPoint) {
+        Project project = projectRepository.findById(id).orElse(new Project());
+        project.addEcoPoint(ecoPoint);
+        Project addedProject = projectRepository.save(project);
+        Account account = accountRepository.findAccountByName("delma").orElse(new Account());
+        account.subtractEcoPoint(ecoPoint);
+
+        return ProjectDetailResponseDto.of(addedProject);
     }
 }

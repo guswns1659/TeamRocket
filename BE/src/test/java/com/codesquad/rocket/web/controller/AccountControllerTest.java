@@ -15,6 +15,7 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import com.codesquad.rocket.web.dto.response.account.EcoPointResponseDto;
 import com.codesquad.rocket.web.dto.response.account.TodaySavingResponseDto;
 import com.codesquad.rocket.web.dto.response.account.TotalSavingResponseDto;
+import com.codesquad.rocket.web.dto.response.project.ProjectDetailResponseDto;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureWebTestClient(timeout = "30000")
@@ -79,5 +80,23 @@ public class AccountControllerTest {
             .getResponseBody();
 
         assertThat(ecoPointResponseDto.getEcoPoint()).isEqualTo(ecoPoint);
+    }
+
+    @DisplayName("donate api 테스트")
+    @CsvSource({"1, 1000, 10000"})
+    @ParameterizedTest
+    void 사용자의_포인트로_기부하면_추가된_프로젝트_응답한다(Long projectId, Integer ecoPoint, Integer currentMoney) {
+
+        String url = "http://localhost:" + port + "/project/donate/" + projectId + "?ecoPoint=" + ecoPoint;
+
+        ProjectDetailResponseDto projectDetailResponseDto = webTestClient.get()
+            .uri(url)
+            .exchange()
+            .expectStatus().isEqualTo(HttpStatus.OK)
+            .expectBody(ProjectDetailResponseDto.class)
+            .returnResult()
+            .getResponseBody();
+
+        assertThat(projectDetailResponseDto.getCurrentMoney()).isEqualTo(currentMoney);
     }
 }
