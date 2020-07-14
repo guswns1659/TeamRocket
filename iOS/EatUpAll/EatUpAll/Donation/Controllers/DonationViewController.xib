@@ -25,7 +25,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="c6d-97-z3n" customClass="ClosingDonationProjectCollectionView" customModule="EatUpAll" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="99" width="414" height="240"/>
+                    <rect key="frame" x="0.0" y="87" width="414" height="240"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="240" id="jm4-xW-Rq4"/>
@@ -38,13 +38,13 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도움이 필요한 프로젝트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paD-E9-Iro">
-                    <rect key="frame" x="20" y="363" width="374" height="23"/>
+                    <rect key="frame" x="20" y="351" width="374" height="23"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ojj-GL-QYf" customClass="DonationProjectCollectionView" customModule="EatUpAll" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="402" width="414" height="494"/>
+                    <rect key="frame" x="0.0" y="378" width="414" height="518"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q0i-Wd-a4t">
                         <size key="itemSize" width="128" height="128"/>
@@ -56,10 +56,10 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="ojj-GL-QYf" firstAttribute="top" secondItem="paD-E9-Iro" secondAttribute="bottom" constant="16" id="0Ap-U7-NTT"/>
+                <constraint firstItem="ojj-GL-QYf" firstAttribute="top" secondItem="paD-E9-Iro" secondAttribute="bottom" constant="4" id="0Ap-U7-NTT"/>
                 <constraint firstItem="c6d-97-z3n" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1ig-YO-xMB"/>
                 <constraint firstItem="4dJ-9x-dIJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="341-6t-DPc"/>
-                <constraint firstItem="c6d-97-z3n" firstAttribute="top" secondItem="4dJ-9x-dIJ" secondAttribute="bottom" constant="16" id="4ER-bK-rXA"/>
+                <constraint firstItem="c6d-97-z3n" firstAttribute="top" secondItem="4dJ-9x-dIJ" secondAttribute="bottom" constant="4" id="4ER-bK-rXA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="paD-E9-Iro" secondAttribute="trailing" constant="20" id="4JH-nZ-w9Y"/>
                 <constraint firstItem="paD-E9-Iro" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="HEj-2h-YHb"/>
                 <constraint firstItem="ojj-GL-QYf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="J4X-tN-BOh"/>
