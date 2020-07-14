@@ -16,7 +16,8 @@ final class DonationViewController: UIViewController {
     private var wholeDonationProjectDataSource: DonationProjectCollectionViewDataSource<DonationProjectCell>!
     private var closingDonationProjectDelegate: ClosingDonationProjectCollectionViewDelegate!
     private var wholeDonationProjectDelegate: WholeDonationProjectCollectionViewDelegate!
-
+    @IBOutlet weak var wholeDonationProjectCollectionViewHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,6 +87,8 @@ extension DonationViewController {
         wholeDonationProjectDataSource = DonationProjectCollectionViewDataSource(
             handler: { (_) in
                 self.wholeDonationProjectCollectionView.reloadData()
+                self.wholeDonationProjectCollectionView.layoutIfNeeded()
+                self.wholeDonationProjectCollectionViewHeight.constant = self.wholeDonationProjectCollectionView.contentSize.height
         })
         wholeDonationProjectCollectionView.dataSource = wholeDonationProjectDataSource
     }
