@@ -1,14 +1,14 @@
 //
-//  ClosingDonationProjectCollectionViewDataSource.swift
+//  DonationProjectCollectionViewDataSource.swift
 //  EatUpAll
 //
-//  Created by Cory Kim on 2020/07/13.
+//  Created by Cory Kim on 2020/07/14.
 //  Copyright © 2020 team rocket. All rights reserved.
 //
 
 import UIKit
 
-final class ClosingDonationProjectCollectionViewDataSource: NSObject, UICollectionViewDataSource, ViewModelBinding {
+final class DonationProjectCollectionViewDataSource<T: UICollectionViewCell>: NSObject, UICollectionViewDataSource, ViewModelBinding {
     
     typealias Key = [DonationProject]
     private var changedHandler: Handler
@@ -18,7 +18,9 @@ final class ClosingDonationProjectCollectionViewDataSource: NSObject, UICollecti
         }
     }
     
-    init(with donationProjects: [DonationProject] = [], handler: @escaping Handler = { _ in }) {
+    init(
+        with donationProjects: [DonationProject] = [],
+        handler: @escaping Handler = { _ in }) {
         self.donationProjects = donationProjects
         self.changedHandler = handler
     }
@@ -41,8 +43,9 @@ final class ClosingDonationProjectCollectionViewDataSource: NSObject, UICollecti
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: String(describing: ClosingDonationProjectCell.self),
-            for: indexPath) as! ClosingDonationProjectCell
+            withReuseIdentifier: String(describing: T.self),
+            for: indexPath) as! T
         return cell
     }
 }
+
