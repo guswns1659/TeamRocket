@@ -10,8 +10,9 @@ import UIKit
 
 final class ChallengeCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var imageView: UIImageView!
+    
+    override func prepareForReuse() {
+        imageView.image = nil
     }
 }

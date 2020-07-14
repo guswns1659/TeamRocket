@@ -18,9 +18,18 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sL-AA-jfh">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="oHw-wg-IcN">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="2sL-AA-jfh" secondAttribute="height" multiplier="1:1" id="7ZO-fb-Qz6"/>
+                            <constraint firstItem="oHw-wg-IcN" firstAttribute="leading" secondItem="2sL-AA-jfh" secondAttribute="leading" id="UD8-s2-eqk"/>
+                            <constraint firstAttribute="trailing" secondItem="oHw-wg-IcN" secondAttribute="trailing" id="cel-Pn-Y6y"/>
+                            <constraint firstItem="oHw-wg-IcN" firstAttribute="top" secondItem="2sL-AA-jfh" secondAttribute="top" id="qDD-bK-u7H"/>
+                            <constraint firstAttribute="bottom" secondItem="oHw-wg-IcN" secondAttribute="bottom" id="qPg-6x-9ir"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -32,7 +41,13 @@
                 <constraint firstItem="2sL-AA-jfh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fww-Jb-eOV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="imageView" destination="oHw-wg-IcN" id="jZM-oX-CGb"/>
+            </connections>
             <point key="canvasLocation" x="118.84057971014494" y="127.90178571428571"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="logo" width="120" height="120"/>
+    </resources>
 </document>
