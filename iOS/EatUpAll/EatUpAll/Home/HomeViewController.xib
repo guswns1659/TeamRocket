@@ -13,8 +13,10 @@
                 <outlet property="emptyPlateCollectionView" destination="r3Q-AB-4kB" id="zPp-XW-Sfn"/>
                 <outlet property="todayMyPlates" destination="F4d-wJ-Eue" id="VVC-6s-OIT"/>
                 <outlet property="todayMySavings" destination="BS6-ex-bLz" id="gpi-Ve-55f"/>
+                <outlet property="todayMyView" destination="g7M-HD-yLM" id="D1k-Ki-786"/>
                 <outlet property="todayWholePlates" destination="TKS-al-5Nf" id="lfN-yo-8S4"/>
                 <outlet property="todayWholeSavings" destination="24J-OF-NtK" id="lxf-fw-ZO5"/>
+                <outlet property="todayWholeView" destination="hvM-Ks-JdS" id="4gQ-bs-lJd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

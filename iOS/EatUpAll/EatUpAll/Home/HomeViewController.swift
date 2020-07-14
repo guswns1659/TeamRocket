@@ -15,6 +15,8 @@ final class HomeViewController: UIViewController {
     @IBOutlet weak var todayWholeSavings: UILabel!
     @IBOutlet weak var todayMyPlates: UILabel!
     @IBOutlet weak var todayMySavings: UILabel!
+    @IBOutlet weak var todayWholeView: UIView!
+    @IBOutlet weak var todayMyView: UIView!
     @IBOutlet weak var emptyPlateCollectionView: UICollectionView!
     
     private var todayRecordUseCase: TodayRecordUseCase!
@@ -27,11 +29,21 @@ final class HomeViewController: UIViewController {
     }
     
     private func configure() {
+        configureUI()
         todayRecordUseCase = TodayRecordUseCase()
         emptyPlateUseCase = EmptyPlateUseCase()
         fetchTodayRecords()
         fetchEmptyPlate()
         configureCollectionView()
+    }
+    
+    private func configureUI() {
+        todayWholeView.layer.borderWidth = 0.8
+        todayWholeView.layer.borderColor = UIColor(named: "key_green")?.cgColor
+        todayWholeView.roundCorner(cornerRadius: 15)
+        todayMyView.roundCorner(cornerRadius: 15)
+        todayWholeView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.4)
+        todayMyView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.4)
     }
     
     private func fetchTodayRecords() {
