@@ -11,6 +11,8 @@ import UIKit
 final class DonationProjectCell: UICollectionViewCell {
     
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var progressBar: UIView!
+    @IBOutlet weak var progressBarBackgroundView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +26,12 @@ final class DonationProjectCell: UICollectionViewCell {
 extension DonationProjectCell {
     private func configure() {
         configureUI()
+        configureProgressBars()
+    }
+    
+    private func configureProgressBars() {
+        progressBar.roundCorner(cornerRadius: 2.0)
+        progressBarBackgroundView.roundCorner(cornerRadius: 2.0)
     }
     
     private func configureUI() {
