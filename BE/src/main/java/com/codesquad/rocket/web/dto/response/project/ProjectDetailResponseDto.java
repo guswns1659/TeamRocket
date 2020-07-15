@@ -1,5 +1,8 @@
 package com.codesquad.rocket.web.dto.response.project;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.codesquad.rocket.domain.project.Project;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -25,14 +28,21 @@ public class ProjectDetailResponseDto {
     private Long leftDay;
     private Long leftHour;
     private Integer donators;
-    private String descriptionURL;
+    private String mainURL;
+    private List<String> descriptionURL;
 
     public static ProjectDetailResponseDto of(Project project) {
+        List<String> urls = new ArrayList<>();
+        urls.add(project.getImages().get(0).getUrl());
+        urls.add(project.getImages().get(0).getUrl());
+        urls.add(project.getImages().get(0).getUrl());
+
         return ProjectDetailResponseDto.builder()
             .id(project.getId())
             .title(project.getName())
             .currentMoney(project.getCurrentMoney())
-            .descriptionURL("www.naver.com")
+            .mainURL(project.getImages().get(0).getUrl())
+            .descriptionURL(urls)
             .donators(project.getDonators())
             .targetMoney(project.getTargetMoney())
             .titleWithCompany(project.getCorporation().getName() + postfix)

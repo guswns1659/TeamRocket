@@ -46,6 +46,8 @@ public class RestaurantRepositoryTest {
 
         Restaurant restaurant = Restaurant.builder()
             .name(restaurantName)
+            .address("제주도 서귀포시")
+            .rating(3.4)
             .description(description)
             .point(point)
             .build();

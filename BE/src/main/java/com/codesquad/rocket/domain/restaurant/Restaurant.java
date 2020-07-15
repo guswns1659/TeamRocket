@@ -36,6 +36,10 @@ public class Restaurant {
 
     private String description;
 
+    private String address;
+
+    private Double rating;
+
     private Point point;
 
     @ElementCollection
@@ -48,5 +52,4 @@ public class Restaurant {
     public void addImage(Image image) {
         this.getImages().add(image);
     }
-
 }

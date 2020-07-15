@@ -1,5 +1,6 @@
 package com.codesquad.rocket.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -7,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.codesquad.rocket.domain.account.Account;
 import com.codesquad.rocket.domain.account.AccountRepository;
+import com.codesquad.rocket.domain.account.PointHistory;
+import com.codesquad.rocket.domain.account.PointOption;
 import com.codesquad.rocket.domain.project.Project;
 import com.codesquad.rocket.domain.project.ProjectRepository;
 import com.codesquad.rocket.web.dto.response.project.ProjectDetailResponseDto;
@@ -52,8 +55,18 @@ public class ProjectService {
         Project project = projectRepository.findById(id).orElse(new Project());
         project.addEcoPoint(ecoPoint);
         Project addedProject = projectRepository.save(project);
+
         Account account = accountRepository.findAccountByName("delma").orElse(new Account());
         account.subtractEcoPoint(ecoPoint);
+        // pointHistory 생성 후 account에 추가 한뒤 저장.
+        PointHistory pointHistory = PointHistory.builder()
+            .ecoPoint(ecoPoint)
+            .pointOption(PointOption.DONATE)
+            .createdAt(new Date())
+            .projectName(project.getName())
+            .build();
+        account.addPointHistory(pointHistory);
+        accountRepository.save(account);
 
         return ProjectDetailResponseDto.of(addedProject);
     }
