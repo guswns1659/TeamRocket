@@ -68,7 +68,7 @@ extension TabBarViewController {
     }
     
     private func configureChallengeButton() {
-        challengeButton = ChallengeButton(type: .system)
+        challengeButton = UIButton(type: .system)
         challengeButton.backgroundColor = .clear
         
         let numberOfItems = CGFloat(tabBar.items!.count)
