@@ -25,6 +25,7 @@ class DonationDetailViewController: UIViewController {
     private var donateView: DonateView!
     private var descriptionImages: [UIImage] = []
     private var donationProjectDetailUseCase: DonationProjectDetailUseCase!
+    private let toolBarKeyBoard = UIToolbar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class DonationDetailViewController: UIViewController {
         configureUI()
         configureUseCase()
         configureDonateView()
+        configureToolbar()
     }
     
     private func configureUI() {
@@ -47,6 +49,7 @@ class DonationDetailViewController: UIViewController {
 
     private func configureDonateView() {
         donateView = DonateView()
+        donateView.configureTextField { $0.inputAccessoryView = toolBarKeyBoard }
         donateView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(donateView)
         donateView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -110,5 +113,20 @@ class DonationDetailViewController: UIViewController {
                 print(error)
             }
         }
+    }
+}
+
+//MARK:- Keyboard
+
+extension DonationDetailViewController {
+    private func configureToolbar() {
+        toolBarKeyBoard.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(doneButtonDidTap(sender:)))
+        toolBarKeyBoard.items = [doneButton]
+        toolBarKeyBoard.tintColor = UIColor(named: "key_green")
+    }
+    
+    @objc private func doneButtonDidTap(sender: UIButton) {
+        view.endEditing(true)
     }
 }

@@ -56,4 +56,8 @@ class DonateView: UIView {
     @objc private func allDonate(recognizer: UITapGestureRecognizer) {
         amountTextField.text = ecoPointLabel.text
     }
+    
+    func configureTextField(handler: (UITextField) -> Void) {
+        handler(amountTextField)
+    }
 }
