@@ -22,7 +22,6 @@ struct DonationProject: Codable {
     let imageURLs: [String]
     let numberOfDonations: Int
     
-    
     enum CodingKeys: String, CodingKey {
         case id
         case title = "projectTitle"
