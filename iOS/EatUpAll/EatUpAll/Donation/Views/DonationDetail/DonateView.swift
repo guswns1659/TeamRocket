@@ -76,7 +76,7 @@ class DonateView: UIView {
             isPossible = true
         }
         NotificationCenter.default.post(name: .inputDone, object: nil)
-        NotificationCenter.default.post(name: .donateButtonDidTap, object: nil, userInfo: ["announcement" : (announcement, isPossible)])
+        NotificationCenter.default.post(name: .donateButtonDidTap, object: nil, userInfo: ["announcement" : (announcement, isPossible, inputText)])
     }
     
     func configureTextField(handler: (UITextField) -> Void) {

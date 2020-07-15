@@ -11,6 +11,7 @@
 		3022698A24BF09BA005A864C /* DonateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3022698924BF09BA005A864C /* DonateView.xib */; };
 		3022698C24BF33F9005A864C /* MyEcoPointRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022698B24BF33F9005A864C /* MyEcoPointRequest.swift */; };
 		3022698E24BF342D005A864C /* MyEcoPointUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022698D24BF342D005A864C /* MyEcoPointUseCase.swift */; };
+		3022699024BF4130005A864C /* DonateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022698F24BF4130005A864C /* DonateRequest.swift */; };
 		302BB01824BD65C6000EB297 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB01724BD65C6000EB297 /* Endpoint.swift */; };
 		302BB01A24BD65DB000EB297 /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB01924BD65DB000EB297 /* NetworkDispatcher.swift */; };
 		302BB01C24BD661E000EB297 /* Session+NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB01B24BD661D000EB297 /* Session+NetworkDispatcher.swift */; };
@@ -76,6 +77,7 @@
 		3022698924BF09BA005A864C /* DonateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonateView.xib; sourceTree = "<group>"; };
 		3022698B24BF33F9005A864C /* MyEcoPointRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEcoPointRequest.swift; sourceTree = "<group>"; };
 		3022698D24BF342D005A864C /* MyEcoPointUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEcoPointUseCase.swift; sourceTree = "<group>"; };
+		3022698F24BF4130005A864C /* DonateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateRequest.swift; sourceTree = "<group>"; };
 		302BB01724BD65C6000EB297 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		302BB01924BD65DB000EB297 /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		302BB01B24BD661D000EB297 /* Session+NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+NetworkDispatcher.swift"; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				380B222A24BDEAD30004FA55 /* DonationWholeProjectRequest.swift */,
 				30DA856B24BED2B100297204 /* DonationProjectDetailRequest.swift */,
 				3022698B24BF33F9005A864C /* MyEcoPointRequest.swift */,
+				3022698F24BF4130005A864C /* DonateRequest.swift */,
 			);
 			path = Donation;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				30DA856C24BED2B200297204 /* DonationProjectDetailRequest.swift in Sources */,
 				38714B2324BC780A00E9B9FC /* SceneDelegate.swift in Sources */,
 				38EB2A8024BDD424002CBDEA /* ChallengeCell.swift in Sources */,
+				3022699024BF4130005A864C /* DonateRequest.swift in Sources */,
 				380B222E24BEA4DE0004FA55 /* Int+DecimalStyle.swift in Sources */,
 				383D8C8224BC920100561EF3 /* UIView+Border.swift in Sources */,
 				380B222924BDEA9B0004FA55 /* DonationClosingProjectRequest.swift in Sources */,

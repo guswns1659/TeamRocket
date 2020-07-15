@@ -22,9 +22,11 @@ class DonationDetailViewController: UIViewController {
     @IBOutlet weak var descriptionStackView: UIStackView!
     @IBOutlet weak var donationButton: UIButton!
     
+    private var donationDetail: DonationDetail!
     private var donateView: DonateView!
     private var descriptionImages: [UIImage] = []
     private var donationProjectDetailUseCase: DonationProjectDetailUseCase!
+    private var donationUseCase: DonationUseCase!
     private var myEcoPointUseCase: MyEcoPointUseCase!
     private let toolBarKeyBoard = UIToolbar()
     
@@ -61,6 +63,7 @@ class DonationDetailViewController: UIViewController {
     private func configureUseCase() {
         donationProjectDetailUseCase = DonationProjectDetailUseCase()
         myEcoPointUseCase = MyEcoPointUseCase()
+        donationUseCase = DonationUseCase()
     }
 
     private func configureDonateView() {
@@ -82,10 +85,8 @@ class DonationDetailViewController: UIViewController {
     }
     
     @objc private func showAlert(_ notification: Notification) {
-        guard let info = notification.userInfo?["announcement"] as? (String, Bool) else { return }
-        if info.1 {
-            //서버로 요청
-        }
+        guard let info = notification.userInfo?["announcement"] as? (String, Bool, String) else { return }
+        info.1 ? requestDonation(id: donationDetail.id, point: info.2) : nil
         
         let alertController = UIAlertController(title: "알림", message: info.0, preferredStyle: .alert)
         let ok = UIAlertAction(title: "확인", style: .default) { _ in
@@ -110,6 +111,19 @@ class DonationDetailViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    private func requestDonation(id: Int, point: String) {
+        let request = DonateRequest(id: id)
+        request.append(name: .ecoPoint, value: point)
+        donationUseCase.getResources(request: request.asURLRequest(), dataType: DonationDetail.self) { result in
+            switch result {
+            case .success(let resultData):
+                self.generateData(data: resultData)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     private func fetchMyEcoPoint() {
         let request = MyEcoPointRequest().asURLRequest()
         myEcoPointUseCase.getResources(request: request, dataType: MyEcoPoint.self) { result in
@@ -127,6 +141,7 @@ class DonationDetailViewController: UIViewController {
         donationProjectDetailUseCase.getResources(request: request, dataType: DonationDetail.self) { result in
             switch result {
             case .success(let donationDetail):
+                self.donationDetail = donationDetail
                 self.generateData(data: donationDetail)
             case .failure(let error):
                 print(error)
