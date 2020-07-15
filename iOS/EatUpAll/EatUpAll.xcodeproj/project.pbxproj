@@ -41,6 +41,10 @@
 		383D8C8D24BC97F700561EF3 /* DonationProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8C24BC97F700561EF3 /* DonationProject.swift */; };
 		383D8C8F24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D8C8E24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift */; };
 		383F239B24BEAD7400C5E8C9 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383F239A24BEAD7400C5E8C9 /* UIView+Animation.swift */; };
+		385F612824BF3229003C2B7D /* ChallengeCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F612624BF3229003C2B7D /* ChallengeCameraViewController.swift */; };
+		385F612924BF3229003C2B7D /* ChallengeCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385F612724BF3229003C2B7D /* ChallengeCameraViewController.xib */; };
+		385F612C24BF32D4003C2B7D /* ChallengePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F612A24BF32D4003C2B7D /* ChallengePreviewViewController.swift */; };
+		385F612D24BF32D4003C2B7D /* ChallengePreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385F612B24BF32D4003C2B7D /* ChallengePreviewViewController.xib */; };
 		38652A3724BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38652A3624BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift */; };
 		38652A3A24BC89E4006A8A48 /* ClosingDonationProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38652A3824BC89E4006A8A48 /* ClosingDonationProjectCell.swift */; };
 		38652A3B24BC89E4006A8A48 /* ClosingDonationProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38652A3924BC89E4006A8A48 /* ClosingDonationProjectCell.xib */; };
@@ -97,6 +101,10 @@
 		383D8C8C24BC97F700561EF3 /* DonationProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProject.swift; sourceTree = "<group>"; };
 		383D8C8E24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosingDonationProjectCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		383F239A24BEAD7400C5E8C9 /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
+		385F612624BF3229003C2B7D /* ChallengeCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCameraViewController.swift; sourceTree = "<group>"; };
+		385F612724BF3229003C2B7D /* ChallengeCameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeCameraViewController.xib; sourceTree = "<group>"; };
+		385F612A24BF32D4003C2B7D /* ChallengePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengePreviewViewController.swift; sourceTree = "<group>"; };
+		385F612B24BF32D4003C2B7D /* ChallengePreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengePreviewViewController.xib; sourceTree = "<group>"; };
 		38652A3624BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosingDonationProjectCollectionView.swift; sourceTree = "<group>"; };
 		38652A3824BC89E4006A8A48 /* ClosingDonationProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosingDonationProjectCell.swift; sourceTree = "<group>"; };
 		38652A3924BC89E4006A8A48 /* ClosingDonationProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClosingDonationProjectCell.xib; sourceTree = "<group>"; };
@@ -259,6 +267,25 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		385F612424BF320B003C2B7D /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				385F612524BF3215003C2B7D /* Controllers */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
+		385F612524BF3215003C2B7D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				385F612624BF3229003C2B7D /* ChallengeCameraViewController.swift */,
+				385F612724BF3229003C2B7D /* ChallengeCameraViewController.xib */,
+				385F612A24BF32D4003C2B7D /* ChallengePreviewViewController.swift */,
+				385F612B24BF32D4003C2B7D /* ChallengePreviewViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		38652A3524BC85BA006A8A48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +329,7 @@
 				38714B3424BC79BB00E9B9FC /* TabBar */,
 				38714B3924BC7BE000E9B9FC /* Home */,
 				38714B3E24BC7F9200E9B9FC /* Donation */,
+				385F612424BF320B003C2B7D /* Challenge */,
 				38EB2A7524BDA5D0002CBDEA /* ChallengeFeed */,
 				38714B3624BC7B5500E9B9FC /* Extensions */,
 				383D8C8524BC94B400561EF3 /* ViewModel */,
@@ -473,9 +501,11 @@
 				38652A3B24BC89E4006A8A48 /* ClosingDonationProjectCell.xib in Resources */,
 				383D8C8024BC8F5500561EF3 /* DonationProjectCell.xib in Resources */,
 				38EB2A7924BDA61D002CBDEA /* ChallengeFeedViewController.xib in Resources */,
+				385F612924BF3229003C2B7D /* ChallengeCameraViewController.xib in Resources */,
 				38714B2D24BC780C00E9B9FC /* LaunchScreen.storyboard in Resources */,
 				38714B2A24BC780C00E9B9FC /* Assets.xcassets in Resources */,
 				302BB02924BD6ED9000EB297 /* DonationDetailViewController.xib in Resources */,
+				385F612D24BF32D4003C2B7D /* ChallengePreviewViewController.xib in Resources */,
 				38EB2A8124BDD424002CBDEA /* ChallengeCell.xib in Resources */,
 				306FA78324BD585200279A18 /* EmptyPlateCollectionViewCell.xib in Resources */,
 				38714B4224BC7FA400E9B9FC /* DonationViewController.xib in Resources */,
@@ -521,8 +551,10 @@
 				302BB01A24BD65DB000EB297 /* NetworkDispatcher.swift in Sources */,
 				30B0A2F624BD9CCA00BB9E55 /* EmptyPlateUseCase.swift in Sources */,
 				38714B3824BC7B7C00E9B9FC /* UIViewController+loadFromNib.swift in Sources */,
+				385F612C24BF32D4003C2B7D /* ChallengePreviewViewController.swift in Sources */,
 				38EB2A7424BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift in Sources */,
 				302BB01F24BD66CE000EB297 /* UseCase.swift in Sources */,
+				385F612824BF3229003C2B7D /* ChallengeCameraViewController.swift in Sources */,
 				30B0A30424BDC37900BB9E55 /* TodayRecordUseCase.swift in Sources */,
 				302BB01824BD65C6000EB297 /* Endpoint.swift in Sources */,
 				38714B2324BC780A00E9B9FC /* SceneDelegate.swift in Sources */,
