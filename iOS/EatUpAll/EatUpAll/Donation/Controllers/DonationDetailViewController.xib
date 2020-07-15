@@ -10,6 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DonationDetailViewController" customModule="EatUpAll" customModuleProvider="target">
             <connections>
+                <outlet property="currentMoney" destination="3at-O9-tkn" id="uo1-ID-RkD"/>
+                <outlet property="donatorCount" destination="bQ7-Gx-c0c" id="Slh-Nf-F4g"/>
+                <outlet property="hostCompany" destination="rKP-7S-uNI" id="gbQ-eW-5KY"/>
+                <outlet property="leftTime" destination="pbW-51-cwI" id="g6G-rc-nNk"/>
+                <outlet property="projectTitle" destination="815-7C-2VP" id="qoc-Eo-6HO"/>
+                <outlet property="targetMoney" destination="Ll2-6H-T72" id="txJ-0g-uSZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -200,6 +206,9 @@
                     <state key="normal" image="chevron.left" catalog="system">
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" scale="large" weight="bold"/>
                     </state>
+                    <connections>
+                        <action selector="backButtonDidTap:" destination="-1" eventType="touchUpInside" id="Uh1-Tb-yh5"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELU-OU-V9E">
                     <rect key="frame" x="8" y="800" width="398" height="54"/>
