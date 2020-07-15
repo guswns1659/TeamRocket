@@ -95,6 +95,7 @@
             <connections>
                 <outlet property="accumulatedDonationLabel" destination="dAx-vG-IY3" id="W4e-bk-QGI"/>
                 <outlet property="containerView" destination="1xv-gw-NEm" id="5Ss-H2-Xzg"/>
+                <outlet property="imageView" destination="xhj-l2-Tkc" id="hwW-dV-I9K"/>
                 <outlet property="progressPercentageLabel" destination="PgN-2o-tf6" id="hus-QY-gj6"/>
                 <outlet property="remainingDateLabel" destination="60U-kT-VcI" id="Uy6-cr-CKi"/>
                 <outlet property="subtitleLabel" destination="oYI-7T-99A" id="57M-bZ-Ph7"/>

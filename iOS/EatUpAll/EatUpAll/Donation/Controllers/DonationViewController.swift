@@ -22,38 +22,50 @@ final class DonationViewController: UIViewController {
     private var wholeDonationProjectDelegate: WholeDonationProjectCollectionViewDelegate!
     @IBOutlet weak var wholeDonationProjectCollectionViewHeight: NSLayoutConstraint!
     
+    private var donationUseCase: DonationUseCase!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configure()
-        fetchClosingDonationProjects()
         fetchDonationProjects()
+    }
+}
+
+// MARK:- Fetching Projects
+
+extension DonationViewController {
+    private func fetchDonationProjects() {
+        fetchClosingDonationProjects()
+        fetchWholeDonationProjects()
+    }
+    
+    private func fetchWholeDonationProjects() {
+        let request = DonationWholeProjectRequest().asURLRequest()
+        donationUseCase.getResources(
+            request: request,
+            dataType: DonationProjectContainer.self) { (result) in
+                switch result {
+                case .success(let wholeProjectContainer):
+                    self.wholeDonationProjectDataSource.updateDonationProjects(wholeProjectContainer.data)
+                case .failure(_):
+                    break
+                }
+        }
     }
     
     private func fetchClosingDonationProjects() {
-        closingDonationProjectDataSource.updateDonationProjects([
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000)])
-    }
-    
-    private func fetchDonationProjects() {
-        wholeDonationProjectDataSource.updateDonationProjects([
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000)])
+        let request = DonationClosingProjectRequest().asURLRequest()
+        donationUseCase.getResources(
+            request: request,
+            dataType: DonationProjectContainer.self) { (result) in
+                switch result {
+                case .success(let closingProjectContainer):
+                    self.closingDonationProjectDataSource.updateDonationProjects(closingProjectContainer.data)
+                case .failure(_):
+                    break
+                }
+        }
     }
 }
 
@@ -66,6 +78,11 @@ extension DonationViewController {
         configureClosingDonationProjectDelegate()
         configureWholeDonationProjectDataSource()
         configureWholeDonationProjectDelegate()
+        configureUseCase()
+    }
+    
+    private func configureUseCase() {
+        donationUseCase = DonationUseCase()
     }
     
     private func configureNavigation() {

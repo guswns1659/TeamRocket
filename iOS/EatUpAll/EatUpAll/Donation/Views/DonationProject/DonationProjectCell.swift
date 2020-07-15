@@ -11,13 +11,14 @@ import UIKit
 final class DonationProjectCell: UICollectionViewCell, DonationProjectConfigurable {
     
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var progressBar: UIView!
     @IBOutlet weak var progressBarBackgroundView: UIView!
+    @IBOutlet weak var progressBarView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var remainingDateLabel: UILabel!
     @IBOutlet weak var accumulatedDonationLabel: UILabel!
     @IBOutlet weak var progressPercentageLabel: UILabel!
     @IBOutlet weak var projectImageView: UIImageView!
+    @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +27,23 @@ final class DonationProjectCell: UICollectionViewCell, DonationProjectConfigurab
     }
     
     func configureCell(with donationProject: DonationProject) {
-        
+        titleLabel.text = "\(donationProject.subtitle) \(donationProject.title)"
+        remainingDateLabel.text = "\(donationProject.leftDays)일 남음"
+        accumulatedDonationLabel.text = "\(donationProject.currentAmount.moneyFormat)원"
+        let percentage = Double(donationProject.currentAmount) / Double(donationProject.goalAmount)
+        progressPercentageLabel.text = "\(Int(percentage * 100))%"
+        configureProgressBar(with: percentage)
+    }
+    
+    private func configureProgressBar(with percentage: Double) {
+        let maxWidth = progressBarBackgroundView.frame.width
+        var progressBarWidth = maxWidth * CGFloat(percentage)
+        progressBarWidth = progressBarWidth > maxWidth ? maxWidth : progressBarWidth
+        progressBarWidthConstraint.constant = progressBarWidth
+    }
+    
+    func configureTitleImage(_ image: UIImage) {
+        projectImageView.image = image
     }
 }
 
@@ -39,7 +56,7 @@ extension DonationProjectCell {
     }
     
     private func configureProgressBars() {
-        progressBar.roundCorner(cornerRadius: 2.0)
+        progressBarView.roundCorner(cornerRadius: 2.0)
         progressBarBackgroundView.roundCorner(cornerRadius: 2.0)
     }
     

@@ -13,4 +13,6 @@ enum EndPoint {
     static let emptyPlateURL = "\(baseURL)challenge/weeklyTopLike"
     static let todayRecordURL = "\(baseURL)account/todaySaving"
     static let totalSavingURL = "\(baseURL)account/totalSaving"
+    static let donationClosingProjectURL = "\(baseURL)/project/orderByDeadLine"
+    static let donationWholeProjectURL = "\(baseURL)/project/orderByCreatedAt"
 }
