@@ -93,4 +93,8 @@ class DonateView: UIView {
     func configureEcoPointLabel(_ point: Int) {
         ecoPointLabel.text = "\(point)"
     }
+    
+    func resetAmount() {
+        amountTextField.text = ""
+    }
 }

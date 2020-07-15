@@ -101,6 +101,7 @@ class DonationDetailViewController: UIViewController {
     }
     
     @IBAction func donationButtonDidTap(_ sender: UIButton) {
+        donateView.resetAmount()
         fetchMyEcoPoint()
         UIView.animate(withDuration: 0.3) {
             self.donateView.alpha = 1.0
