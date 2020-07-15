@@ -3,10 +3,8 @@ package com.codesquad.rocket.domain.account;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
+import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
-import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -44,11 +42,7 @@ public class Account {
     @OneToMany(mappedBy = "account")
     private final Set<ProjectAccount> projectAccounts = new HashSet<>();
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "account_challenge", joinColumns = @JoinColumn(name = "account_id"))
-    @AttributeOverrides({
-        @AttributeOverride(name = "likeCount", column = @Column(name = "challenge_likeCount"))
-    })
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private final Set<Challenge> challenges = new HashSet<>();
 
     @ElementCollection
