@@ -34,6 +34,11 @@ final class DonationProjectCollectionViewDataSource<T: DonationProjectConfigurab
         self.donationProjects = donationProjects
     }
     
+    func referDonationProject(at indexPath: IndexPath, handler: (DonationProject) -> Void ) {
+        let donationProject = donationProjects[indexPath.item]
+        handler(donationProject)
+    }
+    
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {

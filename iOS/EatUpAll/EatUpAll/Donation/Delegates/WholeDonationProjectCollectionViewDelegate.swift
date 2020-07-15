@@ -35,4 +35,8 @@ final class WholeDonationProjectCollectionViewDelegate: NSObject, UICollectionVi
         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         16
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        NotificationCenter.default.post(name: .selectionWholeDonationCell, object: nil, userInfo: ["indexPath":indexPath])
+    }
 }
