@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="currentMoney" destination="3at-O9-tkn" id="uo1-ID-RkD"/>
                 <outlet property="descriptionStackView" destination="raM-hW-k7L" id="6Ld-JK-SlW"/>
+                <outlet property="donationButton" destination="ELU-OU-V9E" id="eOu-6c-cmW"/>
                 <outlet property="donationRatio" destination="XcM-co-j0M" id="U7p-OJ-TyF"/>
                 <outlet property="donatorCount" destination="bQ7-Gx-c0c" id="Slh-Nf-F4g"/>
                 <outlet property="hostCompany" destination="rKP-7S-uNI" id="gbQ-eW-5KY"/>

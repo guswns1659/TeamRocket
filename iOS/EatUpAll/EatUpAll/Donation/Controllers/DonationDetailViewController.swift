@@ -20,6 +20,7 @@ class DonationDetailViewController: UIViewController {
     @IBOutlet weak var donatorCount: UILabel!
     @IBOutlet weak var donationRatio: UILabel!
     @IBOutlet weak var descriptionStackView: UIStackView!
+    @IBOutlet weak var donationButton: UIButton!
     
     private var descriptionImages: [UIImage] = []
     private var donationProjectDetailUseCase: DonationProjectDetailUseCase!
@@ -30,6 +31,15 @@ class DonationDetailViewController: UIViewController {
     }
     
     private func configure() {
+        configureUI()
+        configureUseCase()
+    }
+    
+    private func configureUI() {
+        donationButton.roundCorner(cornerRadius: 10)
+    }
+    
+    private func configureUseCase() {
         donationProjectDetailUseCase = DonationProjectDetailUseCase()
     }
 
