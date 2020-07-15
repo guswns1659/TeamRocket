@@ -23,9 +23,9 @@ public class AccountServiceTest {
     private final Logger logger = LoggerFactory.getLogger(AccountServiceTest.class);
 
     @DisplayName("totalSaving을 가져오는 테스트")
-    @CsvSource({"6, 90"})
+    @CsvSource({"6, 40"})
     @ParameterizedTest
-    void totalSaving을_가져온다(Double totalSaving, Double totalPlates) {
+    void totalSaving을_가져온다(Double totalSaving, Integer totalPlates) {
         TotalSavingResponseDto totalSavingResponseDto = accountService.totalSaving();
         assertThat(totalSavingResponseDto.getTotalSaving()).isEqualTo(totalSaving);
         assertThat(totalSavingResponseDto.getTotalPlates()).isEqualTo(totalPlates);

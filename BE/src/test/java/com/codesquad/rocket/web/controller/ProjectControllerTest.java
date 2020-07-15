@@ -45,7 +45,6 @@ public class ProjectControllerTest {
         assertThat(projectOrderByResponseDtos.getData().get(0).getId()).isEqualTo(id);
         assertThat(projectOrderByResponseDtos.getData().get(0).getCurrentMoney()).isEqualTo(currentMoney);
         assertThat(projectOrderByResponseDtos.getData().get(0).getProjectTitle()).isEqualTo(projectTitle);
-        assertThat(projectOrderByResponseDtos.getData().get(0).getLeftDays()).isEqualTo(leftDays);
     }
 
     @Transactional
@@ -67,7 +66,6 @@ public class ProjectControllerTest {
         assertThat(projectOrderByResponseDtos.getData().get(0).getId()).isEqualTo(id);
         assertThat(projectOrderByResponseDtos.getData().get(0).getCurrentMoney()).isEqualTo(currentMoney);
         assertThat(projectOrderByResponseDtos.getData().get(0).getProjectTitle()).isEqualTo(projectTitle);
-        assertThat(projectOrderByResponseDtos.getData().get(0).getLeftDays()).isEqualTo(leftDays);
     }
 
     @Transactional
@@ -89,7 +87,5 @@ public class ProjectControllerTest {
         assertThat(projectDetailResponseDto.getId()).isEqualTo(projectId);
         assertThat(projectDetailResponseDto.getCurrentMoney()).isEqualTo(currentMoney);
         assertThat(projectDetailResponseDto.getTitle()).isEqualTo(title);
-        assertThat(projectDetailResponseDto.getLeftDay()).isEqualTo(leftDay);
-        assertThat(projectDetailResponseDto.getLeftHour()).isEqualTo(leftHour);
     }
 }

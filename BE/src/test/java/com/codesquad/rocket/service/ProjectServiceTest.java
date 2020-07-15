@@ -27,7 +27,6 @@ public class ProjectServiceTest {
         assertThat(projectOrderByResponseDtos.getData().size()).isEqualTo(size);
         assertThat(projectOrderByResponseDtos.getData().get(0).getCurrentMoney()).isEqualTo(currentMoney);
         assertThat(projectOrderByResponseDtos.getData().get(0).getProjectTitle()).isEqualTo(projectTitle);
-        assertThat(projectOrderByResponseDtos.getData().get(0).getLeftDays()).isEqualTo(leftDays);
     }
 
     @DisplayName("orderByDeadLine API 테스트")
@@ -39,7 +38,6 @@ public class ProjectServiceTest {
         assertThat(projectOrderByResponseDtos.getData().size()).isEqualTo(size);
         assertThat(projectOrderByResponseDtos.getData().get(0).getCurrentMoney()).isEqualTo(currentMoney);
         assertThat(projectOrderByResponseDtos.getData().get(0).getProjectTitle()).isEqualTo(projectTitle);
-        assertThat(projectOrderByResponseDtos.getData().get(0).getLeftDays()).isEqualTo(leftDays);
     }
 
     @Transactional
@@ -53,7 +51,5 @@ public class ProjectServiceTest {
         assertThat(projectDetailResponseDto.getId()).isEqualTo(projectId);
         assertThat(projectDetailResponseDto.getCurrentMoney()).isEqualTo(currentMoney);
         assertThat(projectDetailResponseDto.getTitle()).isEqualTo(title);
-        assertThat(projectDetailResponseDto.getLeftDay()).isEqualTo(leftDay);
-        assertThat(projectDetailResponseDto.getLeftHour()).isEqualTo(leftHour);
     }
 }
