@@ -38,7 +38,7 @@ final class ClosingDonationProjectCollectionViewDelegate: NSObject, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        NotificationCenter.default.post(name: .selectionDonationCell, object: nil, userInfo: ["id":indexPath.row])
+        NotificationCenter.default.post(name: .selectionClosingDonationCell, object: nil, userInfo: ["indexPath":indexPath])
     }
 }
 

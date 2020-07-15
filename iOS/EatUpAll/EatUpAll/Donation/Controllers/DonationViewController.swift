@@ -31,15 +31,31 @@ final class DonationViewController: UIViewController {
         fetchDonationProjects()
     }
     
-    @objc func presentDetailView(_ notification: Notification) {
+    @objc func presentClosingDetailCell(_ notification: Notification) {
         let donationDetailViewController = DonationDetailViewController.loadFromNib()
-
         donationDetailViewController.modalPresentationStyle = .fullScreen
+
+        guard let indexPath = notification.userInfo?["indexPath"] as? IndexPath else { return }
+        closingDonationProjectDataSource.referDonationProject(at: indexPath) { donationProject in
+
+        }
+        present(donationDetailViewController, animated: true)
+    }
+    
+    @objc func presentWholeDetailCell(_ notification: Notification) {
+        guard let indexPath = notification.userInfo?["indexPath"] as? IndexPath else { return }
+        let donationDetailViewController = DonationDetailViewController.loadFromNib()
+        donationDetailViewController.modalPresentationStyle = .fullScreen
+
+        wholeDonationProjectDataSource.referDonationProject(at: indexPath) { donationProject in
+
+        }
         present(donationDetailViewController, animated: true)
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: .selectionDonationCell, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .selectionClosingDonationCell, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .selectionWholeDonationCell, object: nil)
     }
 }
 
@@ -94,7 +110,8 @@ extension DonationViewController {
     }
     
     private func configureObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(presentDetailView(_:)), name: .selectionDonationCell, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(presentClosingDetailCell), name: .selectionClosingDonationCell, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(presentWholeDetailCell), name: .selectionWholeDonationCell, object: nil)
     }
     
     private func configureUseCase() {
@@ -139,5 +156,6 @@ extension DonationViewController {
 }
 
 extension Notification.Name {
-    static let selectionDonationCell = Notification.Name(rawValue: "selectionDonationCell")
+    static let selectionClosingDonationCell = Notification.Name(rawValue: "selectionClosingDonationCell")
+    static let selectionWholeDonationCell = Notification.Name(rawValue: "selectionWholeDonationCell")
 }
