@@ -21,8 +21,6 @@ final class ChallengeCameraViewController: UIViewController {
     private var photoOutput: AVCapturePhotoOutput?
     
     private var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
-    
-    private var capturedImage: UIImage?
 
     @IBOutlet weak var cameraButton: UIButton!
     
@@ -50,7 +48,7 @@ extension ChallengeCameraViewController: AVCapturePhotoCaptureDelegate {
         didFinishProcessingPhoto photo: AVCapturePhoto,
         error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
-            capturedImage = UIImage(data: imageData)
+            let capturedImage = UIImage(data: imageData)
             previewViewController.modalPresentationStyle = .fullScreen
             previewViewController.configureCapturedImage(capturedImage)
             present(previewViewController, animated: false, completion: nil)

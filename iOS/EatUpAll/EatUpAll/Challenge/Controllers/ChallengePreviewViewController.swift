@@ -26,6 +26,8 @@ final class ChallengePreviewViewController: UIViewController {
     
     func configureCapturedImage(_ image: UIImage?) {
         capturedImage = image
+        guard capturedImageView != nil else { return }
+        configureCapturedImageView()
     }
     
     @IBAction func cancelButtonDidTap(_ sender: Any) {
