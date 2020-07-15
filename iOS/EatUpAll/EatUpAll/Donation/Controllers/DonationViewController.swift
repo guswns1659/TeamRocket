@@ -30,6 +30,17 @@ final class DonationViewController: UIViewController {
         configure()
         fetchDonationProjects()
     }
+    
+    @objc func presentDetailView(_ notification: Notification) {
+        let donationDetailViewController = DonationDetailViewController.loadFromNib()
+
+        donationDetailViewController.modalPresentationStyle = .fullScreen
+        present(donationDetailViewController, animated: true)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .selectionDonationCell, object: nil)
+    }
 }
 
 // MARK:- Fetching Projects
@@ -79,6 +90,11 @@ extension DonationViewController {
         configureWholeDonationProjectDataSource()
         configureWholeDonationProjectDelegate()
         configureUseCase()
+        configureObserver()
+    }
+    
+    private func configureObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(presentDetailView(_:)), name: .selectionDonationCell, object: nil)
     }
     
     private func configureUseCase() {
@@ -120,4 +136,8 @@ extension DonationViewController {
             frame: CGSize(width: view.frame.width, height: view.frame.height))
         wholeDonationProjectCollectionView.delegate = wholeDonationProjectDelegate
     }
+}
+
+extension Notification.Name {
+    static let selectionDonationCell = Notification.Name(rawValue: "selectionDonationCell")
 }
