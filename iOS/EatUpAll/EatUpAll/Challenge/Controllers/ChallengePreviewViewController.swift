@@ -29,7 +29,7 @@ final class ChallengePreviewViewController: UIViewController {
     }
     
     @IBAction func cancelButtonDidTap(_ sender: Any) {
-        
+        dismiss(animated: false, completion: nil)
     }
     
     @IBAction func saveButtonDidTap(_ sender: Any) {
