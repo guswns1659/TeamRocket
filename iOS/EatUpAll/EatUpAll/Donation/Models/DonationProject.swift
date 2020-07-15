@@ -18,22 +18,19 @@ struct DonationProject: Codable {
     let subtitle: String
     let leftDays: Int
     let currentAmount: Int
-    let imageURLs: DonationProjectImage
-//    let numberOfDonations: Int
-//    let goalAmount: Int
+    let goalAmount: Int
+    let imageURLs: [String]
+    let numberOfDonations: Int
+    
     
     enum CodingKeys: String, CodingKey {
         case id
         case title = "projectTitle"
         case subtitle = "titleWithCompany"
         case leftDays
-        case imageURLs = "image"
+        case imageURLs = "images"
         case currentAmount = "currentMoney"
-//        case goalAmount
-//        case numberOfDonations
+        case goalAmount = "targetMoney"
+        case numberOfDonations = "donators"
     }
-}
-
-struct DonationProjectImage: Codable {
-    let url: String
 }
