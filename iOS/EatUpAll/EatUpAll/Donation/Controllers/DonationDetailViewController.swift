@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DonationDetailViewController: UIViewController {
 
+    @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var hostCompany: UILabel!
     @IBOutlet weak var projectTitle: UILabel!
     @IBOutlet weak var currentMoney: UILabel!
     @IBOutlet weak var targetMoney: UILabel!
     @IBOutlet weak var leftTime: UILabel!
     @IBOutlet weak var donatorCount: UILabel!
+    @IBOutlet weak var donationRatio: UILabel!
     
     private var donationProjectDetailUseCase: DonationProjectDetailUseCase!
     
@@ -37,15 +40,23 @@ class DonationDetailViewController: UIViewController {
         donationProjectDetailUseCase.getResources(request: request, dataType: DonationDetail.self) { result in
             switch result {
             case .success(let donationDetail):
-                self.hostCompany.text = donationDetail.titleWithCompany
-                self.projectTitle.text = donationDetail.title
-                self.currentMoney.text = "\(donationDetail.currentMoney)"
-                self.targetMoney.text = "\(donationDetail.targetMoney)"
-                self.donatorCount.text = "\(donationDetail.donators)"
-                self.leftTime.text = "\(donationDetail.leftDay)일 \(donationDetail.leftHour)시간"
+                self.configureData(data: donationDetail)
             case .failure(let error):
                 print(error)
             }
         }
+    }
+    
+    private func configureData(data: DonationDetail) {
+        let url = URL(string: data.mainURL)
+        mainImage.kf.setImage(with: url)
+        self.hostCompany.text = data.titleWithCompany
+        self.projectTitle.text = data.title
+        self.currentMoney.text = "\(data.currentMoney)원"
+        self.targetMoney.text = "\(data.targetMoney)원"
+        self.donatorCount.text = "\(data.donators)명"
+        self.leftTime.text = "\(data.leftDay)일 \(data.leftHour)시간"
+        let percentage = Double(data.currentMoney) / Double(data.targetMoney)
+        self.donationRatio.text = "\(Int(percentage * 100))%"
     }
 }

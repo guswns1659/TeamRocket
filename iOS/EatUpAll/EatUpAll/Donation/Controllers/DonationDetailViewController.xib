@@ -11,9 +11,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DonationDetailViewController" customModule="EatUpAll" customModuleProvider="target">
             <connections>
                 <outlet property="currentMoney" destination="3at-O9-tkn" id="uo1-ID-RkD"/>
+                <outlet property="donationRatio" destination="XcM-co-j0M" id="U7p-OJ-TyF"/>
                 <outlet property="donatorCount" destination="bQ7-Gx-c0c" id="Slh-Nf-F4g"/>
                 <outlet property="hostCompany" destination="rKP-7S-uNI" id="gbQ-eW-5KY"/>
                 <outlet property="leftTime" destination="pbW-51-cwI" id="g6G-rc-nNk"/>
+                <outlet property="mainImage" destination="ZbD-sb-cnL" id="miZ-no-jlD"/>
                 <outlet property="projectTitle" destination="815-7C-2VP" id="qoc-Eo-6HO"/>
                 <outlet property="targetMoney" destination="Ll2-6H-T72" id="txJ-0g-uSZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
