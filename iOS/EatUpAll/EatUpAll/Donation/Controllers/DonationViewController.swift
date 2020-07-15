@@ -30,9 +30,28 @@ final class DonationViewController: UIViewController {
         configure()
         fetchDonationProjects()
     }
-    
+}
+
+// MARK:- Fetching Projects
+
+extension DonationViewController {
     private func fetchDonationProjects() {
         fetchClosingDonationProjects()
+        fetchWholeDonationProjects()
+    }
+    
+    private func fetchWholeDonationProjects() {
+        let request = DonationWholeProjectRequest().asURLRequest()
+        donationUseCase.getResources(
+            request: request,
+            dataType: DonationProjectContainer.self) { (result) in
+                switch result {
+                case .success(let wholeProjectContainer):
+                    self.wholeDonationProjectDataSource.updateDonationProjects(wholeProjectContainer.data)
+                case .failure(_):
+                    break
+                }
+        }
     }
     
     private func fetchClosingDonationProjects() {

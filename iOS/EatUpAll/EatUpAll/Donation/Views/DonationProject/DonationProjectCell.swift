@@ -26,11 +26,15 @@ final class DonationProjectCell: UICollectionViewCell, DonationProjectConfigurab
     }
     
     func configureCell(with donationProject: DonationProject) {
-        
+        titleLabel.text = "\(donationProject.subtitle) \(donationProject.title)"
+        remainingDateLabel.text = "\(donationProject.leftDays)일 남음"
+        accumulatedDonationLabel.text = "\(donationProject.currentAmount.moneyFormat)원"
+        let percentage = Double(donationProject.currentAmount) / Double(donationProject.goalAmount)
+        progressPercentageLabel.text = "\(Int(percentage * 100))%"
     }
     
     func configureTitleImage(_ image: UIImage) {
-        
+        projectImageView.image = image
     }
 }
 
