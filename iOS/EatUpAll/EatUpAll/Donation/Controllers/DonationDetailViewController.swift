@@ -43,6 +43,7 @@ class DonationDetailViewController: UIViewController {
             name: UIResponder.keyboardWillHideNotification,
             object: nil)
         NotificationCenter.default.removeObserver(self, name: .inputDone, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .donateButtonDidTap, object: nil)
     }
     
     private func configure() {
@@ -77,6 +78,25 @@ class DonationDetailViewController: UIViewController {
     private func configureObservers() {
         configureKeyboardNotification()
         NotificationCenter.default.addObserver(self, selector: #selector(doneButtonDidTap(sender:)), name: .inputDone, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showAlert(_:)), name: .donateButtonDidTap, object: nil)
+    }
+    
+    @objc private func showAlert(_ notification: Notification) {
+        guard let info = notification.userInfo?["announcement"] as? (String, Bool) else { return }
+        if info.1 {
+            //서버로 요청
+        }
+        
+        let alertController = UIAlertController(title: "알림", message: info.0, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default) { _ in
+            if info.1 {
+                UIView.animate(withDuration: 0.3) {
+                    self.donateView.alpha = 0.0
+                }
+            }
+        }
+        alertController.addAction(ok)
+        present(alertController, animated: true)
     }
     
     @IBAction func donationButtonDidTap(_ sender: UIButton) {
@@ -191,4 +211,5 @@ extension DonationDetailViewController {
 
 extension Notification.Name {
     static let inputDone = Notification.Name("inputDone")
+    static let donateButtonDidTap = Notification.Name("donate")
 }

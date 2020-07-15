@@ -39,6 +39,9 @@
                             <state key="normal" title="기부하기">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="donateButtonDidTap:" destination="-1" eventType="touchUpInside" id="2wu-Yr-OhH"/>
+                            </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xdV-NS-rrJ">
                             <rect key="frame" x="22" y="83" width="354" height="50"/>
