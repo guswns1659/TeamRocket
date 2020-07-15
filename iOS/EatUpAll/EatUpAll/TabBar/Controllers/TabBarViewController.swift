@@ -52,6 +52,10 @@ extension TabBarViewController {
     }
     
     @objc private func challengeButtonDidTap() {
+        animateChallengeButton()
+    }
+    
+    private func animateChallengeButton() {
         let tabChallenge = tabBar.items![2]
         tabChallenge.image = tabChallenge.image?.withTintColor(
             Color.keyGreen, renderingMode: .alwaysOriginal)
