@@ -15,4 +15,15 @@ enum EndPoint {
     static let totalSavingURL = "\(baseURL)account/totalSaving"
     static let donationClosingProjectURL = "\(baseURL)/project/orderByDeadLine"
     static let donationWholeProjectURL = "\(baseURL)/project/orderByCreatedAt"
+    static let donationProjectDetailURL = "\(baseURL)project/"
+}
+
+enum QueryParameters: CustomStringConvertible {
+    case id
+    
+    var description: String {
+        switch self {
+        case .id: return "id"
+        }
+    }
 }
