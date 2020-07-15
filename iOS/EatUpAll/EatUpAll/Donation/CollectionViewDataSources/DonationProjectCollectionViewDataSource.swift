@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class DonationProjectCollectionViewDataSource<T: DonationProjectConfigurable>: NSObject, UICollectionViewDataSource, ViewModelBinding {
     
@@ -45,6 +46,17 @@ final class DonationProjectCollectionViewDataSource<T: DonationProjectConfigurab
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: String(describing: T.self),
             for: indexPath) as! T
+        let project = donationProjects[indexPath.item]
+        let titleImageURL = URL(string: project.imageURLs.first!)!
+        cell.configureCell(with: project)
+        KingfisherManager.shared.retrieveImage(with: titleImageURL) { (result) in
+            switch result {
+            case .success(let retrieveImageResult):
+                cell.configureTitleImage(retrieveImageResult.image)
+            case .failure(_):
+                break
+            }
+        }
         return cell
     }
 }
