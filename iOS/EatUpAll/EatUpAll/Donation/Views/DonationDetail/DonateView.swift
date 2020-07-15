@@ -33,6 +33,7 @@ class DonateView: UIView {
         Bundle.main.loadNibNamed(String(describing: Self.self), owner: self, options: nil)
         addSubview(frameView)
         frameView.frame = self.bounds
+        amountTextField.text = ""
         configureUI()
         configureGestureRecognizer()
     }
@@ -54,6 +55,7 @@ class DonateView: UIView {
         UIView.animate(withDuration: 0.3) {
             self.alpha = 0.0
         }
+        NotificationCenter.default.post(name: .inputDone, object: nil)
     }
     
     @objc private func allDonate(recognizer: UITapGestureRecognizer) {

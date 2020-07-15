@@ -41,13 +41,14 @@ class DonationDetailViewController: UIViewController {
             self,
             name: UIResponder.keyboardWillHideNotification,
             object: nil)
+        NotificationCenter.default.removeObserver(self, name: .inputDone, object: nil)
     }
     
     private func configure() {
         configureUI()
         configureUseCase()
         configureDonateView()
-        configureKeyboardNotification()
+        configureObservers()
         configureToolbar()
     }
     
@@ -71,6 +72,11 @@ class DonationDetailViewController: UIViewController {
         donateView.alpha = 0
     }
 
+    private func configureObservers() {
+        configureKeyboardNotification()
+        NotificationCenter.default.addObserver(self, selector: #selector(doneButtonDidTap(sender:)), name: .inputDone, object: nil)
+    }
+    
     @IBAction func donationButtonDidTap(_ sender: UIButton) {
         donateView.alpha = 1
     }
@@ -164,4 +170,8 @@ extension DonationDetailViewController {
     @objc private func doneButtonDidTap(sender: UIButton) {
         view.endEditing(true)
     }
+}
+
+extension Notification.Name {
+    static let inputDone = Notification.Name("inputDone")
 }
