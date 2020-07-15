@@ -221,6 +221,9 @@
                     <state key="normal" title="기부하기">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="donationButtonDidTap:" destination="-1" eventType="touchUpInside" id="9yF-Gy-AaD"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

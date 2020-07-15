@@ -22,6 +22,7 @@ class DonationDetailViewController: UIViewController {
     @IBOutlet weak var descriptionStackView: UIStackView!
     @IBOutlet weak var donationButton: UIButton!
     
+    private var donateView: DonateView!
     private var descriptionImages: [UIImage] = []
     private var donationProjectDetailUseCase: DonationProjectDetailUseCase!
     
@@ -33,16 +34,33 @@ class DonationDetailViewController: UIViewController {
     private func configure() {
         configureUI()
         configureUseCase()
+        configureDonateView()
     }
     
     private func configureUI() {
         donationButton.roundCorner(cornerRadius: 10)
     }
-    
+        
     private func configureUseCase() {
         donationProjectDetailUseCase = DonationProjectDetailUseCase()
     }
 
+    private func configureDonateView() {
+        donateView = DonateView()
+        donateView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(donateView)
+        donateView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        donateView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        donateView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        donateView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        donateView.isHidden = true
+    }
+
+    @IBAction func donationButtonDidTap(_ sender: UIButton) {
+        donationButton.isHidden = true
+        donateView.isHidden = false
+    }
+    
     @IBAction func backButtonDidTap(_ sender: UIButton) {
         dismiss(animated: true)
     }
