@@ -64,6 +64,21 @@ extension HomeViewController {
         fetchPersonalTotalSaving()
         fetchTodayRecords()
         fetchEmptyPlate()
+        fetchDonationProjects()
+    }
+    
+    private func fetchDonationProjects() {
+        let request = DonationClosingProjectRequest().asURLRequest()
+        donationUseCase.getResources(
+            request: request,
+            dataType: DonationProjectContainer.self) { (result) in
+                switch result {
+                case .success(let container):
+                    self.donationProjectDataSource.updateDonationProjects(container.data)
+                case .failure(_):
+                    break
+                }
+        }
     }
     
     private func fetchPersonalTotalSaving() {
@@ -115,6 +130,24 @@ extension HomeViewController {
         configureUI()
         configureUseCases()
         configureCollectionView()
+        configureDonationProject()
+    }
+    
+    private func configureDonationProject() {
+        configureDonationProjectDataSource()
+        configureDonationUseCase()
+    }
+    
+    private func configureDonationUseCase() {
+        donationUseCase = DonationUseCase()
+    }
+    
+    private func configureDonationProjectDataSource() {
+        donationProjectDataSource = DonationProjectCollectionViewDataSource<ClosingDonationProjectCell>(
+            handler: { (_) in
+                self.donationProjectCollectionView.reloadData()
+        })
+        donationProjectCollectionView.dataSource = donationProjectDataSource
     }
     
     private func configureUI() {
