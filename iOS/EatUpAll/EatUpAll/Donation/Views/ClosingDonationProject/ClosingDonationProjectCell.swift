@@ -33,7 +33,7 @@ final class ClosingDonationProjectCell: UICollectionViewCell, DonationProjectCon
         titleLabel.text = donationProject.title
         subtitleLabel.text = donationProject.subtitle
         remainingDateLabel.text = "\(donationProject.leftDays)일 남음"
-        accumulatedDonationLabel.text = "\(donationProject.currentAmount)원"
+        accumulatedDonationLabel.text = "\(donationProject.currentAmount.moneyFormat)원"
         let percentage = Double(donationProject.currentAmount) / Double(donationProject.goalAmount)
         progressPercentageLabel.text = "\(Int(percentage * 100))%"
     }
