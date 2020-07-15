@@ -19,37 +19,67 @@ final class HomeViewController: UIViewController {
     @IBOutlet weak var todayMyPlates: UILabel!
     @IBOutlet weak var todayMySavings: UILabel!
     @IBOutlet weak var emptyPlateCollectionView: UICollectionView!
+    @IBOutlet weak var donationProjectCollectionView: ClosingDonationProjectCollectionView!
     
     private var personalTotalSavingUseCase: PersonalTotalSavingUseCase!
     private var todayRecordUseCase: TodayRecordUseCase!
     private var emptyPlateUseCase: EmptyPlateUseCase!
     private var emptyPlateInfo: ChallengeEmptyPlate!
+    private var donationProjectDataSource: DonationProjectCollectionViewDataSource<ClosingDonationProjectCell>!
+    private var donationProjectDelegate: ClosingDonationProjectCollectionViewDelegate!
+    private var donationUseCase: DonationUseCase!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        fetchDatas()
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return emptyPlateInfo.data.count
     }
     
-    private func configure() {
-        configureUI()
-        configureUseCases()
-        
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EmptyPlateCollectionViewCell.self), for: indexPath) as! EmptyPlateCollectionViewCell
+        let url = URL(string: emptyPlateInfo.data[indexPath.row].image)
+        KingfisherManager.shared.retrieveImage(with: url!, options: nil, progressBlock: nil, downloadTaskUpdated: nil) { (result) in
+            switch result {
+            case .success(let value):
+                cell.configureImage(value.image)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        return cell
+    }
+}
+
+// MARK:- Fetch Datas
+
+extension HomeViewController {
+    private func fetchDatas() {
         fetchPersonalTotalSaving()
         fetchTodayRecords()
         fetchEmptyPlate()
-        
-        configureCollectionView()
+        fetchDonationProjects()
     }
     
-    private func configureUI() {
-        personalTotalView.roundCorner(cornerRadius: 15)
-        personalTotalView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.3)
-    }
-    
-    private func configureUseCases() {
-        personalTotalSavingUseCase = PersonalTotalSavingUseCase()
-        todayRecordUseCase = TodayRecordUseCase()
-        emptyPlateUseCase = EmptyPlateUseCase()
+    private func fetchDonationProjects() {
+        let request = DonationClosingProjectRequest().asURLRequest()
+        donationUseCase.getResources(
+            request: request,
+            dataType: DonationProjectContainer.self) { (result) in
+                switch result {
+                case .success(let container):
+                    self.donationProjectDataSource.updateDonationProjects(container.data)
+                case .failure(_):
+                    break
+                }
+        }
     }
     
     private func fetchPersonalTotalSaving() {
@@ -92,30 +122,53 @@ final class HomeViewController: UIViewController {
             }
         }
     }
+}
+
+// MARK:- Configuration
+
+extension HomeViewController {
+    private func configure() {
+        configureUI()
+        configureUseCases()
+        configureCollectionView()
+        configureDonationProject()
+    }
+    
+    private func configureDonationProject() {
+        configureDonationProjectDataSource()
+        configureDonationProjectDelegate()
+        configureDonationUseCase()
+    }
+    
+    private func configureDonationProjectDelegate() {
+        donationProjectDelegate = ClosingDonationProjectCollectionViewDelegate(frame: view.frame.size)
+        donationProjectCollectionView.delegate = donationProjectDelegate
+    }
+    
+    private func configureDonationUseCase() {
+        donationUseCase = DonationUseCase()
+    }
+    
+    private func configureDonationProjectDataSource() {
+        donationProjectDataSource = DonationProjectCollectionViewDataSource<ClosingDonationProjectCell>(
+            handler: { (_) in
+                self.donationProjectCollectionView.reloadData()
+        })
+        donationProjectCollectionView.dataSource = donationProjectDataSource
+    }
+    
+    private func configureUI() {
+        personalTotalView.roundCorner(cornerRadius: 15)
+        personalTotalView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.3)
+    }
+    
+    private func configureUseCases() {
+        personalTotalSavingUseCase = PersonalTotalSavingUseCase()
+        todayRecordUseCase = TodayRecordUseCase()
+        emptyPlateUseCase = EmptyPlateUseCase()
+    }
     
     private func configureCollectionView() {
         emptyPlateCollectionView.register(UINib(nibName: String(describing: EmptyPlateCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EmptyPlateCollectionViewCell.self))
-    }
-}
-
-// MARK: - UICollectionViewDataSource
-
-extension HomeViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return emptyPlateInfo.data.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EmptyPlateCollectionViewCell.self), for: indexPath) as! EmptyPlateCollectionViewCell
-        let url = URL(string: emptyPlateInfo.data[indexPath.row].image)
-        KingfisherManager.shared.retrieveImage(with: url!, options: nil, progressBlock: nil, downloadTaskUpdated: nil) { (result) in
-            switch result {
-            case .success(let value):
-                cell.configureImage(value.image)
-            case .failure(let error):
-                print(error)
-            }
-        }
-        return cell
     }
 }
