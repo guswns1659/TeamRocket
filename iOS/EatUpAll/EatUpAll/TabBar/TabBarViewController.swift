@@ -41,6 +41,7 @@ extension TabBarViewController {
     }
     
     private func configureTabBar() {
+        tabBar.isTranslucent = false
         tabBar.tintColor = UIColor(named: "key_green")
     }
     
