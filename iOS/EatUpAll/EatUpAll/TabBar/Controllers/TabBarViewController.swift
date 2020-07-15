@@ -24,7 +24,9 @@ final class TabBarViewController: UITabBarController {
     
     private var homeViewController: UIViewController!
     private var donationViewController: UIViewController!
+    private var challengeViewController: UIViewController!
     private var challengeFeedViewController: UIViewController!
+    private var myPageViewController: UIViewController!
     private var challengeButton: UIButton!
 
     override func viewDidLoad() {
@@ -109,9 +111,9 @@ extension TabBarViewController {
     private func configureChildViewControllers() {
         homeViewController = HomeViewController.loadFromNib()
         donationViewController = DonationViewController.loadFromNib()
-        let doChallengeViewController = UIViewController()
+        challengeViewController = UIViewController()
         challengeFeedViewController = ChallengeFeedViewController.loadFromNib()
-        let myPageViewController = UIViewController()
+        myPageViewController = UIViewController()
         
         let donationNavigationController = UINavigationController(rootViewController: donationViewController)
         let challengeNavigationController = UINavigationController(rootViewController: challengeFeedViewController)
@@ -119,7 +121,7 @@ extension TabBarViewController {
         viewControllers = [
             homeViewController,
             donationNavigationController,
-            doChallengeViewController,
+            challengeViewController,
             challengeNavigationController,
             myPageViewController
         ]
@@ -128,7 +130,9 @@ extension TabBarViewController {
     private func configureTabBarItems() {
         homeViewController.title = "홈"
         donationViewController.title = "기부"
+        challengeViewController.title = "인증"
         challengeFeedViewController.title = "챌린지"
+        myPageViewController.title = "내 정보"
     }
     
     private func configureTabBarImages() {
