@@ -13,6 +13,7 @@
                 <outlet property="containerView" destination="dk1-gY-YZ8" id="uKV-UJ-1Cy"/>
                 <outlet property="donateButton" destination="EWw-8n-xqB" id="ToE-yG-hEO"/>
                 <outlet property="frameView" destination="iN0-l3-epB" id="YHk-bw-hFH"/>
+                <outlet property="transparentView" destination="pIB-iW-hlr" id="yfi-yt-Q9S"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,13 +23,6 @@
             <subviews>
                 <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIB-iW-hlr">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <subviews>
-                        <view alpha="0.40000000596046448" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zmr-RB-EgL">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
-                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dk1-gY-YZ8">

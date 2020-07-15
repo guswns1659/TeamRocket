@@ -57,7 +57,6 @@ class DonationDetailViewController: UIViewController {
     }
 
     @IBAction func donationButtonDidTap(_ sender: UIButton) {
-        donationButton.isHidden = true
         donateView.isHidden = false
     }
     
