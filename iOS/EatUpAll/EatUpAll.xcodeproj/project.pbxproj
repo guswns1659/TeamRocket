@@ -302,8 +302,6 @@
 				38714B2924BC780C00E9B9FC /* Assets.xcassets */,
 				38714B2B24BC780C00E9B9FC /* LaunchScreen.storyboard */,
 				38714B2E24BC780C00E9B9FC /* Info.plist */,
-				302BB02624BD6ED9000EB297 /* DonationDetailViewController.swift */,
-				302BB02724BD6ED9000EB297 /* DonationDetailViewController.xib */,
 			);
 			path = EatUpAll;
 			sourceTree = "<group>";
@@ -355,6 +353,8 @@
 			children = (
 				38714B3F24BC7FA400E9B9FC /* DonationViewController.swift */,
 				38714B4024BC7FA400E9B9FC /* DonationViewController.xib */,
+				302BB02624BD6ED9000EB297 /* DonationDetailViewController.swift */,
+				302BB02724BD6ED9000EB297 /* DonationDetailViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
