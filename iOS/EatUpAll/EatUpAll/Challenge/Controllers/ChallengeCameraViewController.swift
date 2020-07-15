@@ -21,6 +21,8 @@ final class ChallengeCameraViewController: UIViewController {
     private var photoOutput: AVCapturePhotoOutput?
     
     private var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    
+    private var capturedImage: UIImage?
 
     @IBOutlet weak var cameraButton: UIButton!
     
@@ -31,8 +33,24 @@ final class ChallengeCameraViewController: UIViewController {
     }
     
     @IBAction func cameraButtonDidTap(_ sender: Any) {
-        previewViewController.modalPresentationStyle = .fullScreen
-        present(previewViewController, animated: false, completion: nil)
+        let settings = AVCapturePhotoSettings()
+        photoOutput?.capturePhoto(with: settings, delegate: self)
+    }
+}
+
+// MARK:- AVCapturePhotoCaptureDelegate
+
+extension ChallengeCameraViewController: AVCapturePhotoCaptureDelegate {
+    func photoOutput(
+        _ output: AVCapturePhotoOutput,
+        didFinishProcessingPhoto photo: AVCapturePhoto,
+        error: Error?) {
+        if let imageData = photo.fileDataRepresentation() {
+            capturedImage = UIImage(data: imageData)
+            previewViewController.modalPresentationStyle = .fullScreen
+            previewViewController.configureCapturedImage(capturedImage)
+            present(previewViewController, animated: false, completion: nil)
+        }
     }
 }
 
@@ -72,9 +90,11 @@ extension ChallengeCameraViewController {
         do {
             let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera)
             captureSession.addInput(captureDeviceInput)
+            photoOutput = AVCapturePhotoOutput()
             photoOutput?.setPreparedPhotoSettingsArray(
                 [AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecType.jpeg])],
                 completionHandler: nil)
+            captureSession.addOutput(photoOutput!)
         } catch {
             print(error)
         }
