@@ -13,6 +13,7 @@
                 <outlet property="allDonateView" destination="x9G-gY-YHn" id="SNT-L0-8aJ"/>
                 <outlet property="amountTextField" destination="omD-ys-7ES" id="E2Z-8i-S6v"/>
                 <outlet property="containerView" destination="dk1-gY-YZ8" id="uKV-UJ-1Cy"/>
+                <outlet property="containerViewBottomAnchor" destination="m4a-fs-Bkl" id="2WK-eP-7lt"/>
                 <outlet property="donateButton" destination="EWw-8n-xqB" id="ToE-yG-hEO"/>
                 <outlet property="ecoPointLabel" destination="ixK-c9-MsY" id="T4z-O9-hLW"/>
                 <outlet property="frameView" destination="iN0-l3-epB" id="YHk-bw-hFH"/>

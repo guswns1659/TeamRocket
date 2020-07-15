@@ -17,6 +17,7 @@ class DonateView: UIView {
     @IBOutlet weak var ecoPointLabel: UILabel!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var allDonateView: UIView!
+    @IBOutlet weak var containerViewBottomAnchor: NSLayoutConstraint!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,5 +60,12 @@ class DonateView: UIView {
     
     func configureTextField(handler: (UITextField) -> Void) {
         handler(amountTextField)
+    }
+    
+    func moveContainerView(constant: CGFloat) {
+        containerViewBottomAnchor.constant = constant
+        UIView.animateCurveEaseOut(withDuration: 0.5, animations: {
+            self.layoutIfNeeded()
+        })
     }
 }
