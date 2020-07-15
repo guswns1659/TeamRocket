@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="currentMoney" destination="3at-O9-tkn" id="uo1-ID-RkD"/>
                 <outlet property="descriptionStackView" destination="raM-hW-k7L" id="6Ld-JK-SlW"/>
+                <outlet property="donationButton" destination="ELU-OU-V9E" id="eOu-6c-cmW"/>
                 <outlet property="donationRatio" destination="XcM-co-j0M" id="U7p-OJ-TyF"/>
                 <outlet property="donatorCount" destination="bQ7-Gx-c0c" id="Slh-Nf-F4g"/>
                 <outlet property="hostCompany" destination="rKP-7S-uNI" id="gbQ-eW-5KY"/>
@@ -28,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssf-cg-LO6">
-                    <rect key="frame" x="0.0" y="44" width="414" height="752"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleAspectFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="1200" translatesAutoresizingMaskIntoConstraints="NO" id="IgR-b3-ha6">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="1366"/>
@@ -216,20 +217,23 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELU-OU-V9E">
                     <rect key="frame" x="8" y="800" width="398" height="54"/>
                     <color key="backgroundColor" name="key_green"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <state key="normal" title="기부하기">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="donationButtonDidTap:" destination="-1" eventType="touchUpInside" id="9yF-Gy-AaD"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="Ssf-cg-LO6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="62q-V0-Hq3"/>
-                <constraint firstItem="Ssf-cg-LO6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="AGZ-b1-u8J"/>
+                <constraint firstItem="Ssf-cg-LO6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AGZ-b1-u8J"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IgR-b3-ha6" secondAttribute="trailing" id="Gqv-tH-yly"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ssf-cg-LO6" secondAttribute="trailing" id="UHB-EQ-CLj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ELU-OU-V9E" secondAttribute="trailing" constant="8" id="aol-MB-K2J"/>
-                <constraint firstItem="Ssf-cg-LO6" firstAttribute="bottom" secondItem="ELU-OU-V9E" secondAttribute="top" constant="-4" id="cdg-y8-OLD"/>
+                <constraint firstItem="Ssf-cg-LO6" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="cdg-y8-OLD"/>
                 <constraint firstItem="ELU-OU-V9E" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.06" id="jQa-l6-kir"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ELU-OU-V9E" secondAttribute="bottom" constant="8" id="mAj-x1-SCY"/>
                 <constraint firstItem="IgR-b3-ha6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nZ9-Xz-cOT"/>

@@ -20,3 +20,7 @@ struct DonationDetail: Codable {
     private(set) var title: String
     private(set) var titleWithCompany: String
 }
+
+struct MyEcoPoint: Codable {
+    private(set) var ecoPoint: Int
+}
