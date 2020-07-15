@@ -110,7 +110,7 @@ extension TabBarViewController {
         homeViewController = HomeViewController.loadFromNib()
         donationViewController = DonationViewController.loadFromNib()
         let doChallengeViewController = UIViewController()
-        challengeFeedViewController = ChallengeViewController.loadFromNib()
+        challengeFeedViewController = ChallengeFeedViewController.loadFromNib()
         let myPageViewController = UIViewController()
         
         let donationNavigationController = UINavigationController(rootViewController: donationViewController)
