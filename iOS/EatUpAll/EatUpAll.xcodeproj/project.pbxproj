@@ -251,6 +251,14 @@
 			path = Delegates;
 			sourceTree = "<group>";
 		};
+		383F239C24BEE6D900C5E8C9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				38714B2424BC780A00E9B9FC /* TabBarViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		38652A3524BC85BA006A8A48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,7 +319,7 @@
 		38714B3424BC79BB00E9B9FC /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				38714B2424BC780A00E9B9FC /* TabBarViewController.swift */,
+				383F239C24BEE6D900C5E8C9 /* Controllers */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
