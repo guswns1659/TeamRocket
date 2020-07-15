@@ -9,6 +9,8 @@
 import UIKit
 
 final class ChallengeCameraViewController: UIViewController {
+    
+    private var previewViewController: ChallengePreviewViewController!
 
     @IBOutlet weak var cameraButton: UIButton!
     
@@ -19,6 +21,8 @@ final class ChallengeCameraViewController: UIViewController {
     }
     
     @IBAction func cameraButtonDidTap(_ sender: Any) {
+        previewViewController.modalPresentationStyle = .fullScreen
+        present(previewViewController, animated: false, completion: nil)
     }
 }
 
@@ -26,6 +30,10 @@ final class ChallengeCameraViewController: UIViewController {
 
 extension ChallengeCameraViewController {
     private func configure() {
-        
+        configurePreviewViewController()
+    }
+    
+    private func configurePreviewViewController() {
+        previewViewController = ChallengePreviewViewController.loadFromNib()
     }
 }
