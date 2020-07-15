@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3022698824BF09A3005A864C /* DonateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022698724BF09A3005A864C /* DonateView.swift */; };
 		3022698A24BF09BA005A864C /* DonateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3022698924BF09BA005A864C /* DonateView.xib */; };
+		3022698C24BF33F9005A864C /* MyEcoPointRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022698B24BF33F9005A864C /* MyEcoPointRequest.swift */; };
+		3022698E24BF342D005A864C /* MyEcoPointUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022698D24BF342D005A864C /* MyEcoPointUseCase.swift */; };
 		302BB01824BD65C6000EB297 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB01724BD65C6000EB297 /* Endpoint.swift */; };
 		302BB01A24BD65DB000EB297 /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB01924BD65DB000EB297 /* NetworkDispatcher.swift */; };
 		302BB01C24BD661E000EB297 /* Session+NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB01B24BD661D000EB297 /* Session+NetworkDispatcher.swift */; };
@@ -72,6 +74,8 @@
 /* Begin PBXFileReference section */
 		3022698724BF09A3005A864C /* DonateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateView.swift; sourceTree = "<group>"; };
 		3022698924BF09BA005A864C /* DonateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonateView.xib; sourceTree = "<group>"; };
+		3022698B24BF33F9005A864C /* MyEcoPointRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEcoPointRequest.swift; sourceTree = "<group>"; };
+		3022698D24BF342D005A864C /* MyEcoPointUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEcoPointUseCase.swift; sourceTree = "<group>"; };
 		302BB01724BD65C6000EB297 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		302BB01924BD65DB000EB297 /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		302BB01B24BD661D000EB297 /* Session+NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+NetworkDispatcher.swift"; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				30B0A30324BDC37900BB9E55 /* TodayRecordUseCase.swift */,
 				380B222624BDEA6C0004FA55 /* DonationUseCase.swift */,
 				30B0A30724BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift */,
+				3022698D24BF342D005A864C /* MyEcoPointUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				380B222824BDEA9B0004FA55 /* DonationClosingProjectRequest.swift */,
 				380B222A24BDEAD30004FA55 /* DonationWholeProjectRequest.swift */,
 				30DA856B24BED2B100297204 /* DonationProjectDetailRequest.swift */,
+				3022698B24BF33F9005A864C /* MyEcoPointRequest.swift */,
 			);
 			path = Donation;
 			sourceTree = "<group>";
@@ -512,6 +518,7 @@
 				306FA78224BD585200279A18 /* EmptyPlateCollectionViewCell.swift in Sources */,
 				30B0A2F824BD9E0300BB9E55 /* EmptyPlateRequest.swift in Sources */,
 				383F239B24BEAD7400C5E8C9 /* UIView+Animation.swift in Sources */,
+				3022698E24BF342D005A864C /* MyEcoPointUseCase.swift in Sources */,
 				380B222724BDEA6C0004FA55 /* DonationUseCase.swift in Sources */,
 				38652A3A24BC89E4006A8A48 /* ClosingDonationProjectCell.swift in Sources */,
 				38EB2A7D24BDD3B7002CBDEA /* ChallengeCollectionView.swift in Sources */,
@@ -524,6 +531,7 @@
 				38714B2524BC780A00E9B9FC /* TabBarViewController.swift in Sources */,
 				383D8C8D24BC97F700561EF3 /* DonationProject.swift in Sources */,
 				38EB2A8424BDD5C1002CBDEA /* ChallengeCollectionViewDataSource.swift in Sources */,
+				3022698C24BF33F9005A864C /* MyEcoPointRequest.swift in Sources */,
 				30B0A30C24BDCEE400BB9E55 /* PersonalTotalSaving.swift in Sources */,
 				383D8C7C24BC8E4D00561EF3 /* DonationProjectCollectionView.swift in Sources */,
 				38EB2A7824BDA61D002CBDEA /* ChallengeViewController.swift in Sources */,

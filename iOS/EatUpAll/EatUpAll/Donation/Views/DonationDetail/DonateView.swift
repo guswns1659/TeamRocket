@@ -72,4 +72,8 @@ class DonateView: UIView {
             self.layoutIfNeeded()
         })
     }
+    
+    func configureEcoPointLabel(_ point: Int) {
+        ecoPointLabel.text = "\(point)"
+    }
 }

@@ -25,6 +25,7 @@ class DonationDetailViewController: UIViewController {
     private var donateView: DonateView!
     private var descriptionImages: [UIImage] = []
     private var donationProjectDetailUseCase: DonationProjectDetailUseCase!
+    private var myEcoPointUseCase: MyEcoPointUseCase!
     private let toolBarKeyBoard = UIToolbar()
     
     override func viewDidLoad() {
@@ -58,6 +59,7 @@ class DonationDetailViewController: UIViewController {
         
     private func configureUseCase() {
         donationProjectDetailUseCase = DonationProjectDetailUseCase()
+        myEcoPointUseCase = MyEcoPointUseCase()
     }
 
     private func configureDonateView() {
@@ -78,11 +80,26 @@ class DonationDetailViewController: UIViewController {
     }
     
     @IBAction func donationButtonDidTap(_ sender: UIButton) {
-        donateView.alpha = 1
+        fetchMyEcoPoint()
+        UIView.animate(withDuration: 0.3) {
+            self.donateView.alpha = 1.0
+        }
     }
     
     @IBAction func backButtonDidTap(_ sender: UIButton) {
         dismiss(animated: true)
+    }
+    
+    private func fetchMyEcoPoint() {
+        let request = MyEcoPointRequest().asURLRequest()
+        myEcoPointUseCase.getResources(request: request, dataType: MyEcoPoint.self) { result in
+            switch result {
+            case .success(let point):
+                self.donateView.configureEcoPointLabel(point.ecoPoint)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     func fetchDonationDetailData(id: Int) {
@@ -90,14 +107,14 @@ class DonationDetailViewController: UIViewController {
         donationProjectDetailUseCase.getResources(request: request, dataType: DonationDetail.self) { result in
             switch result {
             case .success(let donationDetail):
-                self.configureData(data: donationDetail)
+                self.generateData(data: donationDetail)
             case .failure(let error):
                 print(error)
             }
         }
     }
     
-    private func configureData(data: DonationDetail) {
+    private func generateData(data: DonationDetail) {
         let url = URL(string: data.mainURL)
         mainImage.kf.setImage(with: url)
         hostCompany.text = data.titleWithCompany
