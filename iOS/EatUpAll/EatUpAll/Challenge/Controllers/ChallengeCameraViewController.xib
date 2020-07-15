@@ -42,7 +42,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sn2-AN-ysU">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                     <color key="backgroundColor" name="key_green"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45E-Tj-1f2">
@@ -82,8 +82,8 @@
                 <constraint firstItem="Ide-bp-ZL6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Mxz-ei-uXq"/>
                 <constraint firstAttribute="trailing" secondItem="45E-Tj-1f2" secondAttribute="trailing" id="TOF-qd-Dss"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QcR-ts-Uzc" secondAttribute="trailing" id="XmP-xr-Vi0"/>
-                <constraint firstItem="QcR-ts-Uzc" firstAttribute="top" secondItem="Sn2-AN-ysU" secondAttribute="bottom" id="Z67-ob-FLt"/>
                 <constraint firstItem="Sn2-AN-ysU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZK7-6V-mWH"/>
+                <constraint firstItem="Ide-bp-ZL6" firstAttribute="top" secondItem="Sn2-AN-ysU" secondAttribute="bottom" id="amC-C3-Bfe"/>
                 <constraint firstAttribute="trailing" secondItem="Sn2-AN-ysU" secondAttribute="trailing" id="evL-Qs-8Ud"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QcR-ts-Uzc" secondAttribute="bottom" id="gAS-Ra-N7G"/>
                 <constraint firstItem="Ide-bp-ZL6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="o9t-bG-TfF"/>
