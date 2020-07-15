@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeCameraViewController" customModule="EatUpAll" customModuleProvider="target">
             <connections>
+                <outlet property="cameraButton" destination="8rO-Vb-Te1" id="21A-7c-Ngv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,6 +29,9 @@
                                 <constraint firstAttribute="width" secondItem="8rO-Vb-Te1" secondAttribute="height" multiplier="1:1" id="9Lf-z8-kqz"/>
                                 <constraint firstAttribute="height" constant="48" id="yla-93-AJv"/>
                             </constraints>
+                            <connections>
+                                <action selector="cameraButtonDidTap:" destination="-1" eventType="touchUpInside" id="Bse-Oe-r3a"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

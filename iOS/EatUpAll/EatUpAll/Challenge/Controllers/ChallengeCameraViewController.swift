@@ -10,8 +10,22 @@ import UIKit
 
 final class ChallengeCameraViewController: UIViewController {
 
+    @IBOutlet weak var cameraButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configure()
+    }
+    
+    @IBAction func cameraButtonDidTap(_ sender: Any) {
+    }
+}
+
+// MARK:- Configuration
+
+extension ChallengeCameraViewController {
+    private func configure() {
+        
     }
 }
