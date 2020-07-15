@@ -10,7 +10,7 @@ import Foundation
 
 struct DonationDetail: Codable {
     private(set) var currentMoney: Int
-    private(set) var descriptionURL: [String]
+    private(set) var descriptionURL: String
     private(set) var donators: Int
     private(set) var id: Int
     private(set) var leftDay: Int
