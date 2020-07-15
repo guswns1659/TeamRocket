@@ -69,7 +69,7 @@ extension TabBarViewController {
         tabChallenge.title = "인증"
         
         UIView.animateCurveEaseOut(
-            withDuration: 0.5,
+            withDuration: 0.3,
             animations: {
                 self.view.alpha = 0.99
         }) { (_) in
