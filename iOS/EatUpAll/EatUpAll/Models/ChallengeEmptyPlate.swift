@@ -14,9 +14,11 @@ struct ChallengeEmptyPlate: Codable {
 
 struct Plate: Codable {
     private(set) var likeCount: Int
-    private(set) var url: String
+    private(set) var image: String
     private(set) var description: String
     private(set) var restaurantName: String
     private(set) var createdAt: String
     private(set) var updatedAt: String
+    private(set) var latitude: Double
+    private(set) var longitude: Double
 }
