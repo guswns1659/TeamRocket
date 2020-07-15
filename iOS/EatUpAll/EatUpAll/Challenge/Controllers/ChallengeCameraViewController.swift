@@ -36,6 +36,10 @@ final class ChallengeCameraViewController: UIViewController {
         let settings = AVCapturePhotoSettings()
         photoOutput?.capturePhoto(with: settings, delegate: self)
     }
+    
+    @IBAction func dismissButtonDidTap(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK:- AVCapturePhotoCaptureDelegate
