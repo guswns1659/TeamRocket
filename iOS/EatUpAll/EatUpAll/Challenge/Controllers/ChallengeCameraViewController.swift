@@ -109,11 +109,10 @@ extension ChallengeCameraViewController {
         cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
         cameraPreviewLayer?.frame = self.view.frame
-        view.layer.insertSublayer(cameraPreviewLayer!, at: 0)
+        backgroundView.layer.insertSublayer(cameraPreviewLayer!, at: 0)
     }
     
     private func startRunningCaptureSession() {
-        backgroundView.backgroundColor = .clear
         captureSession.startRunning()
     }
     

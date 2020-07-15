@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcR-ts-Uzc">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcR-ts-Uzc" userLabel="BackgroundView">
                     <rect key="frame" x="0.0" y="96" width="414" height="766"/>
                     <subviews>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rO-Vb-Te1" customClass="ChallengeCameraButton" customModule="EatUpAll" customModuleProvider="target">
