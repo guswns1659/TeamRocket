@@ -37,9 +37,10 @@ final class DonationViewController: UIViewController {
 
         guard let indexPath = notification.userInfo?["indexPath"] as? IndexPath else { return }
         closingDonationProjectDataSource.referDonationProject(at: indexPath) { donationProject in
-
+            self.present(donationDetailViewController, animated: true) {
+                donationDetailViewController.fetchDonationDetailData(id: donationProject.id)
+            }
         }
-        present(donationDetailViewController, animated: true)
     }
     
     @objc func presentWholeDetailCell(_ notification: Notification) {
@@ -48,9 +49,10 @@ final class DonationViewController: UIViewController {
         donationDetailViewController.modalPresentationStyle = .fullScreen
 
         wholeDonationProjectDataSource.referDonationProject(at: indexPath) { donationProject in
-
+            self.present(donationDetailViewController, animated: true) {
+                donationDetailViewController.fetchDonationDetailData(id: donationProject.id)
+            }
         }
-        present(donationDetailViewController, animated: true)
     }
     
     deinit {
