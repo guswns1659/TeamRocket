@@ -7,10 +7,20 @@
 //
 
 import UIKit
+import AVFoundation
 
 final class ChallengeCameraViewController: UIViewController {
     
+    @IBOutlet weak var backgroundView: UIView!
     private var previewViewController: ChallengePreviewViewController!
+    private var captureSession = AVCaptureSession()
+    private var backCamera: AVCaptureDevice?
+    private var frontCamera: AVCaptureDevice?
+    private var currentCamera: AVCaptureDevice!
+    
+    private var photoOutput: AVCapturePhotoOutput?
+    
+    private var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
 
     @IBOutlet weak var cameraButton: UIButton!
     
@@ -31,6 +41,56 @@ final class ChallengeCameraViewController: UIViewController {
 extension ChallengeCameraViewController {
     private func configure() {
         configurePreviewViewController()
+        configureCaptureSession()
+        configureDevice()
+        configureInputOutput()
+        configurePreviewLayer()
+        startRunningCaptureSession()
+    }
+    
+    private func configureCaptureSession() {
+        captureSession.sessionPreset = .photo
+    }
+    
+    private func configureDevice() {
+        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(
+            deviceTypes: [.builtInWideAngleCamera],
+            mediaType: .video,
+            position: .back)
+        let devices = deviceDiscoverySession.devices
+        for device in devices {
+            if device.position == .back {
+                backCamera = device
+            } else if device.position == .front {
+                frontCamera = device
+            }
+        }
+        currentCamera = backCamera
+    }
+    
+    private func configureInputOutput() {
+        do {
+            let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera)
+            captureSession.addInput(captureDeviceInput)
+            photoOutput?.setPreparedPhotoSettingsArray(
+                [AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecType.jpeg])],
+                completionHandler: nil)
+        } catch {
+            print(error)
+        }
+    }
+    
+    private func configurePreviewLayer() {
+        cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
+        cameraPreviewLayer?.frame = self.view.frame
+        view.layer.insertSublayer(cameraPreviewLayer!, at: 0)
+    }
+    
+    private func startRunningCaptureSession() {
+        backgroundView.backgroundColor = .clear
+        captureSession.startRunning()
     }
     
     private func configurePreviewViewController() {

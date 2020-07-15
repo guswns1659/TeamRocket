@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeCameraViewController" customModule="EatUpAll" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="QcR-ts-Uzc" id="cEU-gT-WoY"/>
                 <outlet property="cameraButton" destination="8rO-Vb-Te1" id="21A-7c-Ngv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
