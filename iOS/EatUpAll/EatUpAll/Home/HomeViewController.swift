@@ -26,6 +26,7 @@ final class HomeViewController: UIViewController {
     private var emptyPlateUseCase: EmptyPlateUseCase!
     private var emptyPlateInfo: ChallengeEmptyPlate!
     private var donationProjectDataSource: DonationProjectCollectionViewDataSource<ClosingDonationProjectCell>!
+    private var donationProjectDelegate: ClosingDonationProjectCollectionViewDelegate!
     private var donationUseCase: DonationUseCase!
     
     override func viewDidLoad() {
@@ -135,7 +136,13 @@ extension HomeViewController {
     
     private func configureDonationProject() {
         configureDonationProjectDataSource()
+        configureDonationProjectDelegate()
         configureDonationUseCase()
+    }
+    
+    private func configureDonationProjectDelegate() {
+        donationProjectDelegate = ClosingDonationProjectCollectionViewDelegate(frame: view.frame.size)
+        donationProjectCollectionView.delegate = donationProjectDelegate
     }
     
     private func configureDonationUseCase() {
