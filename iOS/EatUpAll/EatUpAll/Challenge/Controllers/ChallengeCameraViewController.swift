@@ -14,8 +14,6 @@ final class ChallengeCameraViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     private var previewViewController: ChallengePreviewViewController!
     private var captureSession = AVCaptureSession()
-    private var backCamera: AVCaptureDevice?
-    private var frontCamera: AVCaptureDevice?
     private var currentCamera: AVCaptureDevice!
     
     private var photoOutput: AVCapturePhotoOutput?
@@ -77,15 +75,8 @@ extension ChallengeCameraViewController {
             deviceTypes: [.builtInWideAngleCamera],
             mediaType: .video,
             position: .back)
-        let devices = deviceDiscoverySession.devices
-        for device in devices {
-            if device.position == .back {
-                backCamera = device
-            } else if device.position == .front {
-                frontCamera = device
-            }
-        }
-        currentCamera = backCamera
+        let device = deviceDiscoverySession.devices.first!
+        currentCamera = device
     }
     
     private func configureInputOutput() {
