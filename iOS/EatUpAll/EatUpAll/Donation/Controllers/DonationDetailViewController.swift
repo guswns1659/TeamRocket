@@ -68,11 +68,11 @@ class DonationDetailViewController: UIViewController {
         donateView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         donateView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         donateView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        donateView.isHidden = true
+        donateView.alpha = 0
     }
 
     @IBAction func donationButtonDidTap(_ sender: UIButton) {
-        donateView.isHidden = false
+        donateView.alpha = 1
     }
     
     @IBAction func backButtonDidTap(_ sender: UIButton) {

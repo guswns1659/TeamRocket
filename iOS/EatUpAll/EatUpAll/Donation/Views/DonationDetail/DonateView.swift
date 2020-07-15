@@ -51,7 +51,9 @@ class DonateView: UIView {
     }
     
     @objc private func hide(recognizer: UITapGestureRecognizer) {
-        isHidden = true
+        UIView.animate(withDuration: 0.3) {
+            self.alpha = 0.0
+        }
     }
     
     @objc private func allDonate(recognizer: UITapGestureRecognizer) {

@@ -29,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssf-cg-LO6">
-                    <rect key="frame" x="0.0" y="44" width="414" height="752"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleAspectFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="1200" translatesAutoresizingMaskIntoConstraints="NO" id="IgR-b3-ha6">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="1366"/>
@@ -229,11 +229,11 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="Ssf-cg-LO6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="62q-V0-Hq3"/>
-                <constraint firstItem="Ssf-cg-LO6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="AGZ-b1-u8J"/>
+                <constraint firstItem="Ssf-cg-LO6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AGZ-b1-u8J"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IgR-b3-ha6" secondAttribute="trailing" id="Gqv-tH-yly"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ssf-cg-LO6" secondAttribute="trailing" id="UHB-EQ-CLj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ELU-OU-V9E" secondAttribute="trailing" constant="8" id="aol-MB-K2J"/>
-                <constraint firstItem="Ssf-cg-LO6" firstAttribute="bottom" secondItem="ELU-OU-V9E" secondAttribute="top" constant="-4" id="cdg-y8-OLD"/>
+                <constraint firstItem="Ssf-cg-LO6" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="cdg-y8-OLD"/>
                 <constraint firstItem="ELU-OU-V9E" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.06" id="jQa-l6-kir"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ELU-OU-V9E" secondAttribute="bottom" constant="8" id="mAj-x1-SCY"/>
                 <constraint firstItem="IgR-b3-ha6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nZ9-Xz-cOT"/>
