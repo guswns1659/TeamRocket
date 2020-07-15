@@ -14,6 +14,9 @@ class DonateView: UIView {
     @IBOutlet weak var transparentView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var donateButton: UIButton!
+    @IBOutlet weak var ecoPointLabel: UILabel!
+    @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var allDonateView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,11 +42,18 @@ class DonateView: UIView {
     }
     
     private func configureGestureRecognizer() {
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(hide(recognizer:)))
-        transparentView.addGestureRecognizer(gesture)
+        let hideGesture = UITapGestureRecognizer(target: self, action: #selector(hide(recognizer:)))
+        transparentView.addGestureRecognizer(hideGesture)
+        
+        let allDonateGesture = UITapGestureRecognizer(target: self, action: #selector(allDonate(recognizer:)))
+        allDonateView.addGestureRecognizer(allDonateGesture)
     }
     
     @objc private func hide(recognizer: UITapGestureRecognizer) {
         isHidden = true
+    }
+    
+    @objc private func allDonate(recognizer: UITapGestureRecognizer) {
+        amountTextField.text = ecoPointLabel.text
     }
 }

@@ -10,8 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DonateView" customModule="EatUpAll" customModuleProvider="target">
             <connections>
+                <outlet property="allDonateView" destination="x9G-gY-YHn" id="SNT-L0-8aJ"/>
+                <outlet property="amountTextField" destination="omD-ys-7ES" id="E2Z-8i-S6v"/>
                 <outlet property="containerView" destination="dk1-gY-YZ8" id="uKV-UJ-1Cy"/>
                 <outlet property="donateButton" destination="EWw-8n-xqB" id="ToE-yG-hEO"/>
+                <outlet property="ecoPointLabel" destination="ixK-c9-MsY" id="T4z-O9-hLW"/>
                 <outlet property="frameView" destination="iN0-l3-epB" id="YHk-bw-hFH"/>
                 <outlet property="transparentView" destination="pIB-iW-hlr" id="yfi-yt-Q9S"/>
             </connections>
@@ -39,9 +42,9 @@
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xdV-NS-rrJ">
                             <rect key="frame" x="22" y="83" width="354" height="50"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omD-ys-7ES">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omD-ys-7ES">
                                     <rect key="frame" x="0.0" y="0.0" width="268.5" height="50"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9G-gY-YHn">
