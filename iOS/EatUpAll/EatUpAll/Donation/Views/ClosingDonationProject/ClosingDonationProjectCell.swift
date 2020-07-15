@@ -10,11 +10,13 @@ import UIKit
 
 protocol DonationProjectConfigurable: UICollectionViewCell {
     func configureCell(with donationProject: DonationProject)
+    func configureTitleImage(_ image: UIImage)
 }
 
 final class ClosingDonationProjectCell: UICollectionViewCell, DonationProjectConfigurable {
     
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var remainingDateLabel: UILabel!
     @IBOutlet weak var accumulatedDonationLabel: UILabel!
     @IBOutlet weak var progressPercentageLabel: UILabel!
@@ -28,7 +30,16 @@ final class ClosingDonationProjectCell: UICollectionViewCell, DonationProjectCon
     }
     
     func configureCell(with donationProject: DonationProject) {
-
+        titleLabel.text = donationProject.title
+        subtitleLabel.text = donationProject.subtitle
+        remainingDateLabel.text = "\(donationProject.leftDays)일 남음"
+        accumulatedDonationLabel.text = "\(donationProject.currentAmount)원"
+        let percentage = Double(donationProject.currentAmount) / Double(donationProject.goalAmount)
+        progressPercentageLabel.text = "\(Int(percentage * 100))%"
+    }
+    
+    func configureTitleImage(_ image: UIImage) {
+        imageView.image = image
     }
 }
 

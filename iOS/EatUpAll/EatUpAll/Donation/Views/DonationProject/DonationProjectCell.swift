@@ -28,6 +28,10 @@ final class DonationProjectCell: UICollectionViewCell, DonationProjectConfigurab
     func configureCell(with donationProject: DonationProject) {
         
     }
+    
+    func configureTitleImage(_ image: UIImage) {
+        
+    }
 }
 
 // MARK:- Configuration
