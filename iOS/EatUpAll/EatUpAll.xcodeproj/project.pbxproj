@@ -298,7 +298,6 @@
 		38714B1F24BC780A00E9B9FC /* EatUpAll */ = {
 			isa = PBXGroup;
 			children = (
-				30B0A2F924BD9EB100BB9E55 /* Models */,
 				30A1615024BD62A1007FEDC4 /* Networks */,
 				38714B3424BC79BB00E9B9FC /* TabBar */,
 				38714B3924BC7BE000E9B9FC /* Home */,
@@ -338,6 +337,7 @@
 		38714B3924BC7BE000E9B9FC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				30B0A2F924BD9EB100BB9E55 /* Models */,
 				306FA77F24BD581300279A18 /* Views */,
 				38714B3A24BC7BFD00E9B9FC /* HomeViewController.swift */,
 				38714B3B24BC7BFD00E9B9FC /* HomeViewController.xib */,
