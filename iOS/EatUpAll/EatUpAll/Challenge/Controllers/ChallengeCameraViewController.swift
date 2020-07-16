@@ -12,6 +12,8 @@ import AVFoundation
 final class ChallengeCameraViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var captureAnimationView: UIView!
+    
     private var previewViewController: ChallengePreviewViewController!
     private var captureSession = AVCaptureSession()
     private var currentCamera: AVCaptureDevice!
@@ -26,6 +28,15 @@ final class ChallengeCameraViewController: UIViewController {
         super.viewDidLoad()
 
         configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureCaptureAnimationView()
+    }
+    
+    private func configureCaptureAnimationView() {
+        captureAnimationView.isHidden = true
     }
     
     @IBAction func cameraButtonDidTap(_ sender: Any) {
@@ -51,10 +62,22 @@ extension ChallengeCameraViewController: AVCapturePhotoCaptureDelegate {
         error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
             let capturedImage = UIImage(data: imageData)
-            previewViewController.modalPresentationStyle = .fullScreen
-            previewViewController.configureCapturedImage(capturedImage)
-            present(previewViewController, animated: false, completion: nil)
+            animateCaptureEffect(completion: { _ in
+                self.previewViewController.configureCapturedImage(capturedImage)
+                self.navigationController?.pushViewController(
+                    self.previewViewController, animated: true)
+            })
         }
+    }
+    
+    private func animateCaptureEffect(completion: ((Bool) -> Void)?) {
+        captureAnimationView.isHidden = false
+        captureAnimationView.alpha = 0
+        UIView.animateCurveEaseOut(
+            withDuration: 0.3,
+            animations: {
+                self.captureAnimationView.alpha = 1.0
+        }, completion: completion)
     }
 }
 
@@ -62,6 +85,7 @@ extension ChallengeCameraViewController: AVCapturePhotoCaptureDelegate {
 
 extension ChallengeCameraViewController {
     private func configure() {
+        configureNavigationController()
         configurePreviewViewController()
         configureCaptureSession()
         configureDevice()
@@ -72,6 +96,10 @@ extension ChallengeCameraViewController {
         configureInputOutput()
         configurePreviewLayer()
         startRunningCaptureSession()
+    }
+    
+    private func configureNavigationController() {
+        navigationController?.navigationBar.isHidden = true
     }
     
     private func configureCaptureSession() {
@@ -108,7 +136,11 @@ extension ChallengeCameraViewController {
         cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-        cameraPreviewLayer?.frame = view.frame
+        cameraPreviewLayer?.frame = CGRect(
+            x: 0,
+            y: view.safeAreaLayoutGuide.layoutFrame.minY,
+            width: view.frame.width,
+            height: view.frame.width)
         backgroundView.layer.insertSublayer(cameraPreviewLayer!, at: 0)
     }
     
