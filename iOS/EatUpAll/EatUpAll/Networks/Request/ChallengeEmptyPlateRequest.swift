@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct EmptyPlateRequest: Request {
+struct ChallengeEmptyPlateRequest: Request {
     var path: String = EndPoint.emptyPlateURL
 }
