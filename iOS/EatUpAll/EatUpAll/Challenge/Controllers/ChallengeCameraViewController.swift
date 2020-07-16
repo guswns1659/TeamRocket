@@ -30,6 +30,15 @@ final class ChallengeCameraViewController: UIViewController {
         configure()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureCaptureAnimationView()
+    }
+    
+    private func configureCaptureAnimationView() {
+        captureAnimationView.isHidden = true
+    }
+    
     @IBAction func cameraButtonDidTap(_ sender: Any) {
         let settings = AVCapturePhotoSettings()
         photoOutput?.capturePhoto(with: settings, delegate: self)
