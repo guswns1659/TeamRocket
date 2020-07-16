@@ -111,7 +111,7 @@ extension HomeViewController {
     }
     
     private func fetchChallengeEmptyPlate() {
-        let request = ChallengeEmptyPlateRequest().asURLRequest()
+        let request = WeeklyTopLikedEmptyPlateRequest().asURLRequest()
         challengeEmptyPlateUseCase.getResources(request: request, dataType: ChallengeEmptyPlateContainer.self) { result in
             switch result {
             case .success(let data):
