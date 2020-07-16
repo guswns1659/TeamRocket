@@ -30,9 +30,9 @@ public class ChallengeControllerTest {
 
     @Transactional
     @DisplayName("weeklyTopLike API 테스트")
-    @CsvSource({"2, https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/empty_image4.jpg%20new"})
+    @CsvSource({"4, 2"})
     @ParameterizedTest
-    void weeklyTopLike를_응답한다(Integer likeCount, String challengeUrl) {
+    void weeklyTopLike를_응답한다(Integer size, Integer likeCount) {
 
         String url = "http://localhost:" + port + "/challenge/weeklyTopLike";
 
@@ -44,6 +44,7 @@ public class ChallengeControllerTest {
             .returnResult()
             .getResponseBody();
 
+        assertThat(weeklyTopLikeResponseDto.getData().size()).isEqualTo(size);
         assertThat(weeklyTopLikeResponseDto.getData().get(0).getLikeCount()).isEqualTo(likeCount);
     }
 
