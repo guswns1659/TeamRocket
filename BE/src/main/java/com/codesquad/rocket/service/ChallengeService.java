@@ -76,6 +76,8 @@ public class ChallengeService {
         if (likedIsTrue(liked)) {
             try {
                 challenge.addLike(Like.of(account));
+                challengeRepository.save(challenge);
+
                 return LikeResponseDto.builder()
                     .status(OK)
                     .build();
@@ -88,6 +90,8 @@ public class ChallengeService {
 
         try {
             challenge.removeLike(account);
+            challengeRepository.save(challenge);
+
             return LikeResponseDto.builder()
                 .status(OK)
                 .build();
@@ -123,8 +127,7 @@ public class ChallengeService {
             .anyMatch(like -> like.getName().equals(account.getName()));
     }
 
-    public ChallengeStatusResponseDto addChallenge(Long restaurantId, MultipartFile multipartFile, String description) throws
-        IOException {
+    public ChallengeStatusResponseDto addChallenge(Long restaurantId, MultipartFile multipartFile, String description) {
         try {
             Restaurant restaurant = restaurantRepository.findById(restaurantId).orElse(new Restaurant());
             Account account = accountRepository.findAccountByName("delma").orElse(new Account());
@@ -136,6 +139,40 @@ public class ChallengeService {
                 .description(description)
                 .point(restaurant.getPoint())
                 .restaurantName(restaurant.getName())
+                .updatedAt(new Date())
+                .url(uploadUrl)
+                .build();
+
+            challengeRepository.save(challenge);
+            PointHistory pointHistory = PointHistory.builder()
+                .pointOption(PointOption.SAVE)
+                .createdAt(new Date())
+                .ecoPoint(200)
+                .build();
+            account.addPointHistory(pointHistory);
+            accountRepository.save(account);
+
+            return ChallengeStatusResponseDto.builder()
+                .status("200")
+                .build();
+        } catch (Exception e) {
+            return ChallengeStatusResponseDto.builder()
+                .status("400")
+                .build();
+        }
+    }
+
+
+    public ChallengeStatusResponseDto addChallenge(MultipartFile multipartFile, String description) {
+        try {
+            // Restaurant restaurant = restaurantRepository.findById(restaurantId).orElse(new Restaurant());
+            Account account = accountRepository.findAccountByName("delma").orElse(new Account());
+            String uploadUrl = s3Uploader.upload(multipartFile, "static");
+
+            Challenge challenge = Challenge.builder()
+                .account(account)
+                .createdAt(new Date())
+                .description(description)
                 .updatedAt(new Date())
                 .url(uploadUrl)
                 .build();

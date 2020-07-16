@@ -69,7 +69,7 @@ public class ChallengeControllerTest {
 
     @Transactional
     @DisplayName("challenge/{id} API 테스트")
-    @CsvSource({"1"})
+    @CsvSource({"2"})
     @ParameterizedTest
     void 챌린지_상세페이지를_응답한다(Long id) {
 
@@ -88,7 +88,7 @@ public class ChallengeControllerTest {
 
     @Transactional
     @DisplayName("challenge/{id}?liked= API 테스트")
-    @CsvSource({"1, True, 200"})
+    @CsvSource({"2, True, 200"})
     @ParameterizedTest
     void 좋아요의_결과를_응답한다(Long id, String result, String status) {
 

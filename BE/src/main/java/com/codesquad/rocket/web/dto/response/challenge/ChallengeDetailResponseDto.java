@@ -25,6 +25,7 @@ public class ChallengeDetailResponseDto {
     private Date createdAt;
     private Date updatedAt;
     private String isLiked;
+    private String author;
 
     public static ChallengeDetailResponseDto likedOf(Challenge challenge) {
         return ChallengeDetailResponseDto.builder()
@@ -37,6 +38,7 @@ public class ChallengeDetailResponseDto {
             .updatedAt(challenge.getUpdatedAt())
             .latitude(challenge.getPoint().getY())
             .longitude(challenge.getPoint().getX())
+            .author(challenge.getAccount().getName())
             .isLiked("True")
             .build();
     }
@@ -52,6 +54,7 @@ public class ChallengeDetailResponseDto {
             .updatedAt(challenge.getUpdatedAt())
             .latitude(challenge.getPoint().getY())
             .longitude(challenge.getPoint().getX())
+            .author(challenge.getAccount().getName())
             .isLiked("False")
             .build();
     }

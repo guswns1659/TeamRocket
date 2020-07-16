@@ -50,10 +50,18 @@ public class ChallengeController {
 
     @PostMapping(path = "{restaurantId}",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ChallengeStatusResponseDto upload(
-        @PathVariable Long restaurantId,
+        @PathVariable(required = false) Long restaurantId,
         @RequestPart(value = "picture") MultipartFile file,
-        @RequestParam(value = "description") String description) throws IOException {
+        @RequestParam(value = "description") String description) {
 
         return challengeService.addChallenge(restaurantId, file, description);
+    }
+
+    @PostMapping(path = "upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ChallengeStatusResponseDto upload2(
+        @RequestPart(value = "picture") MultipartFile file,
+        @RequestParam(value = "description") String description) {
+
+        return challengeService.addChallenge(file, description);
     }
 }
