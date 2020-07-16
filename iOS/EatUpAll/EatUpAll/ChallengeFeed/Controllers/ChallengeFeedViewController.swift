@@ -17,11 +17,31 @@ final class ChallengeFeedViewController: UIViewController {
 
     @IBOutlet weak var collectionView: ChallengeCollectionView!
     private var dataSource: ChallengeCollectionViewDataSource!
+    private var useCase: ChallengeEmptyPlateUseCase!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configure()
+        fetchDatas()
+    }
+}
+
+// MARK:- Fetching Datas
+
+extension ChallengeFeedViewController {
+    private func fetchDatas() {
+        let request = ChallengeEmptyPlateRequest().asURLRequest()
+        useCase.getResources(
+            request: request,
+            dataType: ChallengeEmptyPlateContainer.self) { (result) in
+                switch result {
+                case .success(let container):
+                    self.dataSource.configureData(container.data)
+                case .failure(_):
+                    break
+                }
+        }
     }
 }
 
@@ -32,6 +52,11 @@ extension ChallengeFeedViewController {
         configureUI()
         configureCollectionViewDataSource()
         configureCollectionViewLayout()
+        configureUseCase()
+    }
+    
+    private func configureUseCase() {
+        useCase = ChallengeEmptyPlateUseCase()
     }
     
     private func configureCollectionViewLayout() {
@@ -50,7 +75,9 @@ extension ChallengeFeedViewController {
     }
     
     private func configureCollectionViewDataSource() {
-        dataSource = ChallengeCollectionViewDataSource()
+        dataSource = ChallengeCollectionViewDataSource(handler: { (_) in
+            self.collectionView.reloadData()
+        })
         collectionView.dataSource = dataSource
     }
 }

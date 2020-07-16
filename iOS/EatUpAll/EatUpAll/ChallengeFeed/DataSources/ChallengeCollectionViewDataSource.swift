@@ -29,6 +29,10 @@ final class ChallengeCollectionViewDataSource: NSObject, UICollectionViewDataSou
         self.changedHandler = handler
     }
     
+    func configureData(_ data: [ChallengeEmptyPlate]) {
+        self.challengeEmptyPlates = data
+    }
+    
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
