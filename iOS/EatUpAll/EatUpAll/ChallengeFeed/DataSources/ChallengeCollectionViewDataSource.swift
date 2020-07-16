@@ -34,6 +34,11 @@ final class ChallengeCollectionViewDataSource: NSObject, UICollectionViewDataSou
         self.challengeEmptyPlates = data
     }
     
+    func referChallengeEmptyPlates(at indexPath: IndexPath, handler: (ChallengeEmptyPlate) -> Void ) {
+        let challengeEmptyPlate = challengeEmptyPlates[indexPath.item]
+        handler(challengeEmptyPlate)
+    }
+    
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {

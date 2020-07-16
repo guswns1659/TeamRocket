@@ -10,6 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeDetailViewController" customModule="EatUpAll" customModuleProvider="target">
             <connections>
+                <outlet property="challengeImageView" destination="pGO-Bt-yJB" id="efc-pK-FSw"/>
+                <outlet property="descriptionTextView" destination="Avb-yM-3iN" id="Zb0-cd-cTv"/>
+                <outlet property="likeButton" destination="5Ot-S7-OEg" id="YsG-Ya-v7a"/>
+                <outlet property="likeCountLabel" destination="gqm-rn-yR6" id="NZt-az-uDi"/>
+                <outlet property="placeLabel" destination="5eg-TK-4FA" id="yXj-c6-gk5"/>
+                <outlet property="userLabel" destination="0N5-Nn-4NL" id="Onz-PY-elG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,7 +38,7 @@
                     <color key="textColor" name="key_dark_gray"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pGO-Bt-yJB">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pGO-Bt-yJB">
                     <rect key="frame" x="0.0" y="102" width="414" height="390"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ot-S7-OEg">
@@ -100,7 +106,6 @@
         </view>
     </objects>
     <resources>
-        <image name="logo" width="120" height="120"/>
         <image name="map_pin" width="54.666667938232422" height="86.666664123535156"/>
         <image name="suit.heart" catalog="system" width="128" height="109"/>
         <namedColor name="key_dark_gray">

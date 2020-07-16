@@ -104,6 +104,9 @@ extension ChallengeFeedViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let challengeDetailViewController = ChallengeDetailViewController.loadFromNib()
+        dataSource.referChallengeEmptyPlates(at: indexPath) { emptyPlate in
+            challengeDetailViewController.configureID(emptyPlate.id)
+        }
         navigationController?.pushViewController(challengeDetailViewController, animated: true)
     }
 }
