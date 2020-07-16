@@ -17,11 +17,34 @@ final class ChallengeFeedViewController: UIViewController {
 
     @IBOutlet weak var collectionView: ChallengeCollectionView!
     private var dataSource: ChallengeCollectionViewDataSource!
+    private var useCase: ChallengeEmptyPlateUseCase!
+    
+    private var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configure()
+        fetchChallengeFeed()
+    }
+}
+
+// MARK:- Fetching Datas
+
+extension ChallengeFeedViewController {
+    private func fetchChallengeFeed() {
+        let request = ChallengeEmptyPlateRequest().asURLRequest()
+        useCase.getResources(
+            request: request,
+            dataType: ChallengeEmptyPlateContainer.self) { (result) in
+                switch result {
+                case .success(let container):
+                    self.refreshControl.endRefreshing()
+                    self.dataSource.configureData(container.data)
+                case .failure(_):
+                    break
+                }
+        }
     }
 }
 
@@ -32,6 +55,23 @@ extension ChallengeFeedViewController {
         configureUI()
         configureCollectionViewDataSource()
         configureCollectionViewLayout()
+        configureUseCase()
+        configureRefreshControl()
+    }
+    
+    private func configureRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor(named: "key_green")
+        refreshControl.addTarget(self, action: #selector(refreshChallengeFeed), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
+    }
+    
+    @objc private func refreshChallengeFeed() {
+        fetchChallengeFeed()
+    }
+    
+    private func configureUseCase() {
+        useCase = ChallengeEmptyPlateUseCase()
     }
     
     private func configureCollectionViewLayout() {
@@ -50,7 +90,9 @@ extension ChallengeFeedViewController {
     }
     
     private func configureCollectionViewDataSource() {
-        dataSource = ChallengeCollectionViewDataSource()
+        dataSource = ChallengeCollectionViewDataSource(handler: { (_) in
+            self.collectionView.reloadData()
+        })
         collectionView.dataSource = dataSource
     }
 }
