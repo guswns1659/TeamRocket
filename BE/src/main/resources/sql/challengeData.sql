@@ -62,3 +62,21 @@ VALUES (1, CURRENT_TIME , 'description4', POINT (126.29216, 33.6632387), '마루
 
 insert into challenge_like (challenge_id, account_name) values (1, 'delma');
 insert into challenge_like (challenge_id, account_name) values (1, 'jack');
+insert into challenge_like (challenge_id, account_name) values (1, 'cory');
+insert into challenge_like (challenge_id, account_name) values (1, 'poogle');
+insert into challenge_like (challenge_id, account_name) values (1, 'solar');
+
+insert into challenge_like (challenge_id, account_name) values (2, 'ever');
+insert into challenge_like (challenge_id, account_name) values (2, 'david');
+insert into challenge_like (challenge_id, account_name) values (2, 'jack');
+insert into challenge_like (challenge_id, account_name) values (2, 'delma');
+
+insert into challenge_like (challenge_id, account_name) values (3, 'poogle');
+insert into challenge_like (challenge_id, account_name) values (3, 'delma');
+insert into challenge_like (challenge_id, account_name) values (3, 'jack');
+
+insert into challenge_like (challenge_id, account_name) values (4, 'delma');
+insert into challenge_like (challenge_id, account_name) values (4, 'jack');
+
+insert into challenge_like (challenge_id, account_name) values (5, 'jack');
+

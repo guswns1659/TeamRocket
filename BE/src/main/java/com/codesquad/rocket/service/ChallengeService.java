@@ -38,7 +38,7 @@ public class ChallengeService {
     public WeeklyTopLikeResponseDto weeklyTopLike() {
         List<Challenge> challenges = challengeRepository.findAll();
         challenges.sort((o1, o2) -> o2.getLikes().size() - o1.getLikes().size());
-        challenges.subList(0, 4);
+        challenges = challenges.subList(0, 7);
         List<ChallengeDetailResponseDto> data = challengeHasLikeWithAccount(challenges);
 
         return WeeklyTopLikeResponseDto.builder()
