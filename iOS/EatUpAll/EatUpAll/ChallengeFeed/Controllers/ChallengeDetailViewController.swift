@@ -47,6 +47,7 @@ class ChallengeDetailViewController: UIViewController {
         placeLabel.text = plateInfo.restaurantName
         likeCountLabel.text = "\(plateInfo.likeCount)"
         descriptionTextView.text = plateInfo.description
+        userLabel.text = plateInfo.author
         let buttonImage = UIImage(systemName: "suit.heart.fill")
         if plateInfo.isLiked == "True" {
             likeButton.setImage(buttonImage, for: .normal)
