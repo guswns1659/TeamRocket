@@ -24,6 +24,7 @@ final class TabBarViewController: UITabBarController {
     
     private var homeViewController: UIViewController!
     private var donationViewController: UIViewController!
+    private var challengeCameraNavigationController: UINavigationController!
     private var challengeCameraViewController: UIViewController!
     private var challengeFeedViewController: UIViewController!
     private var myPageViewController: UIViewController!
@@ -58,7 +59,6 @@ extension TabBarViewController {
     }
     
     private func presentCameraController() {
-        let challengeCameraNavigationController = UINavigationController(rootViewController: challengeCameraViewController)
         challengeCameraNavigationController.modalPresentationStyle = .fullScreen
         present(challengeCameraNavigationController, animated: true, completion: nil)
     }
@@ -119,6 +119,7 @@ extension TabBarViewController {
         homeViewController = HomeViewController.loadFromNib()
         donationViewController = DonationViewController.loadFromNib()
         challengeCameraViewController = ChallengeCameraViewController.loadFromNib()
+        challengeCameraNavigationController = UINavigationController(rootViewController: challengeCameraViewController)
         let dummyChallengeCameraViewController = UIViewController()
         challengeFeedViewController = ChallengeFeedViewController.loadFromNib()
         myPageViewController = UIViewController()
