@@ -37,8 +37,14 @@ final class ChallengePreviewViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        resetPreviewController()
         configureTopConstraint()
         descriptionTextView.delegate = self
+    }
+    
+    private func resetPreviewController() {
+        descriptionTextView.text = ""
+        descriptionPlaceholderLabel.isHidden = false
     }
     
     func configureCapturedImage(_ image: UIImage?) {
