@@ -136,7 +136,11 @@ extension ChallengeCameraViewController {
         cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-        cameraPreviewLayer?.frame = view.frame
+        cameraPreviewLayer?.frame = CGRect(
+            x: 0,
+            y: view.safeAreaLayoutGuide.layoutFrame.minY,
+            width: view.frame.width,
+            height: view.frame.width)
         backgroundView.layer.insertSublayer(cameraPreviewLayer!, at: 0)
     }
     
