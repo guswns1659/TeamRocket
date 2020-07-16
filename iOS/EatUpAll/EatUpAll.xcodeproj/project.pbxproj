@@ -35,7 +35,7 @@
 		30DA856824BED09600297204 /* DonationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA856724BED09600297204 /* DonationDetail.swift */; };
 		30DA856A24BED26A00297204 /* DonationProjectDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA856924BED26A00297204 /* DonationProjectDetailUseCase.swift */; };
 		30DA856C24BED2B200297204 /* DonationProjectDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA856B24BED2B100297204 /* DonationProjectDetailRequest.swift */; };
-		38002B9624C02D6B00D85D72 /* ChallengeEmptyPlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38002B9524C02D6B00D85D72 /* ChallengeEmptyPlate.swift */; };
+		38002B9B24C0356800D85D72 /* ChallengeEmptyPlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38002B9A24C0356800D85D72 /* ChallengeEmptyPlate.swift */; };
 		380B222724BDEA6C0004FA55 /* DonationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B222624BDEA6C0004FA55 /* DonationUseCase.swift */; };
 		380B222924BDEA9B0004FA55 /* DonationClosingProjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B222824BDEA9B0004FA55 /* DonationClosingProjectRequest.swift */; };
 		380B222B24BDEAD30004FA55 /* DonationWholeProjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B222A24BDEAD30004FA55 /* DonationWholeProjectRequest.swift */; };
@@ -104,7 +104,7 @@
 		30DA856724BED09600297204 /* DonationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationDetail.swift; sourceTree = "<group>"; };
 		30DA856924BED26A00297204 /* DonationProjectDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectDetailUseCase.swift; sourceTree = "<group>"; };
 		30DA856B24BED2B100297204 /* DonationProjectDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectDetailRequest.swift; sourceTree = "<group>"; };
-		38002B9524C02D6B00D85D72 /* ChallengeEmptyPlate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEmptyPlate.swift; sourceTree = "<group>"; };
+		38002B9A24C0356800D85D72 /* ChallengeEmptyPlate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEmptyPlate.swift; sourceTree = "<group>"; };
 		380B222624BDEA6C0004FA55 /* DonationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationUseCase.swift; sourceTree = "<group>"; };
 		380B222824BDEA9B0004FA55 /* DonationClosingProjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationClosingProjectRequest.swift; sourceTree = "<group>"; };
 		380B222A24BDEAD30004FA55 /* DonationWholeProjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationWholeProjectRequest.swift; sourceTree = "<group>"; };
@@ -235,10 +235,10 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		38002B9224C02CFD00D85D72 /* Models */ = {
+		38002B9924C0355D00D85D72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				38002B9524C02D6B00D85D72 /* ChallengeEmptyPlate.swift */,
+				38002B9A24C0356800D85D72 /* ChallengeEmptyPlate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -448,7 +448,7 @@
 		38EB2A7524BDA5D0002CBDEA /* ChallengeFeed */ = {
 			isa = PBXGroup;
 			children = (
-				38002B9224C02CFD00D85D72 /* Models */,
+				38002B9924C0355D00D85D72 /* Models */,
 				38EB2A7A24BDD2D4002CBDEA /* Controllers */,
 				38EB2A8224BDD571002CBDEA /* DataSources */,
 				38EB2A7B24BDD38A002CBDEA /* Views */,
@@ -576,7 +576,7 @@
 				383D8C8F24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift in Sources */,
 				38714B3C24BC7BFD00E9B9FC /* HomeViewController.swift in Sources */,
 				306FA78224BD585200279A18 /* EmptyPlateCollectionViewCell.swift in Sources */,
-				38002B9624C02D6B00D85D72 /* ChallengeEmptyPlate.swift in Sources */,
+				38002B9B24C0356800D85D72 /* ChallengeEmptyPlate.swift in Sources */,
 				30B0A2F824BD9E0300BB9E55 /* ChallengeEmptyPlateRequest.swift in Sources */,
 				383F239B24BEAD7400C5E8C9 /* UIView+Animation.swift in Sources */,
 				3022698E24BF342D005A864C /* MyEcoPointUseCase.swift in Sources */,
