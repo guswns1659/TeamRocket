@@ -8,12 +8,31 @@
 
 import UIKit
 
-final class ChallengeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
+final class ChallengeCollectionViewDataSource: NSObject, UICollectionViewDataSource, ViewModelBinding {
+    
+    typealias Key = [ChallengeEmptyPlate]
+    private var changedHandler: Handler
+    private var challengeEmptyPlates: [ChallengeEmptyPlate] = [] {
+        didSet {
+            changedHandler(challengeEmptyPlates)
+        }
+    }
+    
+    init(
+        with challengeEmptyPlates: [ChallengeEmptyPlate] = [],
+        handler: @escaping Handler = { _ in }) {
+        self.challengeEmptyPlates = challengeEmptyPlates
+        self.changedHandler = handler
+    }
+    
+    func updateNotify(handler: @escaping Handler) {
+        self.changedHandler = handler
+    }
     
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
-        16
+        return challengeEmptyPlates.count
     }
     
     func collectionView(
