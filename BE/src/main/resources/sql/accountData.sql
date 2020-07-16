@@ -12,13 +12,19 @@ use angelhack;
 -- drop table if exists corporation;
 
 -- Account
+INSERT INTO account (eco_point, name, today_plate, total_plate) VALUES ( 2000, 'delma', 1, 40);
 INSERT INTO account (eco_point, name, today_plate, total_plate) VALUES ( 1000, 'jack', 2,  20);
 INSERT INTO account (eco_point, name, today_plate, total_plate) VALUES ( 1500, 'cory', 3,  30);
-INSERT INTO account (eco_point, name, today_plate, total_plate) VALUES ( 2000, 'delma', 1, 40);
 
 -- -- PointHistory
 INSERT INTO account_point_history (account_id, created_at, eco_point, point_option, project_name)
 VALUES (1, CURRENT_TIME , 300, 'SAVE', '북극곰 살리기 프로젝트');
---
+INSERT INTO account_point_history (account_id, created_at, eco_point, point_option, project_name)
+VALUES (1, CURRENT_TIME , 400, 'SAVE', '북극곰 살리기 프로젝트');
+INSERT INTO account_point_history (account_id, created_at, eco_point, point_option, project_name)
+VALUES (1, CURRENT_TIME , 500, 'SAVE', '북극곰 살리기 프로젝트');
+INSERT INTO account_point_history (account_id, created_at, eco_point, point_option, project_name)
+VALUES (1, CURRENT_TIME , 600, 'SAVE', '북극곰 살리기 프로젝트');
+
 
 

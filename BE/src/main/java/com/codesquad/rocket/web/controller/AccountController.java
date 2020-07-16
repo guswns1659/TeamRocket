@@ -4,10 +4,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.codesquad.rocket.service.AccountService;
 import com.codesquad.rocket.web.dto.response.account.EcoPointResponseDto;
+import com.codesquad.rocket.web.dto.response.account.PointHistoryResponseDto;
 import com.codesquad.rocket.web.dto.response.account.TodaySavingResponseDto;
 import com.codesquad.rocket.web.dto.response.account.TotalSavingResponseDto;
-import com.codesquad.rocket.service.AccountService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -30,5 +31,10 @@ public class AccountController {
     @GetMapping("ecoPoint")
     public EcoPointResponseDto ecoPointOfAccount() {
         return accountService.ecoPointOfAccount();
+    }
+
+    @GetMapping("pointHistory")
+    public PointHistoryResponseDto pointHistory() {
+        return accountService.pointHistory();
     }
 }

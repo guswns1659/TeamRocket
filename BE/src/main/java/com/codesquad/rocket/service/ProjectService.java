@@ -13,8 +13,8 @@ import com.codesquad.rocket.domain.account.PointOption;
 import com.codesquad.rocket.domain.project.Project;
 import com.codesquad.rocket.domain.project.ProjectRepository;
 import com.codesquad.rocket.web.dto.response.project.ProjectDetailResponseDto;
-import com.codesquad.rocket.web.dto.response.project.ProjectOrderByResponseDtos;
 import com.codesquad.rocket.web.dto.response.project.ProjectOrderByDto;
+import com.codesquad.rocket.web.dto.response.project.ProjectOrderByResponseDtos;
 import lombok.RequiredArgsConstructor;
 
 @Service

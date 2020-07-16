@@ -57,7 +57,7 @@ public class Project {
 
     private Integer donators;
 
-    @ElementCollection(fetch = FetchType.EAGER)
+    @ElementCollection
     @CollectionTable(name = "project_image", joinColumns = @JoinColumn(name = "project_id"))
     @AttributeOverrides({
         @AttributeOverride(name = "url", column = @Column(name = "project_image"))

@@ -1,13 +1,12 @@
 package com.codesquad.rocket.domain.account;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -41,14 +40,14 @@ public class Account {
     private Integer ecoPoint;
 
     @OneToMany(mappedBy = "account")
-    private final Set<ProjectAccount> projectAccounts = new HashSet<>();
+    private final List<ProjectAccount> projectAccounts = new ArrayList<>();
 
-    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private final Set<Challenge> challenges = new HashSet<>();
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
+    private final List<Challenge> challenges = new ArrayList<>();
 
     @ElementCollection
     @CollectionTable(name = "account_point_history", joinColumns = @JoinColumn(name = "account_id"))
-    private final Set<PointHistory> pointHistories = new HashSet<>();
+    private final List<PointHistory> pointHistories = new ArrayList<>();
 
     public void addChallenge(Challenge challenge) {
         this.getChallenges().add(challenge);

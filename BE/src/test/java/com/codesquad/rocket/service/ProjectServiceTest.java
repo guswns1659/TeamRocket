@@ -18,6 +18,7 @@ public class ProjectServiceTest {
     @Autowired
     private ProjectService projectService;
 
+    @Transactional
     @DisplayName("orderByCreatedAt API 테스트")
     @CsvSource({"5, 9000, 해양 포유류 보호법 후원 프로젝트, 6"})
     @ParameterizedTest
@@ -29,6 +30,7 @@ public class ProjectServiceTest {
         assertThat(projectOrderByResponseDtos.getData().get(0).getProjectTitle()).isEqualTo(projectTitle);
     }
 
+    @Transactional
     @DisplayName("orderByDeadLine API 테스트")
     @CsvSource({"3, 9000, 해양 포유류 보호법 후원 프로젝트, 6"})
     @ParameterizedTest

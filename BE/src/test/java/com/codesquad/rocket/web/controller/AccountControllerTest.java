@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 import com.codesquad.rocket.web.dto.response.account.EcoPointResponseDto;
+import com.codesquad.rocket.web.dto.response.account.PointHistoryResponseDto;
 import com.codesquad.rocket.web.dto.response.account.TodaySavingResponseDto;
 import com.codesquad.rocket.web.dto.response.account.TotalSavingResponseDto;
 import com.codesquad.rocket.web.dto.response.project.ProjectDetailResponseDto;
@@ -83,7 +84,7 @@ public class AccountControllerTest {
     }
 
     @DisplayName("donate api 테스트")
-    @CsvSource({"1, 1000, 10000"})
+    @CsvSource({"1, 600, 9600"})
     @ParameterizedTest
     void 사용자의_포인트로_기부하면_추가된_프로젝트_응답한다(Long projectId, Integer ecoPoint, Integer currentMoney) {
 
@@ -98,5 +99,25 @@ public class AccountControllerTest {
             .getResponseBody();
 
         assertThat(projectDetailResponseDto.getCurrentMoney()).isEqualTo(currentMoney);
+    }
+
+    @DisplayName("포인트 히스토리 api 테스트")
+    @CsvSource({"2020-07-16, 600, 기부, 북극곰 살리기 프로젝트"})
+    @ParameterizedTest
+    void 포인트_히스토리를_응답한다(String createdAt, Integer ecoPoint, String pointOption, String projectName) {
+
+        String url = "http://localhost:" + port + "/account/pointHistory";
+
+        PointHistoryResponseDto pointHistoryResponseDto = webTestClient.get()
+            .uri(url)
+            .exchange()
+            .expectStatus().isEqualTo(HttpStatus.OK)
+            .expectBody(PointHistoryResponseDto.class)
+            .returnResult()
+            .getResponseBody();
+
+        assertThat(pointHistoryResponseDto.getData().get(0).getCreatedAt()).isEqualTo(createdAt);
+        assertThat(pointHistoryResponseDto.getData().get(0).getEcoPoint()).isEqualTo(ecoPoint);
+        assertThat(pointHistoryResponseDto.getData().get(0).getPointOption()).isEqualTo(pointOption);
     }
 }
