@@ -1,5 +1,5 @@
 //
-//  ChallengeViewController.swift
+//  ChallengeFeedViewController.swift
 //  EatUpAll
 //
 //  Created by Cory Kim on 2020/07/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ChallengeViewController: UIViewController {
+final class ChallengeFeedViewController: UIViewController {
     
     private enum Metric {
         static let numberOfCellAtRow: CGFloat = 3
@@ -27,7 +27,7 @@ final class ChallengeViewController: UIViewController {
 
 // MARK:- Configuration
 
-extension ChallengeViewController {
+extension ChallengeFeedViewController {
     private func configure() {
         configureUI()
         configureCollectionViewDataSource()
