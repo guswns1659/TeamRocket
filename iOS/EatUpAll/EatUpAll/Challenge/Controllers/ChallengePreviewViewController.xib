@@ -37,7 +37,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TY-lD-NsX">
-                            <rect key="frame" x="339" y="9.5" width="59" height="33"/>
+                            <rect key="frame" x="335" y="9.5" width="59" height="33"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <state key="normal" title="사용하기">
                                 <color key="titleColor" name="key_dark_gray"/>
@@ -53,7 +53,7 @@
                         <constraint firstItem="aAZ-bL-E4w" firstAttribute="leading" secondItem="SVU-tj-KGJ" secondAttribute="leading" constant="16" id="aHN-BD-DCk"/>
                         <constraint firstItem="aAZ-bL-E4w" firstAttribute="centerY" secondItem="SVU-tj-KGJ" secondAttribute="centerY" id="tWj-AM-dXC"/>
                         <constraint firstItem="6TY-lD-NsX" firstAttribute="centerY" secondItem="SVU-tj-KGJ" secondAttribute="centerY" id="te9-ui-IDj"/>
-                        <constraint firstAttribute="trailing" secondItem="6TY-lD-NsX" secondAttribute="trailing" constant="16" id="z8I-r0-3P9"/>
+                        <constraint firstAttribute="trailing" secondItem="6TY-lD-NsX" secondAttribute="trailing" constant="20" id="z8I-r0-3P9"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2l1-WU-WRr">
