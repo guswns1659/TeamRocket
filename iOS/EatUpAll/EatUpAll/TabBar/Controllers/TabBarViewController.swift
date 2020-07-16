@@ -24,7 +24,7 @@ final class TabBarViewController: UITabBarController {
     
     private var homeViewController: UIViewController!
     private var donationViewController: UIViewController!
-    private var challengeViewController: UIViewController!
+    private var challengeCameraViewController: UIViewController!
     private var challengeFeedViewController: UIViewController!
     private var myPageViewController: UIViewController!
     private var challengeButton: UIButton!
@@ -57,6 +57,11 @@ extension TabBarViewController {
         animateChallengeButton()
     }
     
+    private func presentCameraController() {
+        challengeCameraViewController.modalPresentationStyle = .fullScreen
+        present(challengeCameraViewController, animated: true, completion: nil)
+    }
+    
     private func animateChallengeButton() {
         let tabChallenge = tabBar.items![2]
         tabChallenge.image = tabChallenge.image?.withTintColor(
@@ -64,12 +69,13 @@ extension TabBarViewController {
         tabChallenge.title = "인증"
         
         UIView.animateCurveEaseOut(
-            withDuration: 0.5,
+            withDuration: 0.2,
             animations: {
                 self.view.alpha = 0.99
         }) { (_) in
             self.view.alpha = 1
             tabChallenge.image = Image.challenge
+            self.presentCameraController()
         }
     }
     
@@ -111,7 +117,8 @@ extension TabBarViewController {
     private func configureChildViewControllers() {
         homeViewController = HomeViewController.loadFromNib()
         donationViewController = DonationViewController.loadFromNib()
-        challengeViewController = UIViewController()
+        challengeCameraViewController = ChallengeCameraViewController.loadFromNib()
+        let dummyChallengeCameraViewController = UIViewController()
         challengeFeedViewController = ChallengeFeedViewController.loadFromNib()
         myPageViewController = UIViewController()
         
@@ -121,7 +128,7 @@ extension TabBarViewController {
         viewControllers = [
             homeViewController,
             donationNavigationController,
-            challengeViewController,
+            dummyChallengeCameraViewController,
             challengeNavigationController,
             myPageViewController
         ]
@@ -130,7 +137,8 @@ extension TabBarViewController {
     private func configureTabBarItems() {
         homeViewController.title = "홈"
         donationViewController.title = "기부"
-        challengeViewController.title = "인증"
+        let tabChallenge = tabBar.items![2]
+        tabChallenge.title = "인증"
         challengeFeedViewController.title = "챌린지"
         myPageViewController.title = "내 정보"
     }
