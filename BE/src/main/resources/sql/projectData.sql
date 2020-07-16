@@ -17,8 +17,8 @@ insert into project_account (account_id, project_id) values (1, 3);
 insert into project_account (account_id, project_id) values (1, 4);
 insert into project_account (account_id, project_id) values (1, 5);
 
-insert into project_image (project_id, project_image) values (1, 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/%ED%95%B4%EC%96%91%ED%8F%AC%EC%9C%A0%EB%A5%98%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.jpeg%20new');
-insert into project_image (project_id, project_image) values (2, 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/%ED%95%B4%EC%96%91%EC%93%B0%EB%A0%88%EA%B8%B0%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.jpeg%20new');
-insert into project_image (project_id, project_image) values (3, 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/%EC%88%9C%EC%B2%9C%EB%A7%8C%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.jpeg%20new');
+insert into project_image (project_id, project_image) values (1, 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/download%20%281%29%20new2');
+insert into project_image (project_id, project_image) values (2, 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/download%20new1');
+insert into project_image (project_id, project_image) values (3, 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/download%20%282%29%20new5');
 insert into project_image (project_id, project_image) values (4, 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/%EB%B6%81%EA%B7%B9%EA%B3%B0%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.jpeg%20new');
 insert into project_image (project_id, project_image) values (5, 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/%EB%82%98%EB%AC%B4%EC%8B%AC%EA%B8%B0%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.jpeg%20new');
