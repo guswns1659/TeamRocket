@@ -12,6 +12,8 @@ import AVFoundation
 final class ChallengeCameraViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var captureAnimationView: UIView!
+    
     private var previewViewController: ChallengePreviewViewController!
     private var captureSession = AVCaptureSession()
     private var currentCamera: AVCaptureDevice!
@@ -51,10 +53,22 @@ extension ChallengeCameraViewController: AVCapturePhotoCaptureDelegate {
         error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
             let capturedImage = UIImage(data: imageData)
-            previewViewController.modalPresentationStyle = .fullScreen
-            previewViewController.configureCapturedImage(capturedImage)
-            present(previewViewController, animated: false, completion: nil)
+            animateCaptureEffect(completion: { _ in
+                self.previewViewController.configureCapturedImage(capturedImage)
+                self.navigationController?.pushViewController(
+                    self.previewViewController, animated: true)
+            })
         }
+    }
+    
+    private func animateCaptureEffect(completion: ((Bool) -> Void)?) {
+        captureAnimationView.isHidden = false
+        captureAnimationView.alpha = 0
+        UIView.animateCurveEaseOut(
+            withDuration: 0.3,
+            animations: {
+                self.captureAnimationView.alpha = 1.0
+        }, completion: completion)
     }
 }
 

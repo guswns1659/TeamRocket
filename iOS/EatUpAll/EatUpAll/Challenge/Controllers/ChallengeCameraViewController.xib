@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="backgroundView" destination="QcR-ts-Uzc" id="cEU-gT-WoY"/>
                 <outlet property="cameraButton" destination="8rO-Vb-Te1" id="21A-7c-Ngv"/>
+                <outlet property="captureAnimationView" destination="Xso-gD-SPg" id="yoA-Ow-6Wm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,8 +23,18 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcR-ts-Uzc" userLabel="BackgroundView">
                     <rect key="frame" x="0.0" y="96" width="414" height="414"/>
+                    <subviews>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xso-gD-SPg">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="Xso-gD-SPg" firstAttribute="top" secondItem="QcR-ts-Uzc" secondAttribute="top" id="CSd-eI-KP5"/>
+                        <constraint firstAttribute="bottom" secondItem="Xso-gD-SPg" secondAttribute="bottom" id="Qex-mO-kef"/>
+                        <constraint firstAttribute="trailing" secondItem="Xso-gD-SPg" secondAttribute="trailing" id="U6a-Ri-OMo"/>
+                        <constraint firstItem="Xso-gD-SPg" firstAttribute="leading" secondItem="QcR-ts-Uzc" secondAttribute="leading" id="f9q-Ky-Ydf"/>
                         <constraint firstAttribute="width" secondItem="QcR-ts-Uzc" secondAttribute="height" multiplier="1:1" id="fBF-Tr-BEf"/>
                     </constraints>
                 </view>
