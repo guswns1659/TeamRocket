@@ -66,6 +66,7 @@ final class ChallengePreviewViewController: UIViewController {
     }
     
     @IBAction func descriptionDoneButtonDidTap(_ sender: Any) {
+        dismissDescriptionMode()
     }
 }
 
