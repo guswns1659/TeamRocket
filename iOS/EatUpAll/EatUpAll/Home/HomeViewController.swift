@@ -23,7 +23,7 @@ final class HomeViewController: UIViewController {
     
     private var personalTotalSavingUseCase: PersonalTotalSavingUseCase!
     private var todayRecordUseCase: TodayRecordUseCase!
-    private var emptyPlateUseCase: EmptyPlateUseCase!
+    private var challengeEmptyPlateUseCase: ChallengeEmptyPlateUseCase!
     private var emptyPlateInfo: ChallengeEmptyPlateContainer!
     private var donationProjectDataSource: DonationProjectCollectionViewDataSource<ClosingDonationProjectCell>!
     private var donationProjectDelegate: ClosingDonationProjectCollectionViewDelegate!
@@ -64,7 +64,7 @@ extension HomeViewController {
     private func fetchDatas() {
         fetchPersonalTotalSaving()
         fetchTodayRecords()
-        fetchEmptyPlate()
+        fetchChallengeEmptyPlate()
         fetchDonationProjects()
     }
     
@@ -110,9 +110,9 @@ extension HomeViewController {
         }
     }
     
-    private func fetchEmptyPlate() {
-        let request = EmptyPlateRequest().asURLRequest()
-        emptyPlateUseCase.getResources(request: request, dataType: ChallengeEmptyPlateContainer.self) { result in
+    private func fetchChallengeEmptyPlate() {
+        let request = ChallengeEmptyPlateRequest().asURLRequest()
+        challengeEmptyPlateUseCase.getResources(request: request, dataType: ChallengeEmptyPlateContainer.self) { result in
             switch result {
             case .success(let data):
                 self.emptyPlateInfo = data
@@ -165,7 +165,7 @@ extension HomeViewController {
     private func configureUseCases() {
         personalTotalSavingUseCase = PersonalTotalSavingUseCase()
         todayRecordUseCase = TodayRecordUseCase()
-        emptyPlateUseCase = EmptyPlateUseCase()
+        challengeEmptyPlateUseCase = ChallengeEmptyPlateUseCase()
     }
     
     private func configureCollectionView() {

@@ -23,8 +23,8 @@
 		306FA78224BD585200279A18 /* EmptyPlateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306FA78024BD585200279A18 /* EmptyPlateCollectionViewCell.swift */; };
 		306FA78324BD585200279A18 /* EmptyPlateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 306FA78124BD585200279A18 /* EmptyPlateCollectionViewCell.xib */; };
 		306FA78D24BD61C300279A18 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 306FA78C24BD61C300279A18 /* Alamofire */; };
-		30B0A2F624BD9CCA00BB9E55 /* EmptyPlateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2F524BD9CCA00BB9E55 /* EmptyPlateUseCase.swift */; };
-		30B0A2F824BD9E0300BB9E55 /* EmptyPlateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2F724BD9E0300BB9E55 /* EmptyPlateRequest.swift */; };
+		30B0A2F624BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2F524BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift */; };
+		30B0A2F824BD9E0300BB9E55 /* ChallengeEmptyPlateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2F724BD9E0300BB9E55 /* ChallengeEmptyPlateRequest.swift */; };
 		30B0A2FE24BDA4BD00BB9E55 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 30B0A2FD24BDA4BD00BB9E55 /* Kingfisher */; };
 		30B0A30024BDC2AA00BB9E55 /* TodayRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2FF24BDC2AA00BB9E55 /* TodayRecord.swift */; };
 		30B0A30224BDC2FF00BB9E55 /* TodayRecordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A30124BDC2FF00BB9E55 /* TodayRecordRequest.swift */; };
@@ -93,8 +93,8 @@
 		302BB02724BD6ED9000EB297 /* DonationDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationDetailViewController.xib; sourceTree = "<group>"; };
 		306FA78024BD585200279A18 /* EmptyPlateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlateCollectionViewCell.swift; sourceTree = "<group>"; };
 		306FA78124BD585200279A18 /* EmptyPlateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPlateCollectionViewCell.xib; sourceTree = "<group>"; };
-		30B0A2F524BD9CCA00BB9E55 /* EmptyPlateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlateUseCase.swift; sourceTree = "<group>"; };
-		30B0A2F724BD9E0300BB9E55 /* EmptyPlateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlateRequest.swift; sourceTree = "<group>"; };
+		30B0A2F524BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEmptyPlateUseCase.swift; sourceTree = "<group>"; };
+		30B0A2F724BD9E0300BB9E55 /* ChallengeEmptyPlateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEmptyPlateRequest.swift; sourceTree = "<group>"; };
 		30B0A2FF24BDC2AA00BB9E55 /* TodayRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecord.swift; sourceTree = "<group>"; };
 		30B0A30124BDC2FF00BB9E55 /* TodayRecordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecordRequest.swift; sourceTree = "<group>"; };
 		30B0A30324BDC37900BB9E55 /* TodayRecordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecordUseCase.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 			children = (
 				302BB01E24BD66CE000EB297 /* UseCase.swift */,
 				30DA856924BED26A00297204 /* DonationProjectDetailUseCase.swift */,
-				30B0A2F524BD9CCA00BB9E55 /* EmptyPlateUseCase.swift */,
+				30B0A2F524BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift */,
 				30B0A30324BDC37900BB9E55 /* TodayRecordUseCase.swift */,
 				380B222624BDEA6C0004FA55 /* DonationUseCase.swift */,
 				30B0A30724BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift */,
@@ -197,7 +197,7 @@
 			children = (
 				380B222C24BDEAEA0004FA55 /* Donation */,
 				302BB02424BD68BE000EB297 /* Request.swift */,
-				30B0A2F724BD9E0300BB9E55 /* EmptyPlateRequest.swift */,
+				30B0A2F724BD9E0300BB9E55 /* ChallengeEmptyPlateRequest.swift */,
 				30B0A30124BDC2FF00BB9E55 /* TodayRecordRequest.swift */,
 				30B0A30924BDCEB300BB9E55 /* PersonalTotalSavingRequest.swift */,
 			);
@@ -577,7 +577,7 @@
 				38714B3C24BC7BFD00E9B9FC /* HomeViewController.swift in Sources */,
 				306FA78224BD585200279A18 /* EmptyPlateCollectionViewCell.swift in Sources */,
 				38002B9624C02D6B00D85D72 /* ChallengeEmptyPlate.swift in Sources */,
-				30B0A2F824BD9E0300BB9E55 /* EmptyPlateRequest.swift in Sources */,
+				30B0A2F824BD9E0300BB9E55 /* ChallengeEmptyPlateRequest.swift in Sources */,
 				383F239B24BEAD7400C5E8C9 /* UIView+Animation.swift in Sources */,
 				3022698E24BF342D005A864C /* MyEcoPointUseCase.swift in Sources */,
 				380B222724BDEA6C0004FA55 /* DonationUseCase.swift in Sources */,
@@ -605,7 +605,7 @@
 				30B0A30824BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift in Sources */,
 				302BB02524BD68BE000EB297 /* Request.swift in Sources */,
 				302BB01A24BD65DB000EB297 /* NetworkDispatcher.swift in Sources */,
-				30B0A2F624BD9CCA00BB9E55 /* EmptyPlateUseCase.swift in Sources */,
+				30B0A2F624BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift in Sources */,
 				30DA856824BED09600297204 /* DonationDetail.swift in Sources */,
 				38714B3824BC7B7C00E9B9FC /* UIViewController+loadFromNib.swift in Sources */,
 				385F612C24BF32D4003C2B7D /* ChallengePreviewViewController.swift in Sources */,
