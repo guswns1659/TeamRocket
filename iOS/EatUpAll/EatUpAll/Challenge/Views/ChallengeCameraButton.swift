@@ -30,6 +30,6 @@ extension ChallengeCameraButton {
     
     private func configureUI() {
         roundCorner(cornerRadius: self.frame.height / 2)
-        drawBorder(color: .white, width: 4.0)
+        drawBorder(color: UIColor(named: "key_light_gray")!, width: 12.0)
     }
 }
