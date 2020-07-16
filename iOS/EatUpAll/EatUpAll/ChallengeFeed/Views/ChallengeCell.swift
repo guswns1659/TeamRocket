@@ -15,4 +15,8 @@ final class ChallengeCell: UICollectionViewCell {
     override func prepareForReuse() {
         imageView.image = nil
     }
+    
+    func updateImage(_ image: UIImage?) {
+        imageView.image = image
+    }
 }

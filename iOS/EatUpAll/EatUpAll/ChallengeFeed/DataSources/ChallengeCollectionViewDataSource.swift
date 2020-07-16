@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class ChallengeCollectionViewDataSource: NSObject, UICollectionViewDataSource, ViewModelBinding {
     
@@ -45,6 +46,16 @@ final class ChallengeCollectionViewDataSource: NSObject, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: String(describing: ChallengeCell.self),
             for: indexPath) as! ChallengeCell
+        let challengeEmptyPlate = challengeEmptyPlates[indexPath.item]
+        let challengeImageURL = URL(string: challengeEmptyPlate.image)!
+        KingfisherManager.shared.retrieveImage(with: challengeImageURL) { (result) in
+            switch result {
+            case .success(let retrieveImageResult):
+                cell.updateImage(retrieveImageResult.image)
+            case .failure(_):
+                break
+            }
+        }
         return cell
     }
 }
