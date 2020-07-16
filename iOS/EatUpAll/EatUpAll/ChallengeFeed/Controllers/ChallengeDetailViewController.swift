@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ChallengeDetailViewController: UIViewController {
 
@@ -40,6 +41,7 @@ class ChallengeDetailViewController: UIViewController {
         descriptionTextView.text = plateInfo.description
         let image = UIImage(systemName: "suit.heart.fill")
         plateInfo.isLiked == "True" ? likeButton.setImage(image, for: .normal) : nil
+        challengeImageView.kf.setImage(with: URL(string:plateInfo.image)!)
     }
     
     private func fetchEmptyPlate(id: Int) {
