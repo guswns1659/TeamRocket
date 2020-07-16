@@ -46,11 +46,13 @@ final class ChallengeCollectionViewDataSource: NSObject, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: String(describing: ChallengeCell.self),
             for: indexPath) as! ChallengeCell
+        cell.startShimmeringAnimation()
         let challengeEmptyPlate = challengeEmptyPlates[indexPath.item]
         let challengeImageURL = URL(string: challengeEmptyPlate.image)!
         KingfisherManager.shared.retrieveImage(with: challengeImageURL) { (result) in
             switch result {
             case .success(let retrieveImageResult):
+                cell.stopShimmeringAnimation()
                 cell.updateImage(retrieveImageResult.image)
             case .failure(_):
                 break
