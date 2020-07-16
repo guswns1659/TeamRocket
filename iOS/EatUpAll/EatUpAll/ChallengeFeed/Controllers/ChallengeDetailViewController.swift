@@ -65,10 +65,12 @@ class ChallengeDetailViewController: UIViewController {
             isLiked = false
             let buttonImage = UIImage(systemName: "suit.heart")
             likeButton.setImage(buttonImage, for: .normal)
+            likeCountLabel.text = String(Int(likeCountLabel.text!)! - 1)
         }else {
             isLiked = true
             let buttonImage = UIImage(systemName: "suit.heart.fill")
             likeButton.setImage(buttonImage, for: .normal)
+            likeCountLabel.text = String(Int(likeCountLabel.text!)! + 1)
         }
     }
 }
