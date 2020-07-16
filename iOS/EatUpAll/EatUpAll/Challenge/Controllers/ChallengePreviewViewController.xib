@@ -16,6 +16,8 @@
                 <outlet property="descriptionContainerBackgroundView" destination="HQj-mv-kEu" id="3vN-r3-KH6"/>
                 <outlet property="descriptionModeNavigationBar" destination="pJJ-n0-Rkk" id="Y8L-nF-cbb"/>
                 <outlet property="descriptionModeNavigationBarTopConstraint" destination="mEt-cg-X1K" id="oFc-qL-wFO"/>
+                <outlet property="descriptionPlaceholderLabel" destination="bRW-HI-N9U" id="sPP-E1-Cp4"/>
+                <outlet property="descriptionTextView" destination="43O-si-NJf" id="P5r-bb-whw"/>
                 <outlet property="descriptionView" destination="5ec-AS-7vx" id="vqV-oR-e3g"/>
                 <outlet property="originDescriptionTopConstraint" destination="RIr-9e-7Ow" id="8HV-QF-aIE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -149,8 +151,8 @@
                                     <color key="textColor" name="key_gray"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="43O-si-NJf">
-                                    <rect key="frame" x="16" y="16" width="382" height="148"/>
+                                <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="43O-si-NJf">
+                                    <rect key="frame" x="10" y="8" width="388" height="156"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="textColor" name="key_dark_gray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -160,9 +162,9 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="bRW-HI-N9U" firstAttribute="leading" secondItem="5ec-AS-7vx" secondAttribute="leading" constant="16" id="5rU-QD-9yr"/>
-                                <constraint firstItem="43O-si-NJf" firstAttribute="top" secondItem="5ec-AS-7vx" secondAttribute="top" constant="16" id="Mbo-YJ-RAJ"/>
+                                <constraint firstItem="43O-si-NJf" firstAttribute="top" secondItem="5ec-AS-7vx" secondAttribute="top" constant="8" id="Mbo-YJ-RAJ"/>
                                 <constraint firstAttribute="height" constant="180" id="Wb1-0m-AJR"/>
-                                <constraint firstItem="43O-si-NJf" firstAttribute="leading" secondItem="5ec-AS-7vx" secondAttribute="leading" constant="16" id="iKL-xH-rv0"/>
+                                <constraint firstItem="43O-si-NJf" firstAttribute="leading" secondItem="5ec-AS-7vx" secondAttribute="leading" constant="10" id="iKL-xH-rv0"/>
                                 <constraint firstAttribute="trailing" secondItem="43O-si-NJf" secondAttribute="trailing" constant="16" id="kcm-YT-o4E"/>
                                 <constraint firstAttribute="bottom" secondItem="43O-si-NJf" secondAttribute="bottom" constant="16" id="sIQ-PL-0Ad"/>
                                 <constraint firstItem="bRW-HI-N9U" firstAttribute="top" secondItem="5ec-AS-7vx" secondAttribute="top" constant="16" id="yJN-Tg-utM"/>

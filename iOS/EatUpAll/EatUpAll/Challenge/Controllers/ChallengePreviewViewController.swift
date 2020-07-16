@@ -20,9 +20,14 @@ final class ChallengePreviewViewController: UIViewController {
     @IBOutlet weak var descriptionModeNavigationBar: UIView!
     @IBOutlet weak var descriptionModeNavigationBarTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionPlaceholderLabel: UILabel!
+    
     private var isDescriptionMode: Bool = false
     
     private var capturedImage: UIImage?
+    
+    private let maximumNumberOfText: Int = 200
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +38,7 @@ final class ChallengePreviewViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureTopConstraint()
+        descriptionTextView.delegate = self
     }
     
     func configureCapturedImage(_ image: UIImage?) {
@@ -57,6 +63,23 @@ final class ChallengePreviewViewController: UIViewController {
     }
 }
 
+extension ChallengePreviewViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.count > 0 {
+            descriptionPlaceholderLabel.isHidden = true
+        }
+    }
+    
+    func textView(
+        _ textView: UITextView,
+        shouldChangeTextIn range: NSRange,
+        replacementText text: String) -> Bool {
+        guard let nsText = textView.text as NSString? else { return false }
+        let newString = nsText.replacingCharacters(in: range, with: text)
+        return newString.count <= maximumNumberOfText
+    }
+}
+
 // MARK:- Description Mode
 
 extension ChallengePreviewViewController {
@@ -76,10 +99,13 @@ extension ChallengePreviewViewController {
         guard !isDescriptionMode else { return }
         isDescriptionMode = true
         
+        descriptionTextView.becomeFirstResponder()
+        
         if originDescriptionTopConstraint != nil {
             originDescriptionTopConstraint.isActive = false
         }
         
+        descriptionTextView.isHidden = false
         descriptionBackgroundView.isHidden = false
         descriptionBackgroundView.alpha = 0
         setOriginDescriptionViewTopConstraint(to: false)
@@ -97,6 +123,9 @@ extension ChallengePreviewViewController {
     private func dismissDescriptionMode() {
         guard isDescriptionMode else { return }
         isDescriptionMode = false
+        
+        self.view.endEditing(true)
+        
         newDescriptionViewTopConstraint.isActive = false
         setOriginDescriptionViewTopConstraint(to: true)
         descriptionModeNavigationBarTopConstraint.constant = -52
