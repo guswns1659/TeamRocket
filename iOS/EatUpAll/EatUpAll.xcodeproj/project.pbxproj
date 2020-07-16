@@ -36,6 +36,7 @@
 		30DA856A24BED26A00297204 /* DonationProjectDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA856924BED26A00297204 /* DonationProjectDetailUseCase.swift */; };
 		30DA856C24BED2B200297204 /* DonationProjectDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA856B24BED2B100297204 /* DonationProjectDetailRequest.swift */; };
 		38002B9B24C0356800D85D72 /* ChallengeEmptyPlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38002B9A24C0356800D85D72 /* ChallengeEmptyPlate.swift */; };
+		38002B9D24C043C500D85D72 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38002B9C24C043C500D85D72 /* UIView+Shimmering.swift */; };
 		380B222724BDEA6C0004FA55 /* DonationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B222624BDEA6C0004FA55 /* DonationUseCase.swift */; };
 		380B222924BDEA9B0004FA55 /* DonationClosingProjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B222824BDEA9B0004FA55 /* DonationClosingProjectRequest.swift */; };
 		380B222B24BDEAD30004FA55 /* DonationWholeProjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B222A24BDEAD30004FA55 /* DonationWholeProjectRequest.swift */; };
@@ -105,6 +106,7 @@
 		30DA856924BED26A00297204 /* DonationProjectDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectDetailUseCase.swift; sourceTree = "<group>"; };
 		30DA856B24BED2B100297204 /* DonationProjectDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectDetailRequest.swift; sourceTree = "<group>"; };
 		38002B9A24C0356800D85D72 /* ChallengeEmptyPlate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEmptyPlate.swift; sourceTree = "<group>"; };
+		38002B9C24C043C500D85D72 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
 		380B222624BDEA6C0004FA55 /* DonationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationUseCase.swift; sourceTree = "<group>"; };
 		380B222824BDEA9B0004FA55 /* DonationClosingProjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationClosingProjectRequest.swift; sourceTree = "<group>"; };
 		380B222A24BDEAD30004FA55 /* DonationWholeProjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationWholeProjectRequest.swift; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 				383D8C8324BC921600561EF3 /* UIView+Shadow.swift */,
 				380B222D24BEA4DE0004FA55 /* Int+DecimalStyle.swift */,
 				383F239A24BEAD7400C5E8C9 /* UIView+Animation.swift */,
+				38002B9C24C043C500D85D72 /* UIView+Shimmering.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				30B0A30824BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift in Sources */,
 				302BB02524BD68BE000EB297 /* Request.swift in Sources */,
 				302BB01A24BD65DB000EB297 /* NetworkDispatcher.swift in Sources */,
+				38002B9D24C043C500D85D72 /* UIView+Shimmering.swift in Sources */,
 				30B0A2F624BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift in Sources */,
 				30DA856824BED09600297204 /* DonationDetail.swift in Sources */,
 				38714B3824BC7B7C00E9B9FC /* UIViewController+loadFromNib.swift in Sources */,
