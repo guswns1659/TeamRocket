@@ -24,7 +24,7 @@ final class HomeViewController: UIViewController {
     private var personalTotalSavingUseCase: PersonalTotalSavingUseCase!
     private var todayRecordUseCase: TodayRecordUseCase!
     private var emptyPlateUseCase: EmptyPlateUseCase!
-    private var emptyPlateInfo: ChallengeEmptyPlate!
+    private var emptyPlateInfo: ChallengeEmptyPlateContainer!
     private var donationProjectDataSource: DonationProjectCollectionViewDataSource<ClosingDonationProjectCell>!
     private var donationProjectDelegate: ClosingDonationProjectCollectionViewDelegate!
     private var donationUseCase: DonationUseCase!
@@ -112,7 +112,7 @@ extension HomeViewController {
     
     private func fetchEmptyPlate() {
         let request = EmptyPlateRequest().asURLRequest()
-        emptyPlateUseCase.getResources(request: request, dataType: ChallengeEmptyPlate.self) { result in
+        emptyPlateUseCase.getResources(request: request, dataType: ChallengeEmptyPlateContainer.self) { result in
             switch result {
             case .success(let data):
                 self.emptyPlateInfo = data
