@@ -1,5 +1,7 @@
 package com.codesquad.rocket.web.dto.response.challenge;
 
+import java.util.List;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,6 +14,5 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ChallengeResponseDto {
 
-    private Long id;
-
+    private List<ChallengeDetailResponseDto> data;
 }

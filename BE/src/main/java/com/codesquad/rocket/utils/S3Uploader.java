@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Optional;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -53,7 +54,7 @@ public class S3Uploader {
     }
 
     private Optional<File> convert(MultipartFile multipartFile) throws IOException {
-        File convertFile = new File(multipartFile.getOriginalFilename() + " new");
+        File convertFile = new File(multipartFile.getOriginalFilename() + " new" + new Random().nextInt(10));
         if(convertFile.createNewFile()) {
             try (FileOutputStream fos = new FileOutputStream(convertFile)) {
                 fos.write(multipartFile.getBytes());

@@ -11,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.codesquad.rocket.domain.account.Account;
-import com.codesquad.rocket.domain.account.Challenge;
-import com.codesquad.rocket.domain.account.Like;
+import com.codesquad.rocket.domain.challenge.Challenge;
+import com.codesquad.rocket.domain.challenge.Like;
 import com.codesquad.rocket.domain.challenge.ChallengeRepository;
 
 @SpringBootTest
@@ -22,10 +22,10 @@ public class ChallengeRepositoryTest {
     private ChallengeRepository challengeRepository;
 
     @DisplayName("챌린지를 저장하는 테스트")
-    @CsvSource({"1, 1, 1, 이름, description, 3, restaurantName, www.naver.com"})
+    @CsvSource({"1, 1, 1, 이름, description, restaurantName, www.naver.com"})
     @ParameterizedTest
     void 챌린지와_라이크를_저장한다(Integer todayPlate, Integer totalPlate, Integer ecoPoint, String name,
-        String description, Integer likeCount, String restaurantName, String url) {
+        String description, String restaurantName, String url) {
 
         Account account = Account.builder()
             .todayPlate(todayPlate)
@@ -39,7 +39,6 @@ public class ChallengeRepositoryTest {
             .createdAt(new Date())
             .updatedAt(new Date())
             .description(description)
-            .likeCount(likeCount)
             .restaurantName(restaurantName)
             .url(url)
             .build();

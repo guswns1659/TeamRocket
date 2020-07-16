@@ -21,7 +21,7 @@ public class ChallengeServiceTest {
     private final Logger logger = LoggerFactory.getLogger(ChallengeServiceTest.class);
 
     @DisplayName("weeklyTopLike 요청 테스트")
-    @CsvSource({"4, 4"})
+    @CsvSource({"4, 2"})
     @ParameterizedTest
     void weeklyTopLike를_요청한다(Integer size, Integer likeCount) {
 
@@ -29,6 +29,5 @@ public class ChallengeServiceTest {
         assertThat(weeklyTopLikeResponseDto.getData().size()).isEqualTo(size);
         assertThat(weeklyTopLikeResponseDto.getData().get(0).getLikeCount()).isEqualTo(likeCount);
         logger.info("weeklyTopLike : {}", weeklyTopLikeResponseDto);
-
     }
 }

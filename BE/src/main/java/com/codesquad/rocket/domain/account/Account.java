@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
+import com.codesquad.rocket.domain.challenge.Challenge;
 import com.codesquad.rocket.domain.project.ProjectAccount;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

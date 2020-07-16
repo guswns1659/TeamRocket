@@ -16,7 +16,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.codesquad.rocket.domain.account.Account;
 import com.codesquad.rocket.domain.account.AccountRepository;
-import com.codesquad.rocket.domain.account.Challenge;
+import com.codesquad.rocket.domain.challenge.Challenge;
 import com.codesquad.rocket.domain.account.PointHistory;
 import com.codesquad.rocket.domain.account.PointOption;
 
@@ -45,7 +45,6 @@ public class AccountRepositoryTest {
         Point point = (Point) new WKTReader().read(pointWKT);
 
         Challenge challenge = Challenge.builder()
-            .likeCount(likeCount)
             .point(point)
             .restaurantName(restaurantName)
             .createdAt(new Date())
@@ -63,7 +62,6 @@ public class AccountRepositoryTest {
         account.addChallenge(challenge);
         accountRepository.save(account);
 
-        assertThat(account.getChallenges().iterator().next().getLikeCount()).isEqualTo(likeCount);
         assertThat(account.getChallenges().iterator().next().getPoint().getX()).isEqualTo(longitude);
         assertThat(account.getChallenges().iterator().next().getRestaurantName()).isEqualTo(restaurantName);
         assertThat(account.getPointHistories().iterator().next().getEcoPoint()).isEqualTo(ecoPoint);

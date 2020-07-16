@@ -1,4 +1,4 @@
-package com.codesquad.rocket.domain.account;
+package com.codesquad.rocket.domain.challenge;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,8 +10,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
-import javax.persistence.Embeddable;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -21,6 +21,7 @@ import javax.persistence.TemporalType;
 
 import org.locationtech.jts.geom.Point;
 
+import com.codesquad.rocket.domain.account.Account;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -37,9 +38,6 @@ public class Challenge {
     @Id
     @GeneratedValue
     private Long id;
-
-    @Column(name = "challenge_like_count")
-    private Integer likeCount;
 
     private String url;
 
@@ -59,7 +57,7 @@ public class Challenge {
     @ManyToOne(cascade = CascadeType.ALL)
     private Account account;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "challenge_like", joinColumns = @JoinColumn(name = "challenge_id"))
     @AttributeOverrides({
         @AttributeOverride(name = "name", column = @Column(name = "account_name"))
@@ -68,5 +66,13 @@ public class Challenge {
 
     public void addLike(Like like) {
         this.likes.add(like);
+    }
+
+    public void removeLike(Account account) {
+        Like foundLike = this.likes.stream()
+            .filter(like -> like.hasAccount(account))
+            .findFirst()
+            .orElseThrow(() -> new IllegalStateException("해당하는 Like가 없습니다. accountName" + account.getName()));
+        this.likes.remove(foundLike);
     }
 }

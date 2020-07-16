@@ -13,7 +13,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.codesquad.rocket.web.dto.response.challenge.ChallengeDetailResponseDto;
 import com.codesquad.rocket.web.dto.response.challenge.ChallengeResponseDto;
+import com.codesquad.rocket.web.dto.response.challenge.LikeResponseDto;
 import com.codesquad.rocket.web.dto.response.challenge.WeeklyTopLikeResponseDto;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -28,7 +30,7 @@ public class ChallengeControllerTest {
 
     @Transactional
     @DisplayName("weeklyTopLike API 테스트")
-    @CsvSource({"4, https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/empty_image4.jpg%20new"})
+    @CsvSource({"2, https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/empty_image4.jpg%20new"})
     @ParameterizedTest
     void weeklyTopLike를_응답한다(Integer likeCount, String challengeUrl) {
 
@@ -46,10 +48,10 @@ public class ChallengeControllerTest {
     }
 
     @Transactional
-    @DisplayName("weeklyTopLike API 테스트")
-    @CsvSource({"4, https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/empty_image4.jpg%20new"})
+    @DisplayName("challenge/all API 테스트")
+    @CsvSource({"4"})
     @ParameterizedTest
-    void 전체_챌린지를_응답한다(Long id) {
+    void 전체_챌린지를_응답한다(Integer size) {
 
         String url = "http://localhost:" + port + "/challenge/all";
 
@@ -61,8 +63,44 @@ public class ChallengeControllerTest {
             .returnResult()
             .getResponseBody();
 
-        assertThat(challengeResponseDto.getId()).isEqualTo(id);
+        assertThat(challengeResponseDto.getData().size()).isEqualTo(size);
+    }
 
+    @Transactional
+    @DisplayName("challenge/{id} API 테스트")
+    @CsvSource({"1"})
+    @ParameterizedTest
+    void 챌린지_상세페이지를_응답한다(Long id) {
 
+        String url = "http://localhost:" + port + "/challenge/" + id;
+
+        ChallengeDetailResponseDto challengeDetailResponseDto = webTestClient.get()
+            .uri(url)
+            .exchange()
+            .expectStatus().isEqualTo(HttpStatus.OK)
+            .expectBody(ChallengeDetailResponseDto.class)
+            .returnResult()
+            .getResponseBody();
+
+        assertThat(challengeDetailResponseDto.getId()).isEqualTo(id);
+    }
+
+    @Transactional
+    @DisplayName("challenge/{id}?liked= API 테스트")
+    @CsvSource({"1, True, 200"})
+    @ParameterizedTest
+    void 좋아요의_결과를_응답한다(Long id, String result, String status) {
+
+        String url = "http://localhost:" + port + "/challenge/like/" + id + "?liked=" + result;
+
+        LikeResponseDto likeResponseDto = webTestClient.get()
+            .uri(url)
+            .exchange()
+            .expectStatus().isEqualTo(HttpStatus.OK)
+            .expectBody(LikeResponseDto.class)
+            .returnResult()
+            .getResponseBody();
+
+        assertThat(likeResponseDto.getStatus()).isEqualTo(status);
     }
 }
