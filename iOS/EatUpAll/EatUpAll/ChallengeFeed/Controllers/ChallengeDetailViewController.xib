@@ -50,6 +50,9 @@
                     <state key="normal" image="suit.heart" catalog="system">
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17" scale="large" weight="semibold"/>
                     </state>
+                    <connections>
+                        <action selector="switchLike:" destination="-1" eventType="touchUpInside" id="ldh-P1-Vbl"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqm-rn-yR6">
                     <rect key="frame" x="46" y="507.5" width="18.5" height="19.5"/>

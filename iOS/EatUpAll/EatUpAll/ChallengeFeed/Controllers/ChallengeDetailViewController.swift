@@ -19,7 +19,8 @@ class ChallengeDetailViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     
     private var useCase: ChallengeEmptyPlateUseCase!
-    var id: Int?
+    private var id: Int?
+    private var isLiked: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +37,15 @@ class ChallengeDetailViewController: UIViewController {
     }
     
     private func configureData(plateInfo: ChallengeEmptyPlate) {
+        challengeImageView.kf.setImage(with: URL(string:plateInfo.image)!)
         placeLabel.text = plateInfo.restaurantName
         likeCountLabel.text = "\(plateInfo.likeCount)"
         descriptionTextView.text = plateInfo.description
-        let image = UIImage(systemName: "suit.heart.fill")
-        plateInfo.isLiked == "True" ? likeButton.setImage(image, for: .normal) : nil
-        challengeImageView.kf.setImage(with: URL(string:plateInfo.image)!)
+        let buttonImage = UIImage(systemName: "suit.heart.fill")
+        if plateInfo.isLiked == "True" {
+            likeButton.setImage(buttonImage, for: .normal)
+            isLiked = true
+        }else { isLiked = false }
     }
     
     private func fetchEmptyPlate(id: Int) {
@@ -53,6 +57,18 @@ class ChallengeDetailViewController: UIViewController {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    @IBAction func switchLike(_ sender: UIButton) {
+        if isLiked {
+            isLiked = false
+            let buttonImage = UIImage(systemName: "suit.heart")
+            likeButton.setImage(buttonImage, for: .normal)
+        }else {
+            isLiked = true
+            let buttonImage = UIImage(systemName: "suit.heart.fill")
+            likeButton.setImage(buttonImage, for: .normal)
         }
     }
 }
