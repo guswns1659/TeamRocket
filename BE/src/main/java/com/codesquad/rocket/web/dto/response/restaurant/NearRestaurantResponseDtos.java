@@ -14,5 +14,6 @@ import lombok.NoArgsConstructor;
 @Builder
 public class NearRestaurantResponseDtos {
 
+    private Integer dataCount;
     private List<RestaurantDto> data;
 }

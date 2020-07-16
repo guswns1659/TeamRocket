@@ -29,6 +29,9 @@ public class RestaurantDto {
         List<String> images = restaurant.getImages().stream()
             .map(Image::getUrl)
             .collect(Collectors.toList());
+        images = images.stream()
+            .map(image -> image.replaceAll("\r", ""))
+            .collect(Collectors.toList());
 
         return RestaurantDto.builder()
             .address(restaurant.getAddress())

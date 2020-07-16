@@ -2,7 +2,7 @@ package com.codesquad.rocket.utils;
 
 public class GeometryUtils {
 
-    public static Location calculateByDirection(Double baseLatitude, Double baseLongitude, int distance,
+    public static Location calculateByDirection(Double baseLatitude, Double baseLongitude, double distance,
         Double bearing) {
 
         Double radianLatitude = toRadian(baseLatitude);

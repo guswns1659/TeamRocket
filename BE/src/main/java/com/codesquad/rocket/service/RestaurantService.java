@@ -26,7 +26,7 @@ public class RestaurantService {
 
     public NearRestaurantResponseDtos nearRestaurant(Double latitude, Double longitude) {
 
-        int distance = 2;
+        double distance = 0.3;
 
         // 북동쪽 좌표 구하기
         Location northEast = GeometryUtils.calculateByDirection(latitude, longitude, distance, CardinalDirection.NORTHEAST
@@ -56,6 +56,7 @@ public class RestaurantService {
             .collect(Collectors.toList());
 
         return NearRestaurantResponseDtos.builder()
+            .dataCount(data.size())
             .data(data)
             .build();
     }
