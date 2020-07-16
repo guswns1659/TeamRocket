@@ -62,6 +62,7 @@ extension ChallengeCameraViewController: AVCapturePhotoCaptureDelegate {
 
 extension ChallengeCameraViewController {
     private func configure() {
+        configureNavigationController()
         configurePreviewViewController()
         configureCaptureSession()
         configureDevice()
@@ -72,6 +73,10 @@ extension ChallengeCameraViewController {
         configureInputOutput()
         configurePreviewLayer()
         startRunningCaptureSession()
+    }
+    
+    private func configureNavigationController() {
+        navigationController?.navigationBar.isHidden = true
     }
     
     private func configureCaptureSession() {
