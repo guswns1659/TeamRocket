@@ -34,6 +34,10 @@ final class ChallengeCameraViewController: UIViewController {
     }
     
     @IBAction func dismissButtonDidTap(_ sender: Any) {
+        dismissController()
+    }
+    
+    private func dismissController() {
         dismiss(animated: true, completion: nil)
     }
 }
@@ -61,6 +65,10 @@ extension ChallengeCameraViewController {
         configurePreviewViewController()
         configureCaptureSession()
         configureDevice()
+        guard currentCamera != nil else {
+            dismissController()
+            return
+        }
         configureInputOutput()
         configurePreviewLayer()
         startRunningCaptureSession()
@@ -75,7 +83,10 @@ extension ChallengeCameraViewController {
             deviceTypes: [.builtInWideAngleCamera],
             mediaType: .video,
             position: .back)
-        let device = deviceDiscoverySession.devices.first!
+        guard let device = deviceDiscoverySession.devices.first else {
+            dismissController()
+            return
+        }
         currentCamera = device
     }
     
@@ -89,7 +100,7 @@ extension ChallengeCameraViewController {
                 completionHandler: nil)
             captureSession.addOutput(photoOutput!)
         } catch {
-            print(error)
+            dismissController()
         }
     }
     
