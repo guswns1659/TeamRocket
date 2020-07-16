@@ -65,6 +65,10 @@ extension ChallengeCameraViewController {
         configurePreviewViewController()
         configureCaptureSession()
         configureDevice()
+        guard currentCamera != nil else {
+            dismissController()
+            return
+        }
         configureInputOutput()
         configurePreviewLayer()
         startRunningCaptureSession()
@@ -96,7 +100,7 @@ extension ChallengeCameraViewController {
                 completionHandler: nil)
             captureSession.addOutput(photoOutput!)
         } catch {
-            print(error)
+            dismissController()
         }
     }
     
