@@ -151,7 +151,7 @@ extension TabBarViewController {
         challengeCameraNavigationController = UINavigationController(rootViewController: challengeCameraViewController)
         let dummyChallengeCameraViewController = UIViewController()
         challengeFeedViewController = ChallengeFeedViewController.loadFromNib()
-        myPageViewController = UIViewController()
+        myPageViewController = MyPageViewController.loadFromNib()
         
         let donationNavigationController = UINavigationController(rootViewController: donationViewController)
         let challengeNavigationController = UINavigationController(rootViewController: challengeFeedViewController)
