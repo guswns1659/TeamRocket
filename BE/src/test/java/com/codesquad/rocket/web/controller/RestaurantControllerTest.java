@@ -25,12 +25,11 @@ public class RestaurantControllerTest {
     private int port;
 
     @DisplayName("nKm 이내의 식당을 구하는 테스트")
-    @CsvSource({"33.24859, 126.56480, 6"})
+    @CsvSource({"33.24859, 126.56480, 62"})
     @ParameterizedTest
     void nKM_이내_식당을_요청한다(Double latitude, Double longitude, Integer size) {
 
-        String url = "http://localhost:" + port + "/restaurant/nearRestaurant?" +
-            "latitude=" + latitude + "&" + "longitude=" + longitude;
+        String url = "http://15.164.255.212/api/restaurant/nearRestaurant?latitude="+latitude+"&"+"longitude="+longitude;
 
         NearRestaurantResponseDtos nearRestaurantResponseDtos = webTestClient.get()
             .uri(url)

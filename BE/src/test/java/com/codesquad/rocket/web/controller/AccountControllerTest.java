@@ -29,7 +29,7 @@ public class AccountControllerTest {
     private int port;
 
     @DisplayName("totalSaving api 테스트")
-    @CsvSource({"6"})
+    @CsvSource({"1.5"})
     @ParameterizedTest
     void totalSaving를_응답한다(Double totalSaving) {
 
@@ -47,7 +47,7 @@ public class AccountControllerTest {
     }
 
     @DisplayName("todaySaving api 테스트")
-    @CsvSource({"6, 1"})
+    @CsvSource({"18, 1"})
     @ParameterizedTest
     void todaySaving을_응답한다(Integer todayTotalPlates, Integer todayMyPlates) {
 
@@ -66,7 +66,7 @@ public class AccountControllerTest {
     }
 
     @DisplayName("ecoPoint api 테스트")
-    @CsvSource({"2000"})
+    @CsvSource({"500"})
     @ParameterizedTest
     void 사용자의_ecoPoint를_응답한다(Integer ecoPoint) {
 
@@ -102,7 +102,7 @@ public class AccountControllerTest {
     }
 
     @DisplayName("포인트 히스토리 api 테스트")
-    @CsvSource({"2020-07-16, 600, 기부, 북극곰 살리기 프로젝트"})
+    @CsvSource({"2020-07-17, 600, 기부, 북극곰 살리기 프로젝트"})
     @ParameterizedTest
     void 포인트_히스토리를_응답한다(String createdAt, Integer ecoPoint, String pointOption, String projectName) {
 

@@ -30,7 +30,7 @@ public class ChallengeControllerTest {
 
     @Transactional
     @DisplayName("weeklyTopLike API 테스트")
-    @CsvSource({"4, 2"})
+    @CsvSource({"7, 5"})
     @ParameterizedTest
     void weeklyTopLike를_응답한다(Integer size, Integer likeCount) {
 
@@ -50,7 +50,7 @@ public class ChallengeControllerTest {
 
     @Transactional
     @DisplayName("challenge/all API 테스트")
-    @CsvSource({"4"})
+    @CsvSource({"20"})
     @ParameterizedTest
     void 전체_챌린지를_응답한다(Integer size) {
 
