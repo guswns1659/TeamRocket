@@ -49,6 +49,7 @@ final class TabBarViewController: UITabBarController {
 extension TabBarViewController {
     @objc private func DidScanChallengeQRCode(notification: Notification) {
         guard let restaurantId = notification.userInfo?["restaurantID"] as? Int else { return }
+        challengeCameraNavigationController.modalPresentationStyle = .fullScreen
         present(challengeCameraNavigationController, animated: true, completion: nil)
         challengeCameraViewController.configureMode(to: .QRMode)
     }
