@@ -13,6 +13,11 @@
 		3012EF9924C1B76900CD350C /* MyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3012EF9724C1B76900CD350C /* MyPageViewController.xib */; };
 		3012EF9D24C1BF0800CD350C /* PointHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012EF9B24C1BF0800CD350C /* PointHistoryTableViewCell.swift */; };
 		3012EF9E24C1BF0800CD350C /* PointHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3012EF9C24C1BF0800CD350C /* PointHistoryTableViewCell.xib */; };
+		3012EFA024C1CE1900CD350C /* MyAccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012EF9F24C1CE1900CD350C /* MyAccountRequest.swift */; };
+		3012EFA224C1CE8500CD350C /* PointHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012EFA124C1CE8500CD350C /* PointHistoryRequest.swift */; };
+		3012EFA424C1CEBE00CD350C /* MyPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012EFA324C1CEBE00CD350C /* MyPageUseCase.swift */; };
+		3012EFA824C1CF1400CD350C /* MyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012EFA724C1CF1400CD350C /* MyAccount.swift */; };
+		3012EFAA24C1CF6500CD350C /* PointHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012EFA924C1CF6500CD350C /* PointHistory.swift */; };
 		3022698824BF09A3005A864C /* DonateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022698724BF09A3005A864C /* DonateView.swift */; };
 		3022698A24BF09BA005A864C /* DonateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3022698924BF09BA005A864C /* DonateView.xib */; };
 		3022698C24BF33F9005A864C /* MyEcoPointRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022698B24BF33F9005A864C /* MyEcoPointRequest.swift */; };
@@ -103,6 +108,11 @@
 		3012EF9724C1B76900CD350C /* MyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageViewController.xib; sourceTree = "<group>"; };
 		3012EF9B24C1BF0800CD350C /* PointHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		3012EF9C24C1BF0800CD350C /* PointHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		3012EF9F24C1CE1900CD350C /* MyAccountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountRequest.swift; sourceTree = "<group>"; };
+		3012EFA124C1CE8500CD350C /* PointHistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointHistoryRequest.swift; sourceTree = "<group>"; };
+		3012EFA324C1CEBE00CD350C /* MyPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageUseCase.swift; sourceTree = "<group>"; };
+		3012EFA724C1CF1400CD350C /* MyAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccount.swift; sourceTree = "<group>"; };
+		3012EFA924C1CF6500CD350C /* PointHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointHistory.swift; sourceTree = "<group>"; };
 		3022698724BF09A3005A864C /* DonateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateView.swift; sourceTree = "<group>"; };
 		3022698924BF09BA005A864C /* DonateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonateView.xib; sourceTree = "<group>"; };
 		3022698B24BF33F9005A864C /* MyEcoPointRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEcoPointRequest.swift; sourceTree = "<group>"; };
@@ -204,6 +214,7 @@
 			children = (
 				3012EF9524C1B75400CD350C /* Controllers */,
 				3012EF9A24C1BEEC00CD350C /* Views */,
+				3012EFA524C1CEE800CD350C /* Models */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -226,6 +237,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3012EFA524C1CEE800CD350C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3012EFA724C1CF1400CD350C /* MyAccount.swift */,
+				3012EFA924C1CF6500CD350C /* PointHistory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		3022698624BF081D005A864C /* DonationDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +266,7 @@
 				30B0A30724BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift */,
 				3022698D24BF342D005A864C /* MyEcoPointUseCase.swift */,
 				302406E824C08AD000B3E328 /* LikeUseCase.swift */,
+				3012EFA324C1CEBE00CD350C /* MyPageUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -269,6 +290,8 @@
 				3097497024C0792400C391DC /* AllEmptyPlateRequest.swift */,
 				3097497224C07BAD00C391DC /* EmptyPlateRequest.swift */,
 				302406E624C089D700B3E328 /* LikeRequest.swift */,
+				3012EF9F24C1CE1900CD350C /* MyAccountRequest.swift */,
+				3012EFA124C1CE8500CD350C /* PointHistoryRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -680,7 +703,9 @@
 				302406E724C089D700B3E328 /* LikeRequest.swift in Sources */,
 				383D8C8F24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift in Sources */,
 				38714B3C24BC7BFD00E9B9FC /* HomeViewController.swift in Sources */,
+				3012EFA224C1CE8500CD350C /* PointHistoryRequest.swift in Sources */,
 				3043475324C146650038C569 /* TutorialSecondView.swift in Sources */,
+				3012EFA424C1CEBE00CD350C /* MyPageUseCase.swift in Sources */,
 				306FA78224BD585200279A18 /* EmptyPlateCollectionViewCell.swift in Sources */,
 				38002B9B24C0356800D85D72 /* ChallengeEmptyPlate.swift in Sources */,
 				30B0A2F824BD9E0300BB9E55 /* WeeklyTopLikedEmptyPlateRequest.swift in Sources */,
@@ -699,6 +724,7 @@
 				380B222B24BDEAD30004FA55 /* DonationWholeProjectRequest.swift in Sources */,
 				38714B2524BC780A00E9B9FC /* TabBarViewController.swift in Sources */,
 				383D8C8D24BC97F700561EF3 /* DonationProject.swift in Sources */,
+				3012EFAA24C1CF6500CD350C /* PointHistory.swift in Sources */,
 				3012EF9D24C1BF0800CD350C /* PointHistoryTableViewCell.swift in Sources */,
 				38EB2A8424BDD5C1002CBDEA /* ChallengeCollectionViewDataSource.swift in Sources */,
 				3022698C24BF33F9005A864C /* MyEcoPointRequest.swift in Sources */,
@@ -727,9 +753,11 @@
 				300E3FDA24C06D5A00A95241 /* ChallengeDetailViewController.swift in Sources */,
 				385F612824BF3229003C2B7D /* ChallengeCameraViewController.swift in Sources */,
 				30B0A30424BDC37900BB9E55 /* TodayRecordUseCase.swift in Sources */,
+				3012EFA024C1CE1900CD350C /* MyAccountRequest.swift in Sources */,
 				302BB01824BD65C6000EB297 /* Endpoint.swift in Sources */,
 				30DA856C24BED2B200297204 /* DonationProjectDetailRequest.swift in Sources */,
 				38714B2324BC780A00E9B9FC /* SceneDelegate.swift in Sources */,
+				3012EFA824C1CF1400CD350C /* MyAccount.swift in Sources */,
 				3097497124C0792400C391DC /* AllEmptyPlateRequest.swift in Sources */,
 				38EB2A8024BDD424002CBDEA /* ChallengeCell.swift in Sources */,
 				3012EF9824C1B76900CD350C /* MyPageViewController.swift in Sources */,
