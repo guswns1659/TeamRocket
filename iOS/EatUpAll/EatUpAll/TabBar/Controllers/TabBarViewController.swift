@@ -88,6 +88,7 @@ extension TabBarViewController {
     private func presentCameraController() {
         challengeCameraNavigationController.modalPresentationStyle = .fullScreen
         present(challengeCameraNavigationController, animated: true, completion: nil)
+        challengeCameraViewController.configureMode(to: .challengeMode)
     }
     
     private func animateChallengeButton() {
