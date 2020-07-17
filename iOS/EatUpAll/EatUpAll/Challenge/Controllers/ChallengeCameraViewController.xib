@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeCameraViewController" customModule="EatUpAll" customModuleProvider="target">
             <connections>
+                <outlet property="QRModeGuideView" destination="zgQ-pb-qlb" id="Ggb-ee-PDe"/>
                 <outlet property="backgroundView" destination="QcR-ts-Uzc" id="cEU-gT-WoY"/>
                 <outlet property="cameraButton" destination="8rO-Vb-Te1" id="21A-7c-Ngv"/>
                 <outlet property="captureAnimationView" destination="Xso-gD-SPg" id="yoA-Ow-6Wm"/>
@@ -62,7 +63,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="챌린지 인증" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ly-Oa-y3E">
-                            <rect key="frame" x="168" y="15.5" width="78" height="21"/>
+                            <rect key="frame" x="168" y="16" width="78" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <color key="textColor" name="key_dark_gray"/>
                             <nil key="highlightedColor"/>
@@ -91,11 +92,48 @@
                                 <action selector="cameraButtonDidTap:" destination="-1" eventType="touchUpInside" id="Bse-Oe-r3a"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQy-iY-2dd">
+                            <rect key="frame" x="0.0" y="300" width="414" height="52"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="wi2-b9-bbM"/>
+                            </constraints>
+                        </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgQ-pb-qlb">
+                            <rect key="frame" x="20" y="24" width="374" height="64"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제휴 가게에서 챌린지를 인증하시면 추가 포인트를 획득하실 수 있습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jej-yj-xMf" userLabel="제휴 가게에서 챌린지를 인증하시면 추가 포인트를 획득하실 수 있습니다.">
+                                    <rect key="frame" x="0.0" y="13" width="374" height="38.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="key_green"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="64" id="1ef-Lj-ECM"/>
+                                <constraint firstItem="Jej-yj-xMf" firstAttribute="leading" secondItem="zgQ-pb-qlb" secondAttribute="leading" id="1hY-k1-Yqw"/>
+                                <constraint firstItem="Jej-yj-xMf" firstAttribute="centerY" secondItem="zgQ-pb-qlb" secondAttribute="centerY" id="Ntg-jA-kHQ"/>
+                                <constraint firstAttribute="trailing" secondItem="Jej-yj-xMf" secondAttribute="trailing" id="bJE-fT-zq7"/>
+                                <constraint firstItem="Jej-yj-xMf" firstAttribute="centerX" secondItem="zgQ-pb-qlb" secondAttribute="centerX" id="hTO-xj-NSG"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="LQy-iY-2dd" secondAttribute="trailing" id="7lc-46-4El"/>
+                        <constraint firstAttribute="bottom" secondItem="LQy-iY-2dd" secondAttribute="bottom" id="Kig-p0-rmR"/>
+                        <constraint firstItem="zgQ-pb-qlb" firstAttribute="leading" secondItem="wBp-bW-nFK" secondAttribute="leading" constant="20" id="MBR-Y9-fVq"/>
                         <constraint firstItem="8rO-Vb-Te1" firstAttribute="centerX" secondItem="wBp-bW-nFK" secondAttribute="centerX" id="WA6-4W-Dnr"/>
                         <constraint firstItem="8rO-Vb-Te1" firstAttribute="centerY" secondItem="wBp-bW-nFK" secondAttribute="centerY" id="Zcj-Er-ncX"/>
+                        <constraint firstAttribute="trailing" secondItem="zgQ-pb-qlb" secondAttribute="trailing" constant="20" id="aRG-02-WiG"/>
+                        <constraint firstItem="zgQ-pb-qlb" firstAttribute="top" secondItem="wBp-bW-nFK" secondAttribute="top" constant="24" id="raw-6p-S27"/>
+                        <constraint firstItem="LQy-iY-2dd" firstAttribute="leading" secondItem="wBp-bW-nFK" secondAttribute="leading" id="vbP-0l-jMV"/>
                     </constraints>
                 </view>
             </subviews>
@@ -128,6 +166,9 @@
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="key_dark_gray">
             <color white="0.12300000339746475" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="key_green">
+            <color red="0.11400000005960464" green="0.68599998950958252" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -23,6 +23,19 @@ final class ChallengeCameraViewController: UIViewController {
     private var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
 
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var QRModeGuideView: UIView!
+    
+    private enum Color {
+        static let darkGray = UIColor(named: "key_dark_gray")!
+        static let gray = UIColor(named: "key_gray")!
+    }
+    
+    private var currentMode: Mode = .challengeMode
+    
+    enum Mode {
+        case challengeMode
+        case QRMode
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +46,21 @@ final class ChallengeCameraViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureCaptureAnimationView()
+        modeDidChange()
+    }
+    
+    func configureMode(to mode: Mode) {
+        self.currentMode = mode
+    }
+    
+    private func modeDidChange() {
+        switch currentMode {
+        case .challengeMode:
+            cameraButton.isHidden = false
+            QRModeGuideView.isHidden = true
+        case .QRMode:
+            QRModeGuideView.isHidden = false
+        }
     }
     
     private func configureCaptureAnimationView() {
@@ -64,6 +92,7 @@ extension ChallengeCameraViewController: AVCapturePhotoCaptureDelegate {
             let capturedImage = UIImage(data: imageData)
             animateCaptureEffect(completion: { _ in
                 self.previewViewController.configureCapturedImage(capturedImage)
+                self.previewViewController.configureMode(to: self.currentMode)
                 self.navigationController?.pushViewController(
                     self.previewViewController, animated: true)
             })

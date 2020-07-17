@@ -28,6 +28,11 @@ final class ChallengePreviewViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var descriptionPlaceholderLabel: UILabel!
     
+    @IBOutlet weak var restaurantInfoView: UIView!
+    @IBOutlet weak var restaurantNameLabel: UILabel!
+    
+    private var currentMode: ChallengeCameraViewController.Mode = .challengeMode
+    
     private var useCase: ChallengeNewPostUseCase!
     
     private var isDescriptionMode: Bool = false
@@ -49,6 +54,20 @@ final class ChallengePreviewViewController: UIViewController {
         resetPreviewController()
         configureTopConstraint()
         descriptionTextView.delegate = self
+        modeDidChange()
+    }
+    
+    func configureMode(to mode: ChallengeCameraViewController.Mode) {
+        currentMode = mode
+    }
+    
+    private func modeDidChange() {
+        switch currentMode {
+        case .challengeMode:
+            restaurantInfoView.isHidden = true
+        case .QRMode:
+            restaurantInfoView.isHidden = false
+        }
     }
     
     private func resetPreviewController() {
