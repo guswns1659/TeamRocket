@@ -52,11 +52,12 @@ public class ProjectService {
     }
 
     public ProjectDetailResponseDto donate(Long id, Integer ecoPoint) {
+        Account account = accountRepository.findAccountByName("delma").orElse(new Account());
         Project project = projectRepository.findById(id).orElse(new Project());
         project.addEcoPoint(ecoPoint);
+        project.hasDonator(account);
         Project addedProject = projectRepository.save(project);
 
-        Account account = accountRepository.findAccountByName("delma").orElse(new Account());
         account.subtractEcoPoint(ecoPoint);
         // pointHistory 생성 후 account에 추가 한뒤 저장.
         PointHistory pointHistory = PointHistory.builder()

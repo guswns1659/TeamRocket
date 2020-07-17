@@ -14,8 +14,8 @@ values (5, '2020-07-15' , 9000, '2020-09-30', 'description', 5, '개마고원에
 insert into project_account (account_id, project_id) values (1, 1);
 insert into project_account (account_id, project_id) values (1, 2);
 insert into project_account (account_id, project_id) values (1, 3);
-insert into project_account (account_id, project_id) values (1, 4);
-insert into project_account (account_id, project_id) values (1, 5);
+insert into project_account (account_id, project_id) values (2, 4);
+insert into project_account (account_id, project_id) values (2, 5);
 
 insert into project_image (project_id, project_image) values (1, 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/download%20%281%29%20new2');
 insert into project_image (project_id, project_image) values (2, 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/download%20new1');

@@ -68,7 +68,7 @@ public class Project {
     private Corporation corporation;
 
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private final Set<ProjectAccount> projectAccounts = new HashSet<>();
+    private final List<ProjectAccount> projectAccounts = new ArrayList<>();
 
     public void addCorporation(Corporation corporation) {
         this.corporation = corporation;
@@ -97,5 +97,14 @@ public class Project {
 
     public void addEcoPoint(Integer ecoPoint) {
         this.currentMoney += ecoPoint;
+    }
+
+    public void hasDonator(Account account) {
+        boolean hasDonator = this.projectAccounts.stream()
+            .anyMatch(donator -> donator.getAccount().getId().equals(account.getId()));
+
+        if (!hasDonator) {
+            this.donators++;
+        }
     }
 }

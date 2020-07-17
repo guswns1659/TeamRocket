@@ -34,7 +34,9 @@ public class ProjectController {
     }
 
     @GetMapping("/donate/{id}")
-    public ProjectDetailResponseDto donate(@PathVariable Long id, @RequestParam(required = false, name = "ecoPoint") Integer ecoPoint) {
+    public ProjectDetailResponseDto donate(
+        @PathVariable Long id,
+        @RequestParam(required = false, name = "ecoPoint") Integer ecoPoint) {
         return projectService.donate(id, ecoPoint);
     }
 }
