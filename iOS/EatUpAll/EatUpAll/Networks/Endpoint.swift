@@ -10,7 +10,10 @@ import Foundation
 
 enum EndPoint {
     static let baseURL = "http://15.164.255.212/api/"
-    static let emptyPlateURL = "\(baseURL)challenge/weeklyTopLike"
+    static let weeklyTopLikedEmptyPlateURL = "\(baseURL)challenge/weeklyTopLike"
+    static let emptyPlateDetailURL = "\(baseURL)challenge/"
+    static let likeURL = "\(baseURL)challenge/like/"
+    static let allEmptyPlateURL = "\(baseURL)challenge/all"
     static let todayRecordURL = "\(baseURL)account/todaySaving"
     static let totalSavingURL = "\(baseURL)account/totalSaving"
     static let donationClosingProjectURL = "\(baseURL)/project/orderByDeadLine"
@@ -23,10 +26,12 @@ enum EndPoint {
 
 enum QueryParameters: CustomStringConvertible {
     case ecoPoint
+    case liked
     
     var description: String {
         switch self {
         case .ecoPoint: return "ecoPoint"
+        case .liked: return "liked"
         }
     }
 }

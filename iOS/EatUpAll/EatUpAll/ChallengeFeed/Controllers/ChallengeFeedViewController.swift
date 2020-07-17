@@ -33,7 +33,7 @@ final class ChallengeFeedViewController: UIViewController {
 
 extension ChallengeFeedViewController {
     private func fetchChallengeFeed() {
-        let request = ChallengeEmptyPlateRequest().asURLRequest()
+        let request = AllEmptyPlateRequest().asURLRequest()
         useCase.getResources(
             request: request,
             dataType: ChallengeEmptyPlateContainer.self) { (result) in
@@ -94,5 +94,19 @@ extension ChallengeFeedViewController {
             self.collectionView.reloadData()
         })
         collectionView.dataSource = dataSource
+        collectionView.delegate = self
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension ChallengeFeedViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let challengeDetailViewController = ChallengeDetailViewController.loadFromNib()
+        dataSource.referChallengeEmptyPlates(at: indexPath) { emptyPlate in
+            challengeDetailViewController.configureID(emptyPlate.id)
+        }
+        navigationController?.pushViewController(challengeDetailViewController, animated: true)
     }
 }
