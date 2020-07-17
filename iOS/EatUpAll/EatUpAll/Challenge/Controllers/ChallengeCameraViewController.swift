@@ -56,10 +56,9 @@ final class ChallengeCameraViewController: UIViewController {
     
     private func animateGuideView() {
         guard currentMode == .QRMode else { return }
-        QRModeGuideView.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         UIView.animate(
-            withDuration: 0.4,
-            delay: 0,
+            withDuration: 0.3,
+            delay: 0.2,
             usingSpringWithDamping: 1,
             initialSpringVelocity: 1.4,
             options: .curveEaseOut,
@@ -67,7 +66,7 @@ final class ChallengeCameraViewController: UIViewController {
                 self.QRModeGuideView.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
         }, completion: { _ in
             UIView.animate(
-                withDuration: 0.3,
+                withDuration: 0.2,
                 delay: 0,
                 usingSpringWithDamping: 1,
                 initialSpringVelocity: 0.8,

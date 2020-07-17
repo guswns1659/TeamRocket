@@ -175,63 +175,40 @@
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Iu-bU-Tj9">
                             <rect key="frame" x="0.0" y="212" width="414" height="140"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DSe-bp-Br6">
-                                    <rect key="frame" x="24" y="8" width="366" height="75.5"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 챌린지를 함께하는 여기는" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xig-b9-MDg">
-                                            <rect key="frame" x="0.0" y="0.0" width="366" height="19.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" name="key_gray"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZk-bK-wsv">
-                                            <rect key="frame" x="0.0" y="27.5" width="366" height="48"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vuZ-Fe-Lkg">
-                                                    <rect key="frame" x="12" y="8" width="342" height="32"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ie4-AO-G0k">
-                                                            <rect key="frame" x="0.0" y="0.5" width="32" height="31"/>
-                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="Ie4-AO-G0k" secondAttribute="height" multiplier="1:1" id="lVO-HD-FLV"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 이름" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWq-gR-ofG">
-                                                            <rect key="frame" x="48" y="0.0" width="294" height="32"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                            <color key="backgroundColor" name="key_green"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="vuZ-Fe-Lkg" secondAttribute="trailing" constant="12" id="9IX-pH-j1R"/>
-                                                <constraint firstItem="vuZ-Fe-Lkg" firstAttribute="centerY" secondItem="pZk-bK-wsv" secondAttribute="centerY" id="Hcj-Za-gcF"/>
-                                                <constraint firstItem="vuZ-Fe-Lkg" firstAttribute="centerX" secondItem="pZk-bK-wsv" secondAttribute="centerX" id="TYm-JO-Jt9"/>
-                                                <constraint firstAttribute="height" constant="48" id="byk-vG-Ffx"/>
-                                                <constraint firstItem="vuZ-Fe-Lkg" firstAttribute="leading" secondItem="pZk-bK-wsv" secondAttribute="leading" constant="12" id="neM-g1-Fo2"/>
-                                                <constraint firstItem="vuZ-Fe-Lkg" firstAttribute="top" secondItem="pZk-bK-wsv" secondAttribute="top" constant="8" id="ta7-WR-Xnq"/>
-                                                <constraint firstAttribute="bottom" secondItem="vuZ-Fe-Lkg" secondAttribute="bottom" constant="8" id="zZ8-HM-l8R"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="8"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
-                                    </subviews>
-                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="챌린지에 함께 동참하는 이곳은" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xig-b9-MDg">
+                                    <rect key="frame" x="24" y="52" width="366" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" red="0.31186548223350252" green="0.31186548223350252" blue="0.31186548223350252" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 이름" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWq-gR-ofG">
+                                    <rect key="frame" x="175.5" y="79.5" width="63" height="20.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20.5" id="WIT-SZ-hsF"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" name="key_green"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ie4-AO-G0k">
+                                    <rect key="frame" x="147" y="79" width="20.5" height="21"/>
+                                    <color key="tintColor" name="key_green"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Ie4-AO-G0k" secondAttribute="height" multiplier="1:1" id="lVO-HD-FLV"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="DSe-bp-Br6" secondAttribute="trailing" constant="24" id="PuY-af-XbL"/>
-                                <constraint firstItem="DSe-bp-Br6" firstAttribute="leading" secondItem="2Iu-bU-Tj9" secondAttribute="leading" constant="24" id="cl5-k5-wsm"/>
-                                <constraint firstItem="DSe-bp-Br6" firstAttribute="top" secondItem="2Iu-bU-Tj9" secondAttribute="top" constant="8" id="n5k-mU-J2T"/>
+                                <constraint firstAttribute="bottom" secondItem="YWq-gR-ofG" secondAttribute="bottom" constant="40" id="BhW-Ox-OTl"/>
+                                <constraint firstItem="Ie4-AO-G0k" firstAttribute="height" secondItem="YWq-gR-ofG" secondAttribute="height" id="J2o-MM-2EG"/>
+                                <constraint firstItem="Ie4-AO-G0k" firstAttribute="centerY" secondItem="YWq-gR-ofG" secondAttribute="centerY" id="UUm-Wg-04z"/>
+                                <constraint firstAttribute="trailing" secondItem="Xig-b9-MDg" secondAttribute="trailing" constant="24" id="XZG-Ee-JFF"/>
+                                <constraint firstItem="YWq-gR-ofG" firstAttribute="centerX" secondItem="Xig-b9-MDg" secondAttribute="centerX" id="atd-Bc-7Wr"/>
+                                <constraint firstItem="YWq-gR-ofG" firstAttribute="leading" secondItem="Ie4-AO-G0k" secondAttribute="trailing" constant="8" id="gxD-x8-Ood"/>
+                                <constraint firstItem="Xig-b9-MDg" firstAttribute="leading" secondItem="2Iu-bU-Tj9" secondAttribute="leading" constant="24" id="hUK-Gr-Uv4"/>
+                                <constraint firstItem="YWq-gR-ofG" firstAttribute="top" secondItem="Xig-b9-MDg" secondAttribute="bottom" constant="8" id="lQV-rP-4Wb"/>
                                 <constraint firstAttribute="height" constant="140" id="v9h-Qe-2qW"/>
-                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DSe-bp-Br6" secondAttribute="bottom" constant="8" id="vlN-ee-i2J"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -280,7 +257,7 @@
     </objects>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
-        <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="key_dark_gray">
             <color white="0.12300000339746475" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

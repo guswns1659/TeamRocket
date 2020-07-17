@@ -74,6 +74,8 @@ final class ChallengePreviewViewController: UIViewController {
                 switch result {
                 case .success(let restaurant):
                     self.restaurantNameLabel.text = restaurant.name
+                    self.restaurantNameLabel.sizeToFit()
+                    self.restaurantInfoView.layoutIfNeeded()
                 case .failure(_):
                     self.restaurantNameLabel.text = ""
                     break
