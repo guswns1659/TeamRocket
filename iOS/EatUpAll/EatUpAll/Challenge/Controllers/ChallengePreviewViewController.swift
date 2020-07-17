@@ -32,6 +32,8 @@ final class ChallengePreviewViewController: UIViewController {
     
     private let maximumNumberOfText: Int = 200
     
+    let uploadingHUD = JGProgressHUD(style: .extraLight)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,10 +75,34 @@ final class ChallengePreviewViewController: UIViewController {
     }
     
     private func uploadChallenge() {
-        let request1 = ChallengeUploadRequest().asURLRequest()
+        let request = ChallengeUploadRequest().asURLRequest()
         guard let imageData = capturedImage?.jpegData(compressionQuality: 0.8) else { return }
         let uploadParameter: [String : Any] = ["description": descriptionTextView.text as Any]
-        useCase.upload(request: request1, imageData: imageData, parameters: uploadParameter)
+        uploadingHUD.textLabel.text = "업로딩 중"
+        uploadingHUD.show(in: view, animated: true)
+        useCase.upload(
+            request: request,
+            imageData: imageData,
+            parameters: uploadParameter,
+            completion: { isSuccess in
+                if isSuccess {
+                    self.uploadingHUD.dismiss(animated: true)
+                    self.dismiss(animated: true, completion: {
+                        self.navigationController?.popToRootViewController(animated: false)
+                    })
+                } else {
+                    self.uploadingHUD.dismiss(animated: true)
+                    self.showHUDWithError()
+                }
+        })
+    }
+    
+    private func showHUDWithError() {
+        let hud = JGProgressHUD(style: .extraLight)
+        hud.textLabel.text = "네트워크 오류"
+        hud.detailTextLabel.text = "다시 시도해주세요"
+        hud.show(in: self.view)
+        hud.dismiss(afterDelay: 2.5)
     }
 }
 

@@ -15,7 +15,8 @@ struct ChallengeNewPostUseCase: UseCase {
     func upload(
         request: Alamofire.URLRequestConvertible,
         imageData : Data,
-        parameters: [String: Any]) {
+        parameters: [String: Any],
+        completion: @escaping (Bool) -> Void) {
         
         let headers: HTTPHeaders = [
             "Content-type": "multipart/form-data",
@@ -48,18 +49,11 @@ struct ChallengeNewPostUseCase: UseCase {
             multiPart.append(imageData, withName: "file", fileName: "file.jpeg", mimeType: "picture/jpeg")
         }, to: url, method: .post, headers: headers)
             .responseData { (response) in
-                switch response.result {
-                case .success(let data):
-                    print(data)
-                    do {
-                        let response = try JSONDecoder().decode(UploadResponse.self, from: data)
-                        print(response)
-                    } catch {
-                        print(error)
-                    }
-                case .failure(let error):
-                    print(error)
+                guard response.response?.statusCode == 200 else {
+                    completion(false)
+                    return
                 }
+                completion(true)
         }
     }
 }
