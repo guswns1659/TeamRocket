@@ -28,7 +28,14 @@ final class ChallengePreviewViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var descriptionPlaceholderLabel: UILabel!
     
-    private var useCase: ChallengeNewPostUseCase!
+    @IBOutlet weak var restaurantInfoView: UIView!
+    @IBOutlet weak var restaurantNameLabel: UILabel!
+    
+    private var currentMode: ChallengeCameraViewController.Mode = .challengeMode
+    private var currentRestaurantID: Int?
+    
+    private var uploadUseCase: ChallengeNewPostUseCase!
+    private var networkUseCase: NetworkUseCase!
     
     private var isDescriptionMode: Bool = false
     
@@ -49,6 +56,44 @@ final class ChallengePreviewViewController: UIViewController {
         resetPreviewController()
         configureTopConstraint()
         descriptionTextView.delegate = self
+        modeDidChange()
+        fetchRestaurantInfo()
+    }
+    
+    func configureRestaurantID(_ id: Int?) {
+        self.currentRestaurantID = id
+    }
+    
+    private func fetchRestaurantInfo() {
+        guard currentMode == .QRMode else { return }
+        guard let restaurantID = currentRestaurantID else { return }
+        let request = RestaurantInfoRequest(restaurantID: restaurantID).asURLRequest()
+        networkUseCase.getResources(
+            request: request,
+            dataType: Restaurant.self) { (result) in
+                switch result {
+                case .success(let restaurant):
+                    self.restaurantNameLabel.text = restaurant.name
+                    self.restaurantNameLabel.sizeToFit()
+                    self.restaurantInfoView.layoutIfNeeded()
+                case .failure(_):
+                    self.restaurantNameLabel.text = ""
+                    break
+                }
+        }
+    }
+    
+    func configureMode(to mode: ChallengeCameraViewController.Mode) {
+        currentMode = mode
+    }
+    
+    private func modeDidChange() {
+        switch currentMode {
+        case .challengeMode:
+            restaurantInfoView.isHidden = true
+        case .QRMode:
+            restaurantInfoView.isHidden = false
+        }
     }
     
     private func resetPreviewController() {
@@ -84,7 +129,7 @@ final class ChallengePreviewViewController: UIViewController {
         let uploadParameter: [String : Any] = ["description": descriptionTextView.text as Any]
         uploadingHUD.textLabel.text = "업로딩 중"
         uploadingHUD.show(in: view, animated: true)
-        useCase.upload(
+        uploadUseCase.upload(
             request: request,
             imageData: imageData,
             parameters: uploadParameter,
@@ -209,7 +254,8 @@ extension ChallengePreviewViewController {
     }
     
     private func configureUseCase() {
-        useCase = ChallengeNewPostUseCase()
+        uploadUseCase = ChallengeNewPostUseCase()
+        networkUseCase = NetworkUseCase()
     }
     
     private func configureDescriptionTapRecognizer() {

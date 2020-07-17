@@ -23,16 +23,76 @@ final class ChallengeCameraViewController: UIViewController {
     private var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
 
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var QRModeGuideView: UIView!
+    
+    private enum Color {
+        static let darkGray = UIColor(named: "key_dark_gray")!
+        static let gray = UIColor(named: "key_gray")!
+    }
+    
+    private var currentMode: Mode = .challengeMode
+    private var currentRestaurantID: Int?
+    
+    enum Mode {
+        case challengeMode
+        case QRMode
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configure()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureCaptureAnimationView()
+        modeDidChange()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animateGuideView()
+    }
+    
+    private func animateGuideView() {
+        guard currentMode == .QRMode else { return }
+        UIView.animate(
+            withDuration: 0.3,
+            delay: 0.2,
+            usingSpringWithDamping: 1,
+            initialSpringVelocity: 1.4,
+            options: .curveEaseOut,
+            animations: {
+                self.QRModeGuideView.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+        }, completion: { _ in
+            UIView.animate(
+                withDuration: 0.2,
+                delay: 0,
+                usingSpringWithDamping: 1,
+                initialSpringVelocity: 0.8,
+                options: .curveEaseIn,
+                animations: {
+                    self.QRModeGuideView.transform = .identity
+            })
+        })
+    }
+    
+    func configureRestaurantID(_ id: Int) {
+        self.currentRestaurantID = id
+    }
+    
+    func configureMode(to mode: Mode) {
+        self.currentMode = mode
+    }
+    
+    private func modeDidChange() {
+        switch currentMode {
+        case .challengeMode:
+            cameraButton.isHidden = false
+            QRModeGuideView.isHidden = true
+        case .QRMode:
+            QRModeGuideView.isHidden = false
+        }
     }
     
     private func configureCaptureAnimationView() {
@@ -64,6 +124,8 @@ extension ChallengeCameraViewController: AVCapturePhotoCaptureDelegate {
             let capturedImage = UIImage(data: imageData)
             animateCaptureEffect(completion: { _ in
                 self.previewViewController.configureCapturedImage(capturedImage)
+                self.previewViewController.configureMode(to: self.currentMode)
+                self.previewViewController.configureRestaurantID(self.currentRestaurantID)
                 self.navigationController?.pushViewController(
                     self.previewViewController, animated: true)
             })
