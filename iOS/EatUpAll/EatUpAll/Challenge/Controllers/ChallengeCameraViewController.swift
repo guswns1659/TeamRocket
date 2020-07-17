@@ -39,7 +39,6 @@ final class ChallengeCameraViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configure()
     }
     
@@ -47,6 +46,35 @@ final class ChallengeCameraViewController: UIViewController {
         super.viewWillAppear(animated)
         configureCaptureAnimationView()
         modeDidChange()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animateGuideView()
+    }
+    
+    private func animateGuideView() {
+        guard currentMode == .QRMode else { return }
+        QRModeGuideView.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        UIView.animate(
+            withDuration: 0.4,
+            delay: 0,
+            usingSpringWithDamping: 1,
+            initialSpringVelocity: 1.4,
+            options: .curveEaseOut,
+            animations: {
+                self.QRModeGuideView.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+        }, completion: { _ in
+            UIView.animate(
+                withDuration: 0.3,
+                delay: 0,
+                usingSpringWithDamping: 1,
+                initialSpringVelocity: 0.8,
+                options: .curveEaseIn,
+                animations: {
+                    self.QRModeGuideView.transform = .identity
+            })
+        })
     }
     
     func configureMode(to mode: Mode) {

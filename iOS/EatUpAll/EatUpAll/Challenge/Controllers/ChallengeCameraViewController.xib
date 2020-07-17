@@ -102,7 +102,7 @@
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgQ-pb-qlb">
                             <rect key="frame" x="20" y="24" width="374" height="64"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제휴 가게에서 챌린지를 인증하시면 추가 포인트를 획득하실 수 있습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jej-yj-xMf" userLabel="제휴 가게에서 챌린지를 인증하시면 추가 포인트를 획득하실 수 있습니다.">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="챌린지에 동참하는 가게의 QR코드를 통해 인증하시면 추가 포인트를 획득하실 수 있습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jej-yj-xMf" userLabel="제휴 가게에서 챌린지를 인증하시면 추가 포인트를 획득하실 수 있습니다.">
                                     <rect key="frame" x="0.0" y="13" width="374" height="38.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
