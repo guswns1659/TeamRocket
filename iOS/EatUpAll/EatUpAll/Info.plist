@@ -21,9 +21,11 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>kr.team-rocket.EatUpAll</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>eatupallRestaurant</string>
+				<string>eatupall</string>
 			</array>
 		</dict>
 	</array>
