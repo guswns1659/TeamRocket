@@ -32,6 +32,8 @@
 		3043475124C1465A0038C569 /* TutorialFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043475024C1465A0038C569 /* TutorialFirstView.swift */; };
 		3043475324C146650038C569 /* TutorialSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043475224C146650038C569 /* TutorialSecondView.swift */; };
 		3043475524C1466E0038C569 /* TutorialThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043475424C1466E0038C569 /* TutorialThirdView.swift */; };
+		3043475724C173A10038C569 /* WholeTutorialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3043475624C173A10038C569 /* WholeTutorialView.xib */; };
+		3043475924C180990038C569 /* WholeTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043475824C180990038C569 /* WholeTutorialView.swift */; };
 		306FA78224BD585200279A18 /* EmptyPlateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306FA78024BD585200279A18 /* EmptyPlateCollectionViewCell.swift */; };
 		306FA78324BD585200279A18 /* EmptyPlateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 306FA78124BD585200279A18 /* EmptyPlateCollectionViewCell.xib */; };
 		306FA78D24BD61C300279A18 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 306FA78C24BD61C300279A18 /* Alamofire */; };
@@ -118,6 +120,8 @@
 		3043475024C1465A0038C569 /* TutorialFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFirstView.swift; sourceTree = "<group>"; };
 		3043475224C146650038C569 /* TutorialSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSecondView.swift; sourceTree = "<group>"; };
 		3043475424C1466E0038C569 /* TutorialThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialThirdView.swift; sourceTree = "<group>"; };
+		3043475624C173A10038C569 /* WholeTutorialView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WholeTutorialView.xib; sourceTree = "<group>"; };
+		3043475824C180990038C569 /* WholeTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeTutorialView.swift; sourceTree = "<group>"; };
 		306FA78024BD585200279A18 /* EmptyPlateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlateCollectionViewCell.swift; sourceTree = "<group>"; };
 		306FA78124BD585200279A18 /* EmptyPlateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPlateCollectionViewCell.xib; sourceTree = "<group>"; };
 		3097497024C0792400C391DC /* AllEmptyPlateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEmptyPlateRequest.swift; sourceTree = "<group>"; };
@@ -265,6 +269,8 @@
 				3043474C24C140D80038C569 /* TutorialSecondView.xib */,
 				3043475424C1466E0038C569 /* TutorialThirdView.swift */,
 				3043474E24C1455F0038C569 /* TutorialThirdView.xib */,
+				3043475624C173A10038C569 /* WholeTutorialView.xib */,
+				3043475824C180990038C569 /* WholeTutorialView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -625,6 +631,7 @@
 				3043474F24C1455F0038C569 /* TutorialThirdView.xib in Resources */,
 				385F612924BF3229003C2B7D /* ChallengeCameraViewController.xib in Resources */,
 				38714B2D24BC780C00E9B9FC /* LaunchScreen.storyboard in Resources */,
+				3043475724C173A10038C569 /* WholeTutorialView.xib in Resources */,
 				302406EE24C0931000B3E328 /* TutorialViewController.xib in Resources */,
 				38714B2A24BC780C00E9B9FC /* Assets.xcassets in Resources */,
 				302BB02924BD6ED9000EB297 /* DonationDetailViewController.xib in Resources */,
@@ -678,6 +685,7 @@
 				38652A3724BC86B7006A8A48 /* ClosingDonationProjectCollectionView.swift in Sources */,
 				3022698824BF09A3005A864C /* DonateView.swift in Sources */,
 				302BB01C24BD661E000EB297 /* Session+NetworkDispatcher.swift in Sources */,
+				3043475924C180990038C569 /* WholeTutorialView.swift in Sources */,
 				38EB2A7224BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift in Sources */,
 				385F613024BF41F8003C2B7D /* ChallengeCameraButton.swift in Sources */,
 				38714B2124BC780A00E9B9FC /* AppDelegate.swift in Sources */,

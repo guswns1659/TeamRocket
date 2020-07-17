@@ -36,7 +36,7 @@
                         <color key="titleColor" name="key_green"/>
                     </state>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crG-Rt-7gj">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crG-Rt-7gj">
                     <rect key="frame" x="20" y="81.5" width="360" height="432.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <string key="text">'잘먹었습니다'는 지구를 위한 책임감있는 소비에 초점을 맞춘 서비스로, 기업과 소비자가 모두 참여할 수 있는 challenge - donation 서비스입니다. 

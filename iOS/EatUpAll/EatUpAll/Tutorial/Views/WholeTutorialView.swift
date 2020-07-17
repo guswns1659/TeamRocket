@@ -1,5 +1,5 @@
 //
-//  TutorialThirdView.swift
+//  WholeTutorialView.swift
 //  EatUpAll
 //
 //  Created by delma on 2020/07/17.
@@ -8,9 +8,11 @@
 
 import UIKit
 
-final class TutorialThirdView: UIView {
+final class WholeTutorialView: UIView {
     @IBOutlet weak var frameView: UIView!
-    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var firstView: TutorialFirstView!
+    @IBOutlet weak var secondView: TutorialSecondView!
+    @IBOutlet weak var thirdView: TutorialThirdView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,7 +32,8 @@ final class TutorialThirdView: UIView {
     }
     
     private func configureUI() {
-        submitButton.roundCorner(cornerRadius: 10)
-        frameView.roundCorner(cornerRadius: 10)
+        firstView.roundCorner(cornerRadius: 10)
+        secondView.roundCorner(cornerRadius: 10)
+        thirdView.roundCorner(cornerRadius: 10)
     }
 }

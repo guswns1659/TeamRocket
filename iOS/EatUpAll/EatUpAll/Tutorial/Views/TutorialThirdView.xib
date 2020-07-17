@@ -43,7 +43,7 @@
                         <constraint firstAttribute="height" constant="1" id="vNN-qv-EXs"/>
                     </constraints>
                 </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJx-SK-Foz">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJx-SK-Foz">
                     <rect key="frame" x="20" y="74" width="360" height="440"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <string key="text">1. 매 끼니 밥을 맛있게 먹습니다 🍚

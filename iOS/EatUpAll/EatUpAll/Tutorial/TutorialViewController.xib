@@ -30,45 +30,45 @@
                                             <rect key="frame" x="0.0" y="0.0" width="372.5" height="609"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NwW-sz-rEd" customClass="TutorialFirstView" customModule="EatUpAll" customModuleProvider="target">
-                                                    <rect key="frame" x="36" y="0.0" width="324.5" height="609"/>
+                                                    <rect key="frame" x="36" y="0.0" width="328.5" height="609"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="NwW-sz-rEd" firstAttribute="leading" secondItem="cAL-s6-kWb" secondAttribute="leading" constant="36" id="6Dt-oE-EJ7"/>
                                                 <constraint firstAttribute="bottom" secondItem="NwW-sz-rEd" secondAttribute="bottom" id="B9S-kq-3pF"/>
                                                 <constraint firstItem="NwW-sz-rEd" firstAttribute="top" secondItem="cAL-s6-kWb" secondAttribute="top" id="azH-J1-Uy5"/>
-                                                <constraint firstAttribute="trailing" secondItem="NwW-sz-rEd" secondAttribute="trailing" constant="12" id="uzE-fV-5v1"/>
+                                                <constraint firstAttribute="trailing" secondItem="NwW-sz-rEd" secondAttribute="trailing" constant="8" id="uzE-fV-5v1"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgO-Lq-vZf" userLabel="secondView">
                                             <rect key="frame" x="372.5" y="0.0" width="331.5" height="609"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Yu-no-g2M" customClass="TutorialSecondView" customModule="EatUpAll" customModuleProvider="target">
-                                                    <rect key="frame" x="6" y="0.0" width="319.5" height="609"/>
+                                                    <rect key="frame" x="8" y="0.0" width="315.5" height="609"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="2Yu-no-g2M" firstAttribute="top" secondItem="dgO-Lq-vZf" secondAttribute="top" id="3lZ-P3-LcD"/>
                                                 <constraint firstAttribute="bottom" secondItem="2Yu-no-g2M" secondAttribute="bottom" id="H9N-UT-ebQ"/>
-                                                <constraint firstItem="2Yu-no-g2M" firstAttribute="leading" secondItem="dgO-Lq-vZf" secondAttribute="leading" constant="6" id="Z1R-lE-iVb"/>
-                                                <constraint firstAttribute="trailing" secondItem="2Yu-no-g2M" secondAttribute="trailing" constant="6" id="kcq-pF-g4c"/>
+                                                <constraint firstItem="2Yu-no-g2M" firstAttribute="leading" secondItem="dgO-Lq-vZf" secondAttribute="leading" constant="8" id="Z1R-lE-iVb"/>
+                                                <constraint firstAttribute="trailing" secondItem="2Yu-no-g2M" secondAttribute="trailing" constant="8" id="kcq-pF-g4c"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7U-SR-Q0m" userLabel="thirdView">
                                             <rect key="frame" x="704" y="0.0" width="372.5" height="609"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puP-ZH-1uL" customClass="TutorialThirdView" customModule="EatUpAll" customModuleProvider="target">
-                                                    <rect key="frame" x="6" y="0.0" width="330.5" height="609"/>
+                                                    <rect key="frame" x="8" y="0.0" width="328.5" height="609"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="puP-ZH-1uL" firstAttribute="leading" secondItem="J7U-SR-Q0m" secondAttribute="leading" constant="6" id="GMN-cR-0jK"/>
+                                                <constraint firstItem="puP-ZH-1uL" firstAttribute="leading" secondItem="J7U-SR-Q0m" secondAttribute="leading" constant="8" id="GMN-cR-0jK"/>
                                                 <constraint firstAttribute="bottom" secondItem="puP-ZH-1uL" secondAttribute="bottom" id="gSZ-EZ-nmr"/>
                                                 <constraint firstItem="puP-ZH-1uL" firstAttribute="top" secondItem="J7U-SR-Q0m" secondAttribute="top" id="ibB-lf-4MA"/>
                                                 <constraint firstAttribute="trailing" secondItem="puP-ZH-1uL" secondAttribute="trailing" constant="36" id="uj0-Dz-vqW"/>
@@ -114,7 +114,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="SrP-5P-4EK" secondAttribute="trailing" id="5aj-JO-3lj"/>
                 <constraint firstItem="SrP-5P-4EK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KLP-st-fyc"/>

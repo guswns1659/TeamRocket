@@ -33,5 +33,6 @@ final class TutorialFirstView: UIView {
         nextButton.layer.borderColor = UIColor(named: "key_green")?.cgColor
         nextButton.layer.borderWidth = 1
         nextButton.roundCorner(cornerRadius: 10)
+        frameView.roundCorner(cornerRadius: 10)
     }
 }
