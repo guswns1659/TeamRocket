@@ -29,11 +29,21 @@ final class WholeTutorialView: UIView {
         addSubview(frameView)
         frameView.frame = self.bounds
         configureUI()
+        configureGestureRecognizer()
     }
     
     private func configureUI() {
         firstView.roundCorner(cornerRadius: 10)
         secondView.roundCorner(cornerRadius: 10)
         thirdView.roundCorner(cornerRadius: 10)
+    }
+    
+    private func configureGestureRecognizer() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hide(_:)))
+        frameView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func hide(_ recognizer: UITapGestureRecognizer) {
+        isHidden = true
     }
 }
