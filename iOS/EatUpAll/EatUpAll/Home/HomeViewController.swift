@@ -11,6 +11,9 @@ import Kingfisher
 
 final class HomeViewController: UIViewController {
 
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var personalTotalView: UIView!
+    @IBOutlet weak var personalTotalSavings: UILabel!
     @IBOutlet weak var todayWholePlates: UILabel!
     @IBOutlet weak var todayWholeSavings: UILabel!
     @IBOutlet weak var todayMyPlates: UILabel!
@@ -18,25 +21,87 @@ final class HomeViewController: UIViewController {
     @IBOutlet weak var todayWholeView: UIView!
     @IBOutlet weak var todayMyView: UIView!
     @IBOutlet weak var emptyPlateCollectionView: UICollectionView!
-    
+    @IBOutlet weak var donationProjectCollectionView: ClosingDonationProjectCollectionView!
+
+    private var personalTotalSavingUseCase: PersonalTotalSavingUseCase!
     private var todayRecordUseCase: TodayRecordUseCase!
-    private var emptyPlateUseCase: EmptyPlateUseCase!
-    private var emptyPlateInfo: ChallengeEmptyPlate!
-    
+    private var challengeEmptyPlateUseCase: ChallengeEmptyPlateUseCase!
+    private var emptyPlateInfo: ChallengeEmptyPlateContainer!
+    private var donationProjectDataSource: DonationProjectCollectionViewDataSource<ClosingDonationProjectCell>!
+    private var donationProjectDelegate: ClosingDonationProjectCollectionViewDelegate!
+    private var donationUseCase: DonationUseCase!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        fetchDatas()
     }
-    
-    private func configure() {
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return emptyPlateInfo.data.count
+    }
+        private func configure() {
         configureUI()
         todayRecordUseCase = TodayRecordUseCase()
         emptyPlateUseCase = EmptyPlateUseCase()
-        fetchTodayRecords()
-        fetchEmptyPlate()
-        configureCollectionView()
     }
-    
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EmptyPlateCollectionViewCell.self), for: indexPath) as! EmptyPlateCollectionViewCell
+        let url = URL(string: emptyPlateInfo.data[indexPath.row].image)
+        KingfisherManager.shared.retrieveImage(with: url!, options: nil, progressBlock: nil, downloadTaskUpdated: nil) { (result) in
+            switch result {
+            case .success(let value):
+                cell.configureImage(value.image)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        return cell
+    }
+}
+
+// MARK:- Fetch Datas
+
+extension HomeViewController {
+    private func fetchDatas() {
+        fetchPersonalTotalSaving()
+        fetchTodayRecords()
+        fetchChallengeEmptyPlate()
+        fetchDonationProjects()
+    }
+
+    private func fetchDonationProjects() {
+        let request = DonationClosingProjectRequest().asURLRequest()
+        donationUseCase.getResources(
+            request: request,
+            dataType: DonationProjectContainer.self) { (result) in
+                switch result {
+                case .success(let container):
+                    self.donationProjectDataSource.updateDonationProjects(container.data)
+                case .failure(_):
+                    break
+                }
+        }
+    }
+
+    private func fetchPersonalTotalSaving() {
+        let request = PersonalTotalSavingRequest().asURLRequest()
+        personalTotalSavingUseCase.getResources(request: request, dataType: PersonalTotalSaving.self) { result in
+            switch result {
+            case .success(let data):
+                self.userName.text = "\(data.accountName)"
+                self.personalTotalSavings.text = "\(data.totalSaving)"
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
     private func configureUI() {
         todayWholeView.layer.borderWidth = 0.8
         todayWholeView.layer.borderColor = UIColor(named: "key_green")?.cgColor
@@ -45,7 +110,7 @@ final class HomeViewController: UIViewController {
         todayWholeView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.4)
         todayMyView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.4)
     }
-    
+
     private func fetchTodayRecords() {
         let request = TodayRecordRequest().asURLRequest()
         todayRecordUseCase.getResources(request: request, dataType: TodayRecord.self) { result in
@@ -60,10 +125,10 @@ final class HomeViewController: UIViewController {
             }
         }
     }
-    
-    private func fetchEmptyPlate() {
-        let request = EmptyPlateRequest().asURLRequest()
-        emptyPlateUseCase.getResources(request: request, dataType: ChallengeEmptyPlate.self) { result in
+
+    private func fetchChallengeEmptyPlate() {
+        let request = WeeklyTopLikedEmptyPlateRequest().asURLRequest()
+        challengeEmptyPlateUseCase.getResources(request: request, dataType: ChallengeEmptyPlateContainer.self) { result in
             switch result {
             case .success(let data):
                 self.emptyPlateInfo = data
@@ -73,30 +138,53 @@ final class HomeViewController: UIViewController {
             }
         }
     }
-    
-    private func configureCollectionView() {
-        emptyPlateCollectionView.register(UINib(nibName: String(describing: EmptyPlateCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EmptyPlateCollectionViewCell.self))
-    }
 }
 
-// MARK: - UICollectionViewDataSource
+// MARK:- Configuration
 
-extension HomeViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return emptyPlateInfo.data.count
+extension HomeViewController {
+    private func configure() {
+        configureUI()
+        configureUseCases()
+        configureCollectionView()
+        configureDonationProject()
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EmptyPlateCollectionViewCell.self), for: indexPath) as! EmptyPlateCollectionViewCell
-        let url = URL(string: emptyPlateInfo.data[indexPath.row].url)
-        KingfisherManager.shared.retrieveImage(with: url!, options: nil, progressBlock: nil, downloadTaskUpdated: nil) { (result) in
-            switch result {
-            case .success(let value):
-                cell.configureImage(value.image)
-            case .failure(let error):
-                print(error)
-            }
-        }
-        return cell
+
+    private func configureDonationProject() {
+        configureDonationProjectDataSource()
+        configureDonationProjectDelegate()
+        configureDonationUseCase()
+    }
+
+    private func configureDonationProjectDelegate() {
+        donationProjectDelegate = ClosingDonationProjectCollectionViewDelegate(frame: view.frame.size)
+        donationProjectCollectionView.delegate = donationProjectDelegate
+    }
+
+    private func configureDonationUseCase() {
+        donationUseCase = DonationUseCase()
+    }
+
+    private func configureDonationProjectDataSource() {
+        donationProjectDataSource = DonationProjectCollectionViewDataSource<ClosingDonationProjectCell>(
+            handler: { (_) in
+                self.donationProjectCollectionView.reloadData()
+        })
+        donationProjectCollectionView.dataSource = donationProjectDataSource
+    }
+
+    private func configureUI() {
+        personalTotalView.roundCorner(cornerRadius: 15)
+        personalTotalView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.3)
+    }
+
+    private func configureUseCases() {
+        personalTotalSavingUseCase = PersonalTotalSavingUseCase()
+        todayRecordUseCase = TodayRecordUseCase()
+        challengeEmptyPlateUseCase = ChallengeEmptyPlateUseCase()
+    }
+
+    private func configureCollectionView() {
+        emptyPlateCollectionView.register(UINib(nibName: String(describing: EmptyPlateCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EmptyPlateCollectionViewCell.self))
     }
 }

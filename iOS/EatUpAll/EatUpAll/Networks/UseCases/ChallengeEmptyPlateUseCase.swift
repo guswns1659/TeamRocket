@@ -9,6 +9,6 @@
 import Foundation
 import Alamofire
 
-struct EmptyPlateUseCase: UseCase {
+struct ChallengeEmptyPlateUseCase: UseCase {
     var networkDispatcher: NetworkDispatcher = AF
 }

@@ -22,38 +22,79 @@ final class DonationViewController: UIViewController {
     private var wholeDonationProjectDelegate: WholeDonationProjectCollectionViewDelegate!
     @IBOutlet weak var wholeDonationProjectCollectionViewHeight: NSLayoutConstraint!
     
+    private var donationUseCase: DonationUseCase!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configure()
-        fetchClosingDonationProjects()
         fetchDonationProjects()
     }
     
-    private func fetchClosingDonationProjects() {
-        closingDonationProjectDataSource.updateDonationProjects([
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000)])
+    @objc func presentClosingDetailCell(_ notification: Notification) {
+        let donationDetailViewController = DonationDetailViewController.loadFromNib()
+        donationDetailViewController.modalPresentationStyle = .fullScreen
+
+        guard let indexPath = notification.userInfo?["indexPath"] as? IndexPath else { return }
+        closingDonationProjectDataSource.referDonationProject(at: indexPath) { donationProject in
+            self.present(donationDetailViewController, animated: true) {
+                donationDetailViewController.fetchDonationDetailData(id: donationProject.id)
+            }
+        }
     }
     
+    @objc func presentWholeDetailCell(_ notification: Notification) {
+        guard let indexPath = notification.userInfo?["indexPath"] as? IndexPath else { return }
+        let donationDetailViewController = DonationDetailViewController.loadFromNib()
+        donationDetailViewController.modalPresentationStyle = .fullScreen
+
+        wholeDonationProjectDataSource.referDonationProject(at: indexPath) { donationProject in
+            self.present(donationDetailViewController, animated: true) {
+                donationDetailViewController.fetchDonationDetailData(id: donationProject.id)
+            }
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .selectionClosingDonationCell, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .selectionWholeDonationCell, object: nil)
+    }
+}
+
+// MARK:- Fetching Projects
+
+extension DonationViewController {
     private func fetchDonationProjects() {
-        wholeDonationProjectDataSource.updateDonationProjects([
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000),
-            DonationProject(title: "1111", subtitle: "22222", deadline: Date(), numberOfDonations: 3, currentAmount: 100000, goalAmount: 100000000)])
+        fetchClosingDonationProjects()
+        fetchWholeDonationProjects()
+    }
+    
+    private func fetchWholeDonationProjects() {
+        let request = DonationWholeProjectRequest().asURLRequest()
+        donationUseCase.getResources(
+            request: request,
+            dataType: DonationProjectContainer.self) { (result) in
+                switch result {
+                case .success(let wholeProjectContainer):
+                    self.wholeDonationProjectDataSource.updateDonationProjects(wholeProjectContainer.data)
+                case .failure(_):
+                    break
+                }
+        }
+    }
+    
+    private func fetchClosingDonationProjects() {
+        let request = DonationClosingProjectRequest().asURLRequest()
+        donationUseCase.getResources(
+            request: request,
+            dataType: DonationProjectContainer.self) { (result) in
+                switch result {
+                case .success(let closingProjectContainer):
+                    self.closingDonationProjectDataSource.updateDonationProjects(closingProjectContainer.data)
+                case .failure(_):
+                    break
+                }
+        }
     }
 }
 
@@ -66,6 +107,17 @@ extension DonationViewController {
         configureClosingDonationProjectDelegate()
         configureWholeDonationProjectDataSource()
         configureWholeDonationProjectDelegate()
+        configureUseCase()
+        configureObserver()
+    }
+    
+    private func configureObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(presentClosingDetailCell), name: .selectionClosingDonationCell, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(presentWholeDetailCell), name: .selectionWholeDonationCell, object: nil)
+    }
+    
+    private func configureUseCase() {
+        donationUseCase = DonationUseCase()
     }
     
     private func configureNavigation() {
@@ -103,4 +155,9 @@ extension DonationViewController {
             frame: CGSize(width: view.frame.width, height: view.frame.height))
         wholeDonationProjectCollectionView.delegate = wholeDonationProjectDelegate
     }
+}
+
+extension Notification.Name {
+    static let selectionClosingDonationCell = Notification.Name(rawValue: "selectionClosingDonationCell")
+    static let selectionWholeDonationCell = Notification.Name(rawValue: "selectionWholeDonationCell")
 }

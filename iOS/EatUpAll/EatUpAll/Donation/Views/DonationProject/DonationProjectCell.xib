@@ -52,23 +52,27 @@
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3f-0W-jfT">
                                         <rect key="frame" x="12" y="59" width="373" height="6"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPI-JM-8id">
+                                                <rect key="frame" x="0.0" y="0.0" width="5" height="6"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="6" id="adp-A6-pqh"/>
+                                                    <constraint firstAttribute="width" constant="5" id="rNG-Zc-r9g"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="dPI-JM-8id" secondAttribute="bottom" id="EuW-Pr-n1x"/>
+                                            <constraint firstItem="dPI-JM-8id" firstAttribute="leading" secondItem="a3f-0W-jfT" secondAttribute="leading" id="H3C-CP-Q8e"/>
                                             <constraint firstAttribute="height" constant="6" id="mEq-fD-LMY"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPI-JM-8id">
-                                        <rect key="frame" x="12" y="59" width="198" height="6"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="6" id="adp-A6-pqh"/>
-                                            <constraint firstAttribute="width" constant="198" id="o5J-pL-fvz"/>
+                                            <constraint firstItem="dPI-JM-8id" firstAttribute="top" secondItem="a3f-0W-jfT" secondAttribute="top" id="xus-pb-2bw"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="dPI-JM-8id" firstAttribute="leading" secondItem="R1d-Th-fIo" secondAttribute="leading" constant="12" id="2aX-nF-Yzy"/>
                                     <constraint firstItem="5sI-46-GdW" firstAttribute="leading" secondItem="R1d-Th-fIo" secondAttribute="leading" constant="12" id="3F8-wo-Lv5"/>
                                     <constraint firstAttribute="trailing" secondItem="5sI-46-GdW" secondAttribute="trailing" constant="12" id="6Gm-q1-HEs"/>
                                     <constraint firstItem="MD9-6q-IgN" firstAttribute="leading" secondItem="R1d-Th-fIo" secondAttribute="leading" constant="12" id="7IM-bT-lUL"/>
@@ -76,7 +80,6 @@
                                     <constraint firstItem="a3f-0W-jfT" firstAttribute="leading" secondItem="R1d-Th-fIo" secondAttribute="leading" constant="12" id="I64-dr-87G"/>
                                     <constraint firstAttribute="bottom" secondItem="a3f-0W-jfT" secondAttribute="bottom" constant="12" id="Mqx-l7-jlK"/>
                                     <constraint firstItem="5sI-46-GdW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="R1d-Th-fIo" secondAttribute="top" constant="8" id="Oq4-gQ-ubv"/>
-                                    <constraint firstAttribute="bottom" secondItem="dPI-JM-8id" secondAttribute="bottom" constant="12" id="P8S-hI-SED"/>
                                     <constraint firstItem="a3f-0W-jfT" firstAttribute="top" secondItem="Plp-Ny-Gg0" secondAttribute="bottom" constant="8" id="QD4-pS-mUd"/>
                                     <constraint firstItem="a3f-0W-jfT" firstAttribute="top" secondItem="MD9-6q-IgN" secondAttribute="bottom" constant="8" id="Yyu-Sf-6ab"/>
                                     <constraint firstItem="MD9-6q-IgN" firstAttribute="top" secondItem="5sI-46-GdW" secondAttribute="bottom" constant="8" id="eC0-Em-9sL"/>
@@ -112,8 +115,9 @@
             <connections>
                 <outlet property="accumulatedDonationLabel" destination="Plp-Ny-Gg0" id="sTr-rX-aC5"/>
                 <outlet property="containerView" destination="hVm-d8-e7r" id="vgV-M8-pMF"/>
-                <outlet property="progressBar" destination="a3f-0W-jfT" id="mZb-d2-9tp"/>
-                <outlet property="progressBarBackgroundView" destination="dPI-JM-8id" id="EGI-ek-6dK"/>
+                <outlet property="progressBarBackgroundView" destination="a3f-0W-jfT" id="O5V-IS-Q9f"/>
+                <outlet property="progressBarView" destination="dPI-JM-8id" id="iCd-yl-3Jh"/>
+                <outlet property="progressBarWidthConstraint" destination="rNG-Zc-r9g" id="SvR-9d-EX5"/>
                 <outlet property="progressPercentageLabel" destination="Wwj-wb-tZ3" id="bYM-b4-11f"/>
                 <outlet property="projectImageView" destination="eBN-yO-v5E" id="0qK-nE-Z5A"/>
                 <outlet property="remainingDateLabel" destination="MD9-6q-IgN" id="9RP-bE-FDb"/>
