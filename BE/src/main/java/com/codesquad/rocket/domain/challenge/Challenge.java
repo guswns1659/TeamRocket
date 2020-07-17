@@ -20,6 +20,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.locationtech.jts.geom.Point;
+import org.locationtech.jts.io.WKTReader;
 
 import com.codesquad.rocket.domain.account.Account;
 import lombok.AccessLevel;
@@ -74,5 +75,20 @@ public class Challenge {
             .findFirst()
             .orElseThrow(() -> new IllegalStateException("해당하는 Like가 없습니다. accountName" + account.getName()));
         this.likes.remove(foundLike);
+    }
+
+    public void isAtRestaurant() {
+        try {
+            if (this.getRestaurantName() == null) {
+                this.restaurantName = "null";
+                Double latitude = 0.0;
+                Double longitude = 0.0;
+                String pointWKT = String.format("POINT(%s %s)", longitude, latitude);
+                this.point = (Point) new WKTReader().read(pointWKT);
+            }
+        } catch (Exception e) {
+            this.restaurantName = "null";
+            throw new IllegalStateException("point 생성 실패");
+        }
     }
 }

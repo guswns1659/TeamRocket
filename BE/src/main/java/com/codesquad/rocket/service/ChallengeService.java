@@ -1,6 +1,5 @@
 package com.codesquad.rocket.service;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,6 +16,7 @@ import com.codesquad.rocket.domain.challenge.ChallengeRepository;
 import com.codesquad.rocket.domain.challenge.Like;
 import com.codesquad.rocket.domain.restaurant.Restaurant;
 import com.codesquad.rocket.domain.restaurant.RestaurantRepository;
+import com.codesquad.rocket.utils.GeometryUtils;
 import com.codesquad.rocket.utils.S3Uploader;
 import com.codesquad.rocket.web.dto.response.challenge.ChallengeDetailResponseDto;
 import com.codesquad.rocket.web.dto.response.challenge.ChallengeResponseDto;
@@ -29,6 +29,9 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ChallengeService {
 
+    private static final String NULL = "null";
+    private static final String DIRECTORYNAME = "static";
+    private static final String DELMA = "delma";
     private final AccountRepository accountRepository;
     private final ChallengeRepository challengeRepository;
     private final RestaurantRepository restaurantRepository;
@@ -57,8 +60,7 @@ public class ChallengeService {
 
     public ChallengeDetailResponseDto findById(Long id) {
         Challenge challenge = challengeRepository.findById(id).orElse(new Challenge());
-        String userName = "delma";
-        Account account = accountRepository.findAccountByName(userName).orElse(new Account());
+        Account account = accountRepository.findAccountByName(DELMA).orElse(new Account());
         boolean isLiked = hasAccountInLikes(account, challenge);
         if (isLiked) {
             return ChallengeDetailResponseDto.likedOf(challenge);
@@ -69,8 +71,7 @@ public class ChallengeService {
     public LikeResponseDto getLikeResult(Long id, String liked) {
         final String OK = "200";
         final String FAIL = "400";
-        String userName = "delma";
-        Account account = accountRepository.findAccountByName(userName).orElse(new Account());
+        Account account = accountRepository.findAccountByName(DELMA).orElse(new Account());
         Challenge challenge = challengeRepository.findById(id).orElse(new Challenge());
 
         if (likedIsTrue(liked)) {
@@ -107,8 +108,7 @@ public class ChallengeService {
     }
 
     private List<ChallengeDetailResponseDto> challengeHasLikeWithAccount(List<Challenge> challenges) {
-        String userName = "delma";
-        Account account = accountRepository.findAccountByName(userName).orElse(new Account());
+        Account account = accountRepository.findAccountByName(DELMA).orElse(new Account());
         List<ChallengeDetailResponseDto> data = new ArrayList<>();
 
         for (Challenge challenge : challenges) {
@@ -130,8 +130,8 @@ public class ChallengeService {
     public ChallengeStatusResponseDto addChallenge(Long restaurantId, MultipartFile multipartFile, String description) {
         try {
             Restaurant restaurant = restaurantRepository.findById(restaurantId).orElse(new Restaurant());
-            Account account = accountRepository.findAccountByName("delma").orElse(new Account());
-            String uploadUrl = s3Uploader.upload(multipartFile, "static");
+            Account account = accountRepository.findAccountByName(DELMA).orElse(new Account());
+            String uploadUrl = s3Uploader.upload(multipartFile, DIRECTORYNAME);
 
             Challenge challenge = Challenge.builder()
                 .account(account)
@@ -166,8 +166,8 @@ public class ChallengeService {
     public ChallengeStatusResponseDto addChallenge(MultipartFile multipartFile, String description) {
         try {
             // Restaurant restaurant = restaurantRepository.findById(restaurantId).orElse(new Restaurant());
-            Account account = accountRepository.findAccountByName("delma").orElse(new Account());
-            String uploadUrl = s3Uploader.upload(multipartFile, "static");
+            Account account = accountRepository.findAccountByName(DELMA).orElse(new Account());
+            String uploadUrl = s3Uploader.upload(multipartFile, DIRECTORYNAME);
 
             Challenge challenge = Challenge.builder()
                 .account(account)
@@ -175,6 +175,8 @@ public class ChallengeService {
                 .description(description)
                 .updatedAt(new Date())
                 .url(uploadUrl)
+                .restaurantName(NULL)
+                .point(GeometryUtils.getEmptyPoint())
                 .build();
 
             challengeRepository.save(challenge);
@@ -183,6 +185,7 @@ public class ChallengeService {
                 .createdAt(new Date())
                 .ecoPoint(200)
                 .build();
+
             account.addPointHistory(pointHistory);
             accountRepository.save(account);
 

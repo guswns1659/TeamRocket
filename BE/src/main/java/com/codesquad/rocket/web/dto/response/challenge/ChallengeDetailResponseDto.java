@@ -28,6 +28,8 @@ public class ChallengeDetailResponseDto {
     private String author;
 
     public static ChallengeDetailResponseDto likedOf(Challenge challenge) {
+        challenge.isAtRestaurant();
+
         return ChallengeDetailResponseDto.builder()
             .id(challenge.getId())
             .likeCount(challenge.getLikes().size())
@@ -44,6 +46,8 @@ public class ChallengeDetailResponseDto {
     }
 
     public static ChallengeDetailResponseDto unLikedOf(Challenge challenge) {
+        challenge.isAtRestaurant();
+
         return ChallengeDetailResponseDto.builder()
             .id(challenge.getId())
             .likeCount(challenge.getLikes().size())

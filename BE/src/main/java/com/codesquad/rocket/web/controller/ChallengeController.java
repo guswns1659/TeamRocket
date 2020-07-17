@@ -52,15 +52,15 @@ public class ChallengeController {
     public ChallengeStatusResponseDto upload(
         @PathVariable(required = false) Long restaurantId,
         @RequestPart(value = "picture") MultipartFile file,
-        @RequestParam(value = "description") String description) {
+        @RequestPart(value = "description") String description) {
 
         return challengeService.addChallenge(restaurantId, file, description);
     }
 
     @PostMapping(path = "upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ChallengeStatusResponseDto upload2(
-        @RequestPart(value = "picture") MultipartFile file,
-        @RequestParam(value = "description") String description) {
+    public ChallengeStatusResponseDto uploadNoRestaurant(
+        @RequestPart(value = "file") MultipartFile file,
+        @RequestPart(value = "description") String description) {
 
         return challengeService.addChallenge(file, description);
     }
