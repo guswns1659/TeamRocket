@@ -55,6 +55,7 @@ extension MyPageViewController {
             case .success(let history):
                 self.pointHistories = history
                 self.pointHistoryTableView.dataSource = self
+                self.pointHistoryTableView.reloadData()
             case .failure(let error):
                 print(error)
             }
@@ -114,7 +115,7 @@ extension MyPageViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PointHistoryTableViewCell.self), for: indexPath) as! PointHistoryTableViewCell
-        
+        cell.configureData(pointHistories.data[indexPath.row])
         return cell
     }
 }
