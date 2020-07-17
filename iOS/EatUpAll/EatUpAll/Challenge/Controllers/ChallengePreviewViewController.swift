@@ -33,7 +33,8 @@ final class ChallengePreviewViewController: UIViewController {
     
     private var currentMode: ChallengeCameraViewController.Mode = .challengeMode
     
-    private var useCase: ChallengeNewPostUseCase!
+    private var uploadUseCase: ChallengeNewPostUseCase!
+    private var networkUseCase: NetworkUseCase!
     
     private var isDescriptionMode: Bool = false
     
@@ -103,7 +104,7 @@ final class ChallengePreviewViewController: UIViewController {
         let uploadParameter: [String : Any] = ["description": descriptionTextView.text as Any]
         uploadingHUD.textLabel.text = "업로딩 중"
         uploadingHUD.show(in: view, animated: true)
-        useCase.upload(
+        uploadUseCase.upload(
             request: request,
             imageData: imageData,
             parameters: uploadParameter,
@@ -228,7 +229,8 @@ extension ChallengePreviewViewController {
     }
     
     private func configureUseCase() {
-        useCase = ChallengeNewPostUseCase()
+        uploadUseCase = ChallengeNewPostUseCase()
+        networkUseCase = NetworkUseCase()
     }
     
     private func configureDescriptionTapRecognizer() {

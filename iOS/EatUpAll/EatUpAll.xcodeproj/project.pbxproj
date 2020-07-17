@@ -77,6 +77,8 @@
 		38714B3D24BC7BFD00E9B9FC /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38714B3B24BC7BFD00E9B9FC /* HomeViewController.xib */; };
 		38714B4124BC7FA400E9B9FC /* DonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38714B3F24BC7FA400E9B9FC /* DonationViewController.swift */; };
 		38714B4224BC7FA400E9B9FC /* DonationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38714B4024BC7FA400E9B9FC /* DonationViewController.xib */; };
+		3871901424C2063200954428 /* NetworkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871901324C2063200954428 /* NetworkUseCase.swift */; };
+		3871901624C206D900954428 /* RestaurantInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871901524C206D900954428 /* RestaurantInfoRequest.swift */; };
 		38EB2A7224BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7124BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift */; };
 		38EB2A7424BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7324BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift */; };
 		38EB2A7824BDA61D002CBDEA /* ChallengeFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7624BDA61D002CBDEA /* ChallengeFeedViewController.swift */; };
@@ -157,6 +159,8 @@
 		38714B3B24BC7BFD00E9B9FC /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		38714B3F24BC7FA400E9B9FC /* DonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewController.swift; sourceTree = "<group>"; };
 		38714B4024BC7FA400E9B9FC /* DonationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationViewController.xib; sourceTree = "<group>"; };
+		3871901324C2063200954428 /* NetworkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUseCase.swift; sourceTree = "<group>"; };
+		3871901524C206D900954428 /* RestaurantInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantInfoRequest.swift; sourceTree = "<group>"; };
 		38EB2A7124BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		38EB2A7324BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeDonationProjectCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		38EB2A7624BDA61D002CBDEA /* ChallengeFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeFeedViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 				3022698D24BF342D005A864C /* MyEcoPointUseCase.swift */,
 				38002BA724C08E8400D85D72 /* ChallengeNewPostUseCase.swift */,
 				302406E824C08AD000B3E328 /* LikeUseCase.swift */,
+				3871901324C2063200954428 /* NetworkUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				3097497024C0792400C391DC /* AllEmptyPlateRequest.swift */,
 				3097497224C07BAD00C391DC /* EmptyPlateRequest.swift */,
 				302406E624C089D700B3E328 /* LikeRequest.swift */,
+				3871901524C206D900954428 /* RestaurantInfoRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -604,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3871901424C2063200954428 /* NetworkUseCase.swift in Sources */,
 				38714B4124BC7FA400E9B9FC /* DonationViewController.swift in Sources */,
 				302406E724C089D700B3E328 /* LikeRequest.swift in Sources */,
 				383D8C8F24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift in Sources */,
@@ -637,6 +644,7 @@
 				38EB2A7224BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift in Sources */,
 				385F613024BF41F8003C2B7D /* ChallengeCameraButton.swift in Sources */,
 				38714B2124BC780A00E9B9FC /* AppDelegate.swift in Sources */,
+				3871901624C206D900954428 /* RestaurantInfoRequest.swift in Sources */,
 				302406E924C08AD000B3E328 /* LikeUseCase.swift in Sources */,
 				30B0A30824BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift in Sources */,
 				302BB02524BD68BE000EB297 /* Request.swift in Sources */,
