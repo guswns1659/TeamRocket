@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 final class ChallengePreviewViewController: UIViewController {
 
@@ -22,6 +23,8 @@ final class ChallengePreviewViewController: UIViewController {
     
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var descriptionPlaceholderLabel: UILabel!
+    
+    private var useCase: ChallengeNewPostUseCase!
     
     private var isDescriptionMode: Bool = false
     
@@ -58,7 +61,7 @@ final class ChallengePreviewViewController: UIViewController {
     }
     
     @IBAction func shareButtonDidTap(_ sender: Any) {
-        
+        uploadChallenge()
     }
     
     @IBAction func descriptionCancelButtonDidTap(_ sender: Any) {
@@ -67,6 +70,13 @@ final class ChallengePreviewViewController: UIViewController {
     
     @IBAction func descriptionDoneButtonDidTap(_ sender: Any) {
         dismissDescriptionMode()
+    }
+    
+    private func uploadChallenge() {
+        let request1 = ChallengeUploadRequest().asURLRequest()
+        guard let imageData = capturedImage?.jpegData(compressionQuality: 0.8) else { return }
+        let uploadParameter: [String : Any] = ["description": descriptionTextView.text as Any]
+        useCase.upload(request: request1, imageData: imageData, parameters: uploadParameter)
     }
 }
 
@@ -165,6 +175,11 @@ extension ChallengePreviewViewController {
     private func configure() {
         configureCapturedImageView()
         configureDescriptionTapRecognizer()
+        configureUseCase()
+    }
+    
+    private func configureUseCase() {
+        useCase = ChallengeNewPostUseCase()
     }
     
     private func configureDescriptionTapRecognizer() {
