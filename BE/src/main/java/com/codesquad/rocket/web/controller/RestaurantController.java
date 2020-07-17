@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.codesquad.rocket.service.RestaurantService;
 import com.codesquad.rocket.web.dto.response.restaurant.NearRestaurantResponseDtos;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -16,9 +17,12 @@ public class RestaurantController {
 
     private final RestaurantService restaurantService;
 
+    @ApiOperation(value = "300M 이내 식당 요청",
+        notes = "기준 좌표 300M 이내 식당 리스트 요청, 고정 latitude = 33.24859, longitude = 126.5648")
     @GetMapping("nearRestaurant")
-    public NearRestaurantResponseDtos nearRestaurant(@RequestParam(required = false, value = "latitude") Double latitude,
-        @RequestParam(required = false, value = "longitude") Double longitude) {
+    public NearRestaurantResponseDtos nearRestaurant(
+        @RequestParam(value = "latitude") Double latitude,
+        @RequestParam(value = "longitude") Double longitude) {
         return restaurantService.nearRestaurant(latitude, longitude);
     }
 }
