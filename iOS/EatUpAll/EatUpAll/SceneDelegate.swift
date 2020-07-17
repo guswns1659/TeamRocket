@@ -30,6 +30,13 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func postNotification(userInfo: [String: Any]) {
-        print(userInfo["restaurantID"] as! Int)
+        NotificationCenter.default.post(
+            name: .didScanChallengeQRCode,
+            object: nil,
+            userInfo: userInfo)
     }
+}
+
+extension Notification.Name {
+    static let didScanChallengeQRCode = Notification.Name(rawValue: "didScanChallengeQRCode")
 }
