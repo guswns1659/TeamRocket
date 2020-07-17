@@ -21,6 +21,7 @@ enum EndPoint {
     static let donationProjectDetailURL = "\(baseURL)project/"
     static let myEcoPointURL = "\(baseURL)account/ecoPoint"
     static let donateURL = "\(baseURL)project/donate/"
+    static let challengeUploadURL = "\(baseURL)/challenge/upload"
 }
 
 enum QueryParameters: CustomStringConvertible {

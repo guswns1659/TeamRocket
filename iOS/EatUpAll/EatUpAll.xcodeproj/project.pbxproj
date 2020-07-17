@@ -51,6 +51,9 @@
 		30DA856C24BED2B200297204 /* DonationProjectDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA856B24BED2B100297204 /* DonationProjectDetailRequest.swift */; };
 		38002B9B24C0356800D85D72 /* ChallengeEmptyPlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38002B9A24C0356800D85D72 /* ChallengeEmptyPlate.swift */; };
 		38002B9D24C043C500D85D72 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38002B9C24C043C500D85D72 /* UIView+Shimmering.swift */; };
+		38002BA624C08DBD00D85D72 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 38002BA524C08DBD00D85D72 /* JGProgressHUD */; };
+		38002BA824C08E8400D85D72 /* ChallengeNewPostUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38002BA724C08E8400D85D72 /* ChallengeNewPostUseCase.swift */; };
+		38002BAA24C08EB000D85D72 /* ChallengeUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38002BA924C08EB000D85D72 /* ChallengeUploadRequest.swift */; };
 		380B222724BDEA6C0004FA55 /* DonationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B222624BDEA6C0004FA55 /* DonationUseCase.swift */; };
 		380B222924BDEA9B0004FA55 /* DonationClosingProjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B222824BDEA9B0004FA55 /* DonationClosingProjectRequest.swift */; };
 		380B222B24BDEAD30004FA55 /* DonationWholeProjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B222A24BDEAD30004FA55 /* DonationWholeProjectRequest.swift */; };
@@ -135,6 +138,8 @@
 		30DA856B24BED2B100297204 /* DonationProjectDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectDetailRequest.swift; sourceTree = "<group>"; };
 		38002B9A24C0356800D85D72 /* ChallengeEmptyPlate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEmptyPlate.swift; sourceTree = "<group>"; };
 		38002B9C24C043C500D85D72 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
+		38002BA724C08E8400D85D72 /* ChallengeNewPostUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeNewPostUseCase.swift; sourceTree = "<group>"; };
+		38002BA924C08EB000D85D72 /* ChallengeUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeUploadRequest.swift; sourceTree = "<group>"; };
 		380B222624BDEA6C0004FA55 /* DonationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationUseCase.swift; sourceTree = "<group>"; };
 		380B222824BDEA9B0004FA55 /* DonationClosingProjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationClosingProjectRequest.swift; sourceTree = "<group>"; };
 		380B222A24BDEAD30004FA55 /* DonationWholeProjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationWholeProjectRequest.swift; sourceTree = "<group>"; };
@@ -184,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30B0A2FE24BDA4BD00BB9E55 /* Kingfisher in Frameworks */,
+				38002BA624C08DBD00D85D72 /* JGProgressHUD in Frameworks */,
 				306FA78D24BD61C300279A18 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +216,7 @@
 				380B222624BDEA6C0004FA55 /* DonationUseCase.swift */,
 				30B0A30724BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift */,
 				3022698D24BF342D005A864C /* MyEcoPointUseCase.swift */,
+				38002BA724C08E8400D85D72 /* ChallengeNewPostUseCase.swift */,
 				302406E824C08AD000B3E328 /* LikeUseCase.swift */,
 			);
 			path = UseCases;
@@ -231,6 +238,7 @@
 				30B0A2F724BD9E0300BB9E55 /* WeeklyTopLikedEmptyPlateRequest.swift */,
 				30B0A30124BDC2FF00BB9E55 /* TodayRecordRequest.swift */,
 				30B0A30924BDCEB300BB9E55 /* PersonalTotalSavingRequest.swift */,
+				38002BA924C08EB000D85D72 /* ChallengeUploadRequest.swift */,
 				3097497024C0792400C391DC /* AllEmptyPlateRequest.swift */,
 				3097497224C07BAD00C391DC /* EmptyPlateRequest.swift */,
 				302406E624C089D700B3E328 /* LikeRequest.swift */,
@@ -563,6 +571,7 @@
 			packageProductDependencies = (
 				306FA78C24BD61C300279A18 /* Alamofire */,
 				30B0A2FD24BDA4BD00BB9E55 /* Kingfisher */,
+				38002BA524C08DBD00D85D72 /* JGProgressHUD */,
 			);
 			productName = EatUpAll;
 			productReference = 38714B1D24BC780A00E9B9FC /* EatUpAll.app */;
@@ -595,6 +604,7 @@
 			packageReferences = (
 				306FA78B24BD61C300279A18 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				30B0A2FC24BDA4BD00BB9E55 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				38002BA424C08DBD00D85D72 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 38714B1E24BC780A00E9B9FC /* Products */;
 			projectDirPath = "";
@@ -643,6 +653,7 @@
 				383D8C8F24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift in Sources */,
 				38714B3C24BC7BFD00E9B9FC /* HomeViewController.swift in Sources */,
 				3043475324C146650038C569 /* TutorialSecondView.swift in Sources */,
+				38002BA824C08E8400D85D72 /* ChallengeNewPostUseCase.swift in Sources */,
 				306FA78224BD585200279A18 /* EmptyPlateCollectionViewCell.swift in Sources */,
 				38002B9B24C0356800D85D72 /* ChallengeEmptyPlate.swift in Sources */,
 				30B0A2F824BD9E0300BB9E55 /* WeeklyTopLikedEmptyPlateRequest.swift in Sources */,
@@ -698,6 +709,7 @@
 				383D8C8224BC920100561EF3 /* UIView+Border.swift in Sources */,
 				380B222924BDEA9B0004FA55 /* DonationClosingProjectRequest.swift in Sources */,
 				30B0A30224BDC2FF00BB9E55 /* TodayRecordRequest.swift in Sources */,
+				38002BAA24C08EB000D85D72 /* ChallengeUploadRequest.swift in Sources */,
 				302BB02224BD67B8000EB297 /* NetworkError.swift in Sources */,
 				302BB02824BD6ED9000EB297 /* DonationDetailViewController.swift in Sources */,
 				30DA856A24BED26A00297204 /* DonationProjectDetailUseCase.swift in Sources */,
@@ -908,6 +920,14 @@
 				minimumVersion = 5.14.1;
 			};
 		};
+		38002BA424C08DBD00D85D72 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -920,6 +940,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 30B0A2FC24BDA4BD00BB9E55 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		38002BA524C08DBD00D85D72 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 38002BA424C08DBD00D85D72 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
