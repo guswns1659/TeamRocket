@@ -11,6 +11,7 @@ import Kingfisher
 
 final class HomeViewController: UIViewController {
 
+    @IBOutlet weak var tutorialView: UIView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var personalTotalView: UIView!
     @IBOutlet weak var personalTotalSavings: UILabel!
@@ -21,6 +22,7 @@ final class HomeViewController: UIViewController {
     @IBOutlet weak var emptyPlateCollectionView: UICollectionView!
     @IBOutlet weak var donationProjectCollectionView: ClosingDonationProjectCollectionView!
     
+    private var wholeTutorialView: WholeTutorialView!
     private var personalTotalSavingUseCase: PersonalTotalSavingUseCase!
     private var todayRecordUseCase: TodayRecordUseCase!
     private var challengeEmptyPlateUseCase: ChallengeEmptyPlateUseCase!
@@ -33,6 +35,10 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         configure()
         fetchDatas()
+    }
+    
+    @objc private func showTutorial(_ gesture: UIGestureRecognizer) {
+        wholeTutorialView.isHidden = false
     }
 }
 
@@ -132,6 +138,24 @@ extension HomeViewController {
         configureUseCases()
         configureCollectionView()
         configureDonationProject()
+        configureGestureRecognizer()
+        configureTutorialView()
+    }
+    
+    private func configureTutorialView() {
+        wholeTutorialView = WholeTutorialView()
+        view.addSubview(wholeTutorialView)
+        wholeTutorialView.translatesAutoresizingMaskIntoConstraints = false
+        wholeTutorialView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        wholeTutorialView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        wholeTutorialView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        wholeTutorialView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        wholeTutorialView.isHidden = true
+    }
+    
+    private func configureGestureRecognizer() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showTutorial(_:)))
+        tutorialView.addGestureRecognizer(tapGesture)
     }
     
     private func configureDonationProject() {
