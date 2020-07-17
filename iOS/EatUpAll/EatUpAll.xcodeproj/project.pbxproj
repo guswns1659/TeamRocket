@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300E3FDA24C06D5A00A95241 /* ChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E3FD824C06D5A00A95241 /* ChallengeDetailViewController.swift */; };
+		300E3FDB24C06D5A00A95241 /* ChallengeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300E3FD924C06D5A00A95241 /* ChallengeDetailViewController.xib */; };
 		3022698824BF09A3005A864C /* DonateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022698724BF09A3005A864C /* DonateView.swift */; };
 		3022698A24BF09BA005A864C /* DonateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3022698924BF09BA005A864C /* DonateView.xib */; };
 		3022698C24BF33F9005A864C /* MyEcoPointRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022698B24BF33F9005A864C /* MyEcoPointRequest.swift */; };
 		3022698E24BF342D005A864C /* MyEcoPointUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022698D24BF342D005A864C /* MyEcoPointUseCase.swift */; };
 		3022699024BF4130005A864C /* DonateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022698F24BF4130005A864C /* DonateRequest.swift */; };
+		302406E724C089D700B3E328 /* LikeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302406E624C089D700B3E328 /* LikeRequest.swift */; };
+		302406E924C08AD000B3E328 /* LikeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302406E824C08AD000B3E328 /* LikeUseCase.swift */; };
 		302BB01824BD65C6000EB297 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB01724BD65C6000EB297 /* Endpoint.swift */; };
 		302BB01A24BD65DB000EB297 /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB01924BD65DB000EB297 /* NetworkDispatcher.swift */; };
 		302BB01C24BD661E000EB297 /* Session+NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BB01B24BD661D000EB297 /* Session+NetworkDispatcher.swift */; };
@@ -23,8 +27,10 @@
 		306FA78224BD585200279A18 /* EmptyPlateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306FA78024BD585200279A18 /* EmptyPlateCollectionViewCell.swift */; };
 		306FA78324BD585200279A18 /* EmptyPlateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 306FA78124BD585200279A18 /* EmptyPlateCollectionViewCell.xib */; };
 		306FA78D24BD61C300279A18 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 306FA78C24BD61C300279A18 /* Alamofire */; };
+		3097497124C0792400C391DC /* AllEmptyPlateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097497024C0792400C391DC /* AllEmptyPlateRequest.swift */; };
+		3097497324C07BAD00C391DC /* EmptyPlateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097497224C07BAD00C391DC /* EmptyPlateRequest.swift */; };
 		30B0A2F624BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2F524BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift */; };
-		30B0A2F824BD9E0300BB9E55 /* ChallengeEmptyPlateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2F724BD9E0300BB9E55 /* ChallengeEmptyPlateRequest.swift */; };
+		30B0A2F824BD9E0300BB9E55 /* WeeklyTopLikedEmptyPlateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2F724BD9E0300BB9E55 /* WeeklyTopLikedEmptyPlateRequest.swift */; };
 		30B0A2FE24BDA4BD00BB9E55 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 30B0A2FD24BDA4BD00BB9E55 /* Kingfisher */; };
 		30B0A30024BDC2AA00BB9E55 /* TodayRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2FF24BDC2AA00BB9E55 /* TodayRecord.swift */; };
 		30B0A30224BDC2FF00BB9E55 /* TodayRecordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A30124BDC2FF00BB9E55 /* TodayRecordRequest.swift */; };
@@ -36,6 +42,10 @@
 		30DA856A24BED26A00297204 /* DonationProjectDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA856924BED26A00297204 /* DonationProjectDetailUseCase.swift */; };
 		30DA856C24BED2B200297204 /* DonationProjectDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA856B24BED2B100297204 /* DonationProjectDetailRequest.swift */; };
 		38002B9B24C0356800D85D72 /* ChallengeEmptyPlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38002B9A24C0356800D85D72 /* ChallengeEmptyPlate.swift */; };
+		38002B9D24C043C500D85D72 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38002B9C24C043C500D85D72 /* UIView+Shimmering.swift */; };
+		38002BA624C08DBD00D85D72 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 38002BA524C08DBD00D85D72 /* JGProgressHUD */; };
+		38002BA824C08E8400D85D72 /* ChallengeNewPostUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38002BA724C08E8400D85D72 /* ChallengeNewPostUseCase.swift */; };
+		38002BAA24C08EB000D85D72 /* ChallengeUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38002BA924C08EB000D85D72 /* ChallengeUploadRequest.swift */; };
 		380B222724BDEA6C0004FA55 /* DonationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B222624BDEA6C0004FA55 /* DonationUseCase.swift */; };
 		380B222924BDEA9B0004FA55 /* DonationClosingProjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B222824BDEA9B0004FA55 /* DonationClosingProjectRequest.swift */; };
 		380B222B24BDEAD30004FA55 /* DonationWholeProjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B222A24BDEAD30004FA55 /* DonationWholeProjectRequest.swift */; };
@@ -78,11 +88,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		300E3FD824C06D5A00A95241 /* ChallengeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewController.swift; sourceTree = "<group>"; };
+		300E3FD924C06D5A00A95241 /* ChallengeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeDetailViewController.xib; sourceTree = "<group>"; };
 		3022698724BF09A3005A864C /* DonateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateView.swift; sourceTree = "<group>"; };
 		3022698924BF09BA005A864C /* DonateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonateView.xib; sourceTree = "<group>"; };
 		3022698B24BF33F9005A864C /* MyEcoPointRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEcoPointRequest.swift; sourceTree = "<group>"; };
 		3022698D24BF342D005A864C /* MyEcoPointUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEcoPointUseCase.swift; sourceTree = "<group>"; };
 		3022698F24BF4130005A864C /* DonateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateRequest.swift; sourceTree = "<group>"; };
+		302406E624C089D700B3E328 /* LikeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeRequest.swift; sourceTree = "<group>"; };
+		302406E824C08AD000B3E328 /* LikeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeUseCase.swift; sourceTree = "<group>"; };
 		302BB01724BD65C6000EB297 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		302BB01924BD65DB000EB297 /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		302BB01B24BD661D000EB297 /* Session+NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+NetworkDispatcher.swift"; sourceTree = "<group>"; };
@@ -93,8 +107,10 @@
 		302BB02724BD6ED9000EB297 /* DonationDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationDetailViewController.xib; sourceTree = "<group>"; };
 		306FA78024BD585200279A18 /* EmptyPlateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlateCollectionViewCell.swift; sourceTree = "<group>"; };
 		306FA78124BD585200279A18 /* EmptyPlateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPlateCollectionViewCell.xib; sourceTree = "<group>"; };
+		3097497024C0792400C391DC /* AllEmptyPlateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEmptyPlateRequest.swift; sourceTree = "<group>"; };
+		3097497224C07BAD00C391DC /* EmptyPlateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlateRequest.swift; sourceTree = "<group>"; };
 		30B0A2F524BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEmptyPlateUseCase.swift; sourceTree = "<group>"; };
-		30B0A2F724BD9E0300BB9E55 /* ChallengeEmptyPlateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEmptyPlateRequest.swift; sourceTree = "<group>"; };
+		30B0A2F724BD9E0300BB9E55 /* WeeklyTopLikedEmptyPlateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTopLikedEmptyPlateRequest.swift; sourceTree = "<group>"; };
 		30B0A2FF24BDC2AA00BB9E55 /* TodayRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecord.swift; sourceTree = "<group>"; };
 		30B0A30124BDC2FF00BB9E55 /* TodayRecordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecordRequest.swift; sourceTree = "<group>"; };
 		30B0A30324BDC37900BB9E55 /* TodayRecordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecordUseCase.swift; sourceTree = "<group>"; };
@@ -105,6 +121,9 @@
 		30DA856924BED26A00297204 /* DonationProjectDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectDetailUseCase.swift; sourceTree = "<group>"; };
 		30DA856B24BED2B100297204 /* DonationProjectDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationProjectDetailRequest.swift; sourceTree = "<group>"; };
 		38002B9A24C0356800D85D72 /* ChallengeEmptyPlate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEmptyPlate.swift; sourceTree = "<group>"; };
+		38002B9C24C043C500D85D72 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
+		38002BA724C08E8400D85D72 /* ChallengeNewPostUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeNewPostUseCase.swift; sourceTree = "<group>"; };
+		38002BA924C08EB000D85D72 /* ChallengeUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeUploadRequest.swift; sourceTree = "<group>"; };
 		380B222624BDEA6C0004FA55 /* DonationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationUseCase.swift; sourceTree = "<group>"; };
 		380B222824BDEA9B0004FA55 /* DonationClosingProjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationClosingProjectRequest.swift; sourceTree = "<group>"; };
 		380B222A24BDEAD30004FA55 /* DonationWholeProjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationWholeProjectRequest.swift; sourceTree = "<group>"; };
@@ -154,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30B0A2FE24BDA4BD00BB9E55 /* Kingfisher in Frameworks */,
+				38002BA624C08DBD00D85D72 /* JGProgressHUD in Frameworks */,
 				306FA78D24BD61C300279A18 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +200,8 @@
 				380B222624BDEA6C0004FA55 /* DonationUseCase.swift */,
 				30B0A30724BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift */,
 				3022698D24BF342D005A864C /* MyEcoPointUseCase.swift */,
+				38002BA724C08E8400D85D72 /* ChallengeNewPostUseCase.swift */,
+				302406E824C08AD000B3E328 /* LikeUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -197,9 +219,13 @@
 			children = (
 				380B222C24BDEAEA0004FA55 /* Donation */,
 				302BB02424BD68BE000EB297 /* Request.swift */,
-				30B0A2F724BD9E0300BB9E55 /* ChallengeEmptyPlateRequest.swift */,
+				30B0A2F724BD9E0300BB9E55 /* WeeklyTopLikedEmptyPlateRequest.swift */,
 				30B0A30124BDC2FF00BB9E55 /* TodayRecordRequest.swift */,
 				30B0A30924BDCEB300BB9E55 /* PersonalTotalSavingRequest.swift */,
+				38002BA924C08EB000D85D72 /* ChallengeUploadRequest.swift */,
+				3097497024C0792400C391DC /* AllEmptyPlateRequest.swift */,
+				3097497224C07BAD00C391DC /* EmptyPlateRequest.swift */,
+				302406E624C089D700B3E328 /* LikeRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -407,6 +433,7 @@
 				383D8C8324BC921600561EF3 /* UIView+Shadow.swift */,
 				380B222D24BEA4DE0004FA55 /* Int+DecimalStyle.swift */,
 				383F239A24BEAD7400C5E8C9 /* UIView+Animation.swift */,
+				38002B9C24C043C500D85D72 /* UIView+Shimmering.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -461,6 +488,8 @@
 			children = (
 				38EB2A7624BDA61D002CBDEA /* ChallengeFeedViewController.swift */,
 				38EB2A7724BDA61D002CBDEA /* ChallengeFeedViewController.xib */,
+				300E3FD824C06D5A00A95241 /* ChallengeDetailViewController.swift */,
+				300E3FD924C06D5A00A95241 /* ChallengeDetailViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -502,6 +531,7 @@
 			packageProductDependencies = (
 				306FA78C24BD61C300279A18 /* Alamofire */,
 				30B0A2FD24BDA4BD00BB9E55 /* Kingfisher */,
+				38002BA524C08DBD00D85D72 /* JGProgressHUD */,
 			);
 			productName = EatUpAll;
 			productReference = 38714B1D24BC780A00E9B9FC /* EatUpAll.app */;
@@ -534,6 +564,7 @@
 			packageReferences = (
 				306FA78B24BD61C300279A18 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				30B0A2FC24BDA4BD00BB9E55 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				38002BA424C08DBD00D85D72 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 38714B1E24BC780A00E9B9FC /* Products */;
 			projectDirPath = "";
@@ -550,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38652A3B24BC89E4006A8A48 /* ClosingDonationProjectCell.xib in Resources */,
+				300E3FDB24C06D5A00A95241 /* ChallengeDetailViewController.xib in Resources */,
 				383D8C8024BC8F5500561EF3 /* DonationProjectCell.xib in Resources */,
 				38EB2A7924BDA61D002CBDEA /* ChallengeFeedViewController.xib in Resources */,
 				385F612924BF3229003C2B7D /* ChallengeCameraViewController.xib in Resources */,
@@ -573,11 +605,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				38714B4124BC7FA400E9B9FC /* DonationViewController.swift in Sources */,
+				302406E724C089D700B3E328 /* LikeRequest.swift in Sources */,
 				383D8C8F24BCA0DE00561EF3 /* ClosingDonationProjectCollectionViewDelegate.swift in Sources */,
 				38714B3C24BC7BFD00E9B9FC /* HomeViewController.swift in Sources */,
+				38002BA824C08E8400D85D72 /* ChallengeNewPostUseCase.swift in Sources */,
 				306FA78224BD585200279A18 /* EmptyPlateCollectionViewCell.swift in Sources */,
 				38002B9B24C0356800D85D72 /* ChallengeEmptyPlate.swift in Sources */,
-				30B0A2F824BD9E0300BB9E55 /* ChallengeEmptyPlateRequest.swift in Sources */,
+				30B0A2F824BD9E0300BB9E55 /* WeeklyTopLikedEmptyPlateRequest.swift in Sources */,
 				383F239B24BEAD7400C5E8C9 /* UIView+Animation.swift in Sources */,
 				3022698E24BF342D005A864C /* MyEcoPointUseCase.swift in Sources */,
 				380B222724BDEA6C0004FA55 /* DonationUseCase.swift in Sources */,
@@ -588,6 +622,7 @@
 				30B0A30A24BDCEB300BB9E55 /* PersonalTotalSavingRequest.swift in Sources */,
 				30B0A30024BDC2AA00BB9E55 /* TodayRecord.swift in Sources */,
 				383D8C8724BC94BE00561EF3 /* ViewModelBinding.swift in Sources */,
+				3097497324C07BAD00C391DC /* EmptyPlateRequest.swift in Sources */,
 				380B222B24BDEAD30004FA55 /* DonationWholeProjectRequest.swift in Sources */,
 				38714B2524BC780A00E9B9FC /* TabBarViewController.swift in Sources */,
 				383D8C8D24BC97F700561EF3 /* DonationProject.swift in Sources */,
@@ -602,26 +637,31 @@
 				38EB2A7224BD80C4002CBDEA /* DonationProjectCollectionViewDataSource.swift in Sources */,
 				385F613024BF41F8003C2B7D /* ChallengeCameraButton.swift in Sources */,
 				38714B2124BC780A00E9B9FC /* AppDelegate.swift in Sources */,
+				302406E924C08AD000B3E328 /* LikeUseCase.swift in Sources */,
 				30B0A30824BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift in Sources */,
 				302BB02524BD68BE000EB297 /* Request.swift in Sources */,
 				302BB01A24BD65DB000EB297 /* NetworkDispatcher.swift in Sources */,
+				38002B9D24C043C500D85D72 /* UIView+Shimmering.swift in Sources */,
 				30B0A2F624BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift in Sources */,
 				30DA856824BED09600297204 /* DonationDetail.swift in Sources */,
 				38714B3824BC7B7C00E9B9FC /* UIViewController+loadFromNib.swift in Sources */,
 				385F612C24BF32D4003C2B7D /* ChallengePreviewViewController.swift in Sources */,
 				38EB2A7424BD8505002CBDEA /* WholeDonationProjectCollectionViewDelegate.swift in Sources */,
 				302BB01F24BD66CE000EB297 /* UseCase.swift in Sources */,
+				300E3FDA24C06D5A00A95241 /* ChallengeDetailViewController.swift in Sources */,
 				385F612824BF3229003C2B7D /* ChallengeCameraViewController.swift in Sources */,
 				30B0A30424BDC37900BB9E55 /* TodayRecordUseCase.swift in Sources */,
 				302BB01824BD65C6000EB297 /* Endpoint.swift in Sources */,
 				30DA856C24BED2B200297204 /* DonationProjectDetailRequest.swift in Sources */,
 				38714B2324BC780A00E9B9FC /* SceneDelegate.swift in Sources */,
+				3097497124C0792400C391DC /* AllEmptyPlateRequest.swift in Sources */,
 				38EB2A8024BDD424002CBDEA /* ChallengeCell.swift in Sources */,
 				3022699024BF4130005A864C /* DonateRequest.swift in Sources */,
 				380B222E24BEA4DE0004FA55 /* Int+DecimalStyle.swift in Sources */,
 				383D8C8224BC920100561EF3 /* UIView+Border.swift in Sources */,
 				380B222924BDEA9B0004FA55 /* DonationClosingProjectRequest.swift in Sources */,
 				30B0A30224BDC2FF00BB9E55 /* TodayRecordRequest.swift in Sources */,
+				38002BAA24C08EB000D85D72 /* ChallengeUploadRequest.swift in Sources */,
 				302BB02224BD67B8000EB297 /* NetworkError.swift in Sources */,
 				302BB02824BD6ED9000EB297 /* DonationDetailViewController.swift in Sources */,
 				30DA856A24BED26A00297204 /* DonationProjectDetailUseCase.swift in Sources */,
@@ -832,6 +872,14 @@
 				minimumVersion = 5.14.1;
 			};
 		};
+		38002BA424C08DBD00D85D72 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -844,6 +892,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 30B0A2FC24BDA4BD00BB9E55 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		38002BA524C08DBD00D85D72 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 38002BA424C08DBD00D85D72 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

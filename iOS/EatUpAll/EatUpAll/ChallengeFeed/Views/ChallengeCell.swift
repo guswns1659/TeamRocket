@@ -11,6 +11,7 @@ import UIKit
 final class ChallengeCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var shimmeringView: UIView!
     
     override func prepareForReuse() {
         imageView.image = nil
@@ -18,5 +19,14 @@ final class ChallengeCell: UICollectionViewCell {
     
     func updateImage(_ image: UIImage?) {
         imageView.image = image
+    }
+    
+    func startShimmeringAnimation() {
+        layoutIfNeeded()
+        shimmeringView.startShimmering()
+    }
+    
+    func stopShimmeringAnimation() {
+        shimmeringView.stopShimmering()
     }
 }

@@ -34,6 +34,11 @@ final class ChallengeCollectionViewDataSource: NSObject, UICollectionViewDataSou
         self.challengeEmptyPlates = data
     }
     
+    func referChallengeEmptyPlates(at indexPath: IndexPath, handler: (ChallengeEmptyPlate) -> Void ) {
+        let challengeEmptyPlate = challengeEmptyPlates[indexPath.item]
+        handler(challengeEmptyPlate)
+    }
+    
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
@@ -46,11 +51,13 @@ final class ChallengeCollectionViewDataSource: NSObject, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: String(describing: ChallengeCell.self),
             for: indexPath) as! ChallengeCell
+        cell.startShimmeringAnimation()
         let challengeEmptyPlate = challengeEmptyPlates[indexPath.item]
         let challengeImageURL = URL(string: challengeEmptyPlate.image)!
         KingfisherManager.shared.retrieveImage(with: challengeImageURL) { (result) in
             switch result {
             case .success(let retrieveImageResult):
+                cell.stopShimmeringAnimation()
                 cell.updateImage(retrieveImageResult.image)
             case .failure(_):
                 break

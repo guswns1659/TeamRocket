@@ -13,6 +13,8 @@ struct ChallengeEmptyPlateContainer: Codable {
 }
 
 struct ChallengeEmptyPlate: Codable {
+    let id: Int
+    let author: String
     let likeCount: Int
     let image: String
     let description: String
@@ -21,4 +23,5 @@ struct ChallengeEmptyPlate: Codable {
     let updatedAt: String
     let latitude: Double
     let longitude: Double
+    let isLiked: String
 }
