@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct PointHistoryContainer: Codable {
+    private(set) var data: [PointHistory]
+}
+
 struct PointHistory: Codable {
     private(set) var createdAt: String
     private(set) var ecoPoint: Int

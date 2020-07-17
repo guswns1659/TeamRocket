@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MyPageViewController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
@@ -18,14 +19,74 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var myGeenHouseGasLabel: UILabel!
     @IBOutlet weak var pointHistoryTableView: UITableView!
     
+    private var myPageUseCase: MyPageUseCase!
+    private var pointHistories: PointHistoryContainer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        fetchMyAccount()
+        fetchPointHistory()
+        fetchTodayRecords()
+    }
+}
+
+//MARK: - Fetch Data
+
+extension MyPageViewController {
+    private func fetchMyAccount() {
+        let request = MyAccountRequest(id:1).asURLRequest()
+        myPageUseCase.getResources(request: request, dataType: MyAccount.self) { result in
+            switch result {
+            case .success(let account):
+                self.pointLabel.text = "\(account.ecoPoint)"
+                self.userNameLabel.text = account.name
+                self.profileImageView.kf.setImage(with: URL(string: account.profileUrl)!)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
+    private func fetchPointHistory() {
+        let request = PointHistoryRequest().asURLRequest()
+        myPageUseCase.getResources(request: request, dataType: PointHistoryContainer.self) { result in
+            switch result {
+            case .success(let history):
+                self.pointHistories = history
+                self.pointHistoryTableView.dataSource = self
+            case .failure(let error):
+                print(error)
+            }
+
+        }
+    }
+    
+    private func fetchTodayRecords() {
+        let request = TodayRecordRequest().asURLRequest()
+        myPageUseCase.getResources(request: request, dataType: TodayRecord.self) { result in
+            switch result {
+            case .success(let record):
+                self.myPlatesCountLabel.text = "\(record.todayMyPlates)"
+                self.myGeenHouseGasLabel.text = String(format: "%.2f", arguments: [record.todayMySaving])
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+}
+
+//MARK:- Configurations
+
+extension MyPageViewController {
     private func configure() {
         configureTableView()
         configureUI()
+        configureUseCase()
+    }
+    
+    private func configureUseCase() {
+        myPageUseCase = MyPageUseCase()
     }
     
     private func configureUI() {
@@ -43,17 +104,17 @@ class MyPageViewController: UIViewController {
     
     private func configureTableView() {
         pointHistoryTableView.register(UINib(nibName: String(describing: PointHistoryTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: PointHistoryTableViewCell.self))
-        pointHistoryTableView.dataSource = self
     }
 }
 
 extension MyPageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 12
+        return pointHistories.data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PointHistoryTableViewCell.self), for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PointHistoryTableViewCell.self), for: indexPath) as! PointHistoryTableViewCell
+        
         return cell
     }
 }
