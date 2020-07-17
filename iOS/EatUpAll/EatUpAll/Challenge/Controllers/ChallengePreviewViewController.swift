@@ -9,6 +9,10 @@
 import UIKit
 import JGProgressHUD
 
+protocol ChallengeUploadDelegate {
+    func didSuccessToUploadChallenge()
+}
+
 final class ChallengePreviewViewController: UIViewController {
 
     @IBOutlet weak var NewPostNavigationBar: UIView!
