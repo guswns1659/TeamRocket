@@ -32,6 +32,7 @@ final class ChallengePreviewViewController: UIViewController {
     @IBOutlet weak var restaurantNameLabel: UILabel!
     
     private var currentMode: ChallengeCameraViewController.Mode = .challengeMode
+    private var currentRestaurantID: Int?
     
     private var uploadUseCase: ChallengeNewPostUseCase!
     private var networkUseCase: NetworkUseCase!
@@ -56,6 +57,28 @@ final class ChallengePreviewViewController: UIViewController {
         configureTopConstraint()
         descriptionTextView.delegate = self
         modeDidChange()
+        fetchRestaurantInfo()
+    }
+    
+    func configureRestaurantID(_ id: Int?) {
+        self.currentRestaurantID = id
+    }
+    
+    private func fetchRestaurantInfo() {
+        guard currentMode == .QRMode else { return }
+        guard let restaurantID = currentRestaurantID else { return }
+        let request = RestaurantInfoRequest(restaurantID: restaurantID).asURLRequest()
+        networkUseCase.getResources(
+            request: request,
+            dataType: Restaurant.self) { (result) in
+                switch result {
+                case .success(let restaurant):
+                    self.restaurantNameLabel.text = restaurant.name
+                case .failure(_):
+                    self.restaurantNameLabel.text = ""
+                    break
+                }
+        }
     }
     
     func configureMode(to mode: ChallengeCameraViewController.Mode) {

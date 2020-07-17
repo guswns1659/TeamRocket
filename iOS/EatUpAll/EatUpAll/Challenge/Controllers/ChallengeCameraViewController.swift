@@ -31,6 +31,7 @@ final class ChallengeCameraViewController: UIViewController {
     }
     
     private var currentMode: Mode = .challengeMode
+    private var currentRestaurantID: Int?
     
     enum Mode {
         case challengeMode
@@ -77,6 +78,10 @@ final class ChallengeCameraViewController: UIViewController {
         })
     }
     
+    func configureRestaurantID(_ id: Int) {
+        self.currentRestaurantID = id
+    }
+    
     func configureMode(to mode: Mode) {
         self.currentMode = mode
     }
@@ -121,6 +126,7 @@ extension ChallengeCameraViewController: AVCapturePhotoCaptureDelegate {
             animateCaptureEffect(completion: { _ in
                 self.previewViewController.configureCapturedImage(capturedImage)
                 self.previewViewController.configureMode(to: self.currentMode)
+                self.previewViewController.configureRestaurantID(self.currentRestaurantID)
                 self.navigationController?.pushViewController(
                     self.previewViewController, animated: true)
             })

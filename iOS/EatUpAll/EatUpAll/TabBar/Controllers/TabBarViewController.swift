@@ -52,6 +52,7 @@ extension TabBarViewController {
         challengeCameraNavigationController.modalPresentationStyle = .fullScreen
         present(challengeCameraNavigationController, animated: true, completion: nil)
         challengeCameraViewController.configureMode(to: .QRMode)
+        challengeCameraViewController.configureRestaurantID(restaurantId)
     }
 }
 
