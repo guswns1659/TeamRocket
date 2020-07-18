@@ -150,6 +150,7 @@ public class ChallengeService {
                 .ecoPoint(200)
                 .build();
             account.addPointHistory(pointHistory);
+            account.addPlate();
             accountRepository.save(account);
 
             return ChallengeStatusResponseDto.builder()
@@ -187,6 +188,7 @@ public class ChallengeService {
                 .build();
 
             account.addPointHistory(pointHistory);
+            account.addPlate();
             accountRepository.save(account);
 
             return ChallengeStatusResponseDto.builder()

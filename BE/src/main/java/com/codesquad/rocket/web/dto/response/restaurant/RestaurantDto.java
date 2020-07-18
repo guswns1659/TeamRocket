@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class RestaurantDto {
 
+    private Long id;
     private String name;
     private String description;
     private String address;
@@ -34,6 +35,7 @@ public class RestaurantDto {
             .collect(Collectors.toList());
 
         return RestaurantDto.builder()
+            .id(restaurant.getId())
             .address(restaurant.getAddress())
             .description(restaurant.getDescription())
             .latitude(restaurant.getPoint().getY())

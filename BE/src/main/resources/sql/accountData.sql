@@ -12,13 +12,20 @@ use angelhack;
 -- drop table if exists corporation;
 
 -- Account
-INSERT INTO account (eco_point, name, today_plate, total_plate) VALUES ( 500, 'delma', 1, 10);
-INSERT INTO account (eco_point, name, today_plate, total_plate) VALUES ( 1000, 'jack', 2,  20);
-INSERT INTO account (eco_point, name, today_plate, total_plate) VALUES ( 1500, 'cory', 3,  30);
-INSERT INTO account (eco_point, name, today_plate, total_plate) VALUES ( 2000, 'poogle', 3,  40);
-INSERT INTO account (eco_point, name, today_plate, total_plate) VALUES ( 2500, 'solar', 3,  50);
-INSERT INTO account (eco_point, name, today_plate, total_plate) VALUES ( 3000, 'ever', 3,  60);
-INSERT INTO account (eco_point, name, today_plate, total_plate) VALUES ( 3500, 'david', 3,  70);
+INSERT INTO account (eco_point, name, profile_url, today_plate, total_plate)
+VALUES ( 500, 'delma', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 1, 10);
+INSERT INTO account (eco_point, name, profile_url, today_plate, total_plate)
+VALUES ( 1000, 'jack', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 2, 20);
+INSERT INTO account (eco_point, name, profile_url, today_plate, total_plate)
+VALUES ( 1500, 'cory', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 3, 30);
+INSERT INTO account (eco_point, name, profile_url, today_plate, total_plate)
+VALUES ( 2000, 'poogle', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 3, 40);
+INSERT INTO account (eco_point, name, profile_url, today_plate, total_plate)
+VALUES ( 2500, 'solar', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 3, 50);
+INSERT INTO account (eco_point, name, profile_url, today_plate, total_plate)
+VALUES ( 3000, 'ever', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 3, 60);
+INSERT INTO account (eco_point, name, profile_url, today_plate, total_plate)
+VALUES ( 3500, 'david', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 3, 70);
 
 -- -- PointHistory
 INSERT INTO account_point_history (account_id, created_at, eco_point, point_option, project_name)

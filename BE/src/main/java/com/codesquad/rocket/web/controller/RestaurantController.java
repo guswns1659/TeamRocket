@@ -1,12 +1,14 @@
 package com.codesquad.rocket.web.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codesquad.rocket.service.RestaurantService;
 import com.codesquad.rocket.web.dto.response.restaurant.NearRestaurantResponseDtos;
+import com.codesquad.rocket.web.dto.response.restaurant.RestaurantDto;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 
@@ -24,5 +26,10 @@ public class RestaurantController {
         @RequestParam(value = "latitude") Double latitude,
         @RequestParam(value = "longitude") Double longitude) {
         return restaurantService.nearRestaurant(latitude, longitude);
+    }
+
+    @GetMapping("{restaurantId}")
+    public RestaurantDto findById(@PathVariable Long restaurantId){
+        return restaurantService.findById(restaurantId);
     }
 }

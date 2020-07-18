@@ -60,4 +60,9 @@ public class RestaurantService {
             .data(data)
             .build();
     }
+
+    public RestaurantDto findById(Long restaurantId) {
+        Restaurant restaurant = restaurantRepository.findById(restaurantId).orElse(new Restaurant());
+        return RestaurantDto.of(restaurant);
+    }
 }

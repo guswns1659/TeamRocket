@@ -1,10 +1,12 @@
 package com.codesquad.rocket.web.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codesquad.rocket.service.AccountService;
+import com.codesquad.rocket.web.dto.response.account.AccountResponseDto;
 import com.codesquad.rocket.web.dto.response.account.EcoPointResponseDto;
 import com.codesquad.rocket.web.dto.response.account.PointHistoryResponseDto;
 import com.codesquad.rocket.web.dto.response.account.TodaySavingResponseDto;
@@ -17,6 +19,11 @@ import lombok.RequiredArgsConstructor;
 public class AccountController {
 
     private final AccountService accountService;
+
+    @GetMapping("{accountId}")
+    public AccountResponseDto findById(@PathVariable Long accountId) {
+        return accountService.findById(accountId);
+    }
 
     @GetMapping("totalSaving")
     public TotalSavingResponseDto totalSaving() {

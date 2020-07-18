@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.codesquad.rocket.domain.account.Account;
 import com.codesquad.rocket.domain.account.AccountRepository;
+import com.codesquad.rocket.web.dto.response.account.AccountResponseDto;
 import com.codesquad.rocket.web.dto.response.account.EcoPointResponseDto;
 import com.codesquad.rocket.web.dto.response.account.PointHistoryDto;
 import com.codesquad.rocket.web.dto.response.account.PointHistoryResponseDto;
@@ -25,11 +26,10 @@ public class AccountService {
     private final static String USER = "delma";
 
     public TotalSavingResponseDto totalSaving() {
-        String delma = "델마";
         Account account  = accountRepository.findAccountByName(USER).orElse(new Account());
 
         return TotalSavingResponseDto.builder()
-            .accountName(delma)
+            .accountName(account.getName())
             .totalPlates(account.getTotalPlate())
             .totalSaving(account.getTotalPlate() * SAVING_UNIT_PER_PLATE)
             .build();
@@ -67,5 +67,10 @@ public class AccountService {
         return PointHistoryResponseDto.builder()
             .data(data)
             .build();
+    }
+
+    public AccountResponseDto findById(Long accountId) {
+        Account account = accountRepository.findById(accountId).orElse(new Account());
+        return AccountResponseDto.of(account);
     }
 }

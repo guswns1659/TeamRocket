@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 import com.codesquad.rocket.web.dto.response.restaurant.NearRestaurantResponseDtos;
+import com.codesquad.rocket.web.dto.response.restaurant.RestaurantDto;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureWebTestClient(timeout = "30000")
@@ -41,4 +42,24 @@ public class RestaurantControllerTest {
 
         assertThat(nearRestaurantResponseDtos.getData().size()).isEqualTo(size);
     }
-}
+
+    @DisplayName("레스토랑 하나를 가져오는 테스트")
+    @CsvSource({"1, 제주식당"})
+    @ParameterizedTest
+    void 식당을_하나를_요청한다(Long restaurantId, String restaurantName) {
+
+        String url = "http://localhost:" + port + "/restaurant/" + restaurantId;
+
+        RestaurantDto restaurantDto = webTestClient.get()
+            .uri(url)
+            .exchange()
+            .expectStatus().isEqualTo(HttpStatus.OK)
+            .expectBody(RestaurantDto.class)
+            .returnResult()
+            .getResponseBody();
+
+        assertThat(restaurantDto.getId()).isEqualTo(restaurantId);
+        assertThat(restaurantDto.getName()).isEqualTo(restaurantName);
+    }
+
+    }

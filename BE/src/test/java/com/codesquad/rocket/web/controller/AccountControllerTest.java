@@ -12,6 +12,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
+import com.codesquad.rocket.web.dto.response.account.AccountResponseDto;
 import com.codesquad.rocket.web.dto.response.account.EcoPointResponseDto;
 import com.codesquad.rocket.web.dto.response.account.PointHistoryResponseDto;
 import com.codesquad.rocket.web.dto.response.account.TodaySavingResponseDto;
@@ -119,5 +120,26 @@ public class AccountControllerTest {
         assertThat(pointHistoryResponseDto.getData().get(0).getCreatedAt()).isEqualTo(createdAt);
         assertThat(pointHistoryResponseDto.getData().get(0).getEcoPoint()).isEqualTo(ecoPoint);
         assertThat(pointHistoryResponseDto.getData().get(0).getPointOption()).isEqualTo(pointOption);
+    }
+
+    @DisplayName("사용자 한명 요청하는 api 테스트")
+    @CsvSource({"1, delma, 500, https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png"})
+    @ParameterizedTest
+    void 사용자_한명을_응답한다(Long accountId, String accountName, Integer ecoPoint, String profileUrl) {
+
+        String url = "http://localhost:" + port + "/account/" + accountId;
+
+        AccountResponseDto accountResponseDto = webTestClient.get()
+            .uri(url)
+            .exchange()
+            .expectStatus().isEqualTo(HttpStatus.OK)
+            .expectBody(AccountResponseDto.class)
+            .returnResult()
+            .getResponseBody();
+
+        assertThat(accountResponseDto.getId()).isEqualTo(accountId);
+        assertThat(accountResponseDto.getName()).isEqualTo(accountName);
+        assertThat(accountResponseDto.getEcoPoint()).isEqualTo(ecoPoint);
+        assertThat(accountResponseDto.getProfileUrl()).isEqualTo(profileUrl);
     }
 }

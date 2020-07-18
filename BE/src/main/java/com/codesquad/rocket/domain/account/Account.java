@@ -39,6 +39,8 @@ public class Account {
 
     private Integer ecoPoint;
 
+    private String profileUrl;
+
     @OneToMany(mappedBy = "account")
     private final List<ProjectAccount> projectAccounts = new ArrayList<>();
 
@@ -59,5 +61,13 @@ public class Account {
 
     public void subtractEcoPoint(Integer ecoPoint) {
         this.ecoPoint -= ecoPoint;
+    }
+
+    public void addPlate() {
+        // 자정에 접시가 초기화되고 하루에 3번 이후에는 그릇의 개수가 올라가지 못하게 만들어야 함.
+        if (this.todayPlate < 3 ) {
+            this.todayPlate++;
+            this.totalPlate++;
+        }
     }
 }
