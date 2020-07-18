@@ -2,13 +2,13 @@ spring:
   profiles: dev
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://rds-anglehack.cutixbfyzqqm.ap-northeast-2.rds.amazonaws.com:3306/angelhack?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useLegacyDatetimeCode=false
+    url: jdbc:mysql://rds-anglehack.cutixbfyzqqm.ap-northeast-2.rds.amazonaws.com:3306/angelhack?allowLoadLocalInfile=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useLegacyDatetimeCode=false
     username: teamrocket
     password: teamrocket
     initialization-mode: always
     hikari:
       maximum-pool-size: 10
-    data: classpath:sql/accountData.sql, classpath:sql/applicationData.sql, classpath:sql/corporationData.sql, classpath:sql/projectData.sql, classpath:sql/restaurantData.sql, classpath:sql/challengeData.sql
+    data: classpath:sql/accountData.sql, classpath:sql/applicationData.sql, classpath:sql/corporationData.sql, classpath:sql/projectData.sql, classpath:sql/restaurantData-dev.sql, classpath:sql/challengeData.sql
   jpa:
     properties:
       hibernate:
