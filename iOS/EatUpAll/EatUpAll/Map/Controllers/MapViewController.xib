@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qw1-OM-pPJ">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="600.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </mapView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJJ-A2-uok">
                     <rect key="frame" x="16" y="56" width="20" height="28"/>
@@ -39,10 +39,10 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="qw1-OM-pPJ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.67" id="LfZ-y8-ntj"/>
                 <constraint firstItem="qw1-OM-pPJ" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="NMH-Lx-PIU"/>
                 <constraint firstItem="qw1-OM-pPJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hTC-SY-M4r"/>
                 <constraint firstItem="NJJ-A2-uok" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="oSw-Ne-lv3"/>
+                <constraint firstAttribute="bottom" secondItem="qw1-OM-pPJ" secondAttribute="bottom" id="oaj-BS-eGu"/>
                 <constraint firstItem="NJJ-A2-uok" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="wqh-Bw-Bhf"/>
                 <constraint firstItem="NJJ-A2-uok" firstAttribute="width" secondItem="NJJ-A2-uok" secondAttribute="height" multiplier="5:7" id="wtP-3r-m0M"/>
                 <constraint firstItem="qw1-OM-pPJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zr3-zS-Z1w"/>
