@@ -33,6 +33,16 @@ class MyPageViewController: UIViewController {
     }
 }
 
+// MARK:- Refreshable
+
+extension MyPageViewController: Refreshable {
+    func refresh() {
+        fetchMyAccount()
+        fetchPointHistory()
+        fetchTodayRecords()
+    }
+}
+
 //MARK: - Fetch Data
 
 extension MyPageViewController {

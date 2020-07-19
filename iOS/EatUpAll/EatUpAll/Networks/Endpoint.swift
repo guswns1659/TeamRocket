@@ -24,7 +24,8 @@ enum EndPoint {
     static let myAccountURL = "\(baseURL)account/"
     static let pointHistory = "\(baseURL)account/pointHistory"
     static let challengeUploadURL = "\(baseURL)/challenge/upload"
-    static let restaurantInfoURL = "\(baseURL)/restaurant/"
+    static let challengeUploadWithRestaurantIDURL = "\(baseURL)challenge"
+    static let restaurantInfoURL = "\(baseURL)restaurant/"
 }
 
 enum QueryParameters: CustomStringConvertible {

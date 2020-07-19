@@ -13,7 +13,7 @@ struct ChallengeNewPostUseCase: UseCase {
     var networkDispatcher: NetworkDispatcher = AF
     
     func upload(
-        request: Alamofire.URLRequestConvertible,
+        restaurantID: Int?,
         imageData : Data,
         parameters: [String: Any],
         completion: @escaping (Bool) -> Void) {
@@ -23,7 +23,12 @@ struct ChallengeNewPostUseCase: UseCase {
             "Content-Disposition" : "form-data"
         ]
         
-        let url = URL(string: EndPoint.challengeUploadURL)!
+        var url: URL
+        if let restaurantID = restaurantID {
+            url = URL(string: "\(EndPoint.challengeUploadWithRestaurantIDURL)/\(restaurantID)")!
+        } else {
+            url = URL(string: EndPoint.challengeUploadURL)!
+        }
         AF.upload(multipartFormData: { multiPart in
             for (key, value) in parameters {
                 if let temp = value as? String {
@@ -46,7 +51,7 @@ struct ChallengeNewPostUseCase: UseCase {
                 }
             }
             
-            multiPart.append(imageData, withName: "file", fileName: "file.jpeg", mimeType: "picture/jpeg")
+            multiPart.append(imageData, withName: "file", fileName: "file.jpeg", mimeType: "file/jpeg")
         }, to: url, method: .post, headers: headers)
             .responseData { (response) in
                 guard response.response?.statusCode == 200 else {

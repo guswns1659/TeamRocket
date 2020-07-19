@@ -22,13 +22,15 @@ final class TabBarViewController: UITabBarController {
         static let keyGreen: UIColor = UIColor(named: "key_green")!
     }
     
-    private var homeViewController: UIViewController!
+    private var homeViewController: HomeViewController!
     private var donationViewController: UIViewController!
     private var challengeCameraNavigationController: UINavigationController!
     private var challengeCameraViewController: ChallengeCameraViewController!
-    private var challengeFeedViewController: UIViewController!
-    private var myPageViewController: UIViewController!
+    private var challengeFeedViewController: ChallengeFeedViewController!
+    private var myPageViewController: MyPageViewController!
     private var challengeButton: UIButton!
+    
+    private var challengePointPopUpViewController: ChallengePointViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,24 @@ final class TabBarViewController: UITabBarController {
     }
 }
 
+// MARK:- ChallengeCameraViewControllerDelegate
+
+extension TabBarViewController: ChallengeCameraViewControllerDelegate {
+    func didSuccessToUploadChallenge(mode: ChallengeCameraViewController.Mode) {
+        challengePointPopUpViewController.modalPresentationStyle = .overFullScreen
+        present(challengePointPopUpViewController, animated: true, completion: nil)
+        challengePointPopUpViewController.configureEcoPoints(with: mode)
+        refreshViewControllers()
+    }
+    
+    private func refreshViewControllers() {
+        [homeViewController, challengeFeedViewController, myPageViewController].forEach {
+            let viewController = $0 as! Refreshable
+            viewController.refresh()
+        }
+    }
+}
+
 // MARK:- QR Code Notification
 
 extension TabBarViewController {
@@ -53,6 +73,7 @@ extension TabBarViewController {
         present(challengeCameraNavigationController, animated: true, completion: nil)
         challengeCameraViewController.configureMode(to: .QRMode)
         challengeCameraViewController.configureRestaurantID(restaurantId)
+        challengeCameraViewController.delegate = self
     }
 }
 
@@ -90,6 +111,8 @@ extension TabBarViewController {
         challengeCameraNavigationController.modalPresentationStyle = .fullScreen
         present(challengeCameraNavigationController, animated: true, completion: nil)
         challengeCameraViewController.configureMode(to: .challengeMode)
+        challengeCameraViewController.configureRestaurantID(nil)
+        challengeCameraViewController.delegate = self
     }
     
     private func animateChallengeButton() {
@@ -155,6 +178,8 @@ extension TabBarViewController {
         
         let donationNavigationController = UINavigationController(rootViewController: donationViewController)
         let challengeNavigationController = UINavigationController(rootViewController: challengeFeedViewController)
+        
+        challengePointPopUpViewController = ChallengePointViewController.loadFromNib()
         
         viewControllers = [
             homeViewController,
