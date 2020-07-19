@@ -24,10 +24,10 @@ final class ChallengePointViewController: UIViewController {
         super.viewDidAppear(animated)
         popUpViewCenterYConstraint.constant = 0
         
-        UIView.animate(withDuration: 0.3) {
+        UIView.animateCurveEaseOut(withDuration: 0.3, animations: {
             self.backgroundDarkView.alpha = 0.7
             self.view.layoutIfNeeded()
-        }
+        })
     }
     
     func configureEcoPoints(with mode: ChallengeCameraViewController.Mode) {
@@ -42,7 +42,7 @@ final class ChallengePointViewController: UIViewController {
     @IBAction func doneButtonDidTap(_ sender: Any) {
         popUpViewCenterYConstraint.constant = 1000
         
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animateCurveEaseOut(withDuration: 0.3, animations: {
             self.backgroundDarkView.alpha = 0
             self.view.layoutIfNeeded()
         }) { (_) in
