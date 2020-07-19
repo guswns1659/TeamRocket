@@ -13,17 +13,17 @@ use angelhack;
 
 -- Account
 INSERT INTO account (eco_point, name, profile_url, today_plate, total_plate)
-VALUES ( 500, 'delma', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 1, 10);
+VALUES ( 500, 'delma', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 0, 10);
 INSERT INTO account (eco_point, name, profile_url, today_plate, total_plate)
-VALUES ( 1000, 'jack', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 2, 20);
+VALUES ( 1000, 'jack', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 0, 20);
 INSERT INTO account (eco_point, name, profile_url, today_plate, total_plate)
-VALUES ( 1500, 'cory', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 3, 30);
+VALUES ( 1500, 'cory', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 0, 30);
 INSERT INTO account (eco_point, name, profile_url, today_plate, total_plate)
-VALUES ( 2000, 'poogle', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 3, 40);
+VALUES ( 2000, 'poogle', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 0, 40);
 INSERT INTO account (eco_point, name, profile_url, today_plate, total_plate)
-VALUES ( 2500, 'solar', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 3, 50);
+VALUES ( 2500, 'solar', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 0, 50);
 INSERT INTO account (eco_point, name, profile_url, today_plate, total_plate)
-VALUES ( 3000, 'ever', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 3, 60);
+VALUES ( 3000, 'ever', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 0, 60);
 INSERT INTO account (eco_point, name, profile_url, today_plate, total_plate)
 VALUES ( 3500, 'david', 'https://s3-angelhack.s3.ap-northeast-2.amazonaws.com/static/delma.png', 3, 70);
 
