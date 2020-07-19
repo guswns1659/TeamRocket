@@ -130,7 +130,7 @@ final class ChallengePreviewViewController: UIViewController {
         uploadingHUD.textLabel.text = "업로딩 중"
         uploadingHUD.show(in: view, animated: true)
         uploadUseCase.upload(
-            restaurantID: nil,
+            restaurantID: currentRestaurantID,
             imageData: imageData,
             parameters: uploadParameter,
             completion: { isSuccess in

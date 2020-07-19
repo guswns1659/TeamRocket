@@ -23,7 +23,12 @@ struct ChallengeNewPostUseCase: UseCase {
             "Content-Disposition" : "form-data"
         ]
         
-        let url = URL(string: EndPoint.challengeUploadURL)!
+        var url: URL
+        if let restaurantID = restaurantID {
+            url = URL(string: "\(EndPoint.challengeUploadWithRestaurantIDURL)/\(restaurantID)")!
+        } else {
+            url = URL(string: EndPoint.challengeUploadURL)!
+        }
         AF.upload(multipartFormData: { multiPart in
             for (key, value) in parameters {
                 if let temp = value as? String {

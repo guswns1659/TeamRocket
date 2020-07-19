@@ -77,7 +77,7 @@ final class ChallengeCameraViewController: UIViewController {
         })
     }
     
-    func configureRestaurantID(_ id: Int) {
+    func configureRestaurantID(_ id: Int?) {
         self.currentRestaurantID = id
     }
     
