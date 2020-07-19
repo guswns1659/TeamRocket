@@ -9,7 +9,7 @@
 import UIKit
 
 class PointHistoryTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var historyImageView: UIImageView!
     @IBOutlet weak var optionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -22,13 +22,15 @@ class PointHistoryTableViewCell: UITableViewCell {
     
     func configureData(_ data: PointHistory) {
         if data.pointOption == "기부" {
-            historyImageView.image = UIImage(named: "coin")
-        }else {
             historyImageView.image = UIImage(named: "sprout")
+            pointLabel.text = "-\(data.ecoPoint)"
+        }else {
+            historyImageView.image = UIImage(named: "coin")
+            pointLabel.text = "\(data.ecoPoint)"
         }
         optionLabel.text = data.pointOption
         dateLabel.text = data.createdAt
-        pointLabel.text = "\(data.ecoPoint)"
+        
         guard let project = data.projectName else { return }
         projectLabel.text = project
     }
