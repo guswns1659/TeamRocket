@@ -10,7 +10,6 @@ import UIKit
 
 final class TutorialFirstView: UIView {
     @IBOutlet weak var frameView: UIView!
-    @IBOutlet weak var nextButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,9 +29,6 @@ final class TutorialFirstView: UIView {
     }
     
     private func configureUI() {
-        nextButton.layer.borderColor = UIColor(named: "key_green")?.cgColor
-        nextButton.layer.borderWidth = 1
-        nextButton.roundCorner(cornerRadius: 10)
         frameView.roundCorner(cornerRadius: 10)
     }
 }

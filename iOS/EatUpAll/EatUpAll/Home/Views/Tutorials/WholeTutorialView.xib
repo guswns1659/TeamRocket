@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="firstView" destination="ylO-hP-djs" id="IJ0-nu-tfv"/>
                 <outlet property="frameView" destination="iN0-l3-epB" id="nOE-dl-EnG"/>
+                <outlet property="scrollView" destination="S3g-3Q-ctL" id="dV1-EL-BOi"/>
                 <outlet property="secondView" destination="199-mk-ZBE" id="T2z-IR-An7"/>
                 <outlet property="thirdView" destination="GJn-Wz-fsy" id="qUC-6G-9x4"/>
             </connections>
@@ -24,25 +25,25 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3g-3Q-ctL">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3g-3Q-ctL">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZl-8y-lFO" userLabel="ContainerView">
                             <rect key="frame" x="0.0" y="148.5" width="1076.5" height="609"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CAU-11-dLj">
-                                    <rect key="frame" x="36" y="0.0" width="1004.5" height="609"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1076.5" height="609"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylO-hP-djs" userLabel="firstView" customClass="TutorialFirstView" customModule="EatUpAll" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="327" height="609"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="609"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="199-mk-ZBE" userLabel="secondView" customClass="TutorialSecondView" customModule="EatUpAll" customModuleProvider="target">
-                                            <rect key="frame" x="339" y="0.0" width="326.5" height="609"/>
+                                            <rect key="frame" x="363" y="0.0" width="350.5" height="609"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJn-Wz-fsy" userLabel="thirdView" customClass="TutorialThirdView" customModule="EatUpAll" customModuleProvider="target">
-                                            <rect key="frame" x="677.5" y="0.0" width="327" height="609"/>
+                                            <rect key="frame" x="725.5" y="0.0" width="351" height="609"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
@@ -60,8 +61,8 @@
                         <constraint firstAttribute="bottom" secondItem="XZl-8y-lFO" secondAttribute="bottom" id="E9a-Pd-d0H"/>
                         <constraint firstItem="XZl-8y-lFO" firstAttribute="top" secondItem="S3g-3Q-ctL" secondAttribute="top" id="JKW-Jf-OED"/>
                         <constraint firstItem="XZl-8y-lFO" firstAttribute="width" secondItem="wJm-9P-PIY" secondAttribute="width" id="LYJ-u0-q07"/>
-                        <constraint firstItem="CAU-11-dLj" firstAttribute="leading" secondItem="wJm-9P-PIY" secondAttribute="leading" constant="36" id="Sd2-Gz-3ZV"/>
-                        <constraint firstItem="wJm-9P-PIY" firstAttribute="trailing" secondItem="CAU-11-dLj" secondAttribute="trailing" constant="36" id="ZdD-mj-iuV"/>
+                        <constraint firstItem="CAU-11-dLj" firstAttribute="leading" secondItem="wJm-9P-PIY" secondAttribute="leading" id="Sd2-Gz-3ZV"/>
+                        <constraint firstItem="wJm-9P-PIY" firstAttribute="trailing" secondItem="CAU-11-dLj" secondAttribute="trailing" id="ZdD-mj-iuV"/>
                         <constraint firstItem="XZl-8y-lFO" firstAttribute="leading" secondItem="S3g-3Q-ctL" secondAttribute="leading" id="inb-PA-AsR"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="wJm-9P-PIY"/>
