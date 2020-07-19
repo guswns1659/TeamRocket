@@ -124,9 +124,9 @@ final class ChallengePreviewViewController: UIViewController {
     }
     
     private func uploadChallenge() {
-        let request = ChallengeUploadRequest().asURLRequest()
         guard let imageData = capturedImage?.jpegData(compressionQuality: 0.5) else { return }
-        let uploadParameter: [String : Any] = ["description": descriptionTextView.text as Any]
+        let description: String = descriptionTextView.text.count == 0 ? " " : descriptionTextView.text
+        let uploadParameter: [String : Any] = ["description": description as Any]
         uploadingHUD.textLabel.text = "업로딩 중"
         uploadingHUD.show(in: view, animated: true)
         uploadUseCase.upload(
