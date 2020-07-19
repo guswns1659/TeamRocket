@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WholeTutorialView" customModule="EatUpAll" customModuleProvider="target">
+            <connections>
+                <outlet property="firstView" destination="ylO-hP-djs" id="IJ0-nu-tfv"/>
+                <outlet property="frameView" destination="iN0-l3-epB" id="nOE-dl-EnG"/>
+                <outlet property="secondView" destination="199-mk-ZBE" id="T2z-IR-An7"/>
+                <outlet property="thirdView" destination="GJn-Wz-fsy" id="qUC-6G-9x4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="FrameView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APD-8g-7iZ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3g-3Q-ctL">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZl-8y-lFO" userLabel="ContainerView">
+                            <rect key="frame" x="0.0" y="148.5" width="1076.5" height="609"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CAU-11-dLj">
+                                    <rect key="frame" x="36" y="0.0" width="1004.5" height="609"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylO-hP-djs" userLabel="firstView" customClass="TutorialFirstView" customModule="EatUpAll" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="609"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="199-mk-ZBE" userLabel="secondView" customClass="TutorialSecondView" customModule="EatUpAll" customModuleProvider="target">
+                                            <rect key="frame" x="339" y="0.0" width="326.5" height="609"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJn-Wz-fsy" userLabel="thirdView" customClass="TutorialThirdView" customModule="EatUpAll" customModuleProvider="target">
+                                            <rect key="frame" x="677.5" y="0.0" width="327" height="609"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="CAU-11-dLj" firstAttribute="top" secondItem="XZl-8y-lFO" secondAttribute="top" id="8wy-sb-Qkg"/>
+                                <constraint firstAttribute="bottom" secondItem="CAU-11-dLj" secondAttribute="bottom" id="oHK-vD-G4W"/>
+                                <constraint firstItem="CAU-11-dLj" firstAttribute="centerX" secondItem="XZl-8y-lFO" secondAttribute="centerX" id="yWn-Dv-7Ra"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="XZl-8y-lFO" secondAttribute="bottom" id="E9a-Pd-d0H"/>
+                        <constraint firstItem="XZl-8y-lFO" firstAttribute="top" secondItem="S3g-3Q-ctL" secondAttribute="top" id="JKW-Jf-OED"/>
+                        <constraint firstItem="XZl-8y-lFO" firstAttribute="width" secondItem="wJm-9P-PIY" secondAttribute="width" id="LYJ-u0-q07"/>
+                        <constraint firstItem="CAU-11-dLj" firstAttribute="leading" secondItem="wJm-9P-PIY" secondAttribute="leading" constant="36" id="Sd2-Gz-3ZV"/>
+                        <constraint firstItem="wJm-9P-PIY" firstAttribute="trailing" secondItem="CAU-11-dLj" secondAttribute="trailing" constant="36" id="ZdD-mj-iuV"/>
+                        <constraint firstItem="XZl-8y-lFO" firstAttribute="leading" secondItem="S3g-3Q-ctL" secondAttribute="leading" id="inb-PA-AsR"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="wJm-9P-PIY"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="niD-E9-CEl"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="S3g-3Q-ctL" secondAttribute="trailing" id="6C5-nI-TMS"/>
+                <constraint firstItem="XZl-8y-lFO" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="2.6" id="APJ-tX-hQr"/>
+                <constraint firstItem="XZl-8y-lFO" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.68" id="Ari-4S-oSy"/>
+                <constraint firstAttribute="bottom" secondItem="APD-8g-7iZ" secondAttribute="bottom" id="Clc-s7-xxe"/>
+                <constraint firstItem="APD-8g-7iZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CoR-EB-vYq"/>
+                <constraint firstItem="APD-8g-7iZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="DZt-HX-HxV"/>
+                <constraint firstItem="XZl-8y-lFO" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="EvX-A5-aRz"/>
+                <constraint firstItem="S3g-3Q-ctL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NhD-uz-yR1"/>
+                <constraint firstAttribute="bottom" secondItem="S3g-3Q-ctL" secondAttribute="bottom" id="R0s-LO-Uyp"/>
+                <constraint firstAttribute="trailing" secondItem="APD-8g-7iZ" secondAttribute="trailing" id="jGv-mo-BiR"/>
+                <constraint firstItem="S3g-3Q-ctL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qYZ-bI-AJ0"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="132.58928571428572"/>
+        </view>
+    </objects>
+</document>

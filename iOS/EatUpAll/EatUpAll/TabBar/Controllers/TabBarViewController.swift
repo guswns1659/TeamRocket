@@ -25,7 +25,7 @@ final class TabBarViewController: UITabBarController {
     private var homeViewController: UIViewController!
     private var donationViewController: UIViewController!
     private var challengeCameraNavigationController: UINavigationController!
-    private var challengeCameraViewController: UIViewController!
+    private var challengeCameraViewController: ChallengeCameraViewController!
     private var challengeFeedViewController: UIViewController!
     private var myPageViewController: UIViewController!
     private var challengeButton: UIButton!
@@ -34,6 +34,25 @@ final class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         configure()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(
+            self,
+            name: .didScanChallengeQRCode,
+            object: nil)
+    }
+}
+
+// MARK:- QR Code Notification
+
+extension TabBarViewController {
+    @objc private func DidScanChallengeQRCode(notification: Notification) {
+        guard let restaurantId = notification.userInfo?["restaurantID"] as? Int else { return }
+        challengeCameraNavigationController.modalPresentationStyle = .fullScreen
+        present(challengeCameraNavigationController, animated: true, completion: nil)
+        challengeCameraViewController.configureMode(to: .QRMode)
+        challengeCameraViewController.configureRestaurantID(restaurantId)
     }
 }
 
@@ -48,6 +67,15 @@ extension TabBarViewController {
         configureTabBarImages()
         configureChallengeButton()
         configureChallengeButtonAction()
+        configureQRCodeNotification()
+    }
+    
+    private func configureQRCodeNotification() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(DidScanChallengeQRCode),
+            name: .didScanChallengeQRCode,
+            object: nil)
     }
     
     private func configureChallengeButtonAction() {
@@ -61,6 +89,7 @@ extension TabBarViewController {
     private func presentCameraController() {
         challengeCameraNavigationController.modalPresentationStyle = .fullScreen
         present(challengeCameraNavigationController, animated: true, completion: nil)
+        challengeCameraViewController.configureMode(to: .challengeMode)
     }
     
     private func animateChallengeButton() {
@@ -122,7 +151,7 @@ extension TabBarViewController {
         challengeCameraNavigationController = UINavigationController(rootViewController: challengeCameraViewController)
         let dummyChallengeCameraViewController = UIViewController()
         challengeFeedViewController = ChallengeFeedViewController.loadFromNib()
-        myPageViewController = UIViewController()
+        myPageViewController = MyPageViewController.loadFromNib()
         
         let donationNavigationController = UINavigationController(rootViewController: donationViewController)
         let challengeNavigationController = UINavigationController(rootViewController: challengeFeedViewController)

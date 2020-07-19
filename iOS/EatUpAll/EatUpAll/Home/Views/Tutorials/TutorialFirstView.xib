@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TutorialFirstView" customModule="EatUpAll" customModuleProvider="target">
+            <connections>
+                <outlet property="frameView" destination="iN0-l3-epB" id="RFa-7B-fN7"/>
+                <outlet property="nextButton" destination="AsZ-Nh-FUW" id="F7C-5B-3LR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="qat-y6-9il">
+                    <rect key="frame" x="20" y="26" width="208" height="41.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="qat-y6-9il" secondAttribute="height" multiplier="5:1" id="jEB-T4-Egq"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsZ-Nh-FUW">
+                    <rect key="frame" x="166" y="528" width="68" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="AsZ-Nh-FUW" secondAttribute="height" multiplier="17:11" id="JKX-49-Uup"/>
+                        <constraint firstAttribute="width" constant="68" id="zn2-Hk-hCR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <state key="normal" title="다음">
+                        <color key="titleColor" name="key_green"/>
+                    </state>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crG-Rt-7gj">
+                    <rect key="frame" x="20" y="81.5" width="360" height="432.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <string key="text">'잘먹었습니다'는 지구를 위한 책임감있는 소비에 초점을 맞춘 서비스로, 기업과 소비자가 모두 참여할 수 있는 challenge - donation 서비스입니다. 
+</string>
+                    <color key="textColor" name="key_dark_gray"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="crG-Rt-7gj" firstAttribute="leading" secondItem="qat-y6-9il" secondAttribute="leading" id="0bX-uK-DOd"/>
+                <constraint firstItem="crG-Rt-7gj" firstAttribute="top" secondItem="qat-y6-9il" secondAttribute="bottom" constant="14" id="9ep-XH-KUa"/>
+                <constraint firstItem="qat-y6-9il" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.52" id="AbJ-T5-jxu"/>
+                <constraint firstItem="qat-y6-9il" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="26" id="Dg2-nD-dDl"/>
+                <constraint firstItem="AsZ-Nh-FUW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cx2-VV-tns"/>
+                <constraint firstItem="AsZ-Nh-FUW" firstAttribute="top" secondItem="crG-Rt-7gj" secondAttribute="bottom" constant="14" id="pxZ-Yq-MZK"/>
+                <constraint firstAttribute="bottom" secondItem="AsZ-Nh-FUW" secondAttribute="bottom" constant="28" id="sbA-0Y-6S1"/>
+                <constraint firstItem="qat-y6-9il" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="uvm-m0-GdT"/>
+                <constraint firstAttribute="trailing" secondItem="crG-Rt-7gj" secondAttribute="trailing" constant="20" id="ymb-ne-hp6"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139.13043478260872" y="211.60714285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="title" width="321.33334350585938" height="57.666667938232422"/>
+        <namedColor name="key_dark_gray">
+            <color white="0.12300000339746475" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="key_green">
+            <color red="0.11400000005960464" green="0.68599998950958252" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -11,6 +11,7 @@ import Kingfisher
 
 final class HomeViewController: UIViewController {
 
+    @IBOutlet weak var tutorialView: UIView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var personalTotalView: UIView!
     @IBOutlet weak var personalTotalSavings: UILabel!
@@ -24,6 +25,7 @@ final class HomeViewController: UIViewController {
     @IBOutlet weak var findSurroundingRestaurantView: UIView!
     @IBOutlet weak var donationProjectCollectionView: ClosingDonationProjectCollectionView!
 
+    private var wholeTutorialView: WholeTutorialView!
     private var personalTotalSavingUseCase: PersonalTotalSavingUseCase!
     private var todayRecordUseCase: TodayRecordUseCase!
     private var challengeEmptyPlateUseCase: ChallengeEmptyPlateUseCase!
@@ -37,11 +39,11 @@ final class HomeViewController: UIViewController {
         configure()
         fetchDatas()
     }
-    
+
     @objc func presentClosingDetailCell(_ notification: Notification) {
         let donationDetailViewController = DonationDetailViewController.loadFromNib()
         donationDetailViewController.modalPresentationStyle = .fullScreen
-        
+
         guard let indexPath = notification.userInfo?["indexPath"] as? IndexPath else { return }
         donationProjectDataSource.referDonationProject(at: indexPath) { donationProject in
             self.present(donationDetailViewController, animated: true) {
@@ -49,9 +51,13 @@ final class HomeViewController: UIViewController {
             }
         }
     }
-    
+
     deinit {
         NotificationCenter.default.removeObserver(self, name: .selectionClosingDonationCell, object: nil)
+    }
+
+    @objc private func showTutorial(_ gesture: UIGestureRecognizer) {
+        wholeTutorialView.isHidden = false
     }
 }
 
@@ -113,7 +119,7 @@ extension HomeViewController {
             }
         }
     }
-    
+
     private func fetchTodayRecords() {
         let request = TodayRecordRequest().asURLRequest()
         todayRecordUseCase.getResources(request: request, dataType: TodayRecord.self) { result in
@@ -151,13 +157,31 @@ extension HomeViewController {
         configureUseCases()
         configureCollectionView()
         configureDonationProject()
+        configureGestureRecognizer()
+        configureTutorialView()
         configureObserver()
     }
 
     private func configureObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(presentClosingDetailCell), name: .selectionClosingDonationCell, object: nil)
     }
-    
+
+    private func configureTutorialView() {
+        wholeTutorialView = WholeTutorialView()
+        view.addSubview(wholeTutorialView)
+        wholeTutorialView.translatesAutoresizingMaskIntoConstraints = false
+        wholeTutorialView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        wholeTutorialView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        wholeTutorialView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        wholeTutorialView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        wholeTutorialView.isHidden = true
+    }
+
+    private func configureGestureRecognizer() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showTutorial(_:)))
+        tutorialView.addGestureRecognizer(tapGesture)
+    }
+
     private func configureDonationProject() {
         configureDonationProjectDataSource()
         configureDonationProjectDelegate()
@@ -180,7 +204,7 @@ extension HomeViewController {
         })
         donationProjectCollectionView.dataSource = donationProjectDataSource
     }
-    
+
     private func configureUI() {
         todayWholeView.layer.borderWidth = 0.8
         todayWholeView.layer.borderColor = UIColor(named: "key_green")?.cgColor
@@ -193,7 +217,7 @@ extension HomeViewController {
         findSurroundingRestaurantView.roundCorner(cornerRadius: 10)
         findSurroundingRestaurantView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.3)
     }
-    
+
     private func configureUseCases() {
         personalTotalSavingUseCase = PersonalTotalSavingUseCase()
         todayRecordUseCase = TodayRecordUseCase()

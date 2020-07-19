@@ -21,6 +21,7 @@
                 <outlet property="todayWholePlates" destination="TKS-al-5Nf" id="lfN-yo-8S4"/>
                 <outlet property="todayWholeSavings" destination="24J-OF-NtK" id="lxf-fw-ZO5"/>
                 <outlet property="todayWholeView" destination="hvM-Ks-JdS" id="4gQ-bs-lJd"/>
+                <outlet property="tutorialView" destination="ujW-mp-Aoe" id="uZB-0D-ojS"/>
                 <outlet property="userName" destination="xqn-mE-jKH" id="9Do-A5-xnb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
