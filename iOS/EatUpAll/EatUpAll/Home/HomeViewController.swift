@@ -37,6 +37,22 @@ final class HomeViewController: UIViewController {
         configure()
         fetchDatas()
     }
+    
+    @objc func presentClosingDetailCell(_ notification: Notification) {
+        let donationDetailViewController = DonationDetailViewController.loadFromNib()
+        donationDetailViewController.modalPresentationStyle = .fullScreen
+        
+        guard let indexPath = notification.userInfo?["indexPath"] as? IndexPath else { return }
+        donationProjectDataSource.referDonationProject(at: indexPath) { donationProject in
+            self.present(donationDetailViewController, animated: true) {
+                donationDetailViewController.fetchDonationDetailData(id: donationProject.id)
+            }
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .selectionClosingDonationCell, object: nil)
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -135,8 +151,13 @@ extension HomeViewController {
         configureUseCases()
         configureCollectionView()
         configureDonationProject()
+        configureObserver()
     }
 
+    private func configureObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(presentClosingDetailCell), name: .selectionClosingDonationCell, object: nil)
+    }
+    
     private func configureDonationProject() {
         configureDonationProjectDataSource()
         configureDonationProjectDelegate()
