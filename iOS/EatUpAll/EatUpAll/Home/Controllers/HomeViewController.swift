@@ -24,7 +24,8 @@ final class HomeViewController: UIViewController {
     @IBOutlet weak var emptyPlateCollectionView: UICollectionView!
     @IBOutlet weak var findSurroundingRestaurantView: UIView!
     @IBOutlet weak var donationProjectCollectionView: ClosingDonationProjectCollectionView!
-
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
     private var wholeTutorialView: WholeTutorialView!
     private var personalTotalSavingUseCase: PersonalTotalSavingUseCase!
     private var todayRecordUseCase: TodayRecordUseCase!
@@ -35,7 +36,7 @@ final class HomeViewController: UIViewController {
     private var donationUseCase: DonationUseCase!
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        indicator.startAnimating()
         configure()
         fetchDatas()
     }
@@ -101,6 +102,8 @@ extension HomeViewController {
                 switch result {
                 case .success(let container):
                     self.donationProjectDataSource.updateDonationProjects(container.data)
+                    self.indicator.stopAnimating()
+                    self.indicator.hidesWhenStopped = true
                 case .failure(_):
                     break
                 }
