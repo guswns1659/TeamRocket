@@ -113,7 +113,7 @@ extension HomeViewController {
             switch result {
             case .success(let data):
                 self.userName.text = "\(data.accountName)"
-                self.personalTotalSavings.text = "\(data.totalSaving)"
+                self.personalTotalSavings.text = String(format: "%.2f", arguments: [data.totalSaving])
             case .failure(let error):
                 print(error)
             }

@@ -11,5 +11,5 @@ import Foundation
 struct PersonalTotalSaving: Codable {
     private(set) var accountName: String
     private(set) var totalPlates: Int
-    private(set) var totalSaving: Int
+    private(set) var totalSaving: Double
 }
