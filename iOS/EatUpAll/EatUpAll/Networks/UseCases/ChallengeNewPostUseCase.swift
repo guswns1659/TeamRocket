@@ -13,7 +13,7 @@ struct ChallengeNewPostUseCase: UseCase {
     var networkDispatcher: NetworkDispatcher = AF
     
     func upload(
-        request: Alamofire.URLRequestConvertible,
+        restaurantID: Int?,
         imageData : Data,
         parameters: [String: Any],
         completion: @escaping (Bool) -> Void) {
@@ -46,7 +46,7 @@ struct ChallengeNewPostUseCase: UseCase {
                 }
             }
             
-            multiPart.append(imageData, withName: "file", fileName: "file.jpeg", mimeType: "picture/jpeg")
+            multiPart.append(imageData, withName: "file", fileName: "file.jpeg", mimeType: "file/jpeg")
         }, to: url, method: .post, headers: headers)
             .responseData { (response) in
                 guard response.response?.statusCode == 200 else {
