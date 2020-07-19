@@ -103,7 +103,7 @@ public class AccountControllerTest {
     }
 
     @DisplayName("포인트 히스토리 api 테스트")
-    @CsvSource({"2020-07-17, 600, 기부, 북극곰 살리기 프로젝트"})
+    @CsvSource({"2020-07-19, 600, 기부, 북극곰 살리기 프로젝트"})
     @ParameterizedTest
     void 포인트_히스토리를_응답한다(String createdAt, Integer ecoPoint, String pointOption, String projectName) {
 

@@ -70,4 +70,8 @@ public class Account {
             this.totalPlate++;
         }
     }
+
+    public void giveEcoPoint(int ecoPoint) {
+        this.ecoPoint += ecoPoint;
+    }
 }
