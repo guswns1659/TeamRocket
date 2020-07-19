@@ -41,6 +41,7 @@ extension ChallengeFeedViewController: Refreshable {
 
 extension ChallengeFeedViewController {
     private func fetchChallengeFeed() {
+        guard useCase != nil else { return }
         let request = AllEmptyPlateRequest().asURLRequest()
         useCase.getResources(
             request: request,
