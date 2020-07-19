@@ -46,6 +46,10 @@
 		306FA78D24BD61C300279A18 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 306FA78C24BD61C300279A18 /* Alamofire */; };
 		3079F57F24C460390030EEE4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079F57D24C460390030EEE4 /* MapViewController.swift */; };
 		3079F58024C460390030EEE4 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3079F57E24C460390030EEE4 /* MapViewController.xib */; };
+		3079F58324C468270030EEE4 /* RestaurantAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079F58224C468270030EEE4 /* RestaurantAnnotation.swift */; };
+		3079F58624C46AD50030EEE4 /* RestuarantAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079F58524C46AD50030EEE4 /* RestuarantAnnotationView.swift */; };
+		3079F58824C46C730030EEE4 /* NearRestaurantRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079F58724C46C730030EEE4 /* NearRestaurantRequest.swift */; };
+		3079F58A24C478160030EEE4 /* RestaurantAnnotationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079F58924C478160030EEE4 /* RestaurantAnnotationLabel.swift */; };
 		3097497124C0792400C391DC /* AllEmptyPlateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097497024C0792400C391DC /* AllEmptyPlateRequest.swift */; };
 		3097497324C07BAD00C391DC /* EmptyPlateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097497224C07BAD00C391DC /* EmptyPlateRequest.swift */; };
 		30B0A2F624BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2F524BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift */; };
@@ -148,6 +152,10 @@
 		306FA78124BD585200279A18 /* EmptyPlateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPlateCollectionViewCell.xib; sourceTree = "<group>"; };
 		3079F57D24C460390030EEE4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3079F57E24C460390030EEE4 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		3079F58224C468270030EEE4 /* RestaurantAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAnnotation.swift; sourceTree = "<group>"; };
+		3079F58524C46AD50030EEE4 /* RestuarantAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestuarantAnnotationView.swift; sourceTree = "<group>"; };
+		3079F58724C46C730030EEE4 /* NearRestaurantRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearRestaurantRequest.swift; sourceTree = "<group>"; };
+		3079F58924C478160030EEE4 /* RestaurantAnnotationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAnnotationLabel.swift; sourceTree = "<group>"; };
 		3097497024C0792400C391DC /* AllEmptyPlateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEmptyPlateRequest.swift; sourceTree = "<group>"; };
 		3097497224C07BAD00C391DC /* EmptyPlateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlateRequest.swift; sourceTree = "<group>"; };
 		30B0A2F524BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEmptyPlateUseCase.swift; sourceTree = "<group>"; };
@@ -312,6 +320,7 @@
 				3871901524C206D900954428 /* RestaurantInfoRequest.swift */,
 				3012EF9F24C1CE1900CD350C /* MyAccountRequest.swift */,
 				3012EFA124C1CE8500CD350C /* PointHistoryRequest.swift */,
+				3079F58724C46C730030EEE4 /* NearRestaurantRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -353,6 +362,8 @@
 		3079F57B24C4600E0030EEE4 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				3079F58424C46ABF0030EEE4 /* Views */,
+				3079F58124C468040030EEE4 /* Annotation */,
 				3079F57C24C4601D0030EEE4 /* Controllers */,
 			);
 			path = Map;
@@ -365,6 +376,23 @@
 				3079F57E24C460390030EEE4 /* MapViewController.xib */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3079F58124C468040030EEE4 /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				3079F58224C468270030EEE4 /* RestaurantAnnotation.swift */,
+			);
+			path = Annotation;
+			sourceTree = "<group>";
+		};
+		3079F58424C46ABF0030EEE4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3079F58524C46AD50030EEE4 /* RestuarantAnnotationView.swift */,
+				3079F58924C478160030EEE4 /* RestaurantAnnotationLabel.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		30A1615024BD62A1007FEDC4 /* Networks */ = {
@@ -749,6 +777,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3079F58624C46AD50030EEE4 /* RestuarantAnnotationView.swift in Sources */,
 				3871901424C2063200954428 /* NetworkUseCase.swift in Sources */,
 				38714B4124BC7FA400E9B9FC /* DonationViewController.swift in Sources */,
 				302406E724C089D700B3E328 /* LikeRequest.swift in Sources */,
@@ -773,6 +802,7 @@
 				30B0A30024BDC2AA00BB9E55 /* TodayRecord.swift in Sources */,
 				383D8C8724BC94BE00561EF3 /* ViewModelBinding.swift in Sources */,
 				3097497324C07BAD00C391DC /* EmptyPlateRequest.swift in Sources */,
+				3079F58A24C478160030EEE4 /* RestaurantAnnotationLabel.swift in Sources */,
 				3871901924C2081B00954428 /* Restaurant.swift in Sources */,
 				3043475124C1465A0038C569 /* TutorialFirstView.swift in Sources */,
 				380B222B24BDEAD30004FA55 /* DonationWholeProjectRequest.swift in Sources */,
@@ -812,12 +842,14 @@
 				302BB01824BD65C6000EB297 /* Endpoint.swift in Sources */,
 				30DA856C24BED2B200297204 /* DonationProjectDetailRequest.swift in Sources */,
 				38714B2324BC780A00E9B9FC /* SceneDelegate.swift in Sources */,
+				3079F58824C46C730030EEE4 /* NearRestaurantRequest.swift in Sources */,
 				3012EFA824C1CF1400CD350C /* MyAccount.swift in Sources */,
 				3097497124C0792400C391DC /* AllEmptyPlateRequest.swift in Sources */,
 				38EB2A8024BDD424002CBDEA /* ChallengeCell.swift in Sources */,
 				3012EF9824C1B76900CD350C /* MyPageViewController.swift in Sources */,
 				3022699024BF4130005A864C /* DonateRequest.swift in Sources */,
 				380B222E24BEA4DE0004FA55 /* Int+DecimalStyle.swift in Sources */,
+				3079F58324C468270030EEE4 /* RestaurantAnnotation.swift in Sources */,
 				383D8C8224BC920100561EF3 /* UIView+Border.swift in Sources */,
 				380B222924BDEA9B0004FA55 /* DonationClosingProjectRequest.swift in Sources */,
 				30B0A30224BDC2FF00BB9E55 /* TodayRecordRequest.swift in Sources */,

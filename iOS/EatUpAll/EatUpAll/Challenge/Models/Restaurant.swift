@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct RestaurantContainer: Codable {
+    let data: [Restaurant]
+    let dataCount: Int
+}
+
 struct Restaurant: Codable {
     let id: Int
     let address: String
