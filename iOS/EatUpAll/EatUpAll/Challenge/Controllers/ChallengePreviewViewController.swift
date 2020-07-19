@@ -9,7 +9,7 @@
 import UIKit
 import JGProgressHUD
 
-protocol ChallengeUploadDelegate {
+protocol ChallengePreviewViewControllerDelegate: class {
     func didSuccessToUploadChallenge()
 }
 
@@ -28,7 +28,14 @@ final class ChallengePreviewViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var descriptionPlaceholderLabel: UILabel!
     
-    private var useCase: ChallengeNewPostUseCase!
+    @IBOutlet weak var restaurantInfoView: UIView!
+    @IBOutlet weak var restaurantNameLabel: UILabel!
+    
+    private var currentMode: ChallengeCameraViewController.Mode = .challengeMode
+    private var currentRestaurantID: Int?
+    
+    private var uploadUseCase: ChallengeNewPostUseCase!
+    private var networkUseCase: NetworkUseCase!
     
     private var isDescriptionMode: Bool = false
     
@@ -37,6 +44,8 @@ final class ChallengePreviewViewController: UIViewController {
     private let maximumNumberOfText: Int = 200
     
     let uploadingHUD = JGProgressHUD(style: .extraLight)
+    
+    weak var delegate: ChallengePreviewViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +58,44 @@ final class ChallengePreviewViewController: UIViewController {
         resetPreviewController()
         configureTopConstraint()
         descriptionTextView.delegate = self
+        modeDidChange()
+        fetchRestaurantInfo()
+    }
+    
+    func configureRestaurantID(_ id: Int?) {
+        self.currentRestaurantID = id
+    }
+    
+    private func fetchRestaurantInfo() {
+        guard currentMode == .QRMode else { return }
+        guard let restaurantID = currentRestaurantID else { return }
+        let request = RestaurantInfoRequest(restaurantID: restaurantID).asURLRequest()
+        networkUseCase.getResources(
+            request: request,
+            dataType: Restaurant.self) { (result) in
+                switch result {
+                case .success(let restaurant):
+                    self.restaurantNameLabel.text = restaurant.name
+                    self.restaurantNameLabel.sizeToFit()
+                    self.restaurantInfoView.layoutIfNeeded()
+                case .failure(_):
+                    self.restaurantNameLabel.text = ""
+                    break
+                }
+        }
+    }
+    
+    func configureMode(to mode: ChallengeCameraViewController.Mode) {
+        currentMode = mode
+    }
+    
+    private func modeDidChange() {
+        switch currentMode {
+        case .challengeMode:
+            restaurantInfoView.isHidden = true
+        case .QRMode:
+            restaurantInfoView.isHidden = false
+        }
     }
     
     private func resetPreviewController() {
@@ -79,19 +126,20 @@ final class ChallengePreviewViewController: UIViewController {
     }
     
     private func uploadChallenge() {
-        let request = ChallengeUploadRequest().asURLRequest()
-        guard let imageData = capturedImage?.jpegData(compressionQuality: 0.8) else { return }
-        let uploadParameter: [String : Any] = ["description": descriptionTextView.text as Any]
+        guard let imageData = capturedImage?.jpegData(compressionQuality: 0.5) else { return }
+        let description: String = descriptionTextView.text.count == 0 ? " " : descriptionTextView.text
+        let uploadParameter: [String : Any] = ["description": description as Any]
         uploadingHUD.textLabel.text = "업로딩 중"
         uploadingHUD.show(in: view, animated: true)
-        useCase.upload(
-            request: request,
+        uploadUseCase.upload(
+            restaurantID: currentRestaurantID,
             imageData: imageData,
             parameters: uploadParameter,
             completion: { isSuccess in
                 if isSuccess {
                     self.uploadingHUD.dismiss(animated: true)
                     self.dismiss(animated: true, completion: {
+                        self.delegate?.didSuccessToUploadChallenge()
                         self.navigationController?.popToRootViewController(animated: false)
                     })
                 } else {
@@ -209,7 +257,8 @@ extension ChallengePreviewViewController {
     }
     
     private func configureUseCase() {
-        useCase = ChallengeNewPostUseCase()
+        uploadUseCase = ChallengeNewPostUseCase()
+        networkUseCase = NetworkUseCase()
     }
     
     private func configureDescriptionTapRecognizer() {

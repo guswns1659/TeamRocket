@@ -9,5 +9,5 @@
 import Foundation
 
 struct DonationWholeProjectRequest: Request {
-    var path: String = EndPoint.donationClosingProjectURL
+    var path: String = EndPoint.donationWholeProjectURL
 }

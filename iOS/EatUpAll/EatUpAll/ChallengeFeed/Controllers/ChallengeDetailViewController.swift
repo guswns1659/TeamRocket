@@ -11,10 +11,12 @@ import Kingfisher
 
 class ChallengeDetailViewController: UIViewController {
 
+    @IBOutlet weak var placeIconImageView: UIImageView!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var challengeImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeCountLabel: UILabel!
+    @IBOutlet weak var likeCountAnnouncementLabel: UILabel!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     
@@ -45,7 +47,30 @@ class ChallengeDetailViewController: UIViewController {
     private func configureData(plateInfo: ChallengeEmptyPlate) {
         challengeImageView.kf.setImage(with: URL(string:plateInfo.image)!)
         placeLabel.text = plateInfo.restaurantName
-        likeCountLabel.text = "\(plateInfo.likeCount)"
+        if placeLabel.text == "null" {
+            placeIconImageView.isHidden = true
+            placeLabel.isHidden = true
+            NSLayoutConstraint(
+                item: challengeImageView,
+                attribute: .top,
+                relatedBy: .equal,
+                toItem: view.safeAreaLayoutGuide,
+                attribute: .top,
+                multiplier: 1,
+                constant: 0).isActive = true
+        } else {
+            placeIconImageView.isHidden = false
+            placeLabel.isHidden = false
+        }
+        if plateInfo.likeCount == 0 {
+            likeCountLabel.text = "0"
+            likeCountLabel.isHidden = true
+            likeCountAnnouncementLabel.text = "처음으로 챌린지를 응원해주세요"
+        } else {
+            likeCountLabel.text = "\(plateInfo.likeCount)"
+            likeCountLabel.isHidden = false
+            likeCountAnnouncementLabel.text = "명이 응원합니다"
+        }
         descriptionTextView.text = plateInfo.description
         userLabel.text = plateInfo.author
         let buttonImage = UIImage(systemName: "suit.heart.fill")
@@ -68,18 +93,27 @@ class ChallengeDetailViewController: UIViewController {
     }
     
     @IBAction func switchLike(_ sender: UIButton) {
+        let count = Int(likeCountLabel.text!)!
         if isLiked {
             isLiked = false
             let buttonImage = UIImage(systemName: "suit.heart")
             likeButton.setImage(buttonImage, for: .normal)
-            likeCountLabel.text = String(Int(likeCountLabel.text!)! - 1)
+            likeCountLabel.text = String(count - 1)
             likeRequest(isLiked: "False")
         }else {
             isLiked = true
             let buttonImage = UIImage(systemName: "suit.heart.fill")
             likeButton.setImage(buttonImage, for: .normal)
-            likeCountLabel.text = String(Int(likeCountLabel.text!)! + 1)
+            likeCountLabel.text = String(count + 1)
             likeRequest(isLiked: "True")
+        }
+        
+        if Int(likeCountLabel.text!)! == 0 {
+            likeCountLabel.isHidden = true
+            likeCountAnnouncementLabel.text = "처음으로 챌린지를 응원해주세요"
+        } else {
+            likeCountLabel.isHidden = false
+            likeCountAnnouncementLabel.text = "명이 응원합니다"
         }
     }
     

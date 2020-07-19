@@ -20,6 +20,8 @@
                 <outlet property="descriptionTextView" destination="43O-si-NJf" id="P5r-bb-whw"/>
                 <outlet property="descriptionView" destination="5ec-AS-7vx" id="vqV-oR-e3g"/>
                 <outlet property="originDescriptionTopConstraint" destination="RIr-9e-7Ow" id="8HV-QF-aIE"/>
+                <outlet property="restaurantInfoView" destination="2Iu-bU-Tj9" id="Znn-GC-d2f"/>
+                <outlet property="restaurantNameLabel" destination="YWq-gR-ofG" id="ZkB-4L-SH2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -59,7 +61,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="챌린지 등록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUf-CX-8qz">
-                            <rect key="frame" x="168" y="15.5" width="78" height="21"/>
+                            <rect key="frame" x="168" y="16" width="78" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -110,7 +112,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="804-8d-CUE">
-                            <rect key="frame" x="192" y="15.5" width="30" height="21"/>
+                            <rect key="frame" x="192.5" y="16" width="29.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -145,8 +147,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ec-AS-7vx" userLabel="TextFieldContainerView">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="챌린지에 동참에 주셔서 감사합니다. 사진에 대해서 설명해주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRW-HI-N9U">
-                                    <rect key="frame" x="16" y="16" width="211" height="36"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지구를 위해 동참해주셔서 감사합니다. 터치하여 설명을 적을 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRW-HI-N9U">
+                                    <rect key="frame" x="16" y="16" width="224" height="36"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" name="key_gray"/>
                                     <nil key="highlightedColor"/>
@@ -170,12 +172,54 @@
                                 <constraint firstItem="bRW-HI-N9U" firstAttribute="top" secondItem="5ec-AS-7vx" secondAttribute="top" constant="16" id="yJN-Tg-utM"/>
                             </constraints>
                         </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Iu-bU-Tj9">
+                            <rect key="frame" x="0.0" y="212" width="414" height="140"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="챌린지에 함께 동참하는 이곳은" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xig-b9-MDg">
+                                    <rect key="frame" x="24" y="60" width="366" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" red="0.31186548223350252" green="0.31186548223350252" blue="0.31186548223350252" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 이름" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWq-gR-ofG">
+                                    <rect key="frame" x="175.5" y="87.5" width="63" height="20.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20.5" id="WIT-SZ-hsF"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" name="key_green"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ie4-AO-G0k">
+                                    <rect key="frame" x="147" y="87" width="20.5" height="21"/>
+                                    <color key="tintColor" name="key_green"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Ie4-AO-G0k" secondAttribute="height" multiplier="1:1" id="lVO-HD-FLV"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="YWq-gR-ofG" secondAttribute="bottom" constant="32" id="BhW-Ox-OTl"/>
+                                <constraint firstItem="Ie4-AO-G0k" firstAttribute="height" secondItem="YWq-gR-ofG" secondAttribute="height" id="J2o-MM-2EG"/>
+                                <constraint firstItem="Ie4-AO-G0k" firstAttribute="centerY" secondItem="YWq-gR-ofG" secondAttribute="centerY" id="UUm-Wg-04z"/>
+                                <constraint firstAttribute="trailing" secondItem="Xig-b9-MDg" secondAttribute="trailing" constant="24" id="XZG-Ee-JFF"/>
+                                <constraint firstItem="YWq-gR-ofG" firstAttribute="centerX" secondItem="Xig-b9-MDg" secondAttribute="centerX" id="atd-Bc-7Wr"/>
+                                <constraint firstItem="YWq-gR-ofG" firstAttribute="leading" secondItem="Ie4-AO-G0k" secondAttribute="trailing" constant="8" id="gxD-x8-Ood"/>
+                                <constraint firstItem="Xig-b9-MDg" firstAttribute="leading" secondItem="2Iu-bU-Tj9" secondAttribute="leading" constant="24" id="hUK-Gr-Uv4"/>
+                                <constraint firstItem="YWq-gR-ofG" firstAttribute="top" secondItem="Xig-b9-MDg" secondAttribute="bottom" constant="8" id="lQV-rP-4Wb"/>
+                                <constraint firstAttribute="height" constant="140" id="v9h-Qe-2qW"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
+                        <constraint firstItem="2Iu-bU-Tj9" firstAttribute="leading" secondItem="HQj-mv-kEu" secondAttribute="leading" id="2L0-Rb-CSu"/>
                         <constraint firstItem="5ec-AS-7vx" firstAttribute="top" secondItem="HQj-mv-kEu" secondAttribute="top" id="2TD-MJ-N93"/>
                         <constraint firstAttribute="trailing" secondItem="5ec-AS-7vx" secondAttribute="trailing" id="Qis-xw-da5"/>
+                        <constraint firstAttribute="bottom" secondItem="2Iu-bU-Tj9" secondAttribute="bottom" id="VHW-6H-U0C"/>
                         <constraint firstItem="5ec-AS-7vx" firstAttribute="leading" secondItem="HQj-mv-kEu" secondAttribute="leading" id="amH-Ly-zSx"/>
+                        <constraint firstAttribute="trailing" secondItem="2Iu-bU-Tj9" secondAttribute="trailing" id="cRx-cp-uZa"/>
                     </constraints>
                 </view>
             </subviews>
@@ -213,6 +257,7 @@
     </objects>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="key_dark_gray">
             <color white="0.12300000339746475" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

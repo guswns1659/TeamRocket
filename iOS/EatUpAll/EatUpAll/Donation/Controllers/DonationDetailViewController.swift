@@ -21,6 +21,8 @@ class DonationDetailViewController: UIViewController {
     @IBOutlet weak var donationRatio: UILabel!
     @IBOutlet weak var descriptionStackView: UIStackView!
     @IBOutlet weak var donationButton: UIButton!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     private var donationDetail: DonationDetail!
     private var donateView: DonateView!
@@ -32,56 +34,8 @@ class DonationDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.startAnimating()
         configure()
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(
-            self,
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil)
-        NotificationCenter.default.removeObserver(
-            self,
-            name: UIResponder.keyboardWillHideNotification,
-            object: nil)
-        NotificationCenter.default.removeObserver(self, name: .inputDone, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .donateButtonDidTap, object: nil)
-    }
-    
-    private func configure() {
-        configureUI()
-        configureUseCase()
-        configureDonateView()
-        configureObservers()
-        configureToolbar()
-    }
-    
-    private func configureUI() {
-        donationButton.roundCorner(cornerRadius: 10)
-    }
-        
-    private func configureUseCase() {
-        donationProjectDetailUseCase = DonationProjectDetailUseCase()
-        myEcoPointUseCase = MyEcoPointUseCase()
-        donationUseCase = DonationUseCase()
-    }
-
-    private func configureDonateView() {
-        donateView = DonateView()
-        donateView.configureTextField { $0.inputAccessoryView = toolBarKeyBoard }
-        donateView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(donateView)
-        donateView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        donateView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        donateView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        donateView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        donateView.alpha = 0
-    }
-
-    private func configureObservers() {
-        configureKeyboardNotification()
-        NotificationCenter.default.addObserver(self, selector: #selector(doneButtonDidTap(sender:)), name: .inputDone, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(showAlert(_:)), name: .donateButtonDidTap, object: nil)
     }
     
     @objc private func showAlert(_ notification: Notification) {
@@ -111,7 +65,76 @@ class DonationDetailViewController: UIViewController {
     @IBAction func backButtonDidTap(_ sender: UIButton) {
         dismiss(animated: true)
     }
+   
+    deinit {
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil)
+        NotificationCenter.default.removeObserver(self, name: .inputDone, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .donateButtonDidTap, object: nil)
+    }
+}
+
+//MARK:- Generate Description StackView
+
+extension DonationDetailViewController {
+    private func generateData(data: DonationDetail) {
+        let url = URL(string: data.mainURL)
+        mainImage.kf.setImage(with: url)
+        hostCompany.text = data.titleWithCompany
+        projectTitle.text = data.title
+        currentMoney.text = "\(data.currentMoney)원"
+        targetMoney.text = "\(data.targetMoney)원"
+        donatorCount.text = "\(data.donators)명"
+        leftTime.text = "\(data.leftDay)일 \(data.leftHour)시간"
+        let percentage = Double(data.currentMoney) / Double(data.targetMoney)
+        self.donationRatio.text = "\(Int(percentage * 100))%"
+        configureDescriptionStackView(images: data.descriptionURL)
+    }
     
+    private func updateDetailImages(at imageView: UIImageView, image: UIImage?) {
+        guard let image = image else { return }
+        let imageRatio = image.size.height / image.size.width
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.heightAnchor.constraint(equalToConstant: descriptionStackView.frame.width * imageRatio).isActive = true
+        imageView.image = image
+    }
+
+    private func configureDescriptionStackView(images: [String]) {
+        descriptionImages = []
+        images.forEach { generateDescriptionImages(imageURL: $0) }
+        descriptionStackView.subviews.forEach { $0.removeFromSuperview() }
+        descriptionImages.forEach {
+            let imageView = UIImageView(image: $0)
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+            updateDetailImages(at: imageView, image: $0)
+            descriptionStackView.addArrangedSubview(imageView)
+        }
+    }
+    
+    private func generateDescriptionImages(imageURL: String) {
+        let url = URL(string:imageURL)
+        KingfisherManager.shared.retrieveImage(with: url!, options: nil, progressBlock: nil, downloadTaskUpdated: nil) { (result) in
+            switch result {
+            case .success(let value):
+                self.descriptionImages.append(value.image)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+}
+
+
+//MARK:- Fetch & Request
+
+extension DonationDetailViewController {
     private func requestDonation(id: Int, point: String) {
         let request = DonateRequest(id: id)
         request.append(name: .ecoPoint, value: point)
@@ -144,46 +167,57 @@ class DonationDetailViewController: UIViewController {
             case .success(let donationDetail):
                 self.donationDetail = donationDetail
                 self.generateData(data: donationDetail)
+                self.indicator.stopAnimating()
+                self.indicator.hidesWhenStopped = true
             case .failure(let error):
                 print(error)
             }
         }
     }
-    
-    private func generateData(data: DonationDetail) {
-        let url = URL(string: data.mainURL)
-        mainImage.kf.setImage(with: url)
-        hostCompany.text = data.titleWithCompany
-        projectTitle.text = data.title
-        currentMoney.text = "\(data.currentMoney)원"
-        targetMoney.text = "\(data.targetMoney)원"
-        donatorCount.text = "\(data.donators)명"
-        leftTime.text = "\(data.leftDay)일 \(data.leftHour)시간"
-        let percentage = Double(data.currentMoney) / Double(data.targetMoney)
-        self.donationRatio.text = "\(Int(percentage * 100))%"
-        configureDescriptionStackView(images: data.descriptionURL)
+}
+
+//MARK:- Configurations
+
+extension DonationDetailViewController {
+    private func configure() {
+        configureUI()
+        configureUseCase()
+        configureDonateView()
+        configureObservers()
+        configureToolbar()
+        configureScrollView()
     }
     
-    private func configureDescriptionStackView(images: [String]) {
-        descriptionImages = []
-        images.forEach { generateDescriptionImages(imageURL: $0) }
-        descriptionStackView.subviews.forEach { $0.removeFromSuperview() }
-        descriptionImages.forEach {
-            let imageView = UIImageView(image: $0)
-            descriptionStackView.addArrangedSubview(imageView)
-        }
+    private func configureScrollView() {
+        scrollView.contentInset = .init(top: 0, left: 0, bottom: 72, right: 0)
     }
     
-    private func generateDescriptionImages(imageURL: String) {
-        let url = URL(string:imageURL)
-        KingfisherManager.shared.retrieveImage(with: url!, options: nil, progressBlock: nil, downloadTaskUpdated: nil) { (result) in
-            switch result {
-            case .success(let value):
-                self.descriptionImages.append(value.image)
-            case .failure(let error):
-                print(error)
-            }
-        }
+    private func configureUI() {
+        donationButton.roundCorner(cornerRadius: 10)
+    }
+        
+    private func configureUseCase() {
+        donationProjectDetailUseCase = DonationProjectDetailUseCase()
+        myEcoPointUseCase = MyEcoPointUseCase()
+        donationUseCase = DonationUseCase()
+    }
+
+    private func configureDonateView() {
+        donateView = DonateView()
+        donateView.configureTextField { $0.inputAccessoryView = toolBarKeyBoard }
+        donateView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(donateView)
+        donateView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        donateView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        donateView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        donateView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        donateView.alpha = 0
+    }
+
+    private func configureObservers() {
+        configureKeyboardNotification()
+        NotificationCenter.default.addObserver(self, selector: #selector(doneButtonDidTap(sender:)), name: .inputDone, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showAlert(_:)), name: .donateButtonDidTap, object: nil)
     }
 }
 

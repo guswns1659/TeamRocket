@@ -11,10 +11,6 @@ import UIKit
 class EmptyPlateCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var emptyPlateImageView: UIImageView!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
     
     func configureImage(_ image: UIImage) {
         emptyPlateImageView.image = image
