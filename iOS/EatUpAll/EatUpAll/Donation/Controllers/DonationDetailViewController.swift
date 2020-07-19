@@ -22,6 +22,7 @@ class DonationDetailViewController: UIViewController {
     @IBOutlet weak var descriptionStackView: UIStackView!
     @IBOutlet weak var donationButton: UIButton!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     private var donationDetail: DonationDetail!
     private var donateView: DonateView!
@@ -110,7 +111,7 @@ extension DonationDetailViewController {
         descriptionStackView.subviews.forEach { $0.removeFromSuperview() }
         descriptionImages.forEach {
             let imageView = UIImageView(image: $0)
-            imageView.contentMode = .scaleAspectFit
+            imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
             updateDetailImages(at: imageView, image: $0)
             descriptionStackView.addArrangedSubview(imageView)
@@ -184,6 +185,11 @@ extension DonationDetailViewController {
         configureDonateView()
         configureObservers()
         configureToolbar()
+        configureScrollView()
+    }
+    
+    private func configureScrollView() {
+        scrollView.contentInset = .init(top: 0, left: 0, bottom: 72, right: 0)
     }
     
     private func configureUI() {

@@ -20,6 +20,7 @@
                 <outlet property="leftTime" destination="pbW-51-cwI" id="g6G-rc-nNk"/>
                 <outlet property="mainImage" destination="ZbD-sb-cnL" id="miZ-no-jlD"/>
                 <outlet property="projectTitle" destination="815-7C-2VP" id="qoc-Eo-6HO"/>
+                <outlet property="scrollView" destination="Ssf-cg-LO6" id="VXK-hQ-xCp"/>
                 <outlet property="targetMoney" destination="Ll2-6H-T72" id="txJ-0g-uSZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
