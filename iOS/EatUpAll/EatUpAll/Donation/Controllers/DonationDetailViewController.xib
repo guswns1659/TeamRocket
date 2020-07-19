@@ -16,6 +16,7 @@
                 <outlet property="donationRatio" destination="XcM-co-j0M" id="U7p-OJ-TyF"/>
                 <outlet property="donatorCount" destination="bQ7-Gx-c0c" id="Slh-Nf-F4g"/>
                 <outlet property="hostCompany" destination="rKP-7S-uNI" id="gbQ-eW-5KY"/>
+                <outlet property="indicator" destination="8sE-tu-bGH" id="8Ls-mY-tSN"/>
                 <outlet property="leftTime" destination="pbW-51-cwI" id="g6G-rc-nNk"/>
                 <outlet property="mainImage" destination="ZbD-sb-cnL" id="miZ-no-jlD"/>
                 <outlet property="projectTitle" destination="815-7C-2VP" id="qoc-Eo-6HO"/>
@@ -225,6 +226,10 @@
                         <action selector="donationButtonDidTap:" destination="-1" eventType="touchUpInside" id="9yF-Gy-AaD"/>
                     </connections>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="8sE-tu-bGH">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>

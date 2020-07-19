@@ -21,6 +21,7 @@ class DonationDetailViewController: UIViewController {
     @IBOutlet weak var donationRatio: UILabel!
     @IBOutlet weak var descriptionStackView: UIStackView!
     @IBOutlet weak var donationButton: UIButton!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     private var donationDetail: DonationDetail!
     private var donateView: DonateView!
@@ -32,6 +33,7 @@ class DonationDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.startAnimating()
         configure()
     }
     
@@ -144,6 +146,8 @@ class DonationDetailViewController: UIViewController {
             case .success(let donationDetail):
                 self.donationDetail = donationDetail
                 self.generateData(data: donationDetail)
+                self.indicator.stopAnimating()
+                self.indicator.hidesWhenStopped = true
             case .failure(let error):
                 print(error)
             }

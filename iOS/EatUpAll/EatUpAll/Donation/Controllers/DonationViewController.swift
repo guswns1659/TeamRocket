@@ -16,6 +16,7 @@ final class DonationViewController: UIViewController {
     
     @IBOutlet weak var closingDonationProjectCollectionView: ClosingDonationProjectCollectionView!
     @IBOutlet weak var wholeDonationProjectCollectionView: DonationProjectCollectionView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     private var closingDonationProjectDataSource: DonationProjectCollectionViewDataSource<ClosingDonationProjectCell>!
     private var wholeDonationProjectDataSource: DonationProjectCollectionViewDataSource<DonationProjectCell>!
     private var closingDonationProjectDelegate: ClosingDonationProjectCollectionViewDelegate!
@@ -26,7 +27,7 @@ final class DonationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        indicator.startAnimating()
         configure()
         fetchDonationProjects()
     }
@@ -77,6 +78,8 @@ extension DonationViewController {
                 switch result {
                 case .success(let wholeProjectContainer):
                     self.wholeDonationProjectDataSource.updateDonationProjects(wholeProjectContainer.data)
+                    self.indicator.stopAnimating()
+                    self.indicator.hidesWhenStopped = true
                 case .failure(_):
                     break
                 }
