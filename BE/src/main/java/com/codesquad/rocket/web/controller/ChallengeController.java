@@ -51,7 +51,7 @@ public class ChallengeController {
     @PostMapping(path = "{restaurantId}",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ChallengeStatusResponseDto upload(
         @PathVariable(required = false) Long restaurantId,
-        @RequestPart(value = "picture") MultipartFile file,
+        @RequestPart(value = "file") MultipartFile file,
         @RequestPart(value = "description") String description) {
 
         return challengeService.addChallenge(restaurantId, file, description);

@@ -28,7 +28,7 @@ public class ProjectControllerTest {
 
     @Transactional
     @DisplayName("orderByCreatedAt API 테스트")
-    @CsvSource({"1, 9000, 해양 포유류 보호법 후원 프로젝트, 6"})
+    @CsvSource({"1, 9600, 해양 포유류 보호법 후원 프로젝트, 6"})
     @ParameterizedTest
     void 최근생성순으로_프로젝트를_요청한다(Long id, Integer currentMoney, String projectTitle, Long leftDays) {
 
@@ -49,7 +49,7 @@ public class ProjectControllerTest {
 
     @Transactional
     @DisplayName("orderByCreatedAt API 테스트")
-    @CsvSource({"1, 9000, 해양 포유류 보호법 후원 프로젝트, 6"})
+    @CsvSource({"1, 9600, 해양 포유류 보호법 후원 프로젝트, 6"})
     @ParameterizedTest
     void 마감순으로_프로젝트를_요청한다(Long id, Integer currentMoney, String projectTitle, Long leftDays) {
 
@@ -70,7 +70,7 @@ public class ProjectControllerTest {
 
     @Transactional
     @DisplayName("orderByCreatedAt API 테스트")
-    @CsvSource({"1, 9000, 해양 포유류 보호법 후원 프로젝트, 6, 4"})
+    @CsvSource({"1, 9600, 해양 포유류 보호법 후원 프로젝트, 6, 4"})
     @ParameterizedTest
     void 프로젝트_상세보기를_요청한다(Long projectId, Integer currentMoney, String title, Long leftDay, Long leftHour) {
 

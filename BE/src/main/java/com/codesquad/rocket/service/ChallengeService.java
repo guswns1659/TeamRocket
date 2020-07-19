@@ -32,6 +32,10 @@ public class ChallengeService {
     private static final String NULL = "null";
     private static final String DIRECTORYNAME = "static";
     private static final String DELMA = "delma";
+    private static final Integer NO_RESTAURANT_ECOPOINT = 200;
+    private static final Integer RESTAURANT_ECOPOINT = 400;
+    private static final String STATUS_OK = "200";
+    private static final String STATUS_FAIL = "400";
     private final AccountRepository accountRepository;
     private final ChallengeRepository challengeRepository;
     private final RestaurantRepository restaurantRepository;
@@ -50,7 +54,7 @@ public class ChallengeService {
     }
 
     public ChallengeResponseDto findByAll() {
-        List<Challenge> challenges = challengeRepository.findAll();
+        List<Challenge> challenges = challengeRepository.findAllByOrderByCreatedAtDesc();
         List<ChallengeDetailResponseDto> data = challengeHasLikeWithAccount(challenges);
 
         return ChallengeResponseDto.builder()
@@ -147,18 +151,20 @@ public class ChallengeService {
             PointHistory pointHistory = PointHistory.builder()
                 .pointOption(PointOption.SAVE)
                 .createdAt(new Date())
-                .ecoPoint(200)
+                .ecoPoint(RESTAURANT_ECOPOINT)
                 .build();
+
             account.addPointHistory(pointHistory);
             account.addPlate();
+            account.giveEcoPoint(RESTAURANT_ECOPOINT);
             accountRepository.save(account);
 
             return ChallengeStatusResponseDto.builder()
-                .status("200")
+                .status(STATUS_OK)
                 .build();
         } catch (Exception e) {
             return ChallengeStatusResponseDto.builder()
-                .status("400")
+                .status(STATUS_FAIL)
                 .build();
         }
     }
@@ -184,19 +190,20 @@ public class ChallengeService {
             PointHistory pointHistory = PointHistory.builder()
                 .pointOption(PointOption.SAVE)
                 .createdAt(new Date())
-                .ecoPoint(200)
+                .ecoPoint(NO_RESTAURANT_ECOPOINT)
                 .build();
 
             account.addPointHistory(pointHistory);
             account.addPlate();
+            account.giveEcoPoint(NO_RESTAURANT_ECOPOINT);
             accountRepository.save(account);
 
             return ChallengeStatusResponseDto.builder()
-                .status("200")
+                .status(STATUS_OK)
                 .build();
         } catch (Exception e) {
             return ChallengeStatusResponseDto.builder()
-                .status("400")
+                .status(STATUS_FAIL)
                 .build();
         }
     }
