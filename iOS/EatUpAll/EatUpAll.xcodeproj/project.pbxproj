@@ -107,6 +107,7 @@
 		38EB2A8424BDD5C1002CBDEA /* ChallengeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A8324BDD5C1002CBDEA /* ChallengeCollectionViewDataSource.swift */; };
 		38EB632924C461A500A53284 /* ChallengePointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB632724C461A500A53284 /* ChallengePointViewController.swift */; };
 		38EB632A24C461A500A53284 /* ChallengePointViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38EB632824C461A500A53284 /* ChallengePointViewController.xib */; };
+		38EB632D24C4698500A53284 /* RefreshableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB632C24C4698500A53284 /* RefreshableProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +210,7 @@
 		38EB2A8324BDD5C1002CBDEA /* ChallengeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		38EB632724C461A500A53284 /* ChallengePointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengePointViewController.swift; sourceTree = "<group>"; };
 		38EB632824C461A500A53284 /* ChallengePointViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengePointViewController.xib; sourceTree = "<group>"; };
+		38EB632C24C4698500A53284 /* RefreshableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -534,6 +536,7 @@
 		38714B3424BC79BB00E9B9FC /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				38EB632B24C4697200A53284 /* Protocol */,
 				383F239C24BEE6D900C5E8C9 /* Controllers */,
 			);
 			path = TabBar;
@@ -648,6 +651,14 @@
 				38EB632824C461A500A53284 /* ChallengePointViewController.xib */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		38EB632B24C4697200A53284 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				38EB632C24C4698500A53284 /* RefreshableProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -773,6 +784,7 @@
 				383D8C8724BC94BE00561EF3 /* ViewModelBinding.swift in Sources */,
 				3097497324C07BAD00C391DC /* EmptyPlateRequest.swift in Sources */,
 				3871901924C2081B00954428 /* Restaurant.swift in Sources */,
+				38EB632D24C4698500A53284 /* RefreshableProtocol.swift in Sources */,
 				3043475124C1465A0038C569 /* TutorialFirstView.swift in Sources */,
 				380B222B24BDEAD30004FA55 /* DonationWholeProjectRequest.swift in Sources */,
 				38714B2524BC780A00E9B9FC /* TabBarViewController.swift in Sources */,

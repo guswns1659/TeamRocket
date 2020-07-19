@@ -61,6 +61,14 @@ final class HomeViewController: UIViewController {
     }
 }
 
+// MARK:- Refreshable
+
+extension HomeViewController: Refreshable {
+    func refresh() {
+        fetchDatas()
+    }
+}
+
 // MARK: - UICollectionViewDataSource
 
 extension HomeViewController: UICollectionViewDataSource {

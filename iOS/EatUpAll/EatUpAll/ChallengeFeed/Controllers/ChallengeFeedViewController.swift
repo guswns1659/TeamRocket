@@ -29,6 +29,14 @@ final class ChallengeFeedViewController: UIViewController {
     }
 }
 
+// MARK:- Refreshable
+
+extension ChallengeFeedViewController: Refreshable {
+    func refresh() {
+        fetchChallengeFeed()
+    }
+}
+
 // MARK:- Fetching Datas
 
 extension ChallengeFeedViewController {

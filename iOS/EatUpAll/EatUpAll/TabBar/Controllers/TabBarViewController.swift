@@ -22,12 +22,12 @@ final class TabBarViewController: UITabBarController {
         static let keyGreen: UIColor = UIColor(named: "key_green")!
     }
     
-    private var homeViewController: UIViewController!
+    private var homeViewController: HomeViewController!
     private var donationViewController: UIViewController!
     private var challengeCameraNavigationController: UINavigationController!
     private var challengeCameraViewController: ChallengeCameraViewController!
-    private var challengeFeedViewController: UIViewController!
-    private var myPageViewController: UIViewController!
+    private var challengeFeedViewController: ChallengeFeedViewController!
+    private var myPageViewController: MyPageViewController!
     private var challengeButton: UIButton!
     
     private var challengePointPopUpViewController: ChallengePointViewController!
@@ -53,6 +53,14 @@ extension TabBarViewController: ChallengeCameraViewControllerDelegate {
         challengePointPopUpViewController.modalPresentationStyle = .overFullScreen
         present(challengePointPopUpViewController, animated: true, completion: nil)
         challengePointPopUpViewController.configureEcoPoints(with: mode)
+        refreshViewControllers()
+    }
+    
+    private func refreshViewControllers() {
+        [homeViewController, challengeFeedViewController, myPageViewController].forEach {
+            let viewController = $0 as! Refreshable
+            viewController.refresh()
+        }
     }
 }
 
