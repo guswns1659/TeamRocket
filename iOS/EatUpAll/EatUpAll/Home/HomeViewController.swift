@@ -21,6 +21,7 @@ final class HomeViewController: UIViewController {
     @IBOutlet weak var todayWholeView: UIView!
     @IBOutlet weak var todayMyView: UIView!
     @IBOutlet weak var emptyPlateCollectionView: UICollectionView!
+    @IBOutlet weak var findSurroundingRestaurantView: UIView!
     @IBOutlet weak var donationProjectCollectionView: ClosingDonationProjectCollectionView!
 
     private var personalTotalSavingUseCase: PersonalTotalSavingUseCase!
@@ -43,11 +44,6 @@ final class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return emptyPlateInfo.data.count
-    }
-        private func configure() {
-        configureUI()
-        todayRecordUseCase = TodayRecordUseCase()
-        emptyPlateUseCase = EmptyPlateUseCase()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -101,16 +97,7 @@ extension HomeViewController {
             }
         }
     }
-
-    private func configureUI() {
-        todayWholeView.layer.borderWidth = 0.8
-        todayWholeView.layer.borderColor = UIColor(named: "key_green")?.cgColor
-        todayWholeView.roundCorner(cornerRadius: 15)
-        todayMyView.roundCorner(cornerRadius: 15)
-        todayWholeView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.4)
-        todayMyView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.4)
-    }
-
+    
     private func fetchTodayRecords() {
         let request = TodayRecordRequest().asURLRequest()
         todayRecordUseCase.getResources(request: request, dataType: TodayRecord.self) { result in
@@ -172,12 +159,20 @@ extension HomeViewController {
         })
         donationProjectCollectionView.dataSource = donationProjectDataSource
     }
-
+    
     private func configureUI() {
+        todayWholeView.layer.borderWidth = 0.8
+        todayWholeView.layer.borderColor = UIColor(named: "key_green")?.cgColor
+        todayWholeView.roundCorner(cornerRadius: 15)
+        todayMyView.roundCorner(cornerRadius: 15)
+        todayWholeView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.4)
+        todayMyView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.4)
         personalTotalView.roundCorner(cornerRadius: 15)
         personalTotalView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.3)
+        findSurroundingRestaurantView.roundCorner(cornerRadius: 10)
+        findSurroundingRestaurantView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.3)
     }
-
+    
     private func configureUseCases() {
         personalTotalSavingUseCase = PersonalTotalSavingUseCase()
         todayRecordUseCase = TodayRecordUseCase()
