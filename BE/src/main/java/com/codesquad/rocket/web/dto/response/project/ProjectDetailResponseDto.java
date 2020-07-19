@@ -33,9 +33,9 @@ public class ProjectDetailResponseDto {
 
     public static ProjectDetailResponseDto of(Project project) {
         List<String> urls = new ArrayList<>();
-        urls.add(project.getImages().get(0).getUrl());
-        urls.add(project.getImages().get(0).getUrl());
-        urls.add(project.getImages().get(0).getUrl());
+        urls.add(project.getImages().get(1).getUrl());
+        urls.add(project.getImages().get(2).getUrl());
+        urls.add(project.getImages().get(3).getUrl());
 
         return ProjectDetailResponseDto.builder()
             .id(project.getId())
