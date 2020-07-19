@@ -29,6 +29,8 @@ final class TabBarViewController: UITabBarController {
     private var challengeFeedViewController: UIViewController!
     private var myPageViewController: UIViewController!
     private var challengeButton: UIButton!
+    
+    private var challengePointPopUpViewController: ChallengePointViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,16 @@ final class TabBarViewController: UITabBarController {
     }
 }
 
+// MARK:- ChallengeCameraViewControllerDelegate
+
+extension TabBarViewController: ChallengeCameraViewControllerDelegate {
+    func didSuccessToUploadChallenge(mode: ChallengeCameraViewController.Mode) {
+        challengePointPopUpViewController.modalPresentationStyle = .overFullScreen
+        present(challengePointPopUpViewController, animated: true, completion: nil)
+        challengePointPopUpViewController.configureEcoPoints(with: mode)
+    }
+}
+
 // MARK:- QR Code Notification
 
 extension TabBarViewController {
@@ -53,6 +65,7 @@ extension TabBarViewController {
         present(challengeCameraNavigationController, animated: true, completion: nil)
         challengeCameraViewController.configureMode(to: .QRMode)
         challengeCameraViewController.configureRestaurantID(restaurantId)
+        challengeCameraViewController.delegate = self
     }
 }
 
@@ -91,6 +104,7 @@ extension TabBarViewController {
         present(challengeCameraNavigationController, animated: true, completion: nil)
         challengeCameraViewController.configureMode(to: .challengeMode)
         challengeCameraViewController.configureRestaurantID(nil)
+        challengeCameraViewController.delegate = self
     }
     
     private func animateChallengeButton() {
@@ -156,6 +170,8 @@ extension TabBarViewController {
         
         let donationNavigationController = UINavigationController(rootViewController: donationViewController)
         let challengeNavigationController = UINavigationController(rootViewController: challengeFeedViewController)
+        
+        challengePointPopUpViewController = ChallengePointViewController.loadFromNib()
         
         viewControllers = [
             homeViewController,

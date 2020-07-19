@@ -9,6 +9,10 @@
 import UIKit
 import AVFoundation
 
+protocol ChallengeCameraViewControllerDelegate: class {
+    func didSuccessToUploadChallenge(mode: ChallengeCameraViewController.Mode)
+}
+
 final class ChallengeCameraViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
@@ -32,6 +36,8 @@ final class ChallengeCameraViewController: UIViewController {
     
     private var currentMode: Mode = .challengeMode
     private var currentRestaurantID: Int?
+    
+    weak var delegate: ChallengeCameraViewControllerDelegate?
     
     enum Mode {
         case challengeMode
@@ -110,6 +116,14 @@ final class ChallengeCameraViewController: UIViewController {
     
     private func dismissController() {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK:- ChallengePreviewViewControllerDelegate
+
+extension ChallengeCameraViewController: ChallengePreviewViewControllerDelegate {
+    func didSuccessToUploadChallenge() {
+        delegate?.didSuccessToUploadChallenge(mode: currentMode)
     }
 }
 
@@ -212,5 +226,6 @@ extension ChallengeCameraViewController {
     
     private func configurePreviewViewController() {
         previewViewController = ChallengePreviewViewController.loadFromNib()
+        previewViewController.delegate = self
     }
 }

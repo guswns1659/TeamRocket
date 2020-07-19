@@ -9,7 +9,7 @@
 import UIKit
 import JGProgressHUD
 
-protocol ChallengeUploadDelegate {
+protocol ChallengePreviewViewControllerDelegate: class {
     func didSuccessToUploadChallenge()
 }
 
@@ -44,6 +44,8 @@ final class ChallengePreviewViewController: UIViewController {
     private let maximumNumberOfText: Int = 200
     
     let uploadingHUD = JGProgressHUD(style: .extraLight)
+    
+    weak var delegate: ChallengePreviewViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,6 +139,7 @@ final class ChallengePreviewViewController: UIViewController {
                 if isSuccess {
                     self.uploadingHUD.dismiss(animated: true)
                     self.dismiss(animated: true, completion: {
+                        self.delegate?.didSuccessToUploadChallenge()
                         self.navigationController?.popToRootViewController(animated: false)
                     })
                 } else {
