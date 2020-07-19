@@ -11,6 +11,7 @@ import Kingfisher
 
 class ChallengeDetailViewController: UIViewController {
 
+    @IBOutlet weak var placeIconImageView: UIImageView!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var challengeImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
@@ -46,6 +47,21 @@ class ChallengeDetailViewController: UIViewController {
     private func configureData(plateInfo: ChallengeEmptyPlate) {
         challengeImageView.kf.setImage(with: URL(string:plateInfo.image)!)
         placeLabel.text = plateInfo.restaurantName
+        if placeLabel.text == "null" {
+            placeIconImageView.isHidden = true
+            placeLabel.isHidden = true
+            NSLayoutConstraint(
+                item: challengeImageView,
+                attribute: .top,
+                relatedBy: .equal,
+                toItem: view.safeAreaLayoutGuide,
+                attribute: .top,
+                multiplier: 1,
+                constant: 0).isActive = true
+        } else {
+            placeIconImageView.isHidden = false
+            placeLabel.isHidden = false
+        }
         if plateInfo.likeCount == 0 {
             likeCountLabel.text = "0"
             likeCountLabel.isHidden = true

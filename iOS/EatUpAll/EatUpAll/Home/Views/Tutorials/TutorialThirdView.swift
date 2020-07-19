@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol TutorialThirdViewDelegate {
+    func doneButtonDidTap()
+}
+
 final class TutorialThirdView: UIView {
     @IBOutlet weak var frameView: UIView!
     @IBOutlet weak var submitButton: UIButton!
+    
+    var delegate: TutorialThirdViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,5 +38,9 @@ final class TutorialThirdView: UIView {
     private func configureUI() {
         submitButton.roundCorner(cornerRadius: 10)
         frameView.roundCorner(cornerRadius: 10)
+    }
+    
+    @IBAction func doneButtonDidTap(_ sender: Any) {
+        delegate?.doneButtonDidTap()
     }
 }

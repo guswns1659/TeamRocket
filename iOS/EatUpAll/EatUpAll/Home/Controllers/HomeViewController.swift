@@ -235,6 +235,7 @@ extension HomeViewController {
         personalTotalView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.3)
         findSurroundingRestaurantView.roundCorner(cornerRadius: 10)
         findSurroundingRestaurantView.drawShadow(color: .darkGray, offset: .init(width: 1, height: 1), radius: 3.0, opacity: 0.3)
+        emptyPlateCollectionView.contentInset = .init(top: 0, left: 20, bottom: 0, right: 0)
     }
 
     private func configureUseCases() {

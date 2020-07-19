@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -15,6 +15,7 @@
                 <outlet property="likeButton" destination="5Ot-S7-OEg" id="YsG-Ya-v7a"/>
                 <outlet property="likeCountAnnouncementLabel" destination="Zib-uQ-wtE" id="r6Y-xN-3hD"/>
                 <outlet property="likeCountLabel" destination="gqm-rn-yR6" id="NZt-az-uDi"/>
+                <outlet property="placeIconImageView" destination="do7-1T-T4R" id="zIW-va-Nso"/>
                 <outlet property="placeLabel" destination="5eg-TK-4FA" id="yXj-c6-gk5"/>
                 <outlet property="userLabel" destination="0N5-Nn-4NL" id="Onz-PY-elG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -25,25 +26,25 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map_pin" translatesAutoresizingMaskIntoConstraints="NO" id="do7-1T-T4R">
-                    <rect key="frame" x="12" y="60" width="22" height="26"/>
-                    <color key="tintColor" name="key_dark_gray"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="do7-1T-T4R">
+                    <rect key="frame" x="12" y="56.5" width="18" height="19"/>
+                    <color key="tintColor" name="key_green"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="26" id="FDl-TF-h9W"/>
-                        <constraint firstAttribute="width" secondItem="do7-1T-T4R" secondAttribute="height" multiplier="11:13" id="yjd-bu-o1S"/>
+                        <constraint firstAttribute="height" constant="20" id="FDl-TF-h9W"/>
+                        <constraint firstAttribute="width" secondItem="do7-1T-T4R" secondAttribute="height" multiplier="11:13" constant="1" id="yjd-bu-o1S"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eg-TK-4FA">
-                    <rect key="frame" x="42" y="73" width="0.0" height="0.0"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <rect key="frame" x="38" y="66" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                     <color key="textColor" name="key_dark_gray"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pGO-Bt-yJB">
-                    <rect key="frame" x="0.0" y="102" width="414" height="390"/>
+                    <rect key="frame" x="0.0" y="88" width="414" height="390"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ot-S7-OEg">
-                    <rect key="frame" x="12" y="504" width="56" height="56"/>
+                    <rect key="frame" x="12" y="490" width="56" height="56"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="5Ot-S7-OEg" secondAttribute="height" id="lnr-51-CSE"/>
                     </constraints>
@@ -56,7 +57,7 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="CQP-rg-dV6">
-                    <rect key="frame" x="72" y="507" width="102" height="50"/>
+                    <rect key="frame" x="72" y="493" width="102" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqm-rn-yR6">
                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -73,22 +74,18 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0N5-Nn-4NL">
-                    <rect key="frame" x="12" y="568" width="0.0" height="0.0"/>
+                    <rect key="frame" x="12" y="554" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                     <color key="textColor" name="key_dark_gray"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Avb-yM-3iN">
-                    <rect key="frame" x="12" y="576" width="390" height="274"/>
+                    <rect key="frame" x="12" y="562" width="390" height="288"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="mde-wZ-4ax">
-                    <rect key="frame" x="197" y="438" width="20" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -103,13 +100,13 @@
                 <constraint firstItem="CQP-rg-dV6" firstAttribute="centerY" secondItem="5Ot-S7-OEg" secondAttribute="centerY" id="cNM-0R-Usf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Avb-yM-3iN" secondAttribute="trailing" constant="12" id="eif-2E-YVr"/>
                 <constraint firstItem="0N5-Nn-4NL" firstAttribute="leading" secondItem="5Ot-S7-OEg" secondAttribute="leading" id="g34-py-lkk"/>
-                <constraint firstItem="do7-1T-T4R" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="gCu-fc-mrW"/>
+                <constraint firstItem="do7-1T-T4R" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="gCu-fc-mrW"/>
                 <constraint firstItem="Avb-yM-3iN" firstAttribute="leading" secondItem="0N5-Nn-4NL" secondAttribute="leading" id="h02-OS-Ykq"/>
                 <constraint firstItem="0N5-Nn-4NL" firstAttribute="top" secondItem="CQP-rg-dV6" secondAttribute="bottom" constant="11" id="jCI-rO-CLc"/>
                 <constraint firstItem="0N5-Nn-4NL" firstAttribute="top" secondItem="5Ot-S7-OEg" secondAttribute="bottom" constant="8" id="mOt-3a-cJc"/>
                 <constraint firstItem="CQP-rg-dV6" firstAttribute="leading" secondItem="5Ot-S7-OEg" secondAttribute="trailing" constant="4" id="nJ7-T6-jN7"/>
                 <constraint firstItem="5Ot-S7-OEg" firstAttribute="top" secondItem="pGO-Bt-yJB" secondAttribute="bottom" constant="12" id="pij-aM-UQ4"/>
-                <constraint firstItem="pGO-Bt-yJB" firstAttribute="top" secondItem="do7-1T-T4R" secondAttribute="bottom" constant="16" id="sNc-Dr-07J"/>
+                <constraint firstItem="pGO-Bt-yJB" firstAttribute="top" secondItem="do7-1T-T4R" secondAttribute="bottom" constant="12" id="sNc-Dr-07J"/>
                 <constraint firstItem="Avb-yM-3iN" firstAttribute="top" secondItem="0N5-Nn-4NL" secondAttribute="bottom" constant="8" id="vFh-Ci-IjR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -117,7 +114,7 @@
         </view>
     </objects>
     <resources>
-        <image name="map_pin" width="54.666667938232422" height="86.666664123535156"/>
+        <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
         <image name="suit.heart" catalog="system" width="128" height="109"/>
         <namedColor name="key_dark_gray">
             <color white="0.12300000339746475" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
