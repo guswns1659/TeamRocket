@@ -13,6 +13,7 @@
                 <outlet property="challengeImageView" destination="pGO-Bt-yJB" id="efc-pK-FSw"/>
                 <outlet property="descriptionTextView" destination="Avb-yM-3iN" id="Zb0-cd-cTv"/>
                 <outlet property="likeButton" destination="5Ot-S7-OEg" id="YsG-Ya-v7a"/>
+                <outlet property="likeCountAnnouncementLabel" destination="Zib-uQ-wtE" id="r6Y-xN-3hD"/>
                 <outlet property="likeCountLabel" destination="gqm-rn-yR6" id="NZt-az-uDi"/>
                 <outlet property="placeLabel" destination="5eg-TK-4FA" id="yXj-c6-gk5"/>
                 <outlet property="userLabel" destination="0N5-Nn-4NL" id="Onz-PY-elG"/>
@@ -32,9 +33,9 @@
                         <constraint firstAttribute="width" secondItem="do7-1T-T4R" secondAttribute="height" multiplier="11:13" id="yjd-bu-o1S"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="곤니네 버거" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eg-TK-4FA">
-                    <rect key="frame" x="42" y="64" width="69" height="18"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eg-TK-4FA">
+                    <rect key="frame" x="42" y="73" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                     <color key="textColor" name="key_dark_gray"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -42,7 +43,7 @@
                     <rect key="frame" x="0.0" y="102" width="414" height="390"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ot-S7-OEg">
-                    <rect key="frame" x="12" y="504" width="26" height="26"/>
+                    <rect key="frame" x="12" y="504" width="56" height="56"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="5Ot-S7-OEg" secondAttribute="height" id="lnr-51-CSE"/>
                     </constraints>
@@ -54,32 +55,40 @@
                         <action selector="switchLike:" destination="-1" eventType="touchUpInside" id="ldh-P1-Vbl"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqm-rn-yR6">
-                    <rect key="frame" x="46" y="507.5" width="18.5" height="19.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" name="key_dark_gray"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="명이 응원합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zib-uQ-wtE">
-                    <rect key="frame" x="66.5" y="507.5" width="101.5" height="19.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" name="key_dark_gray"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="corykim0829" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0N5-Nn-4NL">
-                    <rect key="frame" x="12" y="538" width="108" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="CQP-rg-dV6">
+                    <rect key="frame" x="72" y="507" width="102" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqm-rn-yR6">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" name="key_dark_gray"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zib-uQ-wtE">
+                            <rect key="frame" x="52" y="0.0" width="50" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" name="key_dark_gray"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0N5-Nn-4NL">
+                    <rect key="frame" x="12" y="568" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                     <color key="textColor" name="key_dark_gray"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Avb-yM-3iN">
-                    <rect key="frame" x="12" y="566.5" width="390" height="283.5"/>
+                    <rect key="frame" x="12" y="576" width="390" height="274"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="mde-wZ-4ax">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -87,19 +96,18 @@
                 <constraint firstItem="5eg-TK-4FA" firstAttribute="centerY" secondItem="do7-1T-T4R" secondAttribute="centerY" id="5qC-bH-2EU"/>
                 <constraint firstItem="do7-1T-T4R" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="A9n-ch-G2X"/>
                 <constraint firstItem="pGO-Bt-yJB" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BDR-Yg-NvN"/>
-                <constraint firstItem="Zib-uQ-wtE" firstAttribute="centerY" secondItem="5Ot-S7-OEg" secondAttribute="centerY" id="DW0-K1-M1O"/>
                 <constraint firstItem="pGO-Bt-yJB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="IUE-0v-Dxb"/>
-                <constraint firstItem="Zib-uQ-wtE" firstAttribute="leading" secondItem="gqm-rn-yR6" secondAttribute="trailing" constant="2" id="Mif-8g-Cj7"/>
                 <constraint firstItem="pGO-Bt-yJB" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.435268" id="Ns6-dw-XDa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Avb-yM-3iN" secondAttribute="bottom" constant="12" id="Stl-dR-Oix"/>
                 <constraint firstItem="5eg-TK-4FA" firstAttribute="leading" secondItem="do7-1T-T4R" secondAttribute="trailing" constant="8" id="ajh-dQ-xEc"/>
-                <constraint firstItem="gqm-rn-yR6" firstAttribute="leading" secondItem="5Ot-S7-OEg" secondAttribute="trailing" constant="8" id="bkE-JS-fC0"/>
+                <constraint firstItem="CQP-rg-dV6" firstAttribute="centerY" secondItem="5Ot-S7-OEg" secondAttribute="centerY" id="cNM-0R-Usf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Avb-yM-3iN" secondAttribute="trailing" constant="12" id="eif-2E-YVr"/>
                 <constraint firstItem="0N5-Nn-4NL" firstAttribute="leading" secondItem="5Ot-S7-OEg" secondAttribute="leading" id="g34-py-lkk"/>
                 <constraint firstItem="do7-1T-T4R" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="gCu-fc-mrW"/>
                 <constraint firstItem="Avb-yM-3iN" firstAttribute="leading" secondItem="0N5-Nn-4NL" secondAttribute="leading" id="h02-OS-Ykq"/>
+                <constraint firstItem="0N5-Nn-4NL" firstAttribute="top" secondItem="CQP-rg-dV6" secondAttribute="bottom" constant="11" id="jCI-rO-CLc"/>
                 <constraint firstItem="0N5-Nn-4NL" firstAttribute="top" secondItem="5Ot-S7-OEg" secondAttribute="bottom" constant="8" id="mOt-3a-cJc"/>
-                <constraint firstItem="gqm-rn-yR6" firstAttribute="centerY" secondItem="5Ot-S7-OEg" secondAttribute="centerY" id="mxj-Fh-qHR"/>
+                <constraint firstItem="CQP-rg-dV6" firstAttribute="leading" secondItem="5Ot-S7-OEg" secondAttribute="trailing" constant="4" id="nJ7-T6-jN7"/>
                 <constraint firstItem="5Ot-S7-OEg" firstAttribute="top" secondItem="pGO-Bt-yJB" secondAttribute="bottom" constant="12" id="pij-aM-UQ4"/>
                 <constraint firstItem="pGO-Bt-yJB" firstAttribute="top" secondItem="do7-1T-T4R" secondAttribute="bottom" constant="16" id="sNc-Dr-07J"/>
                 <constraint firstItem="Avb-yM-3iN" firstAttribute="top" secondItem="0N5-Nn-4NL" secondAttribute="bottom" constant="8" id="vFh-Ci-IjR"/>

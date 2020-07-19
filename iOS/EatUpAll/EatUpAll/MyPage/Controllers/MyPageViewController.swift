@@ -18,12 +18,14 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var myGreenHouseGasView: UIView!
     @IBOutlet weak var myGeenHouseGasLabel: UILabel!
     @IBOutlet weak var pointHistoryTableView: UITableView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     private var myPageUseCase: MyPageUseCase!
     private var pointHistories: PointHistoryContainer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.startAnimating()
         configure()
         fetchMyAccount()
         fetchPointHistory()
@@ -70,6 +72,8 @@ extension MyPageViewController {
             case .success(let record):
                 self.myPlatesCountLabel.text = "\(record.todayMyPlates)"
                 self.myGeenHouseGasLabel.text = String(format: "%.2f", arguments: [record.todayMySaving])
+                self.indicator.stopAnimating()
+                self.indicator.hidesWhenStopped = true
             case .failure(let error):
                 print(error)
             }
