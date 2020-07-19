@@ -29,10 +29,19 @@ final class ChallengeFeedViewController: UIViewController {
     }
 }
 
+// MARK:- Refreshable
+
+extension ChallengeFeedViewController: Refreshable {
+    func refresh() {
+        fetchChallengeFeed()
+    }
+}
+
 // MARK:- Fetching Datas
 
 extension ChallengeFeedViewController {
     private func fetchChallengeFeed() {
+        guard useCase != nil else { return }
         let request = AllEmptyPlateRequest().asURLRequest()
         useCase.getResources(
             request: request,

@@ -9,7 +9,7 @@
 import UIKit
 import JGProgressHUD
 
-protocol ChallengeUploadDelegate {
+protocol ChallengePreviewViewControllerDelegate: class {
     func didSuccessToUploadChallenge()
 }
 
@@ -44,6 +44,8 @@ final class ChallengePreviewViewController: UIViewController {
     private let maximumNumberOfText: Int = 200
     
     let uploadingHUD = JGProgressHUD(style: .extraLight)
+    
+    weak var delegate: ChallengePreviewViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,19 +126,20 @@ final class ChallengePreviewViewController: UIViewController {
     }
     
     private func uploadChallenge() {
-        let request = ChallengeUploadRequest().asURLRequest()
-        guard let imageData = capturedImage?.jpegData(compressionQuality: 0.8) else { return }
-        let uploadParameter: [String : Any] = ["description": descriptionTextView.text as Any]
+        guard let imageData = capturedImage?.jpegData(compressionQuality: 0.5) else { return }
+        let description: String = descriptionTextView.text.count == 0 ? " " : descriptionTextView.text
+        let uploadParameter: [String : Any] = ["description": description as Any]
         uploadingHUD.textLabel.text = "업로딩 중"
         uploadingHUD.show(in: view, animated: true)
         uploadUseCase.upload(
-            request: request,
+            restaurantID: currentRestaurantID,
             imageData: imageData,
             parameters: uploadParameter,
             completion: { isSuccess in
                 if isSuccess {
                     self.uploadingHUD.dismiss(animated: true)
                     self.dismiss(animated: true, completion: {
+                        self.delegate?.didSuccessToUploadChallenge()
                         self.navigationController?.popToRootViewController(animated: false)
                     })
                 } else {

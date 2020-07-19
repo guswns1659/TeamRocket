@@ -22,13 +22,16 @@ final class TabBarViewController: UITabBarController {
         static let keyGreen: UIColor = UIColor(named: "key_green")!
     }
     
-    private var homeViewController: UIViewController!
+    private var homeViewController: HomeViewController!
     private var donationViewController: UIViewController!
     private var challengeCameraNavigationController: UINavigationController!
     private var challengeCameraViewController: ChallengeCameraViewController!
-    private var challengeFeedViewController: UIViewController!
-    private var myPageViewController: UIViewController!
+    private var challengeFeedViewController: ChallengeFeedViewController!
+    private var myPageViewController: MyPageViewController!
     private var challengeButton: UIButton!
+    
+    private var challengePointPopUpViewController: ChallengePointViewController!
+    private var useCase: NetworkUseCase!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +45,57 @@ final class TabBarViewController: UITabBarController {
             name: .didScanChallengeQRCode,
             object: nil)
     }
+    
+    private func checkNumberOfChallenge(completion: @escaping (Int) -> Void) {
+        let request = TodayRecordRequest().asURLRequest()
+        useCase.getResources(
+            request: request,
+            dataType: TodayRecord.self) { (result) in
+                switch result {
+                case .success(let todayChallengeInfo):
+                    let numberOfTodayChallenges = todayChallengeInfo.todayMyPlates
+                    completion(numberOfTodayChallenges)
+                case .failure(_):
+                    break
+                }
+        }
+    }
+    
+    private func blockChallenge() {
+        presentBlockingChallengeAlertController()
+    }
+    
+    private func presentBlockingChallengeAlertController() {
+        let alertController = UIAlertController(
+            title: "수고하셨습니다.",
+            message: "잘먹었습니다 챌린지는 하루 3번까지 참여할 수 있습니다.\n지구를 위한 움직임에 감사드립니다!",
+            preferredStyle: .alert)
+        let doneAction = UIAlertAction(
+            title: "확인",
+            style: .default) { (_) in
+                self.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(doneAction)
+        present(alertController, animated: true, completion: nil)
+    }
+}
+
+// MARK:- ChallengeCameraViewControllerDelegate
+
+extension TabBarViewController: ChallengeCameraViewControllerDelegate {
+    func didSuccessToUploadChallenge(mode: ChallengeCameraViewController.Mode) {
+        challengePointPopUpViewController.modalPresentationStyle = .overFullScreen
+        present(challengePointPopUpViewController, animated: true, completion: nil)
+        challengePointPopUpViewController.configureEcoPoints(with: mode)
+        refreshViewControllers()
+    }
+    
+    private func refreshViewControllers() {
+        [homeViewController, challengeFeedViewController, myPageViewController].forEach {
+            let viewController = $0 as! Refreshable
+            viewController.refresh()
+        }
+    }
 }
 
 // MARK:- QR Code Notification
@@ -49,10 +103,13 @@ final class TabBarViewController: UITabBarController {
 extension TabBarViewController {
     @objc private func DidScanChallengeQRCode(notification: Notification) {
         guard let restaurantId = notification.userInfo?["restaurantID"] as? Int else { return }
-        challengeCameraNavigationController.modalPresentationStyle = .fullScreen
-        present(challengeCameraNavigationController, animated: true, completion: nil)
-        challengeCameraViewController.configureMode(to: .QRMode)
-        challengeCameraViewController.configureRestaurantID(restaurantId)
+        checkNumberOfChallenge { (numberOfTodayChallenges) in
+            if numberOfTodayChallenges >= 3 {
+                self.blockChallenge()
+            } else {
+                self.presentCameraController(mode: .QRMode, restaurantID: restaurantId)
+            }
+        }
     }
 }
 
@@ -68,6 +125,11 @@ extension TabBarViewController {
         configureChallengeButton()
         configureChallengeButtonAction()
         configureQRCodeNotification()
+        configureUseCase()
+    }
+    
+    private func configureUseCase() {
+        useCase = NetworkUseCase()
     }
     
     private func configureQRCodeNotification() {
@@ -83,13 +145,23 @@ extension TabBarViewController {
     }
     
     @objc private func challengeButtonDidTap() {
-        animateChallengeButton()
+        checkNumberOfChallenge { (numberOfTodayChallenges) in
+            if numberOfTodayChallenges >= 3 {
+                self.blockChallenge()
+            } else {
+                self.animateChallengeButton()
+            }
+        }
     }
     
-    private func presentCameraController() {
+    private func presentCameraController(
+        mode: ChallengeCameraViewController.Mode,
+        restaurantID: Int?) {
         challengeCameraNavigationController.modalPresentationStyle = .fullScreen
         present(challengeCameraNavigationController, animated: true, completion: nil)
-        challengeCameraViewController.configureMode(to: .challengeMode)
+        challengeCameraViewController.configureMode(to: mode)
+        challengeCameraViewController.configureRestaurantID(restaurantID)
+        challengeCameraViewController.delegate = self
     }
     
     private func animateChallengeButton() {
@@ -105,7 +177,7 @@ extension TabBarViewController {
         }) { (_) in
             self.view.alpha = 1
             tabChallenge.image = Image.challenge
-            self.presentCameraController()
+            self.presentCameraController(mode: .challengeMode, restaurantID: nil)
         }
     }
     
@@ -155,6 +227,8 @@ extension TabBarViewController {
         
         let donationNavigationController = UINavigationController(rootViewController: donationViewController)
         let challengeNavigationController = UINavigationController(rootViewController: challengeFeedViewController)
+        
+        challengePointPopUpViewController = ChallengePointViewController.loadFromNib()
         
         viewControllers = [
             homeViewController,

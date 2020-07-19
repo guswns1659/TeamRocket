@@ -111,6 +111,9 @@
 		38EB2A8024BDD424002CBDEA /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A7E24BDD424002CBDEA /* ChallengeCell.swift */; };
 		38EB2A8124BDD424002CBDEA /* ChallengeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38EB2A7F24BDD424002CBDEA /* ChallengeCell.xib */; };
 		38EB2A8424BDD5C1002CBDEA /* ChallengeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB2A8324BDD5C1002CBDEA /* ChallengeCollectionViewDataSource.swift */; };
+		38EB632924C461A500A53284 /* ChallengePointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB632724C461A500A53284 /* ChallengePointViewController.swift */; };
+		38EB632A24C461A500A53284 /* ChallengePointViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38EB632824C461A500A53284 /* ChallengePointViewController.xib */; };
+		38EB632D24C4698500A53284 /* RefreshableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB632C24C4698500A53284 /* RefreshableProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -217,6 +220,9 @@
 		38EB2A7E24BDD424002CBDEA /* ChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
 		38EB2A7F24BDD424002CBDEA /* ChallengeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeCell.xib; sourceTree = "<group>"; };
 		38EB2A8324BDD5C1002CBDEA /* ChallengeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		38EB632724C461A500A53284 /* ChallengePointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengePointViewController.swift; sourceTree = "<group>"; };
+		38EB632824C461A500A53284 /* ChallengePointViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengePointViewController.xib; sourceTree = "<group>"; };
+		38EB632C24C4698500A53284 /* RefreshableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -562,6 +568,7 @@
 				38714B3924BC7BE000E9B9FC /* Home */,
 				38714B3E24BC7F9200E9B9FC /* Donation */,
 				385F612424BF320B003C2B7D /* Challenge */,
+				38EB632524C4617E00A53284 /* ChallengePoint */,
 				38EB2A7524BDA5D0002CBDEA /* ChallengeFeed */,
 				3012EF9424C1B74B00CD350C /* MyPage */,
 				3079F57B24C4600E0030EEE4 /* Map */,
@@ -579,6 +586,7 @@
 		38714B3424BC79BB00E9B9FC /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				38EB632B24C4697200A53284 /* Protocol */,
 				383F239C24BEE6D900C5E8C9 /* Controllers */,
 			);
 			path = TabBar;
@@ -678,6 +686,31 @@
 			path = DataSources;
 			sourceTree = "<group>";
 		};
+		38EB632524C4617E00A53284 /* ChallengePoint */ = {
+			isa = PBXGroup;
+			children = (
+				38EB632624C4619300A53284 /* ViewControllers */,
+			);
+			path = ChallengePoint;
+			sourceTree = "<group>";
+		};
+		38EB632624C4619300A53284 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				38EB632724C461A500A53284 /* ChallengePointViewController.swift */,
+				38EB632824C461A500A53284 /* ChallengePointViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		38EB632B24C4697200A53284 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				38EB632C24C4698500A53284 /* RefreshableProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -766,6 +799,7 @@
 				3043474B24C139D70038C569 /* TutorialFirstView.xib in Resources */,
 				38714B4224BC7FA400E9B9FC /* DonationViewController.xib in Resources */,
 				38714B3D24BC7BFD00E9B9FC /* HomeViewController.xib in Resources */,
+				38EB632A24C461A500A53284 /* ChallengePointViewController.xib in Resources */,
 				3043474D24C140D80038C569 /* TutorialSecondView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -804,6 +838,7 @@
 				3097497324C07BAD00C391DC /* EmptyPlateRequest.swift in Sources */,
 				3079F58A24C478160030EEE4 /* RestaurantAnnotationLabel.swift in Sources */,
 				3871901924C2081B00954428 /* Restaurant.swift in Sources */,
+				38EB632D24C4698500A53284 /* RefreshableProtocol.swift in Sources */,
 				3043475124C1465A0038C569 /* TutorialFirstView.swift in Sources */,
 				380B222B24BDEAD30004FA55 /* DonationWholeProjectRequest.swift in Sources */,
 				38714B2524BC780A00E9B9FC /* TabBarViewController.swift in Sources */,
@@ -825,6 +860,7 @@
 				3871901624C206D900954428 /* RestaurantInfoRequest.swift in Sources */,
 				302406E924C08AD000B3E328 /* LikeUseCase.swift in Sources */,
 				30B0A30824BDCE7F00BB9E55 /* PersonalTotalSavingUseCase.swift in Sources */,
+				38EB632924C461A500A53284 /* ChallengePointViewController.swift in Sources */,
 				302BB02524BD68BE000EB297 /* Request.swift in Sources */,
 				302BB01A24BD65DB000EB297 /* NetworkDispatcher.swift in Sources */,
 				38002B9D24C043C500D85D72 /* UIView+Shimmering.swift in Sources */,
