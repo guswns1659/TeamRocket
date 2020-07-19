@@ -24,18 +24,23 @@ enum EndPoint {
     static let myAccountURL = "\(baseURL)account/"
     static let pointHistory = "\(baseURL)account/pointHistory"
     static let challengeUploadURL = "\(baseURL)/challenge/upload"
-    static let challengeUploadWithRestaurantIDURL = "\(baseURL)challenge"
     static let restaurantInfoURL = "\(baseURL)restaurant/"
+    static let nearRestaurantURL = "\(restaurantInfoURL)nearRestaurant"
+    static let challengeUploadWithRestaurantIDURL = "\(baseURL)challenge"
 }
 
 enum QueryParameters: CustomStringConvertible {
     case ecoPoint
     case liked
+    case latitude
+    case longitude
     
     var description: String {
         switch self {
         case .ecoPoint: return "ecoPoint"
         case .liked: return "liked"
+        case .latitude: return "latitude"
+        case .longitude: return "longitude"
         }
     }
 }

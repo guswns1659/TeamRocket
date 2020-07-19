@@ -60,6 +60,12 @@ final class HomeViewController: UIViewController {
     @objc private func showTutorial(_ gesture: UIGestureRecognizer) {
         wholeTutorialView.isHidden = false
     }
+    
+    @objc private func showMap(_ gesture: UIGestureRecognizer) {
+        let mapViewController = MapViewController.loadFromNib()
+        mapViewController.modalPresentationStyle = .fullScreen
+        present(mapViewController, animated: true)
+    }
 }
 
 // MARK:- Refreshable
@@ -189,8 +195,10 @@ extension HomeViewController {
     }
 
     private func configureGestureRecognizer() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showTutorial(_:)))
-        tutorialView.addGestureRecognizer(tapGesture)
+        let tapGestureForShowTutorial = UITapGestureRecognizer(target: self, action: #selector(showTutorial(_:)))
+        tutorialView.addGestureRecognizer(tapGestureForShowTutorial)
+        let tapGestureForFindSurroundingRestaurant = UITapGestureRecognizer(target: self, action: #selector(showMap(_:)))
+       findSurroundingRestaurantView.addGestureRecognizer(tapGestureForFindSurroundingRestaurant)
     }
 
     private func configureDonationProject() {
