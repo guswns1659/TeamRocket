@@ -47,6 +47,7 @@ extension MyPageViewController: Refreshable {
 
 extension MyPageViewController {
     private func fetchMyAccount() {
+        guard myPageUseCase != nil else { return }
         let request = MyAccountRequest(id:1).asURLRequest()
         myPageUseCase.getResources(request: request, dataType: MyAccount.self) { result in
             switch result {
@@ -61,6 +62,7 @@ extension MyPageViewController {
     }
     
     private func fetchPointHistory() {
+        guard myPageUseCase != nil else { return }
         let request = PointHistoryRequest().asURLRequest()
         myPageUseCase.getResources(request: request, dataType: PointHistoryContainer.self) { result in
             switch result {
@@ -76,6 +78,7 @@ extension MyPageViewController {
     }
     
     private func fetchTodayRecords() {
+        guard myPageUseCase != nil else { return }
         let request = TodayRecordRequest().asURLRequest()
         myPageUseCase.getResources(request: request, dataType: TodayRecord.self) { result in
             switch result {
