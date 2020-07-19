@@ -44,6 +44,8 @@
 		306FA78224BD585200279A18 /* EmptyPlateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306FA78024BD585200279A18 /* EmptyPlateCollectionViewCell.swift */; };
 		306FA78324BD585200279A18 /* EmptyPlateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 306FA78124BD585200279A18 /* EmptyPlateCollectionViewCell.xib */; };
 		306FA78D24BD61C300279A18 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 306FA78C24BD61C300279A18 /* Alamofire */; };
+		3079F57F24C460390030EEE4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079F57D24C460390030EEE4 /* MapViewController.swift */; };
+		3079F58024C460390030EEE4 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3079F57E24C460390030EEE4 /* MapViewController.xib */; };
 		3097497124C0792400C391DC /* AllEmptyPlateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097497024C0792400C391DC /* AllEmptyPlateRequest.swift */; };
 		3097497324C07BAD00C391DC /* EmptyPlateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097497224C07BAD00C391DC /* EmptyPlateRequest.swift */; };
 		30B0A2F624BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0A2F524BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift */; };
@@ -144,6 +146,8 @@
 		3043475824C180990038C569 /* WholeTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeTutorialView.swift; sourceTree = "<group>"; };
 		306FA78024BD585200279A18 /* EmptyPlateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlateCollectionViewCell.swift; sourceTree = "<group>"; };
 		306FA78124BD585200279A18 /* EmptyPlateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPlateCollectionViewCell.xib; sourceTree = "<group>"; };
+		3079F57D24C460390030EEE4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3079F57E24C460390030EEE4 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		3097497024C0792400C391DC /* AllEmptyPlateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEmptyPlateRequest.swift; sourceTree = "<group>"; };
 		3097497224C07BAD00C391DC /* EmptyPlateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlateRequest.swift; sourceTree = "<group>"; };
 		30B0A2F524BD9CCA00BB9E55 /* ChallengeEmptyPlateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEmptyPlateUseCase.swift; sourceTree = "<group>"; };
@@ -346,6 +350,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3079F57B24C4600E0030EEE4 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				3079F57C24C4601D0030EEE4 /* Controllers */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		3079F57C24C4601D0030EEE4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3079F57D24C460390030EEE4 /* MapViewController.swift */,
+				3079F57E24C460390030EEE4 /* MapViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		30A1615024BD62A1007FEDC4 /* Networks */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +536,7 @@
 				385F612424BF320B003C2B7D /* Challenge */,
 				38EB2A7524BDA5D0002CBDEA /* ChallengeFeed */,
 				3012EF9424C1B74B00CD350C /* MyPage */,
+				3079F57B24C4600E0030EEE4 /* Map */,
 				38714B3624BC7B5500E9B9FC /* Extensions */,
 				383D8C8524BC94B400561EF3 /* ViewModel */,
 				38714B2024BC780A00E9B9FC /* AppDelegate.swift */,
@@ -700,6 +722,7 @@
 				300E3FDB24C06D5A00A95241 /* ChallengeDetailViewController.xib in Resources */,
 				383D8C8024BC8F5500561EF3 /* DonationProjectCell.xib in Resources */,
 				38EB2A7924BDA61D002CBDEA /* ChallengeFeedViewController.xib in Resources */,
+				3079F58024C460390030EEE4 /* MapViewController.xib in Resources */,
 				3043474F24C1455F0038C569 /* TutorialThirdView.xib in Resources */,
 				3012EF9E24C1BF0800CD350C /* PointHistoryTableViewCell.xib in Resources */,
 				3012EF9924C1B76900CD350C /* MyPageViewController.xib in Resources */,
@@ -733,6 +756,7 @@
 				38714B3C24BC7BFD00E9B9FC /* HomeViewController.swift in Sources */,
 				3012EFA224C1CE8500CD350C /* PointHistoryRequest.swift in Sources */,
 				3043475324C146650038C569 /* TutorialSecondView.swift in Sources */,
+				3079F57F24C460390030EEE4 /* MapViewController.swift in Sources */,
 				3012EFA424C1CEBE00CD350C /* MyPageUseCase.swift in Sources */,
 				38002BA824C08E8400D85D72 /* ChallengeNewPostUseCase.swift in Sources */,
 				306FA78224BD585200279A18 /* EmptyPlateCollectionViewCell.swift in Sources */,
