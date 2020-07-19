@@ -46,13 +46,9 @@
                         <constraint firstAttribute="height" constant="1" id="vNN-qv-EXs"/>
                     </constraints>
                 </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJx-SK-Foz">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 기부 탭으로 가서 기부하고 싶은 프로젝트를 터치합니다.  2. 챌린지 인증을 통해 획득한 에코포인트로 기부하실 수 있습니다.  3. 기부하기 버튼을 눌러 원하는 만큼의 에코 포인트를 기부합니다." translatesAutoresizingMaskIntoConstraints="NO" id="PJx-SK-Foz">
                     <rect key="frame" x="20" y="74" width="360" height="440"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <string key="text">1. 매 끼니 밥을 맛있게 먹습니다 🍚
-2. 다 먹은 접시를 촬영합니다 📸
-3. '잘먹었습니다'에 업로드 합니다 📱
-4. 인증이 완료되면 포인트를 받습니다 💰</string>
                     <color key="textColor" name="key_dark_gray"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

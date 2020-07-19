@@ -47,20 +47,17 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGk-bE-S74">
                     <rect key="frame" x="20" y="74" width="360" height="168"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <string key="text">1. 매 끼니 밥을 맛있게 먹습니다 🍚
-2. 다 먹은 접시를 촬영합니다 📸
-3. '잘먹었습니다'에 업로드 합니다 📱
-4. 인증이 완료되면 포인트를 받습니다 💰</string>
+                    <string key="text">1. 매 끼니 밥을 맛있게 먹습니다.
+2. 다 먹은 그릇을 촬영합니다.
+3. '잘먹었습니다'에 업로드 합니다.
+4. 인증이 완료되면 포인트를 받습니다.</string>
                     <color key="textColor" name="key_dark_gray"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thS-ef-Lyt">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="- 음식물의 형태가 보이면 안돼요! - 잔반도 남기면 안돼요! - 인증 기준을 만족하지 못하면 에코포인트는 회수됩니다." translatesAutoresizingMaskIntoConstraints="NO" id="thS-ef-Lyt">
                     <rect key="frame" x="20" y="304" width="360" height="196"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <string key="text">1. 매 끼니 밥을 맛있게 먹습니다 🍚
-2. 다 먹은 접시를 촬영합니다 📸
-3. </string>
                     <color key="textColor" name="key_dark_gray"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

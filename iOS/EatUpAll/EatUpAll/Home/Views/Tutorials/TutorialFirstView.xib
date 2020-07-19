@@ -19,16 +19,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="qat-y6-9il">
-                    <rect key="frame" x="20" y="26" width="208" height="41.5"/>
+                    <rect key="frame" x="20" y="28" width="208" height="41.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="qat-y6-9il" secondAttribute="height" multiplier="5:1" id="jEB-T4-Egq"/>
                     </constraints>
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crG-Rt-7gj">
-                    <rect key="frame" x="20" y="81.5" width="360" height="502.5"/>
+                    <rect key="frame" x="20" y="83.5" width="360" height="500.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <string key="text">'잘먹었습니다'는 지구를 위한 책임감있는 소비에 초점을 맞춘 서비스로, 기업과 소비자가 모두 참여할 수 있는 challenge - donation 서비스입니다. 
-</string>
+ 모두의 참여로 깨끗한 지구를 만들 수 있도록 여러분의 챌린지 참여를 기다리고 있습니다.</string>
                     <color key="textColor" name="key_dark_gray"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -39,7 +39,7 @@
                 <constraint firstItem="crG-Rt-7gj" firstAttribute="leading" secondItem="qat-y6-9il" secondAttribute="leading" id="0bX-uK-DOd"/>
                 <constraint firstItem="crG-Rt-7gj" firstAttribute="top" secondItem="qat-y6-9il" secondAttribute="bottom" constant="14" id="9ep-XH-KUa"/>
                 <constraint firstItem="qat-y6-9il" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.52" id="AbJ-T5-jxu"/>
-                <constraint firstItem="qat-y6-9il" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="26" id="Dg2-nD-dDl"/>
+                <constraint firstItem="qat-y6-9il" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="28" id="Dg2-nD-dDl"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="crG-Rt-7gj" secondAttribute="bottom" constant="16" id="XcU-4N-eUC"/>
                 <constraint firstItem="qat-y6-9il" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="uvm-m0-GdT"/>
                 <constraint firstAttribute="trailing" secondItem="crG-Rt-7gj" secondAttribute="trailing" constant="20" id="ymb-ne-hp6"/>
