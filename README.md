@@ -134,7 +134,7 @@ Java8, Spring Boot 2.2.2, AWS RDS MySQL8.0, AWS EC2, Nginx
 
 ------
 ## 데모영상
-- [유튜브](https://youtu.be/8t26aRF6UJM)
+- [유튜브](https://youtu.be/pYhdoltYHsI)
 
 ## 참고자료
 - [음식물 쓰레기에 관한 환경부 자료](https://me.go.kr/home/file/readDownloadFile2.do?fileId=25739&fileSeq=1&fileName=02cbe80dbf2710b9209383edeed724b311598d616211b9cb4ca7ed1c3af7e5abf2edcfedf069048834db3fe6f29e09aa&openYn=Y#:~:text=%EC%9D%8C%EC%8B%9D%EB%AC%BC%EC%93%B0%EB%A0%88%EA%B8%B0%EB%8A%94%20%EC%B2%98%EB%A6%AC%EA%B3%BC%EC%A0%95,%EC%98%A8%EC%8B%A4%EA%B0%80%EC%8A%A4%EA%B0%80%20%EB%B0%B0%EC%B6%9C%EB%90%A9%EB%8B%88%EB%8B%A4)
