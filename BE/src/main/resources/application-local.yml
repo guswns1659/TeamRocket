@@ -2,7 +2,7 @@ spring:
   profiles: local
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/angelhack?allowLoadLocalInfile=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useLegacyDatetimeCode=false
+    url: jdbc:mysql://localhost:3306/anglehack?allowLoadLocalInfile=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useLegacyDatetimeCode=false
     username: teamrocket
     password: teamrocket
     initialization-mode: always

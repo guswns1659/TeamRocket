@@ -1,4 +1,4 @@
-use angelhack;
+use anglehack;
 -- drop table if exists account;
 -- drop table if exists account_point_history;
 -- drop table if exists account_challenge;

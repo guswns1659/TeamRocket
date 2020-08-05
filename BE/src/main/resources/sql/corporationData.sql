@@ -1,4 +1,4 @@
-use angelhack;
+use anglehack;
 
 insert into corporation (name) values ('우아한자매들');
 insert into corporation (name) values ('스페셜컴퓨터');

@@ -1,4 +1,4 @@
-use angelhack;
+use anglehack;
 
 insert into project (corporation_id, created_at, current_money, dead_line, description, donators, name, target_money)
 values (1, '2020-05-11' , 2721800, '2020-09-30', 'description', 523, '해양 포유류 보호법 후원 프로젝트', 9900000);
