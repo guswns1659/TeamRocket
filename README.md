@@ -3,9 +3,11 @@
 # 데모영상 
 - [데모영상](https://www.youtube.com/watch?v=AZp6bnvMKUQ&feature=youtu.be)
 
+<details markdown="1">
+<summary>프로젝트 소개</summary>
+
 ## 1. 프로젝트 소개
 음식물 쓰레기로 발생하는 환경오염을 줄이기 위한 프로젝트. 사용자가 음식을 다 먹은 후 빈 그릇을 사진 찍고 인증하면 에코 포인트가 발행된다. 사용자는 획득한 에코포인트로 다양한 기업들의 사회공헌 프로젝트에 기부할 수 있다. 기업들은 프로젝트 참여를 통해 홍보효과를 누릴 수 있다.
-
 
 - 프로젝트 배경 
     - 하루 1만 4천여 톤 발생, 전체 쓰레기 발생량의 28.7% 차지
@@ -32,7 +34,10 @@
 - 어플리케이션의 확장성
     - 음식물쓰레기 인증을 확장해 플라스틱 분리배출, 친환경 용기 재활용, 텀블러 사용 등 환경 보호에 도움이 되는 활동으로 확장 가능.
 
------
+</details>
+
+<details markdown="1">
+<summary>프로젝트 협업</summary>
 
 ## 2. 협업
 사용 툴 : Slack, Github Issue, Adobe XD, Swagger
@@ -69,9 +74,12 @@ Java8, Spring Boot 2.2.2, AWS RDS MySQL8.0, AWS EC2, Nginx
 - TDD 적용, 테스트 커버리지 70% 이상 : 레포지토리부터 컨트롤러까지 모든 레이어 테스트 코드 작성.
 ![](https://i.imgur.com/iclYgkQ.png)
 
-----
+</details>
 
-## 기능 설명
+<details markdown="1">
+<summary>기능 및 화면 설명</summary>
+
+## 3.기능 설명
 
 ### 홈
 <img src = "https://i.imgur.com/auSTlid.png" width = 50%/><img src = "https://i.imgur.com/NkGnPXV.png" width = 50%/>
@@ -134,6 +142,8 @@ Java8, Spring Boot 2.2.2, AWS RDS MySQL8.0, AWS EC2, Nginx
 - 마이페이지에서 프로필 이미지, 보유 에코포인트 확인
 - 오늘 챌린지 참여 횟수와 이로 인해 절감된 온실가스 양 확인
 - 적립하고 기부한 포인트 히스토리 확인
+
+</details>
 
 
 ## 참고자료
