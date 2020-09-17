@@ -3,6 +3,7 @@
 # 데모영상 
 - [데모영상](https://www.youtube.com/watch?v=AZp6bnvMKUQ&feature=youtu.be)
 
+
 <details markdown="1">
 <summary>프로젝트 소개</summary>
 
@@ -10,23 +11,14 @@
 음식물 쓰레기로 발생하는 환경오염을 줄이기 위한 프로젝트. 사용자가 음식을 다 먹은 후 빈 그릇을 사진 찍고 인증하면 에코 포인트가 발행된다. 사용자는 획득한 에코포인트로 다양한 기업들의 사회공헌 프로젝트에 기부할 수 있다. 기업들은 프로젝트 참여를 통해 홍보효과를 누릴 수 있다.
 
 - 프로젝트 배경 
-    - 하루 1만 4천여 톤 발생, 전체 쓰레기 발생량의 28.7% 차지
-    - 음식물의 1/7이 쓰레기로 버려짐.
-    - 경제적 손실 연간 20조 원 이상
-    - 하루에 1만 5천톤, 매립이나 소각에 1톤 당 최소 15만원.
-    - 소각할 곳은 부족하고 비용이 드니 불법 투기 증가.
 
-- 음식물 쓰레기로 인한 문제 상황 
-    - 연간 온실가스 배출량 885만 톤 co2e
-    - 음식물쓰레기 처리 비용 연간 8,000억원
-    ![](https://i.imgur.com/BR4yP5H.png)
+![](https://i.imgur.com/BR4yP5H.png)
 
 - 얼마나 줄여야 환경오염에 도움이 될까?
   - 전 국민이 음식물쓰레기를 20% 줄이면 연간 1,600억원의 쓰레기 처리 비용이 줄고 에너지 절약 등으로 5조 원에 달하는 경제적 이익이 생김.
   - 18억kwh가 절약돼 39만 가구가 겨울을 날 수 있는 연탄 1억 8,600만 장을 보급할 수 있다.
 
 
-## 애플리케이션을 통한 문제 해결 : 음식물 쓰레기 챌린지!
 - 음식물 쓰레기 구성의 30%인 먹고 남긴 음식물을 줄이는 챌린지를 시도하자!
 
 ![](https://i.imgur.com/llFKxIg.png)
@@ -37,7 +29,33 @@
 </details>
 
 <details markdown="1">
-<summary>프로젝트 협업</summary>
+<summary>프로젝트 설계</summary>
+
+# 도메인 객체 설계 
+
+![image](https://user-images.githubusercontent.com/55608425/93446428-3dcd2600-f90c-11ea-9bf4-964d9e4a004a.png)
+
+## 도메인 객체 설명 
+
+- Account은 여러개의 Project에 기부할 수 있다. 중간엔티티, ProjectAccount 생성한다. 사용자는 여러개의 사회공헌 프로젝트에 기부할 수 있고 사회공헌 프로젝트도 여러명의 사용자를 가질 수 있다. 
+- Corporation(회사)는 여러개의 Project(사회공헌 프로젝트)를 가질 수 있다. 
+- Account은 여러개의 Challenge(빈그릇 인증)을 할 수 있다. 
+
+## 디자인 설계
+
+- Adobe XD를 이용한 UI 디자인 ([링크](https://xd.adobe.com/view/508425a2-ea77-4841-aabc-9028dc4a7087-05d7/))
+<img src = "https://i.imgur.com/slv5gXQ.png" width = 50%/>
+
+
+### iOS 
+- Delma : 기획, 디자인, iOS 개발
+- Cory : 기획, 디자인, iOS 개발
+
+</details>
+
+
+<details markdown="1">
+<summary>프로젝트 내 역할</summary>
 
 ## 2. 협업
 사용 툴 : Slack, Github Issue, Adobe XD, Swagger
@@ -55,14 +73,6 @@
 
 ![](https://i.imgur.com/Szd4sJj.png)
 
-
-- Adobe XD를 이용한 UI 디자인 ([링크](https://xd.adobe.com/view/508425a2-ea77-4841-aabc-9028dc4a7087-05d7/))
-<img src = "https://i.imgur.com/slv5gXQ.png" width = 50%/>
-
-
-### iOS 
-- Delma : 기획, 디자인, iOS 개발
-- Cory : 기획, 디자인, iOS 개발
 
 ### BackEnd 개발
 #### 기술 스택
