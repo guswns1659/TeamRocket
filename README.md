@@ -1,7 +1,7 @@
 # 프로젝트 명 : 잘먹었습니다
 
 # 데모영상 
-- [데모영상](https://www.youtube.com/watch?v=AZp6bnvMKUQ&feature=youtu.be)
+- [데모영상](https://bit.ly/3n5IoTh)
 
 
 <details markdown="1">
