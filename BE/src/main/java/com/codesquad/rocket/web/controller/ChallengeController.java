@@ -3,13 +3,7 @@ package com.codesquad.rocket.web.controller;
 import java.io.IOException;
 
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.codesquad.rocket.service.ChallengeService;
@@ -42,6 +36,10 @@ public class ChallengeController {
         return challengeService.findById(id);
     }
 
+    /** 좋아요 버튼 API
+     *  liked = true (누름)
+     *  liked = false (취소)
+     */
     @GetMapping("/like/{id}")
     public LikeResponseDto getLikeResult(@PathVariable Long id,
         @RequestParam(value = "liked") String liked) {
@@ -52,16 +50,8 @@ public class ChallengeController {
     public ChallengeStatusResponseDto upload(
         @PathVariable(required = false) Long restaurantId,
         @RequestPart(value = "file") MultipartFile file,
-        @RequestPart(value = "description") String description) {
+        @RequestPart(value = "description") String description) throws IOException {
 
         return challengeService.addChallenge(restaurantId, file, description);
-    }
-
-    @PostMapping(path = "upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ChallengeStatusResponseDto uploadNoRestaurant(
-        @RequestPart(value = "file") MultipartFile file,
-        @RequestPart(value = "description") String description) {
-
-        return challengeService.addChallenge(file, description);
     }
 }

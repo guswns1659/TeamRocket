@@ -46,10 +46,6 @@ public class RestaurantService {
                 "WHERE MBRContains(ST_LINESTRINGFROMTEXT(" + String.format("'LINESTRING(%f %f, %f %f)')", x1, y1, x2, y2) + ", r.point)"
             , Restaurant.class);
 
-        // query.setParameter(1, baseLongitude);
-        // query.setParameter(2, baseLatitude);
-        // query.setParameter(3, distance * 1000);
-
         List<Restaurant> results = query.getResultList();
         List<RestaurantDto> data = results.stream()
             .map(RestaurantDto::of)

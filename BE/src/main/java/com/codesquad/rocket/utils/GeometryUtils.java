@@ -39,11 +39,4 @@ public class GeometryUtils {
     private static Double cos(Double coordinate) {
         return Math.cos(coordinate);
     }
-
-    public static Point getEmptyPoint() throws ParseException {
-        Double latitude = 0.0;
-        Double longitude = 0.0;
-        String pointWKT = String.format("POINT(%s %s)", longitude, latitude);
-        return (Point)new WKTReader().read(pointWKT);
-    }
 }

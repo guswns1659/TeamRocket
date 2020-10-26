@@ -57,6 +57,7 @@ public class AccountService {
 
     public PointHistoryResponseDto pointHistory() {
         Account account = accountRepository.findAccountByName(USER).orElse(new Account());
+        // 생성 기준으로 오름차순 정렬
         account.getPointHistories().sort(Comparator.comparingInt(a -> (int)a.getCreatedAt().getTime()));
         Collections.reverse(account.getPointHistories());
 

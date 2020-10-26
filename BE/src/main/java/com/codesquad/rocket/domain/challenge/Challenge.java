@@ -19,6 +19,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.codesquad.rocket.domain.restaurant.Restaurant;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.io.WKTReader;
 
@@ -64,6 +65,18 @@ public class Challenge {
         @AttributeOverride(name = "name", column = @Column(name = "account_name"))
     })
     private final List<Like> likes = new ArrayList<>();
+
+    public static Challenge from(Account account, Restaurant restaurant, String uploadUrl, String description) {
+        return Challenge.builder()
+                .account(account)
+                .createdAt(new Date())
+                .description(description)
+                .point(restaurant.getPoint())
+                .restaurantName(restaurant.getName())
+                .updatedAt(new Date())
+                .url(uploadUrl)
+                .build();
+    }
 
     public void addLike(Like like) {
         this.likes.add(like);

@@ -30,4 +30,12 @@ public class PointHistory {
 
     @Enumerated(EnumType.STRING)
     private PointOption pointOption;
+
+    public static PointHistory from(int RestaurantEcoPoint) {
+        return PointHistory.builder()
+                .pointOption(PointOption.SAVE)
+                .createdAt(new Date())
+                .ecoPoint(RestaurantEcoPoint)
+                .build();
+    }
 }
